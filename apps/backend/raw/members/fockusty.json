@@ -1,0 +1,19 @@
+{
+  "tag": "fockusty",
+  "name": "FOCKUSTY",
+  "role": "CEO, Backend-разработчик",
+  "description":
+    "Почему я начал изучать программирование? Всё просто, я просто начал, по приколу, да, вот такой вот я. На август 2024 года мне 15 лет. Мой первый язык - JavaScript, сначала я изучал HTML & CSS (Все мы знаем, что они не ЯП), а потом переключился на JS. Я нашел свой интерес в программировании. Раньше я снимал видео на платформу YouTube, но мне в один момент надоело и я начал изучать веб. Я начал изучать программирование с 13 лет (2023 год в июне).",
+  "socials": [
+    { "href": "(personal) https://fockusty.netlify.app/"},
+    { "href": "https://github.com/FOCKUSTY"},
+    { "href": "https://gravatar.com/fockusty" },
+    { "href": "https://www.youtube.com/channel/UCONoOdImtgCZKih1nxDjxDg"},
+    { "href": "https://vk.com/fockusty"},
+    { "href": "https://t.me/FOCKUSTY"},
+    { "href": "https://twitch.tv/FOCKUSTY"},
+    { "href": "https://steamcommunity.com/profiles/76561198999835541/"},
+    { "href": "https://twitter.com/fockusty"},
+    { "href": "https://pinterest.com/fockusty/"}
+  ]
+}

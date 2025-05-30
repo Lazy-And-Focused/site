@@ -1,3 +1,20 @@
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# netlify
+.netlify/
+
 # Logs
 logs
 *.log
@@ -8,6 +25,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Сompiled output
+/dist
+/node_modules
+/build
 node_modules
 dist
 dist-ssr
