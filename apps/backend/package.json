@@ -1,25 +1,21 @@
 {
-  "name": "site-backend",
-  "version": "0.0.1",
+  "name": "backend",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "nodemon ./src/index.ts",
     "build": "tsc && tsc-alias",
     "start": "node ./dist/src/index.js"
   },
-  "keywords": [
-    "backend",
-    "express",
-    "site",
-    "laf-site",
-    "typescript"
-  ],
   "author": {
     "name": "Lazy And Focused",
-    "url": "https://github.com/Lazy-And-Focused",
+    "url": "https://laf-info.netlify.app/",
     "email": "love.laf.command@gmail.com"
   },
+  "homepage": "https://laf-info.netlify.app/",
+  "repository": "https://github.com/Lazy-And-Focused/site",
   "license": "MIT",
   "dependencies": {
     "@netlify/functions": "^3.1.8",
