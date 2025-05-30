@@ -1,0 +1,22 @@
+{
+  "name": "configs",
+  "version": "1.0.0",
+  "description": "Our Prettier config",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": "./index.js",
+  "peerDependencies": {
+    "@eslint/js": "^9.23.0",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.5",
+    "globals": "^15.15.0",
+    "typescript-eslint": "^8.28.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "prettier": "3.3.3"
+  }
+}
