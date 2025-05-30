@@ -14,8 +14,7 @@ const config = {
   "bracketSpacing": true,
   "semi": true,
   "tabWidth": 2,
-  "plugins": ["prettier-plugin-tailwindcss"]
 };
 
-export const PrettierConfiguration = config;
+export const PrettierLafConfiguration = config;
 export default config;

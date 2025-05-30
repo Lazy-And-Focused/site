@@ -6,7 +6,32 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      '@eslint/js':
+        specifier: ^9.23.0
+        version: 9.27.0
+      eslint:
+        specifier: ^9.23.0
+        version: 9.27.0(jiti@1.21.7)
+      eslint-config-prettier:
+        specifier: ^9.1.0
+        version: 9.1.0(eslint@9.27.0(jiti@1.21.7))
+      eslint-plugin-prettier:
+        specifier: ^5.2.5
+        version: 5.4.1(eslint-config-prettier@9.1.0(eslint@9.27.0(jiti@1.21.7)))(eslint@9.27.0(jiti@1.21.7))(prettier@3.5.3)
+      eslint-plugin-react-hooks:
+        specifier: ^5.2.0
+        version: 5.2.0(eslint@9.27.0(jiti@1.21.7))
+      eslint-plugin-react-refresh:
+        specifier: ^0.4.19
+        version: 0.4.20(eslint@9.27.0(jiti@1.21.7))
+      globals:
+        specifier: ^15.15.0
+        version: 15.15.0
+      typescript-eslint:
+        specifier: ^8.28.0
+        version: 8.33.0(eslint@9.27.0(jiti@1.21.7))(typescript@5.8.3)
 
   apps/backend:
     dependencies:
@@ -144,6 +169,9 @@ importers:
       prettier:
         specifier: 3.3.3
         version: 3.3.3
+      prettier-config-laf:
+        specifier: workspace:^
+        version: link:../../packages/prettier-config-laf
       prettier-plugin-tailwindcss:
         specifier: ^0.6.11
         version: 0.6.12(prettier@3.3.3)
@@ -160,35 +188,11 @@ importers:
         specifier: ^5.4.16
         version: 5.4.19(@types/node@22.15.27)
 
-  packages/configs:
+  packages/prettier-config-laf:
     dependencies:
-      '@eslint/js':
-        specifier: ^9.23.0
-        version: 9.27.0
-      eslint:
-        specifier: ^9.23.0
-        version: 9.27.0(jiti@1.21.7)
-      eslint-config-prettier:
-        specifier: ^9.1.0
-        version: 9.1.0(eslint@9.27.0(jiti@1.21.7))
-      eslint-plugin-prettier:
-        specifier: ^5.2.5
-        version: 5.4.1(eslint-config-prettier@9.1.0(eslint@9.27.0(jiti@1.21.7)))(eslint@9.27.0(jiti@1.21.7))(prettier@3.3.3)
-      eslint-plugin-react-hooks:
-        specifier: ^5.2.0
-        version: 5.2.0(eslint@9.27.0(jiti@1.21.7))
-      eslint-plugin-react-refresh:
-        specifier: ^0.4.19
-        version: 0.4.20(eslint@9.27.0(jiti@1.21.7))
-      globals:
-        specifier: ^15.15.0
-        version: 15.15.0
       prettier:
         specifier: 3.3.3
         version: 3.3.3
-      typescript-eslint:
-        specifier: ^8.28.0
-        version: 8.33.0(eslint@9.27.0(jiti@1.21.7))(typescript@5.8.3)
 
 packages:
 
@@ -4647,6 +4651,15 @@ snapshots:
     dependencies:
       eslint: 9.27.0(jiti@1.21.7)
       prettier: 3.3.3
+      prettier-linter-helpers: 1.0.0
+      synckit: 0.11.8
+    optionalDependencies:
+      eslint-config-prettier: 9.1.0(eslint@9.27.0(jiti@1.21.7))
+
+  eslint-plugin-prettier@5.4.1(eslint-config-prettier@9.1.0(eslint@9.27.0(jiti@1.21.7)))(eslint@9.27.0(jiti@1.21.7))(prettier@3.5.3):
+    dependencies:
+      eslint: 9.27.0(jiti@1.21.7)
+      prettier: 3.5.3
       prettier-linter-helpers: 1.0.0
       synckit: 0.11.8
     optionalDependencies:

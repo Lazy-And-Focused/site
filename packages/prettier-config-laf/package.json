@@ -1,0 +1,14 @@
+{
+  "name": "prettier-config-laf",
+  "version": "1.0.0",
+  "description": "Our Prettier config",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": "./index.js",
+  "peerDependencies": {
+    "prettier": "3.3.3"
+  }
+}
