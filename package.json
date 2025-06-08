@@ -20,29 +20,26 @@
     "lint": "eslint ./ --stats",
     "lint:fix": "eslint --fix",
     "prettier": "prettier . -c -w",
-    
     "build:all": "pnpm --filter {./**} build",
     "build:apps": "pnpm --filter ./apps/** build",
     "build:backend": "pnpm --filter backend build",
     "build:frontend": "pnpm --filter frontend build",
     "build:packages": "pnpm --filter ./packages/** build",
-    
     "start:backend": "pnpm --filter backend start",
     "start:frontend": "pnpm --filter frontend start",
-
     "dev:backend": "pnpm --filter backend dev",
     "dev:frontend": "pnpm --filter frontend dev"
   },
   "devDependencies": {
-    "@eslint/js": "^9.23.0",
-    "eslint": "^9.23.0",
+    "@eslint/js": "^9.28.0",
+    "eslint": "^9.28.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.5",
-    "globals": "^15.15.0",
-    "typescript-eslint": "^8.28.0",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "eslint-plugin-prettier": "^5.4.1",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19"
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^15.15.0",
+    "prettier-plugin-tailwindcss": "^0.6.12",
+    "typescript-eslint": "^8.33.1"
   },
   "engines": {
     "node": ">=20.11.0",
