@@ -1,10 +1,9 @@
-import './App.css';
+import F1 from 'frontend-v1'
 
 function App() {
   return (
     <>
-      <h1>ReDevelopment Stage</h1>
-      <p>Sorry!</p>
+      <F1 />
     </>
   );
 }

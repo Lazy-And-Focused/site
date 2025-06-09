@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Lazy-And-Focused",
+    "url": "https://laf-info.netlify.app/",
+    "email": "love.laf.command@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://laf-info.netlify.app/",
+  "repository": "https://github.com/Lazy-And-Focused/site",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -11,7 +19,9 @@
   },
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "frontend-v1": "workspace:*",
+    "frontend-v2": "workspace:*"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
