@@ -31,7 +31,7 @@ jobs:
         run: pnpm run fockbuilder
       
       - name: "Initializing"
-        run:
+        run: |
           cd ../site-backend/apps/backend
           git init
           git remote add pb https://github.com/Lazy-And-Focused/site.git
