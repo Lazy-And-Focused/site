@@ -41,6 +41,3 @@ jobs:
           git add .
           git commit -m "Publishing changes to backend"
           git push -u pb site-backend
-
-      - name: "Commiting on branch"
-        run: 
