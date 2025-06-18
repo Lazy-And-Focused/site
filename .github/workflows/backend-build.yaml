@@ -30,14 +30,9 @@ jobs:
       - name: "Moving folder"
         run: pnpm run fockbuilder
       
-      - name: "Finding folder"
-        run: cd ../site-backend/apps/backend
-        
-      - name: "Installing dependencies #2"
-        run: npm install
-
-      - name: "GIT initalizing"
+      - name: "Initializing"
         run:
+          cd ../site-backend/apps/backend
           git init
           git remote add pb https://github.com/Lazy-And-Focused/site.git
           git checkout -b site-backend
