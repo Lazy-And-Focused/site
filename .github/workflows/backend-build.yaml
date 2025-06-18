@@ -33,9 +33,9 @@ jobs:
       - name: "Initializing"
         run: |
           cd ../site-backend/apps/backend
+          git init
           git config --global user.name '${{ github.event.head_commit.author.name }}'
           git config --global user.email '${{ github.event.head_commit.author.username }}@${{ github.event.head_commit.author.email }}'
-          git init
           git remote add pb https://github.com/Lazy-And-Focused/site.git
           git checkout -b site-backend
           git add .
