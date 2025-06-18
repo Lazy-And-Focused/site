@@ -42,5 +42,6 @@ jobs:
           git config --global user.email '${{ github.event.head_commit.author.username }}@${{ github.event.head_commit.author.email }}'
           git checkout -b site-backend
           git add .
+          git fetch
           git commit -m "Publishing changes to backend"
-          git push -u https://${{ secrets.PUSH_SECRET }}@github.com/Lazy-And-Focused/site.git site-backend
+          git push -f -u https://${{ secrets.PUSH_SECRET }}@github.com/Lazy-And-Focused/site.git site-backend
