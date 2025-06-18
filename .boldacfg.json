@@ -1,0 +1,27 @@
+{
+  "catalogs": [
+    "./apps/backend"
+  ],
+
+  "ignore_catalogs": [
+    "./**/node_modules/**",
+    "./**/.netlify/**",
+    "./**/dist/**",
+    "./**/.git",
+    "./**/.obsidian",
+    "./**/.github"
+  ],
+
+  "ignore_files": [
+    ".netlify",
+    "dist",
+    "node_modules"
+  ],
+
+  "dirs": [],
+  "source_files": [],
+  "build_files": [],
+  
+  "source": "./",
+  "build": "../site-backend/"
+}

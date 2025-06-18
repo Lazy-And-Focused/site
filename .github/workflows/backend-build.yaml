@@ -1,0 +1,46 @@
+name: Node.js CD
+
+on:
+  push: 
+    branches:
+      - main
+      
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: https://registry.npmjs.org
+    
+      - name: "Installing dependencies"
+        run: pnpm install
+    
+      - name: "Moving folder"
+        run: pnpm run fockbuilder
+      
+      - name: "Finding folder"
+        run: cd ../site-backend/apps/backend
+        
+      - name: "Installing dependencies #2"
+        run: npm install
+
+      - name: "GIT initalizing"
+        run:
+          git init
+          git remote add pb https://github.com/Lazy-And-Focused/site.git
+          git checkout -b site-backend
+          git add .
+          git commit -m "Publishing changes to backend"
+          git push -u pb site-backend
+
+      - name: "Commiting on branch"
+        run: 
