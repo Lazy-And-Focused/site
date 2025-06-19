@@ -41,7 +41,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.5",
     "globals": "^15.15.0",
-    "fock-builder": "2.0.0-beta.1d",
+    "fock-builder": "2.0.0-beta.1e",
     "typescript-eslint": "^8.28.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "eslint-plugin-react-hooks": "^5.2.0",
