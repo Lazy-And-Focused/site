@@ -18,7 +18,10 @@
     "node_modules"
   ],
 
-  "dirs": [],
+  "dirs": [
+    "apps",
+    ["apps", "backend"]
+  ],
   "source_files": [
     ".gitignore",
     "LICENSE",
