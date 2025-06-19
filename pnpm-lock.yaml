@@ -27,8 +27,8 @@ importers:
         specifier: ^0.4.19
         version: 0.4.20(eslint@9.28.0(jiti@1.21.7))
       fock-builder:
-        specifier: 2.0.0-beta.1f
-        version: 2.0.0-beta.1f
+        specifier: 2.0.0-beta.1h
+        version: 2.0.0-beta.1h
       globals:
         specifier: ^15.15.0
         version: 15.15.0
@@ -2247,8 +2247,8 @@ packages:
   fn.name@1.1.0:
     resolution: {integrity: sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==}
 
-  fock-builder@2.0.0-beta.1f:
-    resolution: {integrity: sha512-ARxEKsaE2t1N7hVrLbe5c7ziq7yzH1X2ebqvh8LIxLVjshcHsb7Q2szHYFcfevcJouxJ6oiEzySlJVvJ3rpPtw==}
+  fock-builder@2.0.0-beta.1h:
+    resolution: {integrity: sha512-fUOnhmWO2prFMlhp32LdKf/Aeab6E2SGqf7XHRmsjAgQvfiH232d9kc0Snve2zgNlvkl/NnZQmu6e3Me8laJlQ==}
     engines: {node: '>=7.6.0'}
     hasBin: true
 
@@ -6537,7 +6537,7 @@ snapshots:
 
   fn.name@1.1.0: {}
 
-  fock-builder@2.0.0-beta.1f:
+  fock-builder@2.0.0-beta.1h:
     dependencies:
       node: 22.16.0
       yargs: 17.7.2
