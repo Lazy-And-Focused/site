@@ -19,8 +19,18 @@
   ],
 
   "dirs": [],
-  "source_files": [],
-  "build_files": [],
+  "source_files": [
+    ".gitignore",
+    "LICENSE",
+    ".prettierrc",
+    ".eslint.config.js"
+  ],
+  "build_files": [
+    ["apps", "backend", ".gitignore"],
+    ["apps", "backend", "LICENSE"],
+    ["apps", "backend", ".prettierrc"],
+    ["apps", "backend", ".eslint.config.js"]
+  ],
   
   "source": "./",
   "build": "../site-backend/"

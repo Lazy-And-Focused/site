@@ -37,6 +37,7 @@ jobs:
         run: |
           cd ../site-backend/apps/backend
           git init
+          npm install
           git remote add pb https://github.com/Lazy-And-Focused/site.git
           git config --global user.name '${{ github.event.head_commit.author.name }}'
           git config --global user.email '${{ github.event.head_commit.author.username }}@${{ github.event.head_commit.author.email }}'
