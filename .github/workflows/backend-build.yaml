@@ -35,7 +35,7 @@ jobs:
       
       - name: "Initializing"
         run: |
-          cd ../site-backend/apps/backend
+          cd ./site-backend/apps/backend
           git init
           npm install
           git remote add pb https://github.com/Lazy-And-Focused/site.git

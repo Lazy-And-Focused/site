@@ -33,6 +33,7 @@ dist
 dist-ssr
 *.local
 *.tsbuildinfo
+site-backend
 
 # Editor directories and files
 .vscode/*
