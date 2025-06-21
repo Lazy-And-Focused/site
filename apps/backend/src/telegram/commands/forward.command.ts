@@ -12,8 +12,20 @@ const UTILS: {[key: string]: Map<any, any> } = {
 const FORWARD_TYPES = Object.keys(UTILS);
 const SPACE = "\n";
 
+const help =
+  "\n\nИспользуйте в качестве разделителя перенос строки." +
+  "\n\nКоличество аргументов: три: `forwardType`, name и `length`." +
+  "\n\nОни идут последовательно, `forwardType` — тип переотправленного сообщения, например: `news`." +
+  "\n\n`name` — название записи, обычно для того, что будет записывать в БД, иначе можете оставить пустым." + 
+  "\n\n`length` — количество переотправленных сообщений для прочтения." +
+  "\n\n`name` поддерживает даты, можно написать: `Переотправленное сообщение за {date}`"
+  
 export const sendHelp = (interaction: IInteraction, prefix: string = "") => {
-  return interaction.reply(prefix + "\n");
+  return interaction.reply(
+    (prefix + help)
+      .replaceAll(".", "\\."),
+    { parse_mode: "MarkdownV2" }
+  );
 }
 
 class Command implements ICommand {

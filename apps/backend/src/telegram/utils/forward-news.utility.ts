@@ -2,7 +2,8 @@ import { Message } from "telegraf/typings/core/types/typegram";
 import { IForward } from "../types/interaction.types";
 
 import { News } from "database/models/news.model";
-import { fromMilisecondsToDate, formatDateToDayMonthYear } from "./date-formatter.utility";
+import { fromMilisecondsToDate } from "./date-formatter.utility";
+import { format } from "date-fns";
 
 export type IUtilityMessageForForwards = ({
   type: "forwarded",
@@ -32,10 +33,10 @@ class Utility {
     const dateInMiliseconds = message.message.forward_date;
 
     const date = fromMilisecondsToDate(dateInMiliseconds);
-    if (data.length && !Number.isNaN(Number(data.length)) && Number(data.length) > 1) {
+    if (data.length && !Number.isNaN(+data.length) && +data.length > 1) {
       messages.set(`${message.message.chat.id}`, {
         ...data,
-        length: `${Number(data.length)-1}`
+        length: `${+data.length-1}`
       });
     } else {
       messages.delete(`${message.message.chat.id}`);
@@ -43,15 +44,17 @@ class Utility {
 
     try {
       const news = await News.create({
-        name: message.name || `Отчёт за ${formatDateToDayMonthYear(date)}`,
+        name: typeof message.name === "string"
+          ? message.name.replaceAll("{date}", format(date, "yyyy.MM.dd HH:mm"))
+          : `Пост за ${format(date, "yyyy.MM.dd HH:mm")}`,
         author: forward_origin.type === "channel"
-          ? forward_origin.author_signature
-          : forward_origin.sender_user.username || forward_origin.sender_user.first_name,
+          ? forward_origin.author_signature || "Lazy And Focused"
+          : forward_origin.sender_user.username || forward_origin.sender_user.first_name || "Lazy And Focused",
         text,
         date: date.toISOString()
       });
       
-      console.log(`Была создана новость: "${news.name}" с датой ${formatDateToDayMonthYear(date)}`);
+      console.log(`Был создан: "${news.name}" с датой ${format(date, "yyyy.MM.dd HH:mm")}`);
     } catch (error) {
       console.log(error);
       return this;        
