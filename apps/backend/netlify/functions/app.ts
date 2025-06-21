@@ -17,6 +17,6 @@ start();
 (() => {
   console.log("Trying to connect to MongoDB");
   connect(env.get("MONGO_URL"));
-})
+})();
 
 export const handler = serverless(app);
