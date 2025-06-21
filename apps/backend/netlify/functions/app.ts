@@ -14,9 +14,6 @@ app.use("/", router);
 app.use("/.netlify/functions/app/", router);
 
 start();
-(() => {
-  console.log("Trying to connect to MongoDB");
-  connect(env.get("MONGO_URL"));
-})();
+connect(env.get("MONGO_URL"));
 
 export const handler = serverless(app);
