@@ -15,7 +15,7 @@ const REQUIRED = [
 
 type Required = (typeof REQUIRED)[number];
 
-const KEYS = [
+export const KEYS = [
   ...REQUIRED,
 
   "PORT",
