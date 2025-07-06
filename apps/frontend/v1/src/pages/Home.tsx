@@ -1,25 +1,28 @@
-import TeamMemberCard from '../components/TeamMemberCard';
-import team from '../config/listMembers.ts';
+import TeamMemberCard from '../components/TeamMemberCard.js';
+import team from '../config/listMembers.js';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <main className='h-full w-full'>
-      <section className='flex h-screen w-full flex-col items-center justify-center bg-[#418d76] bg-[url("/images/backgrounds/green.png")] bg-cover bg-center bg-no-repeat px-6 pt-14 shadow-xl dark:bg-[#205848] dark:bg-none lg:px-8'>
+      <section className='flex h-screen w-full flex-col items-center justify-center bg-[#418d76] bg-[url("images/backgrounds/green.png")] bg-cover bg-center bg-no-repeat px-6 pt-14 shadow-xl dark:bg-[#205848] dark:bg-none lg:px-8'>
         <div className='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
           <div className='text-center'>
             <h1 className='text-balance text-5xl font-semibold tracking-tight text-slate-100 drop-shadow-md sm:text-7xl'>
               Разработка с LAF
             </h1>
             <p className='mt-8 text-pretty text-lg font-medium text-slate-200 sm:text-xl/8'>
-              Мы – команда молодых, очень ленивых, но увлеченных работой энтузиастов, двигуящихся к
-              вершинам этого мира.
+              Мы – команда молодых, очень ленивых, но увлеченных работой
+              энтузиастов, двигуящихся к вершинам этого мира.
             </p>
             <div className='mt-10 flex items-center justify-center gap-x-6'>
               <Link to='/#info' className='btn btn-primary rounded-full'>
                 Узнать больше
               </Link>
-              <Link to='/projects' className='btn btn-ghost rounded-full text-slate-200'>
+              <Link
+                to='/projects'
+                className='btn btn-ghost rounded-full text-slate-200'
+              >
                 Проекты <span aria-hidden='true'>→</span>
               </Link>
             </div>
@@ -36,14 +39,20 @@ const Home = () => {
             Чем мы занимаемся
           </h2>
           <p className='mt-6 text-lg/8 text-base-content/40'>
-            Разрабатываем малые и средние IT-продукты, независимо от их типа: веб-, натив-приложения
-            и игры
+            Разрабатываем малые и средние IT-продукты, независимо от их типа:
+            веб-, натив-приложения и игры
           </p>
           <div className='mt-8 flex flex-row gap-4'>
-            <Link to='/#members' className='btn btn-outline btn-primary rounded-md'>
+            <Link
+              to='/#members'
+              className='btn btn-outline btn-primary rounded-md'
+            >
               А кто вы такие?
             </Link>
-            <Link to='/projects' className='btn btn-ghost btn-primary rounded-md'>
+            <Link
+              to='/projects'
+              className='btn btn-ghost btn-primary rounded-md'
+            >
               К проектам <span aria-hidden='true'>→</span>
             </Link>
           </div>
@@ -63,7 +72,10 @@ const Home = () => {
               Юная команда из тех, кто готов покорять ваши сердца!
             </p>
             <div className='mt-8'>
-              <Link to='/about' className='btn btn-outline btn-primary rounded-md'>
+              <Link
+                to='/about'
+                className='btn btn-outline btn-primary rounded-md'
+              >
                 Давай дальше <span aria-hidden='true'>→</span>
               </Link>
             </div>

@@ -1,4 +1,11 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import ListIcon from '../assets/icons/ListIcon';
 import WebsiteIcon from '../assets/icons/WebsiteIcon';
 import { Member } from '../types';
@@ -37,7 +44,9 @@ const TeamMemberCard = ({
     [validateSocial],
   );
 
-  const [avatarSrc, setAvatarSrc] = useState(getAvatarUrl(member, hasPrimarySocials!['github'][0]));
+  const [avatarSrc, setAvatarSrc] = useState(
+    getAvatarUrl(member, hasPrimarySocials!['github'][0]),
+  );
 
   useEffect(
     () => setAvatarSrc(getAvatarUrl(member, hasPrimarySocials!['github'][0])),
@@ -64,12 +73,22 @@ const getAvatarUrl = (member: Member, hasGitHub: boolean) => {
   return '/images/avatars/default.png';
 };
 
-const DefaultVariant = ({ member, avatar }: { member: Member; avatar: string }) => {
+const DefaultVariant = ({
+  member,
+  avatar,
+}: {
+  member: Member;
+  avatar: string;
+}) => {
   const hasPrimarySocials = useContext(HasPrimarySocials);
 
   return (
     <div className={`flex items-center gap-x-6 rounded bg-primary/15 p-2`}>
-      <CardAvatar src={avatar} alt={`${member.name}'s avatar`} className='aspect-square w-24' />
+      <CardAvatar
+        src={avatar}
+        alt={`${member.name}'s avatar`}
+        className='aspect-square w-24'
+      />
       <div className='mr-2 w-full text-end'>
         <h3 className='align-center flex flex-row items-center justify-end gap-x-2 text-base/7 font-semibold tracking-tight text-base-content'>
           {member.name}
@@ -77,7 +96,9 @@ const DefaultVariant = ({ member, avatar }: { member: Member; avatar: string }) 
           {hasPrimarySocials &&
             member.socials
               .filter((link) =>
-                Object.values(hasPrimarySocials).some((s) => link.href.startsWith(s[1])),
+                Object.values(hasPrimarySocials).some((s) =>
+                  link.href.startsWith(s[1]),
+                ),
               )
               .map((s) => (
                 <a
@@ -102,7 +123,13 @@ const DefaultVariant = ({ member, avatar }: { member: Member; avatar: string }) 
   );
 };
 
-const FullVariant = ({ member, avatar }: { member: Member; avatar: string }) => {
+const FullVariant = ({
+  member,
+  avatar,
+}: {
+  member: Member;
+  avatar: string;
+}) => {
   const hasSocials = member.socials.length !== 0;
   const [dropdownOpen, setDropdownOpen] = useState(false);
 

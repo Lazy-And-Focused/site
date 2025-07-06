@@ -21,7 +21,8 @@ const CardAvatar = ({
   alt,
   className,
   ...props
-}: CardAvatarProps & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
+}: CardAvatarProps &
+  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
   const [isLoading, setLoading] = useState(true);
   const [isError, setError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -52,17 +53,23 @@ const CardAvatar = ({
       className={clsx(
         'aspect-square h-auto w-16 overflow-hidden rounded',
         (isLoading || isError) && 'flex items-center justify-center',
-        isError ? 'bg-error/50 text-error-content' : 'bg-primary/50 text-primary-content',
+        isError
+          ? 'bg-error/50 text-error-content'
+          : 'bg-primary/50 text-primary-content',
         className,
       )}
     >
-      {isLoading && <span className='aspect-ratio loading loading-ring absolute' />}
+      {isLoading && (
+        <span className='aspect-ratio loading loading-ring absolute' />
+      )}
       {isError && <HeartBreakIcon className='absolute' />}
       <img
         ref={imageRef}
         className={clsx(
           'h-full w-full transition-[opacity,_filter] duration-500',
-          isLoading || !imageLoaded ? 'opacity-0 grayscale' : 'opacity-100 grayscale-0',
+          isLoading || !imageLoaded
+            ? 'opacity-0 grayscale'
+            : 'opacity-100 grayscale-0',
         )}
         src={src}
         alt={alt}

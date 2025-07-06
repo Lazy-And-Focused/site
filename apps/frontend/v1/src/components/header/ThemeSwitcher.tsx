@@ -1,8 +1,12 @@
 import clsx from 'clsx';
 import { useState, useEffect } from 'react';
 
-const ThemeSwitcher = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
-  const [matches, setMatches] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
+const ThemeSwitcher = (
+  props: React.ButtonHTMLAttributes<HTMLButtonElement>,
+) => {
+  const [matches, setMatches] = useState(
+    window.matchMedia('(prefers-color-scheme: dark)').matches,
+  );
   const [currentTheme, setCurrentTheme] = useState(
     localStorage.theme ?? (matches ? 'forest' : 'emerald'),
   );
@@ -19,7 +23,11 @@ const ThemeSwitcher = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => 
   useEffect(() => {
     document.documentElement.setAttribute(
       'data-theme',
-      currentTheme === 'system' ? (matches ? 'forest' : 'emerald') : currentTheme,
+      currentTheme === 'system'
+        ? matches
+          ? 'forest'
+          : 'emerald'
+        : currentTheme,
     );
     localStorage.theme = currentTheme;
   }, [matches, currentTheme]);
@@ -50,7 +58,9 @@ const ThemeSwitcher = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => 
         fill='currentColor'
         className={clsx(
           'bi',
-          currentTheme === 'emerald' ? 'bi-brightness-high-fill' : 'bi-moon-fill',
+          currentTheme === 'emerald'
+            ? 'bi-brightness-high-fill'
+            : 'bi-moon-fill',
         )}
         viewBox='0 0 16 16'
       >

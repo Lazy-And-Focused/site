@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import TeamMemberCard from '../components/TeamMemberCard';
-import team from '../config/listMembers.ts';
+import TeamMemberCard from '../components/TeamMemberCard.js';
+import team from '../config/listMembers.js';
 
 const About = () => {
   return (
@@ -69,10 +69,16 @@ const About = () => {
             >
               SVG Repo
             </a>
-            <span className='text-base-content/50'> (иконки Gravatar и VK)</span>
+            <span className='text-base-content/50'>
+              {' '}
+              (иконки Gravatar и VK)
+            </span>
           </li>
           <li className='list-disc'>
-            <Link to='#' className='transition-colors hover:text-primary hover:underline'>
+            <Link
+              to='#'
+              className='transition-colors hover:text-primary hover:underline'
+            >
               Своё воображение
             </Link>
           </li>

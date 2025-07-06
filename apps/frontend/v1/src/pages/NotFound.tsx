@@ -1,5 +1,8 @@
 // ----- Временно (надеюсь). Когда времени станет чуть больше, реализую сам.
-import { MouseParallaxChild, MouseParallaxContainer } from 'react-parallax-mouse';
+import {
+  MouseParallaxChild,
+  MouseParallaxContainer,
+} from 'react-parallax-mouse';
 // -----
 import { Link } from 'react-router-dom';
 import HeartBreakIcon from '../assets/icons/HeartBreakIcon';
@@ -7,7 +10,7 @@ import ListIcon from '../assets/icons/ListIcon';
 
 const NotFound = () => {
   return (
-    <main className='h-full max-h-screen w-full overflow-clip bg-[#418d76] bg-[url("/images/backgrounds/pink.png")] bg-cover bg-center bg-no-repeat dark:bg-[#205848] dark:bg-none'>
+    <main className='h-full max-h-screen w-full overflow-clip bg-[#418d76] bg-[url("images/backgrounds/pink.png")] bg-cover bg-center bg-no-repeat dark:bg-[#205848] dark:bg-none'>
       <MouseParallaxContainer
         globalFactorX={0.1}
         globalFactorY={0.1}
@@ -18,7 +21,11 @@ const NotFound = () => {
           factorY={0.5}
           className='mx-auto flex max-w-2xl flex-col items-center justify-center text-center text-slate-200 sm:text-xl/8'
         >
-          <HeartBreakIcon height={128} width={128} className='mb-14 text-slate-100' />
+          <HeartBreakIcon
+            height={128}
+            width={128}
+            className='mb-14 text-slate-100'
+          />
         </MouseParallaxChild>
         <MouseParallaxChild
           factorX={0.5}
@@ -35,8 +42,8 @@ const NotFound = () => {
           className='mx-auto flex max-w-2xl flex-col items-center justify-center text-center text-slate-200 sm:text-xl/8'
         >
           <p className='mt-8 text-pretty text-lg font-medium'>
-            Наш пушистик прошерстил весь сайт, но даже его шустрые лапки с острыми коготками не
-            сумели закотить эту страницу!
+            Наш пушистик прошерстил весь сайт, но даже его шустрые лапки с
+            острыми коготками не сумели закотить эту страницу!
           </p>
         </MouseParallaxChild>
         <MouseParallaxChild

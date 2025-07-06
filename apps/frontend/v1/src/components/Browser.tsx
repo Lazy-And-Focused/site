@@ -27,7 +27,9 @@ const Browser = ({
   return (
     <div className='flex min-h-[400px] min-w-full flex-col rounded-lg bg-white shadow-lg dark:bg-gray-900 md:min-w-[600px]'>
       <div className='flex flex-row items-center justify-between gap-3 rounded-t-lg border-b border-gray-200 bg-emerald-200/15 px-4 py-2 dark:border-gray-800 dark:bg-emerald-800/15'>
-        <div className={'text-lg font-semibold text-gray-900 dark:text-gray-200'}>
+        <div
+          className={'text-lg font-semibold text-gray-900 dark:text-gray-200'}
+        >
           {title ?? 'Браузер'}
         </div>
         <div className='relative'>
@@ -64,7 +66,11 @@ const Browser = ({
                 >
                   {t.favicon && (
                     <span className='block aspect-square h-6 overflow-clip rounded'>
-                      <img src={t.favicon} alt={t.name} className='h-full w-full' />
+                      <img
+                        src={t.favicon}
+                        alt={t.name}
+                        className='h-full w-full'
+                      />
                     </span>
                   )}
                   {t.name}

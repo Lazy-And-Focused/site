@@ -1,7 +1,7 @@
 import { useRef } from 'react';
-import TeamMemberCard from '../components/TeamMemberCard.tsx';
-import teamSocialLinks from '../config/teamSocialLinks.ts';
-import team from '../config/listMembers.ts';
+import TeamMemberCard from '../components/TeamMemberCard.js';
+import teamSocialLinks from '../config/teamSocialLinks.js';
+import team from '../config/listMembers.js';
 
 const Links = () => {
   const copyButtonRef = useRef<HTMLButtonElement>(null);
@@ -58,7 +58,9 @@ const Links = () => {
           Скопировать адрес страницы
         </button>
 
-        <p className='mt-12 text-base text-base-content/40'>Пс-с, ты можешь прокрутить ниже</p>
+        <p className='mt-12 text-base text-base-content/40'>
+          Пс-с, ты можешь прокрутить ниже
+        </p>
       </section>
 
       <section className='flex min-h-screen w-full flex-col items-center justify-center px-6 py-14 lg:px-8'>

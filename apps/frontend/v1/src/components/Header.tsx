@@ -31,7 +31,9 @@ const Header = () => {
     <header
       className={clsx(
         'fixed top-0 z-50 w-full border-b-2 p-4 transition duration-500 ease-in-out',
-        scrollY > 0 ? 'border-primary/75 bg-base-100/20 backdrop-blur-md' : 'border-transparent',
+        scrollY > 0
+          ? 'border-primary/75 bg-base-100/20 backdrop-blur-md'
+          : 'border-transparent',
       )}
     >
       <nav
