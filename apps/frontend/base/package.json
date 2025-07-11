@@ -5,11 +5,11 @@
   "type": "module",
   "author": {
     "name": "Lazy-And-Focused",
-    "url": "https://laf-info.netlify.app/",
+    "url": "https://laf-love.netlify.app/",
     "email": "love.laf.command@gmail.com"
   },
   "license": "MIT",
-  "homepage": "https://laf-info.netlify.app/",
+  "homepage": "https://laf-love.netlify.app/",
   "repository": "https://github.com/Lazy-And-Focused/site",
   "scripts": {
     "dev": "rsbuild dev",

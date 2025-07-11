@@ -6,7 +6,7 @@
   "type": "module",
   "author": {
     "name": "Lazy-And-Focused",
-    "url": "https://laf-love.netlify.app/",
+    "url": "https://laf-info.netlify.app/",
     "email": "love.laf.command@gmail.com"
   },
   "license": "MIT",
@@ -20,9 +20,7 @@
     "lint": "eslint ./ --stats",
     "lint:fix": "eslint --fix",
     "prettier": "prettier . -c -w",
-    
     "fockbuilder": "fockbuilder --start",
-
     "build:all": "pnpm --filter {./**} build",
     "build:apps": "pnpm --filter ./apps/** build",
     "build:backend": "pnpm --filter backend build",
@@ -37,10 +35,10 @@
     "@eslint/js": "^9.28.0",
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^9.1.0",
-    "fock-builder": "2.0.0-beta.1h",
     "eslint-plugin-prettier": "^5.4.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "fock-builder": "2.0.0-beta.1h",
     "globals": "^15.15.0",
     "prettier-plugin-tailwindcss": "^0.6.12",
     "typescript-eslint": "^8.33.1"
@@ -58,5 +56,8 @@
       "@nestjs/core",
       "node"
     ]
+  },
+  "dependencies": {
+    "prettier-config-laf": "1.0.0"
   }
 }
