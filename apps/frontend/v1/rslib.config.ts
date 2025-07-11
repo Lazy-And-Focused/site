@@ -21,7 +21,7 @@ export default defineConfig({
   plugins: [
     pluginReact({
       swcReactOptions: {
-        runtime: 'classic',
+        runtime: 'automatic',
       },
     }),
   ],
