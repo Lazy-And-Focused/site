@@ -1,10 +1,16 @@
 import mongoose from "mongoose";
 
-let status: "non connecting"|"connected" = "non connecting";
+let status: "non connecting" | "connected" = "non connecting";
 
-const connect = (url: string, callback: (...data: unknown[]) => void = () => { console.log("Connected to MongoDB") }) => {
+const connect = (
+  url: string,
+  callback: (...data: unknown[]) => void = () => {
+    console.log("Connected to MongoDB");
+  },
+) => {
   console.log("Trying to connect to MongoDB...");
-  mongoose.connect(url)
+  mongoose
+    .connect(url)
     .then((m) => {
       status = "connected";
       callback(m);

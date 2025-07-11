@@ -1,7 +1,5 @@
 {
-  "catalogs": [
-    "./apps/backend"
-  ],
+  "catalogs": ["./apps/backend"],
 
   "ignore_catalogs": [
     "./**/node_modules/**",
@@ -13,29 +11,17 @@
     "./**/site-backend/**/*"
   ],
 
-  "ignore_files": [
-    ".netlify",
-    "dist",
-    "node_modules"
-  ],
+  "ignore_files": [".netlify", "dist", "node_modules"],
 
-  "dirs": [
-    "apps",
-    ["apps", "backend"]
-  ],
-  "source_files": [
-    ".gitignore",
-    "LICENSE",
-    ".prettierrc",
-    ".eslint.config.js"
-  ],
+  "dirs": ["apps", ["apps", "backend"]],
+  "source_files": [".gitignore", "LICENSE", ".prettierrc", ".eslint.config.js"],
   "build_files": [
     ["apps", "backend", ".gitignore"],
     ["apps", "backend", "LICENSE"],
     ["apps", "backend", ".prettierrc"],
     ["apps", "backend", ".eslint.config.js"]
   ],
-  
+
   "source": "./",
   "build": "./site-backend/"
 }

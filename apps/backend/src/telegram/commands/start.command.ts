@@ -5,7 +5,9 @@ class Command implements ICommand {
   public readonly name = "start";
 
   public async execute(interaction: IInteraction) {
-    return interaction.reply("Привет! Я бот от LAF, скорее всего, если ты обычный пользователь, то ты не сможешь мной воспользоваться, извини.")
+    return interaction.reply(
+      "Привет! Я бот от LAF, скорее всего, если ты обычный пользователь, то ты не сможешь мной воспользоваться, извини.",
+    );
   }
 }
 

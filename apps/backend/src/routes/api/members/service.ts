@@ -7,11 +7,11 @@ class Service {
   public constructor() {}
 
   public async getAll() {
-    return (await Members.find()).map(m => parser.execute(m));
+    return (await Members.find()).map((m) => parser.execute(m));
   }
 
   public getOne(name: string) {
-    return Members.findOne({name: name});
+    return Members.findOne({ name: name });
   }
 }
 

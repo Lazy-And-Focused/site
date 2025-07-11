@@ -25,5 +25,13 @@
   "display": "standalone",
   "theme_color": "#d88188",
   "background_color": "#d88188",
-  "categories": ["develop", "web", "website", "team", "frontend", "backend", "laf"]
+  "categories": [
+    "develop",
+    "web",
+    "website",
+    "team",
+    "frontend",
+    "backend",
+    "laf"
+  ]
 }

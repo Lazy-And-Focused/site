@@ -1,12 +1,12 @@
 import { status } from "database/connect";
 
 class Service {
-  public constructor() {};
+  public constructor() {}
 
   public get() {
     return status;
   }
-};
+}
 
 export { Service };
 

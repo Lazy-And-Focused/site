@@ -10,7 +10,7 @@ export type INews = {
 
   icon?: string;
   image?: string;
-}
+};
 
 export const DEFAULT = {
   banner: "" as const,
@@ -18,16 +18,6 @@ export const DEFAULT = {
   image: "" as const,
 } as const;
 
-export const REQUIRED = [
-  "name",
-  "author",
-  "text",
-  "date"
-] as const;
+export const REQUIRED = ["name", "author", "text", "date"] as const;
 
-export const KEYS = [
-  ...REQUIRED,
-  "banner",
-  "icon",
-  "image",
-] as const;
+export const KEYS = [...REQUIRED, "banner", "icon", "image"] as const;

@@ -15,63 +15,63 @@ class Controller {
 
   public async getAll(_req: Request, res: Response) {
     const members = await service.getAll();
-    
+
     validateRequest(_req);
 
-    res.send({data: members});
+    res.send({ data: members });
   }
 
   public async getOne(req: Request, res: Response) {
     const name = req.params.name;
 
     if (!name) {
-      res.status(400).send({data: {}, error: `params not found`})
+      res.status(400).send({ data: {}, error: `params not found` });
       return;
     }
 
     const member = await service.getOne(name);
 
-    res.send({data: member});
+    res.send({ data: member });
   }
 
   public async post(req: Request, res: Response) {
     const validated = validateRequest(req);
-    
+
     if (!validated) {
       res.status(403);
       return;
-    };
+    }
 
-    RequiredMemberKeys.forEach(k => {
+    RequiredMemberKeys.forEach((k) => {
       if (!(k in req.body)) {
         res.status(418);
         return;
-      };
+      }
     });
 
-    const member = parser.execute({...DEFAULT, ...req.body});
+    const member = parser.execute({ ...DEFAULT, ...req.body });
     const createdMember = await Members.create(member);
 
-    res.send({data: parser.execute(createdMember)});
+    res.send({ data: parser.execute(createdMember) });
   }
 
   public async put(req: Request, res: Response) {
     const name = req.params.name;
 
     if (!name) {
-      res.status(400).send({data: {}, error: `params not found`})
+      res.status(400).send({ data: {}, error: `params not found` });
       return;
     }
 
     const validated = validateRequest(req);
-    
+
     if (!validated) {
       res.status(403);
       return;
-    };
+    }
 
     const updatedMember = await Members.updateOne({ name: name }, req.body);
-    
+
     res.send({ data: updatedMember });
   }
 
@@ -79,16 +79,16 @@ class Controller {
     const name = req.params.name;
 
     if (!name) {
-      res.status(400).send({data: {}, error: `params not found`})
+      res.status(400).send({ data: {}, error: `params not found` });
       return;
     }
 
     const validated = validateRequest(req);
-    
+
     if (!validated) {
       res.status(403);
       return;
-    };
+    }
 
     const deletedMember = await Members.deleteOne({ name: name });
 

@@ -3,7 +3,7 @@ import { IMember } from "./member.type";
 
 export type IProject = {
   name: string;
-  
+
   description: string;
   urls?: ILink[];
 
@@ -21,14 +21,11 @@ export const DEFAULT = {
   url: "",
 } as const;
 
-export const REQUIRED = [
-  "name",
-  "author"
-] as const;
+export const REQUIRED = ["name", "author"] as const;
 
 export const KEYS = [
   ...REQUIRED,
-  
+
   "name",
   "description",
   "url",

@@ -31,4 +31,4 @@
 
 ## ${AUTHORS}
 
-Над проектом властны *(просто шутка)*: @FOCKUSTY (BACKEND), @lanvalird (frontend).
+Над проектом властны _(просто шутка)_: @FOCKUSTY (BACKEND), @lanvalird (frontend).

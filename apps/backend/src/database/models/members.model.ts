@@ -5,47 +5,46 @@ const schema = new Schema<IMember>({
   name: {
     type: mongoose.SchemaTypes.String,
     required: true,
-    unique: true
+    unique: true,
   },
 
   tag: {
     type: mongoose.SchemaTypes.String,
     required: true,
-    unique: true
+    unique: true,
   },
 
   role: {
     type: mongoose.SchemaTypes.String,
-    required: true
+    required: true,
   },
 
   description: {
-    type: mongoose.SchemaTypes.String
+    type: mongoose.SchemaTypes.String,
   },
 
-  socials: [{
-    type: {
-      name: mongoose.SchemaTypes.String,
-      href: mongoose.SchemaTypes.String,
-    }
-  }],
+  socials: [
+    {
+      type: {
+        name: mongoose.SchemaTypes.String,
+        href: mongoose.SchemaTypes.String,
+      },
+    },
+  ],
 
   avatar: {
     type: mongoose.SchemaTypes.String,
-    required: false
+    required: false,
   },
 
   meta: {
     type: mongoose.SchemaTypes.String,
-    required: false
-  }
+    required: false,
+  },
 });
 
 const model = mongoose.model("members", schema);
 
-export {
-  schema as MembersSchema,
-  model as Members
-};
+export { schema as MembersSchema, model as Members };
 
 export default model;

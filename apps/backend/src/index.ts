@@ -7,13 +7,11 @@ import connect from "./database/connect";
 import { start } from "./telegram/index";
 // import { initializeProjects } from "./init";
 
-const app = new App(express())
+const app = new App(express());
 
 // initializeProjects()
-start()
+start();
 connect(env.get("MONGO_URL"));
 app.listen();
 
-export {
-  app,
-};
+export { app };

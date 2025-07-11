@@ -1,7 +1,7 @@
 import { start } from "telegram";
 
 class Service {
-  public constructor() {};
+  public constructor() {}
 
   public get() {
     const client = start();
@@ -10,11 +10,11 @@ class Service {
       commands: client.data.commands,
       listeners: client.data.listeners,
       bot: {
-        ...client.bot.botInfo
-      }
+        ...client.bot.botInfo,
+      },
     };
   }
-};
+}
 
 export { Service };
 
