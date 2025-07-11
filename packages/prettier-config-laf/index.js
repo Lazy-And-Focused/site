@@ -5,15 +5,15 @@
  * @type { import("prettier").Config }
  */
 const config = {
-  "endOfLine": "lf",
-  "arrowParens": "always",
-  "trailingComma": "all",
-  "printWidth": 100,
-  "jsxSingleQuote": true,
-  "singleQuote": true,
-  "bracketSpacing": true,
-  "semi": true,
-  "tabWidth": 2,
+  endOfLine: 'lf',
+  arrowParens: 'always',
+  trailingComma: 'all',
+  printWidth: 100,
+  jsxSingleQuote: true,
+  singleQuote: true,
+  bracketSpacing: true,
+  semi: true,
+  tabWidth: 2,
 };
 
 export const PrettierLafConfiguration = config;

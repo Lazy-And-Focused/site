@@ -1,3 +1,6 @@
+# Other
+pnpm-lock.yaml
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
