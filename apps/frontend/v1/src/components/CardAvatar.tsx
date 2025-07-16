@@ -1,7 +1,5 @@
-import { clsx } from 'clsx';
-import { useState, useEffect, useRef } from 'react';
 import type { DetailedHTMLProps, HTMLAttributes } from 'react';
-import HeartBreakIcon from '../assets/icons/HeartBreakIcon';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 type CardAvatarProps = {
   src: string;
@@ -22,58 +20,20 @@ const CardAvatar = ({
   className,
   ...props
 }: CardAvatarProps &
-  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
-  const [isLoading, setLoading] = useState(true);
-  const [isError, setError] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const imageRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    const img = new Image();
-
-    const eventListeners = {
-      load: () => (setLoading(false), setImageLoaded(true)),
-      error: () => (setLoading(false), setError(true)),
-    };
-
-    img.addEventListener('load', eventListeners['load']);
-    img.addEventListener('error', eventListeners['error']);
-
-    img.src = src;
-
-    return () => {
-      img.removeEventListener('load', eventListeners['load']);
-      img.removeEventListener('error', eventListeners['error']);
-    };
-  }, [src]);
-
+  DetailedHTMLProps<HTMLAttributes<HTMLImageElement>, HTMLImageElement>) => {
   return (
-    <div
-      {...props}
-      className={clsx(
-        'aspect-square h-auto w-16 overflow-hidden rounded',
-        (isLoading || isError) && 'flex items-center justify-center',
-        isError
-          ? 'bg-error/50 text-error-content'
-          : 'bg-primary/50 text-primary-content',
-        className,
-      )}
-    >
-      {isLoading && (
-        <span className='aspect-ratio loading loading-ring absolute' />
-      )}
-      {isError && <HeartBreakIcon className='absolute' />}
-      <img
-        ref={imageRef}
-        className={clsx(
-          'h-full w-full transition-[opacity,_filter] duration-500',
-          isLoading || !imageLoaded
-            ? 'opacity-0 grayscale'
-            : 'opacity-100 grayscale-0',
-        )}
+    <div className='aspect-square h-auto w-16 overflow-hidden rounded'>
+      <LazyLoadImage
         src={src}
-        alt={alt}
-        loading='lazy'
+        width={96}
+        height={96}
+        className='h-full w-full'
+        effect='blur'
+        wrapperProps={{
+          style: { transitionDelay: '1s' },
+        }}
+        placeholderSrc='/avatars/default.webp'
+        {...props}
       />
     </div>
   );
