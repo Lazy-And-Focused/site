@@ -8,7 +8,7 @@ import {
 } from 'react';
 import ListIcon from '../assets/icons/ListIcon';
 import WebsiteIcon from '../assets/icons/WebsiteIcon';
-import { Member } from '../types';
+import type { Member } from '../types';
 import CardAvatar from './CardAvatar';
 
 type HasPrimarySocialsType = {
@@ -87,7 +87,8 @@ const DefaultVariant = ({
       <CardAvatar
         src={avatar}
         alt={`${member.name}'s avatar`}
-        className='aspect-square w-24'
+        size={96}
+        className='h-full w-24'
       />
       <div className='mr-2 w-full text-end'>
         <h3 className='align-center flex flex-row items-center justify-end gap-x-2 text-base/7 font-semibold tracking-tight text-base-content'>

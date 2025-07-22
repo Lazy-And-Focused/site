@@ -2,6 +2,7 @@ import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import { clsx } from 'clsx';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 type CardAvatarProps = {
   src: string;
@@ -20,23 +21,30 @@ const CardAvatar = ({
   src,
   alt,
   className,
+  size = 256,
   ...props
 }: CardAvatarProps &
-  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
+  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+    size?: number;
+  }) => {
   return (
     <div
       {...props}
       className={clsx(
-        'flex aspect-square h-16 w-16 overflow-hidden rounded items-center justify-center',
+        'flex aspect-square items-center justify-center overflow-hidden rounded',
         className,
-      )}>
+      )}
+    >
       <LazyLoadImage
         src={src}
         alt={alt}
-        width={256}
-        height={256}
-        placeholderSrc='/avatars/default.webp'
-        className="h-full w-full"
+        width={size}
+        height={size}
+        effect='blur'
+        className='inline-block h-full w-full'
+        wrapperProps={{
+          style: { width: '100%', height: '100%' },
+        }}
       />
     </div>
   );
