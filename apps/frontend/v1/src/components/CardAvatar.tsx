@@ -1,4 +1,6 @@
 import type { DetailedHTMLProps, HTMLAttributes } from 'react';
+
+import { clsx } from 'clsx';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 type CardAvatarProps = {
@@ -20,20 +22,21 @@ const CardAvatar = ({
   className,
   ...props
 }: CardAvatarProps &
-  DetailedHTMLProps<HTMLAttributes<HTMLImageElement>, HTMLImageElement>) => {
+  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
   return (
-    <div className='aspect-square h-auto w-16 overflow-hidden rounded'>
+    <div
+      {...props}
+      className={clsx(
+        'flex aspect-square h-16 w-16 overflow-hidden rounded items-center justify-center',
+        className,
+      )}>
       <LazyLoadImage
         src={src}
-        width={96}
-        height={96}
-        className='h-full w-full'
-        effect='blur'
-        wrapperProps={{
-          style: { transitionDelay: '1s' },
-        }}
+        alt={alt}
+        width={256}
+        height={256}
         placeholderSrc='/avatars/default.webp'
-        {...props}
+        className="h-full w-full"
       />
     </div>
   );

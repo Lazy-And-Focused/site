@@ -18,7 +18,7 @@ const App = () => {
           <Outlet />
         </Suspense>
         <Footer />
-      </div>
+    </div>
     </>
   );
 };
