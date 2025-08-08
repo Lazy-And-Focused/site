@@ -8,7 +8,7 @@ export type ConfigRoute = {
 export type BaseMember = {
   tag: string;
   name: string;
-  role: string;
+  roles: string[];
   avatar?: string;
   description: string;
   socials?: string[];
