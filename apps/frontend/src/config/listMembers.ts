@@ -8,12 +8,12 @@ const originalTeam: BaseMember[] = [
   {
     tag: 'fockusty',
     name: 'FOCKUSTY',
-    role: 'CEO, Backend-разработчик',
+    roles: ['CEO', 'Backend-разработчик'],
     description:
       'Почему я начал изучать программирование? Всё просто, я просто начал, по приколу, да, вот такой вот я. На август 2024 года мне 15 лет. Мой первый язык - JavaScript, сначала я изучал HTML & CSS (Все мы знаем, что они не ЯП), а потом переключился на JS. Я нашел свой интерес в программировании. Раньше я снимал видео на платформу YouTube, но мне в один момент надоело и я начал изучать веб. Я начал изучать программирование с 13 лет (2023 год в июне).',
     socials: [
       '(personal) https://fockusty.netlify.app/',
-      'https://github.com/FOCKUSTY',
+      'https://github.com/fockusty',
       'https://gravatar.com/fockusty',
       'https://www.youtube.com/channel/UCONoOdImtgCZKih1nxDjxDg',
       'https://vk.com/fockusty',
@@ -27,20 +27,22 @@ const originalTeam: BaseMember[] = [
   {
     tag: 'adelya',
     name: 'Adelya',
-    role: 'HR Менеджер',
+    roles: ['HR Менеджер'],
     avatar: '/images/avatars/adelya.webp',
     description:
       'Я — Адэля и попала в эту команду немного случайно. Являюсь менеджером данной команды, мне сказали, чтобы я заставляла работать всех ленивцев',
     socials: ['https://t.me/Angels13a'],
+    meta: ['no-gh'],
   },
   {
     tag: 'lanvalird',
     name: 'Valentin Bird',
-    role: 'Team Lead, Frontend-разработчик',
+    roles: ['Team Lead', 'Frontend-разработчик'],
+    avatar: 'https://github.com/lanvalird.png',
     description:
-      'Привет! Я интересовался программированием с 11 лет, в 13 начал изучать свой первый язык – PHP, а в данный момент занимаюсь веб-разработкой около трёх лет.\nПрограммирование для меня – не просто очередное хобби, как дизайн сайтов или писательства, а одно из моих любимых занятий, точнее веб-разработка, с которой я бы хотел связать свою дальнейшую жизнь.',
+      'Привет! Я интересовался программированием с 11 лет, а уже в 13 начал изучать свой первый язык — PHP. В данный момент занимаюсь веб-разработкой около 4 лет (с середины 2021 года).\nПрограммирование для меня — не просто очередное хобби, а самая настоящая работа.\nКстати, про хобби: музыка, разработка, дизайн сайтов, документирование и рисование.',
     socials: [
-      '(personal) https://lanvalird.netlify.app/',
+      '(personal) https://lanvalird.ru/',
       'https://github.com/lanvalird',
       'https://gravatar.com/lanvalird',
       'https://t.me/lanvalird',
@@ -53,18 +55,47 @@ const originalTeam: BaseMember[] = [
   {
     tag: 'omonillo',
     name: 'Омонилло',
-    role: 'Промоутер',
+    roles: ['Промоутер'],
     avatar: '/images/avatars/omonillo.webp',
     description:
       'Меня зовут Азамжанов Омонилло, а с остальными разработчиками вы, скорее всего, уже познакомились.\nМы активно работаем над проектами, которые позволяют нам улучшить наши навыки и применить полученные знания на практике.',
+    meta: ['no-gh'],
   },
   {
     tag: 'beyz1k',
     name: 'beyz1k',
-    role: 'Промоутер',
+    roles: ['Промоутер'],
     description:
       'Всем привет меня зовут Эмиль, я будущий промоутер и начинающий фронтенд-разработчик <3',
     socials: ['https://github.com/beyz1k'],
+  },
+{
+    tag: 'dp1offc',
+    name: 'ヂピアイ (Дипиай)',
+    roles: ['Стажёр Frontend-разработчик'],
+    description: 'Начинающий разработчик и основатель Veeldream Software (GameDev-студии)',
+    socials: ['https://github.com/dp1offc'],
+  },
+  {
+    tag: 'yonathanpower',
+    name: 'Yonathan',
+    roles: ['Стажёр Сценарист'],
+    description: '',
+    socials: [
+      'https://t.me/charlatan0',
+      'https://github.com/yonathanpower',
+    ],
+  },
+  {
+    tag: 'emma',
+    name: 'Emma',
+    roles: ['Художница'],
+    avatar: '/images/avatars/default.webp',
+    description: '',
+    socials: [
+      'https://t.me/myrmyra_69',
+    ],
+    meta: ['no-gh'],
   },
 ];
 
