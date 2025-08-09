@@ -25,16 +25,6 @@ const originalTeam: BaseMember[] = [
     ],
   },
   {
-    tag: 'adelya',
-    name: 'Adelya',
-    roles: ['HR Менеджер'],
-    avatar: '/images/avatars/adelya.webp',
-    description:
-      'Я — Адэля и попала в эту команду немного случайно. Являюсь менеджером данной команды, мне сказали, чтобы я заставляла работать всех ленивцев',
-    socials: ['https://t.me/Angels13a'],
-    meta: ['no-gh'],
-  },
-  {
     tag: 'lanvalird',
     name: 'Valentin Bird',
     roles: ['Team Lead', 'Frontend-разработчик'],
