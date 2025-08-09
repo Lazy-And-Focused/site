@@ -1,6 +1,9 @@
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/shared/ui/theme-provider"
+import "./globals.css";
 
-export default function RootLayout({ children }: RootLayoutProps) {
+// Добавьте позже мета-данные (заголовок к примеру)
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
