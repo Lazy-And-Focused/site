@@ -36,6 +36,39 @@ const About = () => {
         </ul>
       </section>
 
+      <section className='flex min-h-full w-full flex-col items-center justify-center px-8 py-16 lg:px-12'>
+        <h2 className='text-3xl font-semibold tracking-tight text-base-content sm:text-4xl'>
+          Примечание
+        </h2>
+        <p className='my-8 text-lg text-base-content/40'>Помимо этого, надо понимать, что...</p>
+        <ul
+          role='list'
+          className='mx-auto w-full max-w-2xl list-inside list-disc space-y-4 rounded-lg bg-base-content/5 p-6 text-sm font-medium text-base-content/85'
+        >
+          <li className='list-disc'>
+            <span className='cursor-not-allowed transition-colors hover:text-primary'>
+              Аватары пользователей, как и их описания, <strong>принадлежат их владельцам</strong>
+            </span>
+          </li>
+          <li className='list-disc'>
+            <span className='cursor-not-allowed transition-colors hover:text-primary'>
+              Любая информация об участника была предоставлена,{' '}
+              <strong>
+                основываясь на данных из Интернет-ресурсов, если пользователь не предоставил
+              </strong>{' '}
+              описание, аватар или ссылки
+            </span>
+          </li>
+          <li className='list-disc'>
+            <span className='text-base-content/50'>Дополнение: </span>
+            <span className='cursor-not-allowed transition-colors hover:text-primary'>
+              Ссылки на социальные сети участников были предоставлены{' '}
+              <strong>только по обоюдному согласию между сторонами</strong>
+            </span>
+          </li>
+        </ul>
+      </section>
+
       <section
         id='credits'
         className='flex min-h-full w-full flex-col items-center justify-center px-8 py-16 lg:px-12'
@@ -73,8 +106,9 @@ const About = () => {
           </li>
           <li className='list-disc'>
             <Link to='#' className='transition-colors hover:text-primary hover:underline'>
-              Своё воображение
+              И если интересно, весь стек здесь
             </Link>
+            <span className='text-base-content/50'> &lt;- кликните на текст</span>
           </li>
         </ul>
       </section>
