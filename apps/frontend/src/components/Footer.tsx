@@ -12,13 +12,13 @@ const Footer = () => {
       >
         <Link
           to='/links'
-          className='inline-flex items-center gap-2 text-nowrap px-2 py-1 text-sm/6 font-medium transition-colors hover:text-black/80 dark:hover:text-white/70 hover:animate-pulse'
+          className='inline-flex items-center gap-2 text-nowrap px-2 py-1 text-sm/6 font-medium transition-colors hover:animate-pulse hover:text-black/80 dark:hover:text-white/70'
         >
           Ссылки на команду
         </Link>
         <Link
           to='/about/#credits'
-          className='inline-flex items-center gap-2 text-nowrap px-2 py-1 text-sm/6 font-medium transition-colors hover:text-black/80 dark:hover:text-white/70 hover:animate-pulse'
+          className='inline-flex items-center gap-2 text-nowrap px-2 py-1 text-sm/6 font-medium transition-colors hover:animate-pulse hover:text-black/80 dark:hover:text-white/70'
         >
           Авторские права
         </Link>
