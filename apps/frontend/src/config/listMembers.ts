@@ -59,10 +59,21 @@ const originalTeam: BaseMember[] = [
       'Всем привет меня зовут Эмиль, я будущий промоутер и начинающий фронтенд-разработчик <3',
     socials: ['https://github.com/beyz1k'],
   },
-{
+  {
+    tag: 'emma',
+    name: 'Эмма',
+    roles: ['Художница'],
+    avatar: '/images/avatars/emma.webp',
+    description: 'Мой творческий псевдоним Эшми. А в команде я Эмма (Эмка). Знаете почему? Потому что только для друзей я ей являюсь.\nРисование — то, что заставляет меня жить. Это не моя профессия, не хобби, это то, что движет мной. Никогда не занималась эти профессионально, но это не мешает находиться мне в этой команде здесь и сейчас. Главное — чтобы моё творчество вдохновляло и радовало меня и окружающих, а не чтобы всё было по правилам.\nПравила конечно тоже нужны, я их тоже люблю, но считаю что в творчестве можно и нужно давать волю фантазии. ',
+    socials: [
+      'https://t.me/krestikruss',
+    ],
+    meta: ['no-gh'],
+  },
+  {
     tag: 'dp1offc',
     name: 'ヂピアイ (Дипиай)',
-    roles: ['Стажёр Frontend-разработчик'],
+    roles: ['Стажёр Разработчик игр'],
     description: 'Начинающий разработчик и основатель Veeldream Software (GameDev-студии)',
     socials: ['https://github.com/dp1offc'],
   },
@@ -75,17 +86,6 @@ const originalTeam: BaseMember[] = [
       'https://t.me/charlatan0',
       'https://github.com/yonathanpower',
     ],
-  },
-  {
-    tag: 'emma',
-    name: 'Emma',
-    roles: ['Художница'],
-    avatar: '/images/avatars/default.webp',
-    description: '',
-    socials: [
-      'https://t.me/myrmyra_69',
-    ],
-    meta: ['no-gh'],
   },
 ];
 
