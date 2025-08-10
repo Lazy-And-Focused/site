@@ -10,7 +10,7 @@ export type BaseMember = {
   name: string;
   roles: string[];
   avatar?: string;
-  description: string;
+  description?: string;
   socials?: string[];
   meta?: string[];
 };

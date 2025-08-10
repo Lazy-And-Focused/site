@@ -51,6 +51,13 @@ const About = () => {
             </span>
           </li>
           <li className='list-disc'>
+            <span className='text-base-content/50'>Дополнение: </span>
+            <span className='cursor-not-allowed transition-colors hover:text-primary'>
+              принадлежат <strong>кроме тех случаев, когда</strong> авторское право соотносится с
+              другим правообладателем
+            </span>
+          </li>
+          <li className='list-disc'>
             <span className='cursor-not-allowed transition-colors hover:text-primary'>
               Любая информация об участника была предоставлена,{' '}
               <strong>
@@ -62,7 +69,7 @@ const About = () => {
           <li className='list-disc'>
             <span className='text-base-content/50'>Дополнение: </span>
             <span className='cursor-not-allowed transition-colors hover:text-primary'>
-              Ссылки на социальные сети участников были предоставлены{' '}
+              ссылки на социальные сети участников были предоставлены{' '}
               <strong>только по обоюдному согласию между сторонами</strong>
             </span>
           </li>
@@ -105,7 +112,10 @@ const About = () => {
             <span className='text-base-content/50'> (иконки Gravatar и VK)</span>
           </li>
           <li className='list-disc'>
-            <Link to='#' className='transition-colors hover:text-primary hover:underline'>
+            <Link
+              to='https://github.com/Lazy-And-Focused/site'
+              className='transition-colors hover:text-primary hover:underline'
+            >
               И если интересно, весь стек здесь
             </Link>
             <span className='text-base-content/50'> &lt;- кликните на текст</span>

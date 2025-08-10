@@ -197,11 +197,13 @@ const FullVariant = ({ member, avatar }: { member: Member; avatar: string }) => 
           </div>
         )}
 
-        <div className='w-full text-pretty rounded border-2 border-primary/10 bg-primary/20 p-2 text-start indent-2 text-sm font-medium text-base-content/90'>
-          {member.description.split('\n').map((p) => (
-            <p key={p}>{p}</p>
-          ))}
-        </div>
+        {member.description && member.description !== '' && (
+          <div className='w-full text-pretty rounded border-2 border-primary/10 bg-primary/20 p-2 text-start indent-2 text-sm font-medium text-base-content/90'>
+            {member.description.split('\n').map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
