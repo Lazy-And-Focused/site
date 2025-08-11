@@ -1,9 +1,13 @@
-import { ThemeProvider } from "@/shared/ui/theme-provider"
+import { ThemeProvider } from "@/shared/ui/theme-provider";
 import "./globals.css";
 
 // Добавьте позже мета-данные (заголовок к примеру)
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -20,5 +24,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </body>
       </html>
     </>
-  )
+  );
 }
