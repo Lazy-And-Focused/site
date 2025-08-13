@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/shared/ui/theme-provider";
+import Header from "@/widgets/header";
 import "./globals.css";
 
 // Добавьте позже мета-данные (заголовок к примеру)
@@ -19,6 +20,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Header />
             {children}
           </ThemeProvider>
         </body>
