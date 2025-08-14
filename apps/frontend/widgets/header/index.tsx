@@ -20,7 +20,7 @@ export default function Header() {
             </div>
           </Link>
 
-          <nav className="items-center space-x-8">
+          <nav className="text-sm items-center space-x-8">
             <Link href="/" className="text-primary">
               Главная
             </Link>
