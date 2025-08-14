@@ -70,13 +70,6 @@ const originalTeam: BaseMember[] = [
     meta: ['no-gh'],
   },
   {
-    tag: 'dp1offc',
-    name: 'ヂピアイ (Дипиай)',
-    roles: ['Стажёр Разработчик игр'],
-    description: 'Начинающий разработчик и основатель Veeldream Software (GameDev-студии)',
-    socials: ['https://github.com/dp1offc'],
-  },
-  {
     tag: 'yonathanpower',
     name: 'Yonathan',
     roles: ['Стажёр Сценарист'],
