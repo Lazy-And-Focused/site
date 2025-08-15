@@ -1,6 +1,8 @@
 import { ThemeProvider } from "@/shared/ui/theme-provider";
+
 import Header from "@/widgets/header";
 import Footer from "@/widgets/footer";
+
 import "./globals.css";
 
 // Добавьте позже мета-данные (заголовок к примеру)
@@ -12,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="ru" suppressHydrationWarning>
         <head />
         <body>
           <ThemeProvider
