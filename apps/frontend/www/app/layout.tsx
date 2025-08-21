@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/shared/ui/theme-provider";
 import Header from "@/widgets/header";
 import Footer from "@/widgets/footer";
 
+import "./_lib/fonts-loader";
 import "./globals.css";
 
 // Добавьте позже мета-данные (заголовок к примеру)

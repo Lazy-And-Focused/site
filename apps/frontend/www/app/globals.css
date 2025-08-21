@@ -4,6 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* our */
+  --font-heading: Balsamiq Sans, var(--font-sans);
+
+  /* default */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: Ubuntu Sans, ui-sans-serif, sans-serif, system-ui;
