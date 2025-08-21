@@ -1,10 +1,18 @@
+import HeartSVG from "./_ui/heart";
+
 export default function Home() {
   return (
     <main>
       <section className="font-sans flex items-center justify-center bg-sidebar min-h-screen p-8 pb-20 gap-16 sm:p-20">
-        <div className="flex flex-col gap-[32px] text-center row-start-2 items-center">
-          <h1 className="text-xl font-bold">Сайт команды LAF</h1>
-          <p>И всё, да. Просто редизайн и много чего ещё.</p>
+        <div className="flex flex-col gap-[32px] text-center text-primary row-start-2 items-center">
+          <HeartSVG />
+          <h1 className="text-6xl font-heading font-medium">
+            Разработка с LAF
+          </h1>
+          <p>
+            Lazy And Focused и печеньки с котиками за просмотром новеньких
+            сериалов.
+          </p>
         </div>
       </section>
 
