@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@/shared/ui/theme-provider";
 
-import Header from "@/widgets/header";
-import Footer from "@/widgets/footer";
+import { Header } from "@/widgets/header";
+import { Footer } from "@/widgets/footer";
 
 import "./_lib/fonts-loader";
 import "./globals.css";
@@ -15,12 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <html lang="ru" suppressHydrationWarning>
+      <html lang='ru' suppressHydrationWarning>
         <head />
         <body>
           <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
+            attribute='class'
+            defaultTheme='system'
             enableSystem
             disableTransitionOnChange
           >
