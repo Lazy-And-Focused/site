@@ -29,7 +29,7 @@ export function Header() {
           </Link>
 
           <NavigationMenu className="text-sm space-x-8">
-            <NavigationMenuList>
+            <NavigationMenuList className="flex flex-row space-x-4">
               {links.map(({ href, name, icon: Icon }) => (
                 <NavigationMenuItem key={name}>
                   <NavigationMenuLink asChild>
