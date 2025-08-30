@@ -1,4 +1,5 @@
-import type { NextFont } from "next/font";
+import type { NextFont } from "next/dist/compiled/@next/font";
+
 import {
   Balsamiq_Sans,
   Ubuntu_Sans,
