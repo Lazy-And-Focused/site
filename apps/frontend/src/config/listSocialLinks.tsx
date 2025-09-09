@@ -80,6 +80,10 @@ const listSocialLinks: SocialLink[] = [
     name: 'Patreon',
   },
   {
+    href: 'https://boosty.to/',
+    name: 'Boosty',
+  },
+  {
     href: 'https://twitter.com/',
     name: 'Twitter',
     icon: TwitterIcon,
