@@ -1,6 +1,7 @@
 import { ILink } from "./link.type";
 
 export type IMember = {
+  id: string;
   name: string;
   role: string;
   tag: string;
@@ -10,6 +11,13 @@ export type IMember = {
 
   avatar?: string;
   meta?: string[];
+};
+
+export type ICreateMember = Omit<IMember, "id"|"socials"> & {
+  socials?: ILink[],
+  description?: string,
+  avatar?: string,
+  meta?: string
 };
 
 export const MEMBER_DEFAULT = {
