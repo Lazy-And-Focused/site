@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { IMember } from "types/member.type";
+import { IMember } from "types/members.type";
 
 const schema = new Schema<IMember>({
   name: {

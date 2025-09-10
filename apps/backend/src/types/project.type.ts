@@ -1,5 +1,5 @@
 import { ILink } from "./link.type";
-import { IMember } from "./member.type";
+import { IMember } from "./members.type";
 
 export type IProject = {
   name: string;

@@ -1,6 +1,6 @@
 import { Document, ObjectId } from "mongoose";
 
-import { MEMBER_KEYS, IMember } from "types/member.type";
+import { MEMBER_KEYS, IMember } from "types/members.type";
 import { PROJECT_KEYS, IProject } from "types/project.type";
 import { NEWS_KEYS, INews } from "types/news.type";
 
