@@ -9,6 +9,7 @@ import { Injectable } from "@nestjs/common";
 import { News } from "src/database/models/news.model";
 import { generateId } from "src/database/generate-id";
 import Parser from "src/database/parse";
+import Sorter, { type QuerySort } from "services/sorter.service";
 
 const SORT_BY = [
   "date",
@@ -16,36 +17,15 @@ const SORT_BY = [
   "author"
 ];
 
-const SORT_TYPES = [
-  "desc",
-  "asc",
-];
-
 const parser = new Parser("news");
+const sorter = new Sorter(SORT_BY);
 
 type Filter = { name: string} | { id: string };
 
 @Injectable()
 export class Service {
-  public async get(query: { length: string, offset: string, sortBy: string, sortType: string }): Promise<ServiceResponse<INews[]>> {
-    const filter = query.length === "-1"
-      ? { skip: Number(query.offset) }
-      : { limit: Number(query.length), skip: Number(query.offset) };
-
-    const sortBy = SORT_BY.includes(query.sortBy)
-      ? query.sortBy
-      : SORT_BY[0];
-
-    const sortType = SORT_TYPES.includes(query.sortType)
-      ? query.sortType
-      : SORT_TYPES[0];
-
-    const news = await News.find({}, {}, {
-      sort: {
-        [sortBy]: sortType
-      },
-      ...filter
-    });
+  public async get(query: QuerySort): Promise<ServiceResponse<INews[]>> {
+    const news = await News.find({}, {}, sorter.execute(query));
 
     return {
       successed: true,
