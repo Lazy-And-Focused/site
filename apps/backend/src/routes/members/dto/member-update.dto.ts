@@ -3,7 +3,7 @@ import type { IMember } from "types/members.type";
 import { ApiProperty } from "@nestjs/swagger";
 import { ILink } from "types";
 
-export class MembersUpdateDto implements Partial<IMember> {
+export class MemberUpdateDto implements Partial<IMember> {
   @ApiProperty()
   name?: string;
   

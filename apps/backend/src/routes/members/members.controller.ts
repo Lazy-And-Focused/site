@@ -1,5 +1,5 @@
-import type { MembersCreateDto } from "./dto/members-create.dto";
-import type { MembersUpdateDto } from "./dto/members-update.dto";
+import type { MemberCreateDto } from "./dto/member-create.dto";
+import type { MemberUpdateDto } from "./dto/member-update.dto";
 
 import { Public } from "decorators/public.decorator";
 import { AuthGuard } from "guards/auth/auth.guard";
@@ -15,12 +15,19 @@ import {
   Patch,
   Delete,
   UseGuards,
-  HttpStatus
+  HttpStatus,
+  Query
 } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiUnauthorizedResponse } from "@nestjs/swagger";
 
 import { ROUTE, ROUTES } from "./members.routes";
-import { Service } from "./members.service.ts"
+import { Service } from "./members.service";
+
+const resolveSlug = (slug: string) => slug.startsWith("@")
+  ? { tag: slug.slice(1) }
+  : slug.startsWith("#")
+    ? { name: slug.slice(1) }
+    : { id: slug };
 
 @Injectable()
 @NestController(ROUTE)
@@ -31,7 +38,7 @@ export class Controller {
   ) {}
 
   @ApiOperation({
-    summary: "Getting an array of members"
+    summary: "Getting an array of news"
   })
   @ApiResponse({
     status: HttpStatus.OK,
@@ -39,8 +46,25 @@ export class Controller {
   })
   @Get(ROUTES.GET)
   @Public()
-  public get() {
-    return this.service.get()
+  public get(
+    @Query("length") length?: string,
+    @Query("offset") offset?: string,
+    @Query("sortBy") sortBy?: string,
+    @Query("sortType") sortType?: string
+  ) {
+    const query = {
+      length: "-1",
+      offset: "0",
+    };
+
+    if (length && Number.isNaN(+length)) query.length = "-1";
+    if (offset && Number.isNaN(+offset)) query.offset = "0";
+
+    return this.service.get({
+      ...query,
+      sortBy: sortBy || "",
+      sortType: sortType || ""
+    });
   }
 
   @ApiOperation({
@@ -53,9 +77,9 @@ export class Controller {
   @Get(ROUTES.GET_ONE)
   @Public()
   public getOne(
-    @Param("id") id: string
+    @Param("slug") slug: string
   ) {
-    return this.service.getOne(id);
+    return this.service.getOne(resolveSlug(slug));
   }
 
   @ApiOperation({
@@ -68,7 +92,7 @@ export class Controller {
   })
   @Post(ROUTES.POST)
   public post(
-    @Body() data: MembersCreateDto 
+    @Body() data: MemberCreateDto 
   ) {
     return this.service.post(data);
   }
@@ -83,10 +107,10 @@ export class Controller {
   })
   @Put(ROUTES.PUT)
   public put(
-    @Param("id") id: string,
-    @Body() data: MembersUpdateDto 
+    @Param("slug") slug: string,
+    @Body() data: MemberUpdateDto 
   ) {
-    return this.service.put(id, data);
+    return this.service.put(resolveSlug(slug), data);
   }
 
   @ApiOperation({
@@ -99,10 +123,10 @@ export class Controller {
   })
   @Patch(ROUTES.PUT)
   public patch(
-    @Param("id") id: string,
-    @Body() data: MembersUpdateDto 
+    @Param("slug") slug: string,
+    @Body() data: MemberUpdateDto 
   ) {
-    return this.service.patch(id, data);
+    return this.service.patch(resolveSlug(slug), data);
   }
   
   @ApiOperation({
@@ -115,8 +139,8 @@ export class Controller {
   })
   @Delete(ROUTES.DELETE)
   public delete(
-    @Param("id") id: string
+    @Param("slug") slug: string
   ) {
-    return this.service.delete(id);
+    return this.service.delete(resolveSlug(slug));
   }
 }

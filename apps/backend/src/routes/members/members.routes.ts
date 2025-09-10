@@ -2,14 +2,14 @@ const ROUTE = "members";
 
 const ROUTES = {
   GET: "/",
-  GET_ONE: "/:id",
+  GET_ONE: "/:slug",
   
   POST: "/",
   
-  PUT: "/:id",
-  PATCH: "/:id",
+  PUT: "/:slug",
+  PATCH: "/:slug",
   
-  DELETE: "/:id"
+  DELETE: "/:slug"
 };
 
 export { ROUTE, ROUTES };

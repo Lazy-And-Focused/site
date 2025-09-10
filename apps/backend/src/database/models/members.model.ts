@@ -2,6 +2,12 @@ import mongoose, { Schema } from "mongoose";
 import { IMember } from "types/members.type";
 
 const schema = new Schema<IMember>({
+  id: {
+    type: mongoose.SchemaTypes.String,
+    required: true,
+    unique: true
+  },
+  
   name: {
     type: mongoose.SchemaTypes.String,
     required: true,
