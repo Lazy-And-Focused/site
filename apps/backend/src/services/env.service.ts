@@ -14,6 +14,7 @@ export const REQUIRED = [
   "SESSION_SECRET",
   "HASH_KEY",
   "DATABASE_URL",
+  "AUTH_SERVICE_URL"
 ] as const;
 
 export const ALL = [...REQUIRED, "ENCODING_TYPE", "PORT"] as const;
