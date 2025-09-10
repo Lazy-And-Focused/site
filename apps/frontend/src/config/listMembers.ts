@@ -25,6 +25,14 @@ const originalTeam: BaseMember[] = [
     ],
   },
   {
+    tag: 'alena_viral25',
+    name: 'Neex',
+    roles: ['HR-менеджер'],
+    avatar: '/images/avatars/alena_viral25.webp',
+    description:
+      'Всем привет, я Кари и являюсь HR-менеджер данной команды, моё хобби — рисование',
+  },
+  {
     tag: 'lanvalird',
     name: 'Valentin Bird',
     roles: ['Team Lead', 'Frontend-разработчик'],
@@ -75,6 +83,14 @@ const originalTeam: BaseMember[] = [
     roles: ['Стажёр Сценарист'],
     description: 'Ола! Я Йонатан, в команде являюсь сценаристом, моя цель — создавать истории, которые не только развлекают, но также захватывают и затягивают в свой чудный мир.',
     socials: ['https://t.me/charlatan0', 'https://github.com/yonathanpower'],
+  },
+ {
+    tag: 'kitiket142',
+    name: 'Акула в найках',
+    roles: ['Стажёр Программист'],
+    avatar: '/images/avatars/kitiket142.webp',
+    description:
+      'Всем хай. Я Стажер - разработчик, пишу коды на python и немного на c++. В дальнейшем хочу стать Мидлом в этой команде. Моё хобби спорт и программирование.',
   },
 ];
 
