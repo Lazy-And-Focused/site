@@ -8,10 +8,11 @@ import { CacheModule, CacheInterceptor } from "@nestjs/cache-manager";
 import { LoggerMiddleware } from "./middleware/logger.middleware";
 
 import AuthModule from "./routes/auth/auth.module";
+import NewsModule from "./routes/news/news.module";
 
 @Module({
   imports: [
-    ...[AuthModule].flatMap((module) => [
+    ...[AuthModule, NewsModule].flatMap((module) => [
       module,
       RouterModule.register([{ path: "api", module }]),
     ]),
