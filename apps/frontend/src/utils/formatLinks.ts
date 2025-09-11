@@ -2,6 +2,12 @@ import WebsiteIcon from '../assets/icons/WebsiteIcon';
 import listSocialLinks from '../config/listSocialLinks';
 import { SocialLink } from '../types';
 
+function extractTextInBrackets(input: string): string | null {
+  const regex = /\[([^\[\]]+)\]/;
+  const match = input.match(regex);
+  return match ? match[1] : null;
+}
+
 /**
  * Функция, преобразующая строковые ссылки в массив SocialLink[]
  */
@@ -10,9 +16,14 @@ export const formatLinks = (links: string[]): SocialLink[] => {
   return links
     .map((l, i) => {
       const link = listSocialLinks.find((nl) => l.startsWith(nl.href));
+      const customName = extractTextInBrackets(l);
+
       return {
-        name: link?.name || `link_user_${i}`,
-        href: l.replace(/\([a-z]+\)/g, '').trim(),
+        name: customName || link?.name || `link_${i}`,
+        href: l
+          .replace(/\([a-z]+\)/g, '')
+          .replace(/\[([^\[\]]+)\]/g, '')
+          .trim(),
         icon: link?.icon || WebsiteIcon,
         special: special.some((s) => l.startsWith(s)),
       };
