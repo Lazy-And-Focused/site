@@ -1,7 +1,7 @@
 import { useRef } from 'react';
-import TeamMemberCard from '../components/TeamMemberCard.tsx';
-import teamSocialLinks from '../config/teamSocialLinks.ts';
-import team from '../config/listMembers.ts';
+import TeamMemberCard from '../components/team-member-card.tsx';
+import teamSocialLinks from '../config/team-social-links.ts';
+import team from '../config/list-members.ts';
 
 const Links = () => {
   const copyButtonRef = useRef<HTMLButtonElement>(null);

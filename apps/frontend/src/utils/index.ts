@@ -1,1 +1,1 @@
-export * from './formatLinks';
+export * from './format-links';

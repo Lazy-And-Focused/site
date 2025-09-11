@@ -29,8 +29,7 @@ const originalTeam: BaseMember[] = [
     name: 'Neex',
     roles: ['HR-менеджер'],
     avatar: '/images/avatars/alena_viral25.webp',
-    description:
-      'Всем привет, я Кари и являюсь HR-менеджер данной команды, моё хобби — рисование',
+    description: 'Всем привет, я Кари и являюсь HR-менеджер данной команды, моё хобби — рисование',
   },
   {
     tag: 'lanvalird',
@@ -81,10 +80,11 @@ const originalTeam: BaseMember[] = [
     tag: 'yonathanpower',
     name: 'Yonathan',
     roles: ['Стажёр Сценарист'],
-    description: 'Ола! Я Йонатан, в команде являюсь сценаристом, моя цель — создавать истории, которые не только развлекают, но также захватывают и затягивают в свой чудный мир.',
+    description:
+      'Ола! Я Йонатан, в команде являюсь сценаристом, моя цель — создавать истории, которые не только развлекают, но также захватывают и затягивают в свой чудный мир.',
     socials: ['https://t.me/charlatan0', 'https://github.com/yonathanpower'],
   },
- {
+  {
     tag: 'kitiket142',
     name: 'Акула в найках',
     roles: ['Стажёр Программист'],

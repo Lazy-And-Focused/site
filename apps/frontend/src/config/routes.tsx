@@ -4,13 +4,13 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { lazy } from 'react';
 
-import App from '../App';
-import Home from '../pages/Home';
+import App from '../app';
+import Home from '../pages/home';
 
-const About = lazy(() => import('../pages/About'));
-const Projects = lazy(() => import('../pages/Projects'));
-const NotFound = lazy(() => import('../pages/NotFound'));
-const Links = lazy(() => import('../pages/Links'));
+const About = lazy(() => import('../pages/about'));
+const Projects = lazy(() => import('../pages/projects'));
+const NotFound = lazy(() => import('../pages/not-found'));
+const Links = lazy(() => import('../pages/links'));
 
 /**
  * Все пути к страницам приложения (сайта)

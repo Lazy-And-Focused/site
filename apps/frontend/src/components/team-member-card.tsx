@@ -1,8 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import ListIcon from '../assets/icons/ListIcon';
-import WebsiteIcon from '../assets/icons/WebsiteIcon';
+import ListIcon from '../assets/icons/list-icon';
+import WebsiteIcon from '../assets/icons/website-icon';
 import { Member } from '../types';
-import CardAvatar from './CardAvatar';
+import CardAvatar from './card-avatar';
 
 type HasPrimarySocialsType = {
   [key: string]: { 0: boolean; 1: string };

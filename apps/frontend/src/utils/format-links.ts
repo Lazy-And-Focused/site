@@ -1,5 +1,5 @@
-import WebsiteIcon from '../assets/icons/WebsiteIcon';
-import listSocialLinks from '../config/listSocialLinks';
+import WebsiteIcon from '../assets/icons/website-icon';
+import listSocialLinks from '../config/list-social-links';
 import { SocialLink } from '../types';
 
 function extractTextInBrackets(input: string): string | null {

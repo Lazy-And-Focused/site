@@ -1,16 +1,16 @@
 import type { SocialLink } from '../types';
 
-import DiscordIcon from '../assets/icons/DiscordIcon';
-import GitHubIcon from '../assets/icons/GitHubIcon';
-import GravatarIcon from '../assets/icons/GravatarIcon';
-import TelegramIcon from '../assets/icons/TelegramIcon';
-import WebsiteIcon from '../assets/icons/WebsiteIcon';
-import YouTubeIcon from '../assets/icons/YouTubeIcon';
-import PinterestIcon from '../assets/icons/PinterestIcon';
-import TikTokIcon from '../assets/icons/TikTokIcon';
-import TwitchIcon from '../assets/icons/TwitchIcon';
-import TwitterIcon from '../assets/icons/TwitterIcon';
-import VKIcon from '../assets/icons/VKIcon';
+import DiscordIcon from '../assets/icons/discord-icon';
+import GitHubIcon from '../assets/icons/github-icon';
+import GravatarIcon from '../assets/icons/gravatar-icon';
+import TelegramIcon from '../assets/icons/telegram-icon';
+import WebsiteIcon from '../assets/icons/website-icon';
+import YouTubeIcon from '../assets/icons/youtube-icon';
+import PinterestIcon from '../assets/icons/pinterest-icon';
+import TikTokIcon from '../assets/icons/tiktok-icon';
+import TwitchIcon from '../assets/icons/twitch-icon';
+import TwitterIcon from '../assets/icons/twitter-icon';
+import VKIcon from '../assets/icons/vk-icon';
 
 /**
  * Массив из объектов типа SocialLink. Каждый элемент содержит href (адрес сервиса), name (имя сервиса) и icon (иконка, React-компонент)
