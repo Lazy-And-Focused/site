@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import ListIcon from '../assets/icons/list-icon';
-import WebsiteIcon from '../assets/icons/website-icon';
+import ListIcon from '../assets/icons/list';
+import WebsiteIcon from '../assets/icons/website';
 import { Member } from '../types';
 import CardAvatar from './card-avatar';
 

@@ -1,16 +1,16 @@
 import type { SocialLink } from '../types';
 
-import DiscordIcon from '../assets/icons/discord-icon';
-import GitHubIcon from '../assets/icons/github-icon';
-import GravatarIcon from '../assets/icons/gravatar-icon';
-import TelegramIcon from '../assets/icons/telegram-icon';
-import WebsiteIcon from '../assets/icons/website-icon';
-import YouTubeIcon from '../assets/icons/youtube-icon';
-import PinterestIcon from '../assets/icons/pinterest-icon';
-import TikTokIcon from '../assets/icons/tiktok-icon';
-import TwitchIcon from '../assets/icons/twitch-icon';
-import TwitterIcon from '../assets/icons/twitter-icon';
-import VKIcon from '../assets/icons/vk-icon';
+import DiscordIcon from '../assets/icons/discord';
+import GitHubIcon from '../assets/icons/github';
+import GravatarIcon from '../assets/icons/gravatar';
+import TelegramIcon from '../assets/icons/telegram';
+import WebsiteIcon from '../assets/icons/website';
+import YouTubeIcon from '../assets/icons/youtube';
+import PinterestIcon from '../assets/icons/pinterest';
+import TikTokIcon from '../assets/icons/tiktok';
+import TwitchIcon from '../assets/icons/twitch';
+import TwitterIcon from '../assets/icons/twitter';
+import VKIcon from '../assets/icons/vk';
 
 /**
  * Массив из объектов типа SocialLink. Каждый элемент содержит href (адрес сервиса), name (имя сервиса) и icon (иконка, React-компонент)
