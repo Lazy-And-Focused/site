@@ -1,9 +1,9 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Suspense, useEffect } from 'react';
 
-import Header from './components/header';
-import Footer from './components/footer';
-import Loading from './pages/loading';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import Loading from '../pages/loading';
 
 /**
  * Корневой компонент приложения
