@@ -8,7 +8,7 @@ import Loading from '../pages/loading';
 /**
  * Корневой компонент приложения
  */
-const App = () => {
+export const App = () => {
   return (
     <>
       <ScrollToTop />
@@ -39,5 +39,3 @@ const ScrollToTop = () => {
 
   return null;
 };
-
-export default App;
