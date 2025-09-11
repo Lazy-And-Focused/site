@@ -12,7 +12,7 @@ import {
   VKIcon,
   WebsiteIcon,
   YouTubeIcon,
-} from '../shared/components/ui/icons';
+} from '../components/ui/icons';
 
 /**
  * Массив из объектов типа SocialLink. Каждый элемент содержит href (адрес сервиса), name (имя сервиса) и icon (иконка, React-компонент)

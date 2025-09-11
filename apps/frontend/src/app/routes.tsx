@@ -1,10 +1,10 @@
-import type { ConfigRoute } from '../types';
+import type { ConfigRoute } from '../shared/types';
 
 import { createBrowserRouter } from 'react-router-dom';
 
 import { lazy } from 'react';
 
-import App from '../app/root';
+import App from './root';
 import Home from '../pages/home';
 
 const About = lazy(() => import('../pages/about'));

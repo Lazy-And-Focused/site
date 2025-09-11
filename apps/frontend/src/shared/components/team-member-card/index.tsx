@@ -1,4 +1,4 @@
-import type { Member } from '../../../types';
+import type { Member } from '../../types';
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 

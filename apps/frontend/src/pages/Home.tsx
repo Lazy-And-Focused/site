@@ -1,5 +1,5 @@
 import { TeamMemberCard } from '../shared/components/team-member-card';
-import team from '../config/list-members.ts';
+import team from '../shared/config/list-members.ts';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
