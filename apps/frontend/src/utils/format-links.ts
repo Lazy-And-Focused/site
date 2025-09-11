@@ -1,4 +1,4 @@
-import WebsiteIcon from '../assets/icons/website';
+import WebsiteIcon from '../assets/icons/brands/website';
 import listSocialLinks from '../config/list-social-links';
 import { SocialLink } from '../types';
 
