@@ -1,6 +1,42 @@
+import type { Tab } from '../components/Browser';
+
+import { useEffect, useState } from 'react';
 import Browser from '../components/Browser';
 
+type GitHubRepository = {
+  id: string;
+  name: string;
+  description: string | null;
+  url: string;
+};
+
+const projects: GitHubRepository[] = await fetch(
+  'https://api.github.com/orgs/Lazy-And-Focused/repos',
+  {
+    method: 'GET',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+    },
+  },
+)
+  .then((res) => res.json())
+  .catch(() => []);
+
 const Projects = () => {
+  const [tabs, setTabs] = useState<Tab[]>([]);
+
+  useEffect(() => {
+    setTabs(
+      projects.map((project) => ({
+        id: project.id,
+        name: project.name,
+        favicon: '/images/logo.png',
+        element: project.description || 'У этого репозитория нет описания',
+      })),
+    );
+  }, []);
+
   return (
     <main className='h-full w-full'>
       <section className='flex min-h-screen w-full flex-col items-center justify-center bg-[#418d76] bg-[url("/images/background.png")] bg-cover bg-center bg-no-repeat px-6 pt-14 shadow-xl dark:bg-[#205848] dark:bg-none lg:px-8'>
@@ -10,16 +46,7 @@ const Projects = () => {
               Сделано с LAF
             </h1>
 
-            <Browser
-              tabs={[
-                {
-                  name: 'LAFka',
-                  favicon: '/images/logo.png',
-                  element:
-                    'В разработке. Сайт-форум, где Вы сможете постить свои вопросы или отвечать на них. Также у Вас будет возможность вести свой блог и общаться с людьми!',
-                },
-              ]}
-            />
+            <Browser tabs={tabs}>Выбери любой проект из списка выше</Browser>
           </div>
         </div>
       </section>
