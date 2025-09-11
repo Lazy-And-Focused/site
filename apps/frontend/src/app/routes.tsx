@@ -15,7 +15,7 @@ const Links = lazy(() => import('../pages/links'));
 /**
  * Все пути к страницам приложения (сайта)
  */
-const routes: ConfigRoute[] = [
+export const routes: ConfigRoute[] = [
   {
     path: '/',
     element: <App />,
@@ -33,5 +33,3 @@ const routes: ConfigRoute[] = [
 ];
 
 export const router = createBrowserRouter(routes.map((r) => r));
-
-export default routes;

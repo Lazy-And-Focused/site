@@ -7,7 +7,7 @@ import { ThemeSwitcher } from './theme-switcher';
 
 import clsx from 'clsx';
 
-import routes from '../../../config/routes';
+import { routes } from '../../../app/routes';
 
 /**
  * Шапка сайта

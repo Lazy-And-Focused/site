@@ -1,6 +1,7 @@
 import type { Tab } from '../shared/components/browser';
 
 import { useEffect, useState } from 'react';
+
 import { Browser } from '../shared/components/browser';
 
 type GitHubRepository = {
@@ -10,31 +11,35 @@ type GitHubRepository = {
   url: string;
 };
 
-const projects: GitHubRepository[] = await fetch(
-  'https://api.github.com/orgs/Lazy-And-Focused/repos',
-  {
+function getProjects(): Promise<GitHubRepository[]> {
+  return fetch('https://api.github.com/orgs/Lazy-And-Focused/repos', {
     method: 'GET',
     cache: 'no-cache',
     headers: {
       'Content-Type': 'application/json;charset=UTF-8',
     },
-  },
-)
-  .then((res) => res.json())
-  .catch(() => []);
-
+  })
+    .then((res) => res.json())
+    .catch(() => []);
+}
 const Projects = () => {
   const [tabs, setTabs] = useState<Tab[]>([]);
 
   useEffect(() => {
-    setTabs(
-      projects.map((project) => ({
-        id: project.id,
-        name: project.name,
-        favicon: '/images/logo.png',
-        element: project.description || 'У этого репозитория нет описания',
-      })),
-    );
+    async function fetcher() {
+      const projects = await getProjects();
+
+      setTabs(
+        projects.map((project) => ({
+          id: project.id,
+          name: project.name,
+          favicon: '/images/logo.png',
+          element: project.description || 'У этого репозитория нет описания',
+        })),
+      );
+    }
+
+    fetcher();
   }, []);
 
   return (

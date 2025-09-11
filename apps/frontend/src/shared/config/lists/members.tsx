@@ -1,10 +1,11 @@
-import { BaseMember, Member } from '../types';
-import { formatLinks } from '../utils';
+import type { BaseMember, Member } from '../../types';
+
+import { formatLinks } from '../../utils';
 
 /**
  * Массив с именами пользователей GitHub, которые состоят в команде LAF.
  */
-const originalTeam: BaseMember[] = [
+export const rawMembers: BaseMember[] = [
   {
     tag: 'fockusty',
     name: 'FOCKUSTY',
@@ -94,9 +95,7 @@ const originalTeam: BaseMember[] = [
   },
 ];
 
-const team: Member[] = originalTeam.map<Member>((p) => ({
+export const members: Member[] = rawMembers.map<Member>((p) => ({
   ...p,
   socials: p.socials ? formatLinks(p.socials) : [],
 }));
-
-export default team;

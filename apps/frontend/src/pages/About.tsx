@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { TeamMemberCard } from '../shared/components/team-member-card';
-import team from '../shared/config/list-members.ts';
+
+import { members } from '../shared/config/lists/members';
 
 const About = () => {
   return (
@@ -26,11 +27,11 @@ const About = () => {
           role='list'
           className='mx-auto grid w-full max-w-7xl grid-cols-1 justify-items-center gap-8 rounded-lg bg-base-content/5 p-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'
         >
-          {team
-            .filter((person) => !person.meta?.includes('leave'))
-            .map((person) => (
-              <li key={person.tag} className='flex h-max items-stretch'>
-                <TeamMemberCard member={person} type='full' />
+          {members
+            .filter((member) => !member.meta?.includes('leave'))
+            .map((member) => (
+              <li key={member.tag} className='flex h-max items-stretch'>
+                <TeamMemberCard member={member} type='full' />
               </li>
             ))}
         </ul>
