@@ -1,12 +1,13 @@
-import clsx from 'clsx';
 import { useEffect, useRef, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import GitHubIcon from '../assets/icons/brands/github';
-import ListIcon from '../assets/icons/list';
-import TelegramIcon from '../assets/icons/brands/telegram';
-import routes from '../config/routes';
 import useDeviceWidth from '../hooks/use-device-width';
-import ThemeSwitcher from './header/theme-switcher';
+
+import { Link, NavLink } from 'react-router-dom';
+import { GitHubIcon, TelegramIcon, ListIcon } from '../assets/icons';
+import { ThemeSwitcher } from './header/theme-switcher';
+
+import clsx from 'clsx';
+
+import routes from '../config/routes';
 
 /**
  * Шапка сайта

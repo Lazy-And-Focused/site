@@ -1,7 +1,10 @@
-import { clsx } from 'clsx';
-import { useState, useEffect, useRef } from 'react';
 import type { DetailedHTMLProps, HTMLAttributes } from 'react';
-import HeartBreakIcon from '../assets/icons/heart-break';
+
+import { useState, useEffect, useRef } from 'react';
+
+import { HeartBreakIcon } from '../assets/icons';
+
+import { clsx } from 'clsx';
 
 type CardAvatarProps = {
   src: string;

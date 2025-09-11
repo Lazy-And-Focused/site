@@ -1,4 +1,4 @@
-const WebsiteIcon = (props: React.SVGProps<SVGSVGElement>) => {
+export const WebsiteIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -13,4 +13,3 @@ const WebsiteIcon = (props: React.SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default WebsiteIcon;

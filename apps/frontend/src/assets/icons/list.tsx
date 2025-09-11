@@ -1,4 +1,4 @@
-const ListIcon = (props: React.SVGProps<SVGSVGElement>) => {
+export const ListIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -16,4 +16,3 @@ const ListIcon = (props: React.SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default ListIcon;

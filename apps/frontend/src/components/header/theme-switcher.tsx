@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useState, useEffect } from 'react';
 
-const ThemeSwitcher = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
+export const ThemeSwitcher = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
   const [matches, setMatches] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
   const [currentTheme, setCurrentTheme] = useState(
     localStorage.theme ?? (matches ? 'forest' : 'emerald'),

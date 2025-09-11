@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ListIcon from '../assets/icons/list';
+import { ListIcon } from '../assets/icons';
 
 export type Tab = { id: string | number; name: string; favicon?: string; element: React.ReactNode };
 

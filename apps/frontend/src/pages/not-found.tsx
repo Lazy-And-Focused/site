@@ -2,8 +2,7 @@
 import { MouseParallaxChild, MouseParallaxContainer } from 'react-parallax-mouse';
 // -----
 import { Link } from 'react-router-dom';
-import HeartBreakIcon from '../assets/icons/heart-break-icon';
-import ListIcon from '../assets/icons/list-icon';
+import { HeartBreakIcon, ListIcon } from '../assets/icons';
 
 const NotFound = () => {
   return (

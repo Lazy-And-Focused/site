@@ -1,8 +1,9 @@
+import type { Member } from '../types';
+
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import ListIcon from '../assets/icons/list';
-import WebsiteIcon from '../assets/icons/brands/website';
-import { Member } from '../types';
+
 import CardAvatar from './card-avatar';
+import { WebsiteIcon, ListIcon } from '../assets/icons';
 
 type HasPrimarySocialsType = {
   [key: string]: { 0: boolean; 1: string };

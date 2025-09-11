@@ -1,4 +1,4 @@
-const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => {
+export const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -13,4 +13,3 @@ const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default TikTokIcon;
