@@ -1,7 +1,7 @@
-import type { SocialLink } from '../types';
+import type { SocialLink } from '../../types';
 
-import listSocialLinks from '../config/list-social-links';
-import { WebsiteIcon } from '../assets/icons';
+import listSocialLinks from '../../config/list-social-links';
+import { WebsiteIcon } from '../components/ui/icons';
 
 function extractTextInBrackets(input: string): string | null {
   const regex = /\[([^\[\]]+)\]/;

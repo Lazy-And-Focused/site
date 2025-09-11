@@ -1,9 +1,9 @@
-import type { Member } from '../types';
+import type { Member } from '../../../types';
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
-import CardAvatar from './card-avatar';
-import { WebsiteIcon, ListIcon } from '../assets/icons';
+import { CardAvatar } from '../card-avatar';
+import { WebsiteIcon, ListIcon } from '../ui/icons';
 
 type HasPrimarySocialsType = {
   [key: string]: { 0: boolean; 1: string };
@@ -15,7 +15,7 @@ const HasPrimarySocials = createContext<HasPrimarySocialsType>(null);
  * Компонент, возвращающий карточку участника
  * @param {Member} member Объект с информацией об участнике команды
  */
-const TeamMemberCard = ({
+export const TeamMemberCard = ({
   member,
   type = 'default',
 }: {

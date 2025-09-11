@@ -1,4 +1,4 @@
-import { formatLinks } from '../utils';
+import { formatLinks } from '../shared/utils';
 
 /**
  * Ссылки социальны сетей команды.

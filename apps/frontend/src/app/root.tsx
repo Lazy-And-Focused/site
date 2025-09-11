@@ -1,8 +1,8 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Suspense, useEffect } from 'react';
 
-import Header from '../components/header';
-import Footer from '../components/footer';
+import { Header } from '../shared/components/header';
+import { Footer } from '../shared/components/footer';
 import Loading from '../pages/loading';
 
 /**

@@ -2,7 +2,7 @@ import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import { useState, useEffect, useRef } from 'react';
 
-import { HeartBreakIcon } from '../assets/icons';
+import { HeartBreakIcon } from '../ui/icons';
 
 import { clsx } from 'clsx';
 
@@ -19,7 +19,7 @@ type CardAvatarProps = {
  * @example
  * <CardAvatar src="/avatars/default.png" alt="Default avatar" />
  */
-const CardAvatar = ({
+export const CardAvatar = ({
   src,
   alt,
   className,
@@ -74,5 +74,3 @@ const CardAvatar = ({
     </div>
   );
 };
-
-export default CardAvatar;

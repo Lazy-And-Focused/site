@@ -1,18 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
-import useDeviceWidth from '../hooks/use-device-width';
+import useDeviceWidth from '../../hooks/use-device-width';
 
 import { Link, NavLink } from 'react-router-dom';
-import { GitHubIcon, TelegramIcon, ListIcon } from '../assets/icons';
-import { ThemeSwitcher } from './header/theme-switcher';
+import { GitHubIcon, TelegramIcon, ListIcon } from '../ui/icons';
+import { ThemeSwitcher } from './theme-switcher';
 
 import clsx from 'clsx';
 
-import routes from '../config/routes';
+import routes from '../../../config/routes';
 
 /**
  * Шапка сайта
  */
-const Header = () => {
+export const Header = () => {
   const [scrollY, setScrollY] = useState(0);
   const ww = useDeviceWidth();
 

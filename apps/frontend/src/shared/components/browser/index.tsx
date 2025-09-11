@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ListIcon } from '../assets/icons';
+import { ListIcon } from '../ui/icons';
 
 export type Tab = { id: string | number; name: string; favicon?: string; element: React.ReactNode };
 
@@ -12,7 +12,7 @@ export type Tab = { id: string | number; name: string; favicon?: string; element
  * @example <Browser title="Браузер" tabs={tabs} />
  * @example <Browser title="Браузер" tabs={tabs}>Заполнитель, если не выбрана вкладка</Browser>
  */
-const Browser = ({
+export const Browser = ({
   title,
   tabs,
   children,
