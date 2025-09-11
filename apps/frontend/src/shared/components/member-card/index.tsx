@@ -2,7 +2,7 @@ import type { Member } from '../../types';
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
-import { CardAvatar } from '../card-avatar';
+import { Avatar } from './avatar';
 import { WebsiteIcon, ListIcon } from '../ui/icons';
 
 type HasPrimarySocialsType = {
@@ -70,7 +70,7 @@ const DefaultVariant = ({ member, avatar }: { member: Member; avatar: string }) 
 
   return (
     <div className={`flex items-center gap-x-6 rounded bg-primary/15 p-2`}>
-      <CardAvatar src={avatar} alt={`${member.name}'s avatar`} className='aspect-square w-24' />
+      <Avatar src={avatar} alt={`${member.name}'s avatar`} className='aspect-square w-24' />
       <div className='mr-2 w-full text-end'>
         <h3 className='align-center flex flex-row items-center justify-end gap-x-2 text-base/7 font-semibold tracking-tight text-base-content'>
           {member.name}
@@ -124,7 +124,7 @@ const FullVariant = ({ member, avatar }: { member: Member; avatar: string }) => 
         </h3>
 
         <div className={`relative px-4 ${!hasSocials ? 'mb-12' : ''}`}>
-          <CardAvatar
+          <Avatar
             src={avatar}
             alt={`${member.name}'s avatar`}
             className='aspect-square h-auto w-full'

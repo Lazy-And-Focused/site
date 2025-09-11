@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { TeamMemberCard } from '../shared/components/team-member-card';
+import { TeamMemberCard } from '../shared/components/member-card/index.tsx';
 
 import teamSocialLinks from '../shared/config/team-social-links.ts';
 import { members } from '../shared/config/lists/members';

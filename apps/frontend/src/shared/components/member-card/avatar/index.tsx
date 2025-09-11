@@ -2,11 +2,11 @@ import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import { useState, useEffect, useRef } from 'react';
 
-import { HeartBreakIcon } from '../ui/icons';
+import { HeartBreakIcon } from '../../ui/icons';
 
 import { clsx } from 'clsx';
 
-type CardAvatarProps = {
+type Props = {
   src: string;
   alt: string;
 };
@@ -19,12 +19,12 @@ type CardAvatarProps = {
  * @example
  * <CardAvatar src="/avatars/default.png" alt="Default avatar" />
  */
-export const CardAvatar = ({
+export const Avatar = ({
   src,
   alt,
   className,
   ...props
-}: CardAvatarProps & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
+}: Props & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
   const [isLoading, setLoading] = useState(true);
   const [isError, setError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
