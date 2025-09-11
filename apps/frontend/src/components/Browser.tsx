@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ListIcon from '../assets/icons/ListIcon';
 
-type Tab = { name: string; favicon?: string; element: React.ReactNode };
+export type Tab = { id: string | number; name: string; favicon?: string; element: React.ReactNode };
 
 /**
  * Компонент в стилистике web-обозревателя
@@ -53,7 +53,7 @@ const Browser = ({
               </button>
               {tabs.map((t) => (
                 <button
-                  key={t.name}
+                  key={t.id || t.name}
                   className={`relative flex w-full min-w-max items-center gap-4 overflow-hidden text-ellipsis text-nowrap px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-800 ${
                     openTab === t ? 'bg-gray-100 dark:bg-gray-800' : ''
                   }`}
