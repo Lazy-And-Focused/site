@@ -1,7 +1,13 @@
+import type { BrowserTab } from './types';
+
 import { useState } from 'react';
 import { ListIcon } from '../ui/icons';
 
-export type Tab = { id: string | number; name: string; favicon?: string; element: React.ReactNode };
+type Props = {
+  title?: string;
+  tabs: BrowserTab[];
+  children?: React.ReactNode;
+};
 
 /**
  * Компонент в стилистике web-обозревателя
@@ -12,16 +18,8 @@ export type Tab = { id: string | number; name: string; favicon?: string; element
  * @example <Browser title="Браузер" tabs={tabs} />
  * @example <Browser title="Браузер" tabs={tabs}>Заполнитель, если не выбрана вкладка</Browser>
  */
-export const Browser = ({
-  title,
-  tabs,
-  children,
-}: {
-  title?: string;
-  tabs: Tab[];
-  children?: React.ReactNode;
-}) => {
-  const [openTab, setOpenTab] = useState<Tab | null>(null);
+export const Browser = ({ title, tabs, children }: Props) => {
+  const [openTab, setOpenTab] = useState<BrowserTab | null>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (

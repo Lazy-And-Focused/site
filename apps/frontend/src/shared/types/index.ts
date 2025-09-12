@@ -5,20 +5,6 @@ export type ConfigRoute = {
   children?: ConfigRoute[];
 };
 
-export type BaseMember = {
-  tag: string;
-  name: string;
-  roles: string[];
-  avatar?: string;
-  description?: string;
-  socials?: string[];
-  meta?: string[];
-};
-
-export type Member = Omit<BaseMember, 'socials'> & {
-  socials: SocialLink[];
-};
-
 export type SocialLink = {
   href: string;
   name: string;

@@ -1,4 +1,4 @@
-import type { BaseMember, Member } from '../../types';
+import type { BaseMember, Member } from '../../../entities/member';
 
 import { formatLinks } from '../../utils';
 

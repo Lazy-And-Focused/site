@@ -1,4 +1,4 @@
-import type { Tab } from '../shared/components/browser';
+import type { BrowserTab } from '../shared/components/browser/types';
 
 import { useEffect, useState } from 'react';
 
@@ -23,7 +23,7 @@ function getProjects(): Promise<GitHubRepository[]> {
     .catch(() => []);
 }
 const Projects = () => {
-  const [tabs, setTabs] = useState<Tab[]>([]);
+  const [tabs, setTabs] = useState<BrowserTab[]>([]);
 
   useEffect(() => {
     async function fetcher() {
