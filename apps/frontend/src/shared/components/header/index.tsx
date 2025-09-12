@@ -1,18 +1,20 @@
-import { useEffect, useRef, useState } from 'react';
+import type { HeaderProps } from './types';
+
+import { useEffect, useState } from 'react';
 import useDeviceWidth from '../../hooks/use-device-width';
 
-import { Link, NavLink } from 'react-router-dom';
-import { GitHubIcon, TelegramIcon, ListIcon } from '../ui/icons';
+import { Link } from 'react-router-dom';
+import { GitHubIcon, TelegramIcon } from '../ui/icons';
 import { ThemeSwitcher } from './theme-switcher';
 
 import clsx from 'clsx';
-
-type Props = { links: { name: string; path: string }[] };
+import { Navigation } from './navigation';
+import { MobileHeader } from './mobile';
 
 /**
  * Шапка сайта
  */
-export const Header = ({ links }: Props) => {
+export const Header = (props: HeaderProps) => {
   const [scrollY, setScrollY] = useState(0);
   const ww = useDeviceWidth();
 
@@ -25,7 +27,7 @@ export const Header = ({ links }: Props) => {
   }, []);
 
   if (ww <= 690) {
-    return <MobileHeader links={links} />;
+    return <MobileHeader {...props} />;
   }
 
   return (
@@ -51,9 +53,9 @@ export const Header = ({ links }: Props) => {
             />
           </Link>
         </div>
-        <div className='mx-auto flex flex-1 justify-center gap-x-4 sm:gap-x-8 lg:gap-x-12'>
-          <PagesLinks links={links} />
-        </div>
+
+        <Navigation links={props.links} />
+
         <div className='flex flex-row flex-wrap justify-center gap-4 text-sm font-semibold text-base-content sm:flex-1 sm:justify-end'>
           <a
             href='https://github.com/Lazy-And-Focused'
@@ -79,74 +81,3 @@ export const Header = ({ links }: Props) => {
     </header>
   );
 };
-
-const MobileHeader = ({ links }: Props) => {
-  const modalRef = useRef<HTMLDialogElement>(null);
-
-  const showModal = () => {
-    if (modalRef && modalRef.current) {
-      modalRef.current.showModal();
-    } else return;
-  };
-
-  const closeModal = () => {
-    if (modalRef && modalRef.current) {
-      modalRef.current.close();
-    } else return;
-  };
-
-  return (
-    <>
-      <header className={'bg-base-100/2 fixed right-5 top-5 z-50'}>
-        <button
-          className='btn-circle btn-md flex h-12 w-12 flex-col items-center justify-center border-2 border-primary/75 bg-transparent p-4 text-base-content backdrop-blur-md transition duration-500 ease-in-out'
-          onClick={showModal}
-        >
-          <ListIcon />
-        </button>
-
-        <dialog ref={modalRef} className='modal'>
-          <div className='modal-box flex flex-col gap-4'>
-            <PagesLinks links={links} onClick={closeModal} />
-
-            <div className='modal-action grid grid-cols-2 gap-4'>
-              <ThemeSwitcher className='btn btn-ghost h-5 p-2' />
-
-              <form method='dialog' className='w-full'>
-                <button className='btn btn-ghost w-full'>Закрыть</button>
-              </form>
-            </div>
-          </div>
-        </dialog>
-      </header>
-    </>
-  );
-};
-
-type PagesLinksProps = { links: { name: string; path: string }[]; onClick?: () => void };
-
-const PagesLinks = ({ links, onClick }: PagesLinksProps) => {
-  const ww = useDeviceWidth();
-  const isMobile = ww <= 690;
-
-  return links.map((r) => (
-    <NavLink
-      key={r.path}
-      to={r.path}
-      className={({ isActive, isPending }) =>
-        clsx(
-          'btn btn-ghost min-h-8 text-nowrap rounded font-medium text-base-content transition-colors sm:text-sm',
-          isActive && 'bg-primary/50',
-          isActive && !isMobile && 'shadow',
-          isPending && 'animate-pulse',
-          isMobile ? 'content-center p-2 text-base' : 'h-8 px-2 py-1 text-xs',
-        )
-      }
-      onClick={onClick}
-    >
-      {r.name}
-    </NavLink>
-  ));
-};
-
-export default Header;
