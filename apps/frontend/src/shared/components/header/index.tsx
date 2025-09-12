@@ -7,12 +7,12 @@ import { ThemeSwitcher } from './theme-switcher';
 
 import clsx from 'clsx';
 
-import { routes } from '../../../app/routes';
+type Props = { links: { name: string; path: string }[] };
 
 /**
  * Шапка сайта
  */
-export const Header = () => {
+export const Header = ({ links }: Props) => {
   const [scrollY, setScrollY] = useState(0);
   const ww = useDeviceWidth();
 
@@ -25,7 +25,7 @@ export const Header = () => {
   }, []);
 
   if (ww <= 690) {
-    return <MobileHeader />;
+    return <MobileHeader links={links} />;
   }
 
   return (
@@ -52,7 +52,7 @@ export const Header = () => {
           </Link>
         </div>
         <div className='mx-auto flex flex-1 justify-center gap-x-4 sm:gap-x-8 lg:gap-x-12'>
-          <PagesLinks />
+          <PagesLinks links={links} />
         </div>
         <div className='flex flex-row flex-wrap justify-center gap-4 text-sm font-semibold text-base-content sm:flex-1 sm:justify-end'>
           <a
@@ -80,7 +80,7 @@ export const Header = () => {
   );
 };
 
-const MobileHeader = () => {
+const MobileHeader = ({ links }: Props) => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   const showModal = () => {
@@ -107,21 +107,7 @@ const MobileHeader = () => {
 
         <dialog ref={modalRef} className='modal'>
           <div className='modal-box flex flex-col gap-4'>
-            <PagesLinks onClick={closeModal} />
-
-            <NavLink
-              to='/links'
-              className={({ isActive, isPending }) =>
-                clsx(
-                  'btn btn-ghost min-h-8 text-nowrap rounded px-2 py-1 font-medium text-base-content transition-colors',
-                  isActive && 'bg-primary/50 shadow',
-                  isPending && 'animate-pulse',
-                )
-              }
-              onClick={closeModal}
-            >
-              Ссылки
-            </NavLink>
+            <PagesLinks links={links} onClick={closeModal} />
 
             <div className='modal-action grid grid-cols-2 gap-4'>
               <ThemeSwitcher className='btn btn-ghost h-5 p-2' />
@@ -137,11 +123,13 @@ const MobileHeader = () => {
   );
 };
 
-const PagesLinks = ({ onClick }: { onClick?: () => void }) => {
+type PagesLinksProps = { links: { name: string; path: string }[]; onClick?: () => void };
+
+const PagesLinks = ({ links, onClick }: PagesLinksProps) => {
   const ww = useDeviceWidth();
   const isMobile = ww <= 690;
 
-  return routes[0].children?.slice(0, 3).map((r) => (
+  return links.map((r) => (
     <NavLink
       key={r.path}
       to={r.path}
@@ -151,7 +139,7 @@ const PagesLinks = ({ onClick }: { onClick?: () => void }) => {
           isActive && 'bg-primary/50',
           isActive && !isMobile && 'shadow',
           isPending && 'animate-pulse',
-          isMobile ? 'p-2 text-base' : 'h-8 px-2 py-1 text-xs',
+          isMobile ? 'content-center p-2 text-base' : 'h-8 px-2 py-1 text-xs',
         )
       }
       onClick={onClick}

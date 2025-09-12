@@ -5,6 +5,12 @@ import { Header } from '../shared/components/header';
 import { Footer } from '../shared/components/footer';
 import Loading from '../pages/loading';
 
+const HEADER_LINKS = [
+  { name: 'Главная', path: '/' },
+  { name: 'Проекты', path: 'projects' },
+  { name: 'О нас', path: 'about' },
+];
+
 /**
  * Корневой компонент приложения
  */
@@ -13,7 +19,7 @@ export const App = () => {
     <>
       <ScrollToTop />
       <div className='base-100 base-content h-full min-h-screen'>
-        <Header />
+        <Header links={HEADER_LINKS} />
         <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>
