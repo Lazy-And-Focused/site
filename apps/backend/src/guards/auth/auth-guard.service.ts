@@ -1,48 +1,24 @@
 import type { Request } from "express";
-import type { Auth } from "types";
 
-import Hash from "services/hash.service";
-
-import authErrors from "src/errors/guards/auth.errors";
+import env from "@env";
 
 export class Service {
   public static async validateRequest(req: Request) {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { successed, id, token, profile_id } = Hash.parse(req);
-
-    if (!successed) {
-      console.log(authErrors.HASH_PARSE);
-      return false;
+    try {
+      const response = await fetch(env.AUTH_SERVICE_URL + "/api/guard/auth", {
+        method: "GET",
+        headers: Object.keys(req.headers).map(key => [key, JSON.stringify(req.headers[key])])
+      });
+  
+      if (response.status !== 200) return false;
+  
+      const [ successed ] = await response.json();
+  
+      return successed;
+    } catch (error) {
+      console.error(error);
+      return false;      
     }
-
-    const findedUser = {} as Auth;
-    // const findedUser = await auth.findOne({ id: id });
-
-    if (!findedUser) {
-      console.log(authErrors.USER_NOT_FOUND);
-      return false;
-    }
-
-    if (findedUser.profile_id !== profile_id) {
-      console.log(authErrors.PROFILE_ID_ERROR);
-      return false;
-    }
-
-    if (token !== new Hash().execute(findedUser.access_token)) {
-      console.log(authErrors.TOKEN_ERROR);
-      return false;
-    }
-
-    const profileUser = {};
-    // const profileUser = await users.findOne({ id: findedUser.profile_id });
-
-    if (!profileUser) {
-      console.log(authErrors.PROFILE_NOT_FOUND);
-      return false;
-    }
-
-    console.log("User access granted");
-    return true;
   }
 }
 
