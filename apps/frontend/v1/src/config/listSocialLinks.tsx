@@ -22,6 +22,11 @@ const listSocialLinks: SocialLink[] = [
     icon: WebsiteIcon,
   },
   {
+    href: '(docs) ',
+    name: 'Документация',
+    icon: WebsiteIcon,
+  },
+  {
     href: 'https://github.com/',
     name: 'GitHub',
     icon: GitHubIcon,
