@@ -1,6 +1,6 @@
-import type { BaseMember, Member } from '../../../entities/member';
+import type { BaseMember, Member } from '@/entities/member';
 
-import { formatLinks } from '../../utils';
+import { formatLinks } from '@/shared/utils';
 
 /**
  * Массив с именами пользователей GitHub, которые состоят в команде LAF.

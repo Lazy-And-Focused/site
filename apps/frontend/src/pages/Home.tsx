@@ -1,7 +1,7 @@
-import { TeamMemberCard } from '../shared/components/member-card';
+import { TeamMemberCard } from '@/shared/components/member-card';
 import { Link } from 'react-router-dom';
 
-import { members } from '../shared/config/lists/members';
+import { members } from '@/shared/config/lists/members';
 
 const Home = () => {
   return (

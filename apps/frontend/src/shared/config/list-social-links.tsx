@@ -1,4 +1,4 @@
-import type { SocialLink } from '../types';
+import type { SocialLink } from '@/shared/types';
 
 import {
   DiscordIcon,

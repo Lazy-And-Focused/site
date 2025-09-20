@@ -126,6 +126,9 @@ importers:
       react-router-dom:
         specifier: ^6.30.1
         version: 6.30.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      vite-tsconfig-paths:
+        specifier: ^5.1.4
+        version: 5.1.4(typescript@5.6.3)(vite@5.4.19(@types/node@22.15.29)(terser@5.40.0))
     devDependencies:
       '@eslint/js':
         specifier: ^9.27.0
@@ -2358,6 +2361,9 @@ packages:
     resolution: {integrity: sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==}
     engines: {node: '>=10'}
 
+  globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
+
   gonzales-pe@4.3.0:
     resolution: {integrity: sha512-otgSPpUmdWJ43VXyiNgEYE4luzHCL2pz4wQ0OnDluC6Eg4Ko3Vexy/SrSynglw/eR+OhkzmqFCZa/OFa/RgAOQ==}
     engines: {node: '>=0.6.0'}
@@ -3946,6 +3952,16 @@ packages:
     engines: {node: '>=16.20.2'}
     hasBin: true
 
+  tsconfck@3.1.6:
+    resolution: {integrity: sha512-ks6Vjr/jEw0P1gmOVwutM3B7fWxoWBL2KRDb1JfqGVawBmO5UsvmWOQFGHBPl5yxYz4eERr19E6L7NMv+Fej4w==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    peerDependencies:
+      typescript: ^5.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   tsconfig-paths@4.2.0:
     resolution: {integrity: sha512-NoZ4roiN7LnbKn9QqE1amc9DJfzvZXxF4xDavcOWt1BPkdx+m+0gJuPM+S0vCe7zTJMYUP0R8pO2XMr+Y8oLIg==}
     engines: {node: '>=6'}
@@ -4052,6 +4068,14 @@ packages:
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+
+  vite-tsconfig-paths@5.1.4:
+    resolution: {integrity: sha512-cYj0LRuLV2c2sMqhqhGpaO3LretdtMn/BVX4cPLanIZuwwrkVl+lK84E/miEXkCHWXuq65rhNN4rXsBcOB3S4w==}
+    peerDependencies:
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
 
   vite@5.4.19:
     resolution: {integrity: sha512-qO3aKv3HoQC8QKiNSTuUM1l9o/XX3+c+VTgLHbJWHZGeTPVAg2XwazI9UWzoxjIJCGCV2zU60uqMzjeLZuULqA==}
@@ -5301,10 +5325,10 @@ snapshots:
       '@types/node': 22.15.29
     optional: true
 
-  '@typescript-eslint/eslint-plugin@8.33.0(@typescript-eslint/parser@8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3)':
+  '@typescript-eslint/eslint-plugin@8.33.0(@typescript-eslint/parser@8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3))(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.1
-      '@typescript-eslint/parser': 8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.8.3)
+      '@typescript-eslint/parser': 8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3)
       '@typescript-eslint/scope-manager': 8.33.0
       '@typescript-eslint/type-utils': 8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3)
       '@typescript-eslint/utils': 8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3)
@@ -6653,6 +6677,8 @@ snapshots:
       ignore: 5.3.2
       merge2: 1.4.1
       slash: 3.0.0
+
+  globrex@0.1.2: {}
 
   gonzales-pe@4.3.0:
     dependencies:
@@ -8398,6 +8424,10 @@ snapshots:
       normalize-path: 3.0.0
       plimit-lit: 1.6.1
 
+  tsconfck@3.1.6(typescript@5.6.3):
+    optionalDependencies:
+      typescript: 5.6.3
+
   tsconfig-paths@4.2.0:
     dependencies:
       json5: 2.2.3
@@ -8424,7 +8454,7 @@ snapshots:
 
   typescript-eslint@8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3):
     dependencies:
-      '@typescript-eslint/eslint-plugin': 8.33.0(@typescript-eslint/parser@8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3)
+      '@typescript-eslint/eslint-plugin': 8.33.0(@typescript-eslint/parser@8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3))(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3)
       '@typescript-eslint/parser': 8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3)
       '@typescript-eslint/utils': 8.33.0(eslint@9.28.0(jiti@1.21.7))(typescript@5.6.3)
       eslint: 9.28.0(jiti@1.21.7)
@@ -8494,6 +8524,17 @@ snapshots:
       spdx-expression-parse: 3.0.1
 
   vary@1.1.2: {}
+
+  vite-tsconfig-paths@5.1.4(typescript@5.6.3)(vite@5.4.19(@types/node@22.15.29)(terser@5.40.0)):
+    dependencies:
+      debug: 4.4.1(supports-color@5.5.0)
+      globrex: 0.1.2
+      tsconfck: 3.1.6(typescript@5.6.3)
+    optionalDependencies:
+      vite: 5.4.19(@types/node@22.15.29)(terser@5.40.0)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   vite@5.4.19(@types/node@22.15.29)(terser@5.40.0):
     dependencies:

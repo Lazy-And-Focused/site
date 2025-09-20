@@ -1,16 +1,21 @@
-import type { ConfigRoute } from '../../shared/types';
-
 import { createBrowserRouter } from 'react-router-dom';
 
 import { lazy } from 'react';
 
-import { App } from '../app';
+import { App } from '@/app/app';
 
-const Home = lazy(() => import('../../pages/home'));
-const About = lazy(() => import('../../pages/about'));
-const Projects = lazy(() => import('../../pages/projects'));
-const NotFound = lazy(() => import('../../pages/not-found'));
-const Links = lazy(() => import('../../pages/links'));
+const Home = lazy(() => import('@/pages/home'));
+const About = lazy(() => import('@/pages/about'));
+const Projects = lazy(() => import('@/pages/projects'));
+const NotFound = lazy(() => import('@/pages/not-found'));
+const Links = lazy(() => import('@/pages/links'));
+
+export type ConfigRoute = {
+  name?: string;
+  path: string;
+  element: React.ReactNode;
+  children?: ConfigRoute[];
+};
 
 /**
  * Все пути к страницам приложения (сайта)

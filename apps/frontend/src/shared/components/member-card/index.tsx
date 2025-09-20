@@ -1,9 +1,9 @@
-import type { Member } from '../../../entities/member';
+import type { Member } from '@/entities/member';
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 import { Avatar } from './avatar';
-import { WebsiteIcon, ListIcon } from '../ui/icons';
+import { WebsiteIcon, ListIcon } from '@/icons';
 
 type HasPrimarySocialsType = {
   [key: string]: { 0: boolean; 1: string };

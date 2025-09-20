@@ -2,7 +2,7 @@ import type { HeaderProps } from './types';
 
 import { useRef } from 'react';
 
-import { ListIcon } from '../ui/icons';
+import { ListIcon } from '@/icons';
 import { ThemeSwitcher } from './theme-switcher';
 import { Navigation } from './navigation';
 

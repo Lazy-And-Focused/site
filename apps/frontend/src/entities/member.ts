@@ -1,4 +1,4 @@
-import type { SocialLink } from '../shared/types';
+import type { SocialLink } from '@/shared/types';
 
 export type BaseMember = {
   tag: string;

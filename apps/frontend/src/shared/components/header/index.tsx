@@ -1,10 +1,10 @@
 import type { HeaderProps } from './types';
 
 import { useEffect, useState } from 'react';
-import useDeviceWidth from '../../hooks/use-device-width';
+import useDeviceWidth from '@/shared/hooks/use-device-width';
 
 import { Link } from 'react-router-dom';
-import { GitHubIcon, TelegramIcon } from '../ui/icons';
+import { GitHubIcon, TelegramIcon } from '@/icons';
 import { ThemeSwitcher } from './theme-switcher';
 
 import clsx from 'clsx';

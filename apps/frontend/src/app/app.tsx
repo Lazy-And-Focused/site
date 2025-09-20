@@ -1,15 +1,10 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Suspense, useEffect } from 'react';
 
-import { Header } from '../shared/components/header';
-import { Footer } from '../shared/components/footer';
-import Loading from '../pages/loading';
-
-const HEADER_LINKS = [
-  { name: 'Главная', path: '/' },
-  { name: 'Проекты', path: 'projects' },
-  { name: 'О нас', path: 'about' },
-];
+import { Header } from '@/shared/components/header';
+import { Footer } from '@/shared/components/footer';
+import Loading from '@/pages/loading';
+import { HEADER_LINKS } from './constants';
 
 /**
  * Корневой компонент приложения

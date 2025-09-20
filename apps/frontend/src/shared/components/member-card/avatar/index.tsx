@@ -2,7 +2,7 @@ import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import { useState, useEffect, useRef } from 'react';
 
-import { HeartBreakIcon } from '../../ui/icons';
+import { HeartBreakIcon } from '@/icons';
 
 import { clsx } from 'clsx';
 

@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -7,17 +8,15 @@ export default defineConfig({
     port: 3000,
     warmup: {
       clientFiles: [
-        './src/components/Header.tsx',
-        './src/components/Footer.tsx',
+        './src/components/header.tsx',
+        './src/components/footer.tsx',
 
-        './src/hooks/useDeviceWidth.ts',
+        './src/shared/ui/icons/index.tsx',
 
-        './src/assets/icons/*.tsx',
-
-        './src/config/*.ts',
-        './src/utils/*.ts',
+        './src/shared/config/*.ts',
+        './src/shared/utils/*.ts',
       ],
     },
   },
-  plugins: [react()],
+  plugins: [react(), tsconfigPaths()],
 });

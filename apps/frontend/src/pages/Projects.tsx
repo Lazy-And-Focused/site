@@ -1,8 +1,8 @@
-import type { BrowserTab } from '../shared/components/browser/types';
+import type { BrowserTab } from '@/shared/components/browser/types';
 
 import { useEffect, useState } from 'react';
 
-import { Browser } from '../shared/components/browser';
+import { Browser } from '@/shared/components/browser';
 
 type GitHubRepository = {
   id: string;
