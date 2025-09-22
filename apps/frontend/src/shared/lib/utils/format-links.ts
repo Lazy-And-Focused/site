@@ -1,6 +1,6 @@
 import type { SocialLink } from '@/shared/types';
 
-import listSocialLinks from '@/shared/config/list-social-links';
+import { socialLinks } from '@/shared/config/lists/social-links';
 import { WebsiteIcon } from '@/shared/components/ui/icons';
 
 function extractTextInBrackets(input: string): string | null {
@@ -16,7 +16,7 @@ export const formatLinks = (links: string[]): SocialLink[] => {
   const special = ['(personal)', 'https://github.com/'];
   return links
     .map((l, i) => {
-      const link = listSocialLinks.find((nl) => l.startsWith(nl.href));
+      const link = socialLinks.find((nl) => l.startsWith(nl.href));
       const customName = extractTextInBrackets(l);
 
       return {

@@ -12,12 +12,12 @@ import {
   VKIcon,
   WebsiteIcon,
   YouTubeIcon,
-} from '../components/ui/icons';
+} from '@/icons';
 
 /**
  * Массив из объектов типа SocialLink. Каждый элемент содержит href (адрес сервиса), name (имя сервиса) и icon (иконка, React-компонент)
  */
-export const listSocialLinks: SocialLink[] = [
+export const socialLinks: SocialLink[] = [
   {
     href: '(personal) ',
     name: 'Персональный сайт',
@@ -100,4 +100,4 @@ export const listSocialLinks: SocialLink[] = [
     icon: YouTubeIcon,
   },
 ];
-export default listSocialLinks;
+export default socialLinks;
