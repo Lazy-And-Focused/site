@@ -1,28 +1,35 @@
 {
   "compilerOptions": {
-    "target": "ES2024",
-    "module": "commonjs",
-    "rootDir": "./",
-    "outDir": "./dist",
-    "removeComments": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolvePackageJsonExports": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2024",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
     "skipLibCheck": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "noFallthroughCasesInSwitch": false,
     "paths": {
-      "env": ["./src/services/env.ts"],
+      "@env": ["./src/services/env.service"],
       "services/*": ["./src/services/*"],
-      "database/*": ["./src/database/*"],
-      "models/*": ["./src/database/models/*"],
-      "types/*": ["./src/types/*"],
-      "routes": ["./src/routes"],
-      "telegram": ["./src/telegram"],
-      "api": ["./src/api"]
+      "decorators/*": ["./src/decorators/*"],
+      "guards/*": ["./src/guards/*"],
+      "types": ["./src/types"],
+      "types/*": ["./src/types/*"]
     }
   },
   "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "dist"],
-  "ts-node": {
-    "require": ["tsconfig-paths/register"]
-  }
+  "exclude": ["node_modules", "dist", "bad-fockarch"]
 }

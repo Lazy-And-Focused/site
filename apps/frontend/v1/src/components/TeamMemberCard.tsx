@@ -117,7 +117,7 @@ const DefaultVariant = ({
                 </a>
               ))}
         </h3>
-        <p className='text-sm/6 font-semibold text-primary/75'>{member.role}</p>
+        <p className='text-sm/6 font-semibold text-primary/75'>{member.roles.join(', ')}</p>
       </div>
     </div>
   );
@@ -137,7 +137,7 @@ const FullVariant = ({
     <div className='relative w-full max-w-md rounded-md bg-primary/15 px-2 py-4 text-center'>
       {/* HEADER */}
       <p className='absolute left-0 right-0 top-0 rounded-t-md border-2 border-primary/20 border-b-primary/60 bg-primary/10 px-1 py-2 text-xs font-semibold text-primary/85'>
-        {member.role}
+        {member.roles.join(', ')}
       </p>
 
       {/* FOOTER */}
@@ -224,11 +224,13 @@ const FullVariant = ({
           </div>
         )}
 
-        <div className='w-full text-pretty rounded border-2 border-primary/10 bg-primary/20 p-2 text-start indent-2 text-sm font-medium text-base-content/90'>
-          {member.description.split('\n').map((p) => (
-            <p key={p}>{p}</p>
-          ))}
-        </div>
+        {member.description && member.description !== '' && (
+          <div className='w-full text-pretty rounded border-2 border-primary/10 bg-primary/20 p-2 text-start indent-2 text-sm font-medium text-base-content/90'>
+            {member.description.split('\n').map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

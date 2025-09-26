@@ -2,6 +2,12 @@ import mongoose, { Schema } from "mongoose";
 import { INews } from "types/news.type";
 
 const schema = new Schema<INews>({
+  id: {
+    type: mongoose.SchemaTypes.String,
+    required: true,
+    unique: true
+  },
+
   name: {
     type: mongoose.SchemaTypes.String,
     required: true,

@@ -1,8 +1,8 @@
 import { Document, ObjectId } from "mongoose";
 
-import { KEYS as MEMBER_KEYS, IMember } from "types/member.type";
-import { KEYS as PROJECT_KEYS, IProject } from "types/project.type";
-import { KEYS as NEWS_KEYS, INews } from "types/news.type";
+import { MEMBER_KEYS, IMember } from "types/members.type";
+import { PROJECT_KEYS, IProject } from "types/project.type";
+import { NEWS_KEYS, INews } from "types/news.type";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const MODELS = ["members", "projects", "news"] as const;

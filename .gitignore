@@ -1,5 +1,6 @@
 # Other
 pnpm-lock.yaml
+old-backend/
 
 # IDE - VSCode
 .vscode/*
@@ -10,6 +11,7 @@ pnpm-lock.yaml
 
 # dotenv environment variable files
 .env
+.env.*
 .env.development.local
 .env.test.local
 .env.production.local

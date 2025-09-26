@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-let status: "non connecting" | "connected" = "non connecting";
+let status: "non connected" | "connected" = "non connected";
 
 const connect = (
   url: string,
