@@ -3,7 +3,7 @@ import { TeamMemberCard } from '@/shared/components/member-card';
 
 import { members } from '@/shared/config/lists/members';
 
-const About = () => {
+const AboutPage = () => {
   return (
     <main className='mx-auto h-full max-w-7xl'>
       <section className='flex h-2/5 min-h-max w-full flex-col items-center justify-center rounded-b-xl bg-primary/25 px-6 pt-14 shadow-xl lg:px-8'>
@@ -126,4 +126,4 @@ const About = () => {
     </main>
   );
 };
-export default About;
+export default AboutPage;

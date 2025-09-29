@@ -3,7 +3,9 @@ import { Suspense, useEffect } from 'react';
 
 import { Header } from '@/shared/components/header';
 import { Footer } from '@/shared/components/footer';
+
 import Loading from '@/pages/loading';
+
 import { HEADER_LINKS } from './constants';
 
 /**
@@ -12,7 +14,7 @@ import { HEADER_LINKS } from './constants';
 export const App = () => {
   return (
     <>
-      <ScrollToTop />
+      <ScrollToStartByUrlChanges />
       <div className='base-100 base-content h-full min-h-screen'>
         <Header links={HEADER_LINKS} />
         <Suspense fallback={<Loading />}>
@@ -24,7 +26,7 @@ export const App = () => {
   );
 };
 
-const ScrollToTop = () => {
+const ScrollToStartByUrlChanges = () => {
   const location = useLocation();
 
   useEffect(() => {

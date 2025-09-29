@@ -4,7 +4,7 @@ import { MouseParallaxChild, MouseParallaxContainer } from 'react-parallax-mouse
 import { Link } from 'react-router-dom';
 import { HeartBreakIcon, ListIcon } from '@/shared/components/ui/icons';
 
-const NotFound = () => {
+const NotFoundPage = () => {
   return (
     <main className='h-full max-h-screen w-full overflow-clip bg-[#418d76] bg-[url("/images/backgrounds/pink.png")] bg-cover bg-center bg-no-repeat dark:bg-[#205848] dark:bg-none'>
       <MouseParallaxContainer
@@ -54,4 +54,4 @@ const NotFound = () => {
     </main>
   );
 };
-export default NotFound;
+export default NotFoundPage;

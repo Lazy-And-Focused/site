@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { members } from '@/shared/config/lists/members';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <main className='h-full w-full'>
       <section className='flex h-screen w-full flex-col items-center justify-center bg-[#418d76] bg-[url("/images/backgrounds/green.png")] bg-cover bg-center bg-no-repeat px-6 pt-14 shadow-xl dark:bg-[#205848] dark:bg-none lg:px-8'>
@@ -77,9 +77,7 @@ const Home = () => {
               .filter((member) => !member.meta?.includes('leave'))
               .map((member) => (
                 <li key={member.tag}>
-                  <div>
-                    <TeamMemberCard member={member} />
-                  </div>
+                  <TeamMemberCard member={member} />
                 </li>
               ))}
           </ul>
@@ -88,4 +86,4 @@ const Home = () => {
     </main>
   );
 };
-export default Home;
+export default HomePage;

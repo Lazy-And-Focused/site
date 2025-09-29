@@ -16,7 +16,7 @@ import { MobileHeader } from './mobile';
  */
 export const Header = (props: HeaderProps) => {
   const [scrollY, setScrollY] = useState(0);
-  const ww = useDeviceWidth();
+  const deviceWidth = useDeviceWidth();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -26,7 +26,7 @@ export const Header = (props: HeaderProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (ww <= 690) {
+  if (deviceWidth <= 690) {
     return <MobileHeader {...props} />;
   }
 

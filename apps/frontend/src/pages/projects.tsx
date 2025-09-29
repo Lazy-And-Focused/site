@@ -22,7 +22,8 @@ function getProjects(): Promise<GitHubRepository[]> {
     .then((res) => res.json())
     .catch(() => []);
 }
-const Projects = () => {
+
+const ProjectsPage = () => {
   const [tabs, setTabs] = useState<BrowserTab[]>([]);
 
   useEffect(() => {
@@ -58,4 +59,4 @@ const Projects = () => {
     </main>
   );
 };
-export default Projects;
+export default ProjectsPage;

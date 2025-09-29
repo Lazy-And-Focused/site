@@ -5,7 +5,7 @@ import { TeamMemberCard } from '@/shared/components/member-card/index.tsx';
 import { teamSocialLinks } from '@/shared/config/team-social-links.ts';
 import { members } from '@/shared/config/lists/members.tsx';
 
-const Links = () => {
+const LinksPage = () => {
   const copyButtonRef = useRef<HTMLButtonElement>(null);
 
   const copyLinkPage = () => {
@@ -92,4 +92,4 @@ const Links = () => {
     </main>
   );
 };
-export default Links;
+export default LinksPage;

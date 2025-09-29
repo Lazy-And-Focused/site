@@ -9,8 +9,8 @@ import clsx from 'clsx';
 type Props = { links: HeaderNavLink[]; onClick?: () => void };
 
 export const Navigation = ({ links, onClick }: Props) => {
-  const ww = useDeviceWidth();
-  const isMobile = ww <= 690;
+  const deviceWidth = useDeviceWidth();
+  const isMobile = deviceWidth <= 690;
 
   if (isMobile) {
     return links.map((r) => (

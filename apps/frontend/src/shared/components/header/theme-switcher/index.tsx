@@ -3,27 +3,29 @@ import { useEffect, useState } from 'react';
 import { SystemThemeIcon, LightThemeIcon, DarkThemeIcon } from './icons';
 
 export const ThemeSwitcher = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
-  const [matches, setMatches] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const [mediaMatches, setMediaMatches] = useState(
+    window.matchMedia('(prefers-color-scheme: dark)').matches,
+  );
   const [currentTheme, setCurrentTheme] = useState(
-    localStorage.theme ?? (matches ? 'forest' : 'emerald'),
+    localStorage.theme ?? (mediaMatches ? 'forest' : 'emerald'),
   );
 
   useEffect(() => {
-    const mm = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaMatches = window.matchMedia('(prefers-color-scheme: dark)');
 
-    const listener = () => setMatches(mm.matches);
-    mm.addEventListener('change', listener);
+    const listener = () => setMediaMatches(mediaMatches.matches);
+    mediaMatches.addEventListener('change', listener);
 
-    return () => mm.removeEventListener('change', listener);
+    return () => mediaMatches.removeEventListener('change', listener);
   });
 
   useEffect(() => {
     document.documentElement.setAttribute(
       'data-theme',
-      currentTheme === 'system' ? (matches ? 'forest' : 'emerald') : currentTheme,
+      currentTheme === 'system' ? (mediaMatches ? 'forest' : 'emerald') : currentTheme,
     );
     localStorage.theme = currentTheme;
-  }, [matches, currentTheme]);
+  }, [mediaMatches, currentTheme]);
 
   const toggleTheme = () => {
     const themes = ['system', 'emerald', 'forest'];
