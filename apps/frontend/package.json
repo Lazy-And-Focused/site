@@ -1,16 +1,16 @@
 {
   "name": "frontend",
   "description": "Homepage for LAF team.",
-  "version": "1.2.19",
+  "version": "1.2.20",
   "private": true,
   "type": "module",
   "author": {
     "name": "Lazy-And-Focused",
-    "url": "https://laf-info.netlify.app/",
+    "url": "https://laf-team.ru/",
     "email": "love.laf.command@gmail.com"
   },
   "license": "MIT",
-  "homepage": "https://laf-info.netlify.app/",
+  "homepage": "https://laf-team.ru/",
   "repository": "https://github.com/Lazy-And-Focused/site",
   "scripts": {
     "dev": "vite",
