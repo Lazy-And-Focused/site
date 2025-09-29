@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { TeamMemberCard } from '@/shared/components/member-card/index.tsx';
 
-import teamSocialLinks from '@/shared/config/team-social-links.ts';
+import { teamSocialLinks } from '@/shared/config/team-social-links.ts';
 import { members } from '@/shared/config/lists/members.tsx';
 
 const Links = () => {
@@ -30,23 +30,23 @@ const Links = () => {
         </p>
 
         <ul className='mx-auto grid w-full max-w-2xl list-inside list-disc grid-cols-1 justify-start gap-3 rounded-lg bg-base-content/5 p-6 text-sm font-medium text-base-content/85 sm:grid-cols-2'>
-          {teamSocialLinks.map((s) => (
+          {teamSocialLinks.map((link) => (
             <li
               className='list-none items-center gap-2 transition-colors hover:text-primary hover:underline'
-              key={s.name}
+              key={link.name}
             >
               <a
-                href={s.href}
+                href={link.href}
                 target='_blank'
                 rel='noreferrer'
                 className='relative flex w-full min-w-max items-center justify-start gap-2 overflow-hidden text-ellipsis text-nowrap rounded-md px-4 py-2 text-left hover:bg-base-300/50'
               >
-                {s.icon && (
+                {link.icon && (
                   <span className='flex aspect-square h-6 items-center justify-start overflow-clip rounded'>
-                    <s.icon width={16} height={16} />
+                    <link.icon width={16} height={16} />
                   </span>
                 )}
-                {s.name}
+                {link.name}
               </a>
             </li>
           ))}

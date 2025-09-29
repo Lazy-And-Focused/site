@@ -6,7 +6,7 @@ import { WebsiteIcon } from '@/shared/components/ui/icons';
 const textInBrackets = /\[([^[\]]+)\]/g;
 
 /**
- * Вытаскивает значение из `[]` в строке
+ * Вытаскивает значение из `[]` в строке.
  *
  * @param input Строка для извлечения
  * @returns {string | null} string?
@@ -17,7 +17,7 @@ function extractTextInBrackets(input: string): string | null {
 }
 
 /**
- * Избавляется от `()` и `[]` в строке
+ * Избавляется от `()` и `[]` в строке.
  *
  * @param input Строка для очистки
  * @returns {string} string
@@ -30,7 +30,7 @@ function getClearedLink(input: string): string {
 }
 
 /**
- * Функция, преобразующая строковую ссылку (URL) под тип SocialLink
+ * Функция, преобразующая строковую ссылку (URL) подтип SocialLink.
  */
 export function format(link: string): SocialLink & { special: boolean } {
   const special = ['(personal)', 'https://github.com/'];
@@ -47,12 +47,10 @@ export function format(link: string): SocialLink & { special: boolean } {
 }
 
 /**
- * Функция, преобразующая строковые ссылки в массив SocialLink[]
+ * Функция, преобразующая строковые ссылки в массив SocialLink[].
  */
-export const formatAny = (links: string[]): SocialLink[] => {
+export const formatMany = (links: string[]): SocialLink[] => {
   return links
     .map((link) => format(link))
     .sort((a, b) => (a.special === b.special ? 0 : a.special ? -1 : 1));
 };
-
-export default { formatLinks: formatAny };

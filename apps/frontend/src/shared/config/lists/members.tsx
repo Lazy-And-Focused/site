@@ -1,6 +1,6 @@
 import type { BaseMember, Member } from '@/entities/member';
 
-import { formatAny as formatLinks } from '@/shared/lib/link-master';
+import { formatMany as formatLinks } from '@/shared/lib/link-master';
 
 /**
  * Массив с именами пользователей GitHub, которые состоят в команде LAF.
@@ -104,7 +104,7 @@ export const rawMembers: BaseMember[] = [
   },
 ];
 
-export const members: Member[] = rawMembers.map<Member>((p) => ({
-  ...p,
-  socials: p.socials ? formatLinks(p.socials) : [],
+export const members: Member[] = rawMembers.map<Member>((member) => ({
+  ...member,
+  socials: member.socials ? formatLinks(member.socials) : [],
 }));
