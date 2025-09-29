@@ -45,11 +45,16 @@ export const socialLinks: SocialLink[] = [
   },
   {
     href: 'https://discord.com/invite',
-    name: 'Discord',
+    name: 'Discord (приглашение)',
     icon: DiscordIcon,
   },
   {
     href: 'https://discord.gg/',
+    name: 'Discord (приглашение)',
+    icon: DiscordIcon,
+  },
+  {
+    href: 'https://discordapp.com/users/',
     name: 'Discord',
     icon: DiscordIcon,
   },
