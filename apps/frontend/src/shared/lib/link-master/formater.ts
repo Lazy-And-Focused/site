@@ -3,7 +3,7 @@ import type { SocialLink } from '@/shared/types';
 import { socialLinks } from '@/shared/config/lists/social-links';
 import { WebsiteIcon } from '@/shared/components/ui/icons';
 
-const textInBrackets = /\[([^[\]]+)\]/g;
+const textInBrackets = /\[([^[\]]+)\]/;
 
 /**
  * Вытаскивает значение из `[]` в строке.
@@ -22,7 +22,7 @@ function extractTextInBrackets(input: string): string | null {
  * @param input Строка для очистки
  * @returns {string} string
  */
-function getClearedLink(input: string): string {
+function clear(input: string): string {
   return input
     .replace(/\([a-z]+\)/g, '')
     .replace(textInBrackets, '')
@@ -35,12 +35,14 @@ function getClearedLink(input: string): string {
 export function format(link: string): SocialLink & { special: boolean } {
   const special = ['(personal)', 'https://github.com/'];
 
-  const association = socialLinks.find((social) => link.startsWith(social.href));
+  const cleared = clear(link);
+
+  const association = socialLinks.find((social) => cleared.startsWith(social.href));
   const customName = extractTextInBrackets(link);
 
   return {
-    name: customName || association?.name || new URL(link).hostname,
-    href: getClearedLink(link),
+    name: customName || association?.name || new URL(cleared).hostname,
+    href: clear(link),
     icon: association?.icon || WebsiteIcon,
     special: special.some((social) => link.startsWith(social)),
   };
