@@ -10,15 +10,27 @@ const Projects = lazy(() => import('@/pages/projects'));
 const NotFound = lazy(() => import('@/pages/not-found'));
 const Links = lazy(() => import('@/pages/links'));
 
+/**
+ * Конфигурация отдельного путя до страницы приложения.
+ */
 export type ConfigRoute = {
+  /** Используется в шапке сайта */
   name?: string;
+
+  /** URI, как например `/home` */
   path: string;
+
+  /** Страница приложения (React-компонент)*/
   element: React.ReactNode;
+
+  /** Вложенные ConfigRoute */
   children?: ConfigRoute[];
 };
 
 /**
- * Все пути к страницам приложения (сайта)
+ * Массив со страницами приложения и путями до них.
+ *
+ * @returns {ConfigRoute[]} ConfigRoute[]
  */
 export const routes: ConfigRoute[] = [
   {

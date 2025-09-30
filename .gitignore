@@ -45,3 +45,4 @@ site-backend
 *.njsproj
 *.sln
 *.sw?
+.vs
