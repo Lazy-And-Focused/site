@@ -1,23 +1,14 @@
-import { Link } from 'react-router-dom';
 import { TeamMemberCard } from '@/shared/components/member-card';
+import { Link } from 'react-router-dom';
 
 import { members } from '@/shared/config/lists/members';
 
 const AboutPage = () => {
+  const filterMembers = members.filter((member) => !member.meta?.includes('leave'));
+
   return (
     <main className='mx-auto h-full max-w-7xl'>
-      <section className='flex h-2/5 min-h-max w-full flex-col items-center justify-center rounded-b-xl bg-primary/25 px-6 pt-14 shadow-xl lg:px-8'>
-        <div className='lg:py-46 mx-auto max-w-2xl py-16 sm:py-32'>
-          <div className='text-center'>
-            <h1 className='text-balance text-5xl font-semibold tracking-tight text-primary sm:text-7xl'>
-              О нас
-            </h1>
-            <p className='mt-8 text-pretty text-lg font-medium text-primary/75 sm:text-xl/8'>
-              Немного информации о нас.
-            </p>
-          </div>
-        </div>
-      </section>
+      <BurgerHeader />
 
       <section
         id='members'
@@ -27,21 +18,19 @@ const AboutPage = () => {
           role='list'
           className='mx-auto grid w-full max-w-7xl grid-cols-1 justify-items-center gap-8 rounded-lg bg-base-content/5 p-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'
         >
-          {members
-            .filter((member) => !member.meta?.includes('leave'))
-            .map((member) => (
-              <li key={member.tag} className='flex h-max items-stretch'>
-                <TeamMemberCard member={member} type='full' />
-              </li>
-            ))}
+          {filterMembers.map((member) => (
+            <li key={member.tag} className='flex h-max items-stretch'>
+              <TeamMemberCard member={member} type='full' />
+            </li>
+          ))}
         </ul>
       </section>
 
-      <section className='flex min-h-full w-full flex-col items-center justify-center px-8 py-16 lg:px-12'>
-        <h2 className='text-3xl font-semibold tracking-tight text-base-content sm:text-4xl'>
-          Примечание
-        </h2>
-        <p className='my-8 text-lg text-base-content/40'>Помимо этого, надо понимать, что...</p>
+      <CreditsSection
+        id={'copyright'}
+        title={'Примечание'}
+        description={'Помимо этого, надо понимать, что...'}
+      >
         <ul
           role='list'
           className='mx-auto w-full max-w-2xl list-inside list-disc space-y-4 rounded-lg bg-base-content/5 p-6 text-sm font-medium text-base-content/85'
@@ -75,18 +64,13 @@ const AboutPage = () => {
             </span>
           </li>
         </ul>
-      </section>
+      </CreditsSection>
 
-      <section
-        id='credits'
-        className='flex min-h-full w-full flex-col items-center justify-center px-8 py-16 lg:px-12'
+      <CreditsSection
+        id={'credits'}
+        title={'Послесловие'}
+        description={'Мы использовали следующие ресурсы для создания сайта'}
       >
-        <h2 className='text-3xl font-semibold tracking-tight text-base-content sm:text-4xl'>
-          Послесловие
-        </h2>
-        <p className='my-8 text-lg text-base-content/40'>
-          Мы использовали следующие ресурсы для создания сайта
-        </p>
         <ul
           role='list'
           className='mx-auto w-full max-w-2xl list-inside list-disc space-y-4 rounded-lg bg-base-content/5 p-6 text-sm font-medium text-base-content/85'
@@ -122,8 +106,53 @@ const AboutPage = () => {
             <span className='text-base-content/50'> &lt;- кликните на текст</span>
           </li>
         </ul>
-      </section>
+      </CreditsSection>
     </main>
   );
 };
+
+const BurgerHeader = () => {
+  return (
+    <section className='flex h-2/5 min-h-max w-full flex-col items-center justify-center rounded-b-xl bg-primary/25 px-6 pt-14 shadow-xl lg:px-8'>
+      <div className='lg:py-46 mx-auto max-w-2xl py-16 sm:py-32'>
+        <div className='text-center'>
+          <h1 className='text-balance text-5xl font-semibold tracking-tight text-primary sm:text-7xl'>
+            О нас
+          </h1>
+          <p className='mt-8 text-pretty text-lg font-medium text-primary/75 sm:text-xl/8'>
+            Немного информации о нас.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const CreditsSection = ({
+  id,
+  title,
+  description,
+  children,
+}: {
+  id?: string;
+  title: string;
+  description: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <section
+      id={id}
+      className='flex min-h-full w-full flex-col items-center justify-center px-8 py-16 lg:px-12'
+    >
+      <h2 className='text-3xl font-semibold tracking-tight text-base-content sm:text-4xl'>
+        {title}
+      </h2>
+
+      <p className='my-8 text-lg text-base-content/40'>{description}</p>
+
+      {children}
+    </section>
+  );
+};
+
 export default AboutPage;
