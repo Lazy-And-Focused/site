@@ -8,9 +8,6 @@ import Loading from '@/pages/loading';
 
 import { HEADER_LINKS } from './constants';
 
-/**
- * Корневой компонент приложения
- */
 export const App = () => {
   return (
     <>

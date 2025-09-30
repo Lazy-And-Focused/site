@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import { members } from '@/shared/config/lists/members';
 
 const AboutPage = () => {
-  const filterMembers = members.filter((member) => !member.meta?.includes('leave'));
+  const filteredMembers = members.filter((member) => !member.meta?.includes('leave'));
 
   return (
     <main className='mx-auto h-full max-w-7xl'>
-      <BurgerHeader />
+      <HeroPaperSection />
 
       <section
         id='members'
@@ -18,7 +18,7 @@ const AboutPage = () => {
           role='list'
           className='mx-auto grid w-full max-w-7xl grid-cols-1 justify-items-center gap-8 rounded-lg bg-base-content/5 p-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'
         >
-          {filterMembers.map((member) => (
+          {filteredMembers.map((member) => (
             <li key={member.tag} className='flex h-max items-stretch'>
               <TeamMemberCard member={member} type='full' />
             </li>
@@ -111,7 +111,7 @@ const AboutPage = () => {
   );
 };
 
-const BurgerHeader = () => {
+const HeroPaperSection = () => {
   return (
     <section className='flex h-2/5 min-h-max w-full flex-col items-center justify-center rounded-b-xl bg-primary/25 px-6 pt-14 shadow-xl lg:px-8'>
       <div className='lg:py-46 mx-auto max-w-2xl py-16 sm:py-32'>
@@ -128,17 +128,14 @@ const BurgerHeader = () => {
   );
 };
 
-const CreditsSection = ({
-  id,
-  title,
-  description,
-  children,
-}: {
+type CreditsCetionProps = {
   id?: string;
   title: string;
   description: string;
   children: React.ReactNode;
-}) => {
+};
+
+const CreditsSection = ({ id, title, description, children }: CreditsCetionProps) => {
   return (
     <section
       id={id}
