@@ -11,10 +11,7 @@ import clsx from 'clsx';
 import { Navigation } from './navigation';
 import { MobileHeader } from './mobile';
 
-/**
- * Шапка сайта
- */
-export const Header = (props: HeaderProps) => {
+export const AppHeader = (props: HeaderProps) => {
   const [scrollY, setScrollY] = useState(0);
   const deviceWidth = useDeviceWidth();
 

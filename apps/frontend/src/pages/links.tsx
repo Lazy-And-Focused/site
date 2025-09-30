@@ -5,6 +5,9 @@ import { TeamMemberCard } from '@/shared/components/member-card/index.tsx';
 import { teamSocialLinks } from '@/shared/config/team-social-links.ts';
 import { members } from '@/shared/config/lists/members.tsx';
 
+// Вынести, как и на/в других страницах
+const filteredMembers = members.filter((member) => !member.meta?.includes('leave'));
+
 const LinksPage = () => {
   const copyButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -77,15 +80,13 @@ const LinksPage = () => {
             role='list'
             className='grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-3 xl:col-span-2'
           >
-            {members
-              .filter((member) => !member.meta?.includes('leave'))
-              .map((member) => (
-                <li key={member.tag}>
-                  <div>
-                    <TeamMemberCard member={member} />
-                  </div>
-                </li>
-              ))}
+            {filteredMembers.map((member) => (
+              <li key={member.tag}>
+                <div>
+                  <TeamMemberCard member={member} />
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </section>

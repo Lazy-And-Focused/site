@@ -1,4 +1,4 @@
-import type { HeaderNavLink } from '@/shared/components/header/types';
+import type { HeaderNavLink } from '@/shared/components/app-header/types';
 
 export const REACT_APP_ROOT_ID = 'root';
 

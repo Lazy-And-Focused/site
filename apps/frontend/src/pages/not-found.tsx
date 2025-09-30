@@ -1,6 +1,4 @@
-// ----- Временно (надеюсь). Когда времени станет чуть больше, реализую сам.
 import { MouseParallaxChild, MouseParallaxContainer } from 'react-parallax-mouse';
-// -----
 import { Link } from 'react-router-dom';
 import { HeartBreakIcon, ListIcon } from '@/shared/components/ui/icons';
 

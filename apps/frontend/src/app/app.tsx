@@ -1,8 +1,8 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Suspense, useEffect } from 'react';
 
-import { Header } from '@/shared/components/header';
-import { Footer } from '@/shared/components/footer';
+import { AppHeader } from '@/shared/components/app-header';
+import { AppFooter } from '@/shared/components/app-footer';
 
 import Loading from '@/pages/loading';
 
@@ -13,11 +13,11 @@ export const App = () => {
     <>
       <ScrollToStartByUrlChanges />
       <div className='base-100 base-content h-full min-h-screen'>
-        <Header links={HEADER_LINKS} />
+        <AppHeader links={HEADER_LINKS} />
         <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>
-        <Footer />
+        <AppFooter />
       </div>
     </>
   );

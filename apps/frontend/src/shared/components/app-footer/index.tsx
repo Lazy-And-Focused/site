@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
 
-/**
- * Подвал сайта
- */
-export const Footer = () => {
+export const AppFooter = () => {
   return (
     <footer className='w-full border-t-2 border-primary/75 bg-neutral/20 p-4 backdrop-blur-md transition duration-500 ease-in-out'>
       <nav

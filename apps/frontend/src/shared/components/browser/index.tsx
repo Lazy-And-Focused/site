@@ -12,13 +12,16 @@ type Props = {
 /**
  * Компонент в стилистике web-обозревателя
  *
- * @param title Заголовок окна
- * @param tabs Вкладки
- *
  * @example <Browser title="Браузер" tabs={tabs} />
  * @example <Browser title="Браузер" tabs={tabs}>Заполнитель, если не выбрана вкладка</Browser>
  */
-export const Browser = ({ title, tabs, children }: Props) => {
+export const Browser = ({
+  /** Заголовок окна */
+  title,
+  /** Вкладки с типом BrowserTab[] */
+  tabs,
+  children,
+}: Props) => {
   const [currentTab, setCurrentTab] = useState<BrowserTab | null>(null);
 
   return (
@@ -29,7 +32,6 @@ export const Browser = ({ title, tabs, children }: Props) => {
       </div>
 
       <div className='flex-1 overflow-y-auto p-4 text-gray-900 dark:text-gray-200'>
-        {/* Этот '&&' специальнр для @FOCKUSTY */}
         {(currentTab && currentTab.element) ?? children ?? 'Вкладка не выбрана'}
       </div>
     </div>
