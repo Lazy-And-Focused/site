@@ -1,6 +1,6 @@
 import type { BaseMember, Member } from '@/entities/member';
 
-import { formatMany as formatLinks } from '@/shared/lib/link-master';
+import { stringsToSocialLinks as formatLinks } from '@/shared/lib/link-master';
 
 /**
  * Массив с именами пользователей GitHub, которые состоят в команде LAF.
