@@ -1,11 +1,12 @@
-import { Outlet, useLocation } from 'react-router-dom';
-import { Suspense, useEffect } from 'react';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
-import { AppHeader } from '@/shared/components/app-header';
 import { AppFooter } from '@/shared/components/app-footer';
+import { AppHeader } from '@/shared/components/app-header';
 
-import Loading from '@/pages/loading';
+import LoadingPage from '@/pages/loading';
 
+import { ScrollToStartByUrlChanges } from '@/shared/lib/utils';
 import { HEADER_LINKS } from './constants';
 
 export const App = () => {
@@ -14,28 +15,11 @@ export const App = () => {
       <ScrollToStartByUrlChanges />
       <div className='base-100 base-content h-full min-h-screen'>
         <AppHeader links={HEADER_LINKS} />
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<LoadingPage />}>
           <Outlet />
         </Suspense>
         <AppFooter />
       </div>
     </>
   );
-};
-
-const ScrollToStartByUrlChanges = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.hash) {
-      const element = document.getElementById(location.hash.slice(1));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    }
-  }, [location]);
-
-  return null;
 };

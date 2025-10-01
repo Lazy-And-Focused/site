@@ -1,7 +1,7 @@
 import type { HeaderProps } from './types';
 
 import { useEffect, useState } from 'react';
-import useDeviceWidth from '@/shared/hooks/use-device-width';
+import { useDeviceWidth } from '@/shared/hooks';
 
 import { Link } from 'react-router-dom';
 import { GitHubIcon, TelegramIcon } from '@/icons';

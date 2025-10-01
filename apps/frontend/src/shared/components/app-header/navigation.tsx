@@ -1,6 +1,6 @@
 import type { HeaderNavLink } from './types';
 
-import useDeviceWidth from '@/shared/hooks/use-device-width';
+import { useDeviceWidth } from '@/shared/hooks';
 
 import { NavLink } from 'react-router-dom';
 
