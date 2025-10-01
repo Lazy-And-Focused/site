@@ -1,7 +1,8 @@
 import type { Member } from '@/entities/member';
+
 import { useContext } from 'react';
 import { HasPrimarySocials } from '../contexts';
-import { WebsiteIcon } from '@/icons';
+import { MemberLink } from './ui/member-link';
 
 export const DefaultVariant = ({ member, avatar }: { member: Member; avatar: React.ReactNode }) => {
   const hasPrimarySocials = useContext(HasPrimarySocials);
@@ -16,24 +17,17 @@ export const DefaultVariant = ({ member, avatar }: { member: Member; avatar: Rea
 
           {hasPrimarySocials &&
             member.socials
-              .filter((link) =>
-                Object.values(hasPrimarySocials).some((s) => link.href.startsWith(s[1])),
+              .filter((social) =>
+                Object.values(hasPrimarySocials).some((primarySocial) =>
+                  social.href.startsWith(primarySocial[1]),
+                ),
               )
-              .map((s) => (
-                <a
-                  key={s.href}
-                  href={s.href}
-                  target='_blank'
-                  rel='noreferrer'
-                  aria-label={`Ссылка на ${s.name} пользователя ${member.name}`}
-                  className='md:text-md dark:text-grenn-400 text-sm/6 font-semibold text-primary'
-                >
-                  {s.icon ? (
-                    <s.icon width={16} height={16} />
-                  ) : (
-                    <WebsiteIcon width={16} height={16} />
-                  )}
-                </a>
+              .map((link) => (
+                <MemberLink
+                  href={link.href}
+                  alt={`Ссылка на ${link.name} пользователя ${member.name}`}
+                  icon={link.icon}
+                />
               ))}
         </h3>
         <p className='text-sm/6 font-semibold text-primary/75'>{member.roles.join(', ')}</p>

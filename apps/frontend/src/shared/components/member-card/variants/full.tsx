@@ -3,6 +3,7 @@ import type { Member } from '@/entities/member';
 import { useState } from 'react';
 
 import { WebsiteIcon, ListIcon } from '@/icons';
+import { MemberLink } from './ui/member-link';
 
 export const FullVariant = ({ member, avatar }: { member: Member; avatar: React.ReactNode }) => {
   const hasSocials = member.socials.length !== 0;
@@ -30,22 +31,14 @@ export const FullVariant = ({ member, avatar }: { member: Member; avatar: React.
           {hasSocials && (
             <div className='absolute bottom-3 left-3 right-3 flex items-center justify-center'>
               <ul className='flex max-w-max flex-row items-center justify-center gap-2 rounded-full border-2 border-primary/25 bg-primary/55 p-2 backdrop-blur-md'>
-                {member.socials.slice(0, 5).map((s) => (
-                  <li key={s.href}>
-                    <a
-                      href={s.href}
-                      target='_blank'
-                      rel='noreferrer'
-                      aria-label={`Ссылка на ${s.name} пользователя ${member.name}`}
-                      title={s.name}
+                {member.socials.slice(0, 5).map(({ href, name, icon }) => (
+                  <li key={href}>
+                    <MemberLink
+                      href={href}
+                      alt={`Ссылка на ${name} пользователя ${member.name}`}
                       className='md:text-md text-base-100/96 text-sm/6 font-semibold'
-                    >
-                      {s.icon ? (
-                        <s.icon width={16} height={16} />
-                      ) : (
-                        <WebsiteIcon width={16} height={16} />
-                      )}
-                    </a>
+                      icon={icon}
+                    />
                   </li>
                 ))}
               </ul>

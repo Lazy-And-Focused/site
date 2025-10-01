@@ -1,4 +1,4 @@
-import { stringsToSocialLinks as formatLinks } from '@/shared/lib/link-master';
+import { stringsToSocialLinks as formatLinks } from '@/shared/lib/social-link-master';
 
 /**
  * Ссылки на социальные сети команды в чистом/сыром виде.
