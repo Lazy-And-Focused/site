@@ -2,7 +2,7 @@ import type { Member } from '@/entities/member';
 
 import { useState } from 'react';
 
-import { WebsiteIcon, ListIcon } from '@/icons';
+import { WebsiteIcon, ListIcon } from '@icons';
 import { MemberLink } from './ui/member-link';
 
 export const FullVariant = ({ member, avatar }: { member: Member; avatar: React.ReactNode }) => {

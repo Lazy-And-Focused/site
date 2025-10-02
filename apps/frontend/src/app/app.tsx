@@ -1,13 +1,13 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { AppFooter } from '@/shared/components/app-footer';
-import { AppHeader } from '@/shared/components/app-header';
+import { AppFooter } from '@shared/components/app-footer';
+import { AppHeader } from '@shared/components/app-header';
 
-import LoadingPage from '@/pages/loading';
+import LoadingPage from '@pages/loading';
 
-import { ScrollToStartByUrlChanges } from '@/shared/lib/utils';
-import { HEADER_LINKS } from './constants';
+import { ScrollToStartByUrlChanges } from '@shared/lib/utils';
+import { HEADER_LINKS } from '@app/constants';
 
 export const App = () => {
   return (

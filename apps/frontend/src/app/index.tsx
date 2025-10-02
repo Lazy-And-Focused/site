@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import { RouterProvider } from 'react-router-dom';
-import { router } from './routes';
 
-import { REACT_APP_ROOT_ID } from './constants';
+import { router } from '@app/providers';
+import { REACT_APP_ROOT_ID } from '@app/constants';
 
-import './styles/index.css';
+import '@app/styles/globals.css';
 
+/**
+ * Точка входа в приложение
+ */
 const root = ReactDOM.createRoot(document.getElementById(REACT_APP_ROOT_ID) as HTMLElement);
 
 root.render(

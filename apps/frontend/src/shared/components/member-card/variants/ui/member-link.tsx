@@ -1,4 +1,4 @@
-import { WebsiteIcon } from '@/icons';
+import { WebsiteIcon } from '@icons';
 
 export const MemberLink = ({
   href,
