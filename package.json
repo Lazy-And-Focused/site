@@ -28,6 +28,8 @@
     "build:frontend": "pnpm run build:frontend-v1 && pnpm run build:frontend-base",
     "build:frontend:all": "pnpm --filter {./apps/frontend/**} build",
     "build:packages": "pnpm --filter ./packages/** build",
+    "build:dashboard": "pnpm --filter dashboard build",
+    "dev:dashboard": "pnpm --filter dashboard dev",
     "start:backend": "pnpm --filter backend start",
     "start:frontend": "pnpm --filter frontend preview",
     "dev:backend": "pnpm --filter backend dev",
