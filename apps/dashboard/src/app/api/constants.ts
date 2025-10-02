@@ -1,8 +1,11 @@
 import Api from "./abstract.api";
+
 import Bluesky from "./bluesky.api";
+import Telegram from "./telegram.api";
 
 export const NEWS_API: (new () => Api)[] = [
-  Bluesky
+  Bluesky,
+  Telegram
 ];
 
 export const NEWS_API_VARIANTS: string[] = NEWS_API.map(api => api.name.toLowerCase());
