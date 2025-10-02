@@ -1,6 +1,7 @@
 import type { Member } from '@/entities/member';
 
 import { useContext } from 'react';
+
 import { HasPrimarySocials } from '../contexts';
 import { MemberLink } from './ui/member-link';
 
@@ -19,14 +20,16 @@ export const DefaultVariant = ({ member, avatar }: { member: Member; avatar: Rea
             member.socials
               .filter((social) =>
                 Object.values(hasPrimarySocials).some((primarySocial) =>
-                  social.href.startsWith(primarySocial[1]),
+                  social.url.startsWith(primarySocial[1]),
                 ),
               )
-              .map((link) => (
+              .map((social) => (
                 <MemberLink
-                  href={link.href}
-                  alt={`Ссылка на ${link.name} пользователя ${member.name}`}
-                  icon={link.icon}
+                  key={social.id}
+                  url={social.url}
+                  alt={`Ссылка на ${social.platform.name} пользователя ${member.name}`}
+                  platform={social.platform}
+                  customName={social.customName}
                 />
               ))}
         </h3>

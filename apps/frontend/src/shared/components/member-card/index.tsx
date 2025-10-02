@@ -1,19 +1,12 @@
 import type { Member } from '@/entities/member';
-
 import { useCallback, useEffect, useMemo, useState } from 'react';
-
 import { DefaultVariant } from './variants/default';
 import { FullVariant } from './variants/full';
 import { Avatar } from './avatar';
-
 import { HasPrimarySocials, HasPrimarySocialsType } from './contexts';
 
 export { HasPrimarySocials } from './contexts';
 
-/**
- * Компонент, возвращающий карточку участника
- * @param {Member} member Объект с информацией об участнике команды
- */
 export const TeamMemberCard = ({
   member,
   type = 'default',
@@ -22,8 +15,8 @@ export const TeamMemberCard = ({
   type?: 'default' | 'full';
 }) => {
   const validateSocial = useCallback(
-    (href: string) => {
-      const isExec = member.socials.some((link) => link.url.startsWith(href));
+    (url: string) => {
+      const isExec = member.socials.some((social) => social.url.startsWith(url));
       return isExec || false;
     },
     [member.socials],

@@ -1,27 +1,27 @@
+import type { SocialPlatform } from '@shared/types/social';
 import { WebsiteIcon } from '@icons';
 
-export const MemberLink = ({
-  href,
-  alt,
-  icon: Icon,
-  className,
-}: {
-  href: string;
+interface MemberLinkProps {
+  url: string;
   alt: string;
-  icon?: React.FC<React.SVGProps<SVGSVGElement>>;
-  className: string;
-}) => {
+  platform: SocialPlatform;
+  customName?: string;
+  className?: string;
+}
+
+export const MemberLink = ({ url, alt, platform, className }: MemberLinkProps) => {
+  const Icon = platform.icon || WebsiteIcon;
+
   return (
     <a
-      key={href}
-      href={href}
+      href={url}
       target='_blank'
       rel='noreferrer'
       aria-label={alt}
       title={alt}
       className={className || 'md:text-md dark:text-grenn-400 text-sm/6 font-semibold text-primary'}
     >
-      {Icon ? <Icon width={16} height={16} /> : <WebsiteIcon width={16} height={16} />}
+      <Icon className='h-4 w-4' />
     </a>
   );
 };

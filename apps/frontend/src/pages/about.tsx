@@ -1,11 +1,12 @@
 import { TeamMemberCard } from '@/shared/components/member-card';
 import { Link } from 'react-router-dom';
 
-import { members } from '@/shared/config/lists/members';
+import { TEAM_MEMBERS } from '@/shared/config/team/members';
+
+// Вынести, как и в других компонентах
+const filteredMembers = TEAM_MEMBERS.filter((member) => !member.meta?.includes('leave'));
 
 const AboutPage = () => {
-  const filteredMembers = members.filter((member) => !member.meta?.includes('leave'));
-
   return (
     <main className='mx-auto h-full max-w-7xl'>
       <HeroPaperSection />

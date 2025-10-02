@@ -2,11 +2,11 @@ import { useRef } from 'react';
 
 import { TeamMemberCard } from '@/shared/components/member-card/index.tsx';
 
-import { teamSocialLinks } from '@/shared/config/team-social-links.ts';
-import { members } from '@/shared/config/lists/members.tsx';
+import { TEAM_SOCIAL_LINKS } from '@/shared/config/team/social-links';
+import { TEAM_MEMBERS } from '@/shared/config/team/members';
 
 // Вынести, как и на/в других страницах
-const filteredMembers = members.filter((member) => !member.meta?.includes('leave'));
+const filteredMembers = TEAM_MEMBERS.filter((member) => !member.meta?.includes('leave'));
 
 const LinksPage = () => {
   const copyButtonRef = useRef<HTMLButtonElement>(null);
@@ -33,23 +33,23 @@ const LinksPage = () => {
         </p>
 
         <ul className='mx-auto grid w-full max-w-2xl list-inside list-disc grid-cols-1 justify-start gap-3 rounded-lg bg-base-content/5 p-6 text-sm font-medium text-base-content/85 sm:grid-cols-2'>
-          {teamSocialLinks.map((link) => (
+          {TEAM_SOCIAL_LINKS.map((link) => (
             <li
               className='list-none items-center gap-2 transition-colors hover:text-primary hover:underline'
-              key={link.name}
+              key={link.id}
             >
               <a
-                href={link.href}
+                href={link.url}
                 target='_blank'
                 rel='noreferrer'
                 className='relative flex w-full min-w-max items-center justify-start gap-2 overflow-hidden text-ellipsis text-nowrap rounded-md px-4 py-2 text-left hover:bg-base-300/50'
               >
-                {link.icon && (
+                {link.platform.icon && (
                   <span className='flex aspect-square h-6 items-center justify-start overflow-clip rounded'>
-                    <link.icon width={16} height={16} />
+                    <link.platform.icon className="w-4 h-4" />
                   </span>
                 )}
-                {link.name}
+                {link.customName || link.platform.name}
               </a>
             </li>
           ))}

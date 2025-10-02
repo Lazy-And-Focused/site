@@ -2,7 +2,7 @@ import type { Member } from '@/entities/member';
 
 import { useState } from 'react';
 
-import { WebsiteIcon, ListIcon } from '@icons';
+import { ListIcon } from '@icons';
 import { MemberLink } from './ui/member-link';
 
 export const FullVariant = ({ member, avatar }: { member: Member; avatar: React.ReactNode }) => {
@@ -31,13 +31,14 @@ export const FullVariant = ({ member, avatar }: { member: Member; avatar: React.
           {hasSocials && (
             <div className='absolute bottom-3 left-3 right-3 flex items-center justify-center'>
               <ul className='flex max-w-max flex-row items-center justify-center gap-2 rounded-full border-2 border-primary/25 bg-primary/55 p-2 backdrop-blur-md'>
-                {member.socials.slice(0, 5).map(({ href, name, icon }) => (
-                  <li key={href}>
+                {member.socials.slice(0, 5).map((social) => (
+                  <li key={social.id}>
                     <MemberLink
-                      href={href}
-                      alt={`Ссылка на ${name} пользователя ${member.name}`}
+                      url={social.url}
+                      alt={`Ссылка на ${social.platform.name} пользователя ${member.name}`}
                       className='md:text-md text-base-100/96 text-sm/6 font-semibold'
-                      icon={icon}
+                      platform={social.platform}
+                      customName={social.customName}
                     />
                   </li>
                 ))}
@@ -56,23 +57,23 @@ export const FullVariant = ({ member, avatar }: { member: Member; avatar: React.
             </button>
             {dropdownOpen && (
               <div className='absolute bottom-0 right-0 top-auto z-10 mt-1 w-full min-w-min rounded-md border border-base-content bg-base-100 text-base-content backdrop-blur-sm'>
-                {member.socials.map((s) => (
+                {member.socials.map((social) => (
                   <a
-                    href={s.href}
+                    href={social.url}
                     target='_blank'
                     rel='noreferrer'
-                    key={s.name}
+                    key={social.id}
                     className='relative flex w-full min-w-max items-center justify-start gap-2 overflow-hidden text-ellipsis text-nowrap px-4 py-2 text-left first:rounded-t-md hover:bg-base-300/50'
                     onClick={() => {
                       setDropdownOpen(false);
                     }}
                   >
-                    {s.icon && (
+                    {social.platform.icon && (
                       <span className='flex aspect-square h-6 items-center justify-start overflow-clip rounded'>
-                        <s.icon width={16} height={16} />
+                        <social.platform.icon />
                       </span>
                     )}
-                    {s.name}
+                    {social.customName || social.platform.name}
                   </a>
                 ))}
                 <button
@@ -98,5 +99,5 @@ export const FullVariant = ({ member, avatar }: { member: Member; avatar: React.
         )}
       </div>
     </div>
-  );
+  )
 };
