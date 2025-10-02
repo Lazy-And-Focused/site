@@ -23,7 +23,7 @@ export const TeamMemberCard = ({
 }) => {
   const validateSocial = useCallback(
     (href: string) => {
-      const isExec = member.socials.some((link) => link.href.startsWith(href));
+      const isExec = member.socials.some((link) => link.url.startsWith(href));
       return isExec || false;
     },
     [member.socials],

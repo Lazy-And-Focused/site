@@ -1,7 +1,7 @@
 import { TeamMemberCard } from '@/shared/components/member-card';
 import { Link } from 'react-router-dom';
 
-import { members } from '@/shared/config/lists/members';
+import { TEAM_MEMBERS } from '@shared/config/team/members';
 
 const HomePage = () => {
   return (
@@ -90,7 +90,7 @@ const InfoSection = () => {
 };
 
 const MemberListSection = () => {
-  const filteredMembers = members.filter((member) => !member.meta?.includes('leave'));
+  const filteredMembers = TEAM_MEMBERS.filter((member) => !member.meta?.includes('leave'));
 
   return (
     <section

@@ -1,9 +1,9 @@
-import { stringsToSocialLinks as formatLinks } from '@/shared/lib/social-link-master';
+import { parseSocialLinks } from '@shared/lib/social-links';
 
 /**
- * Ссылки на социальные сети команды в чистом/сыром виде.
+ * Ссылки на социальные сети команды в "сыром" виде
  */
-const rawLinks: string[] = [
+const RAW_TEAM_LINKS: string[] = [
   '(personal) [Главный сайт] https://laf-team.ru/',
   '(docs) [Документация] https://docs.laf-team.ru/',
   '(docs) [Информация о команде] https://docs.google.com/document/d/1Kb7-wxhhX3w0-_bMZ8CeAkJh10nYE8pKk07XQ_bepI8',
@@ -16,6 +16,6 @@ const rawLinks: string[] = [
 ];
 
 /**
- * Массив ссылок команды в обработанном виде.
+ * Обработанные ссылки команды
  */
-export const teamSocialLinks = formatLinks(rawLinks);
+export const TEAM_SOCIAL_LINKS = parseSocialLinks(RAW_TEAM_LINKS);

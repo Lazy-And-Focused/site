@@ -1,11 +1,10 @@
-import type { BaseMember, Member } from '@/entities/member';
-
-import { stringsToSocialLinks as formatLinks } from '@/shared/lib/social-link-master';
+import type { BaseMember, Member } from '@entities/member';
+import { parseSocialLinks } from '@shared/lib/social-links';
 
 /**
- * Массив с именами пользователей GitHub, которые состоят в команде LAF.
+ * "Сырые"/Необработанные данные участников команды
  */
-export const rawMembers: BaseMember[] = [
+export const BASE_TEAM_MEMBERS: BaseMember[] = [
   {
     tag: 'fockusty',
     name: 'FOCKUSTY',
@@ -104,7 +103,10 @@ export const rawMembers: BaseMember[] = [
   },
 ];
 
-export const members: Member[] = rawMembers.map<Member>((member) => ({
+/**
+ * Обработанные данные участников команды
+ */
+export const TEAM_MEMBERS: Member[] = BASE_TEAM_MEMBERS.map((member) => ({
   ...member,
-  socials: member.socials ? formatLinks(member.socials) : [],
+  socials: member.socials ? parseSocialLinks(member.socials) : [],
 }));
