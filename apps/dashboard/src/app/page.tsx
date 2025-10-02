@@ -1,4 +1,4 @@
-export default function Home() {
+const Page = () => {
   return (
     <div>
       Привет, это панель управления для новостей, перейдите по ссылке ниже,
@@ -6,3 +6,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Page;
