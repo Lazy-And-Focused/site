@@ -10,15 +10,12 @@ type Props = {
 };
 
 /**
- * Компонент в стилистике web-обозревателя
- *
- * @example <Browser title="Браузер" tabs={tabs} />
- * @example <Browser title="Браузер" tabs={tabs}>Заполнитель, если не выбрана вкладка</Browser>
+ * Компонент в стилистике web-обозревателя. Использует chidlren, как
+ * заполнитель.
  */
 export const Browser = ({
   /** Заголовок окна */
   title,
-  /** Вкладки с типом BrowserTab[] */
   tabs,
   children,
 }: Props) => {

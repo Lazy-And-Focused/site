@@ -11,23 +11,20 @@ const NotFound = lazy(() => import('@pages/not-found'));
 const Links = lazy(() => import('@pages/links'));
 
 /**
- * Конфигурация маршрута приложения
+ * Конфигурация маршрута в приложении
  */
 export type AppRoute = {
   /** Название для навигации */
   name?: string;
   /** Путь маршрута */
   path: string;
-  /** React-компонент */
+  /** Относящийся к роуту React-компонент */
   element: React.ReactNode;
   /** Дочерние маршруты */
   children?: AppRoute[];
 };
 
-/**
- * Конфигурация всех маршрутов приложения
- */
-export const routes: AppRoute[] = [
+export const appRoutes: AppRoute[] = [
   {
     path: '/',
     element: <App />,

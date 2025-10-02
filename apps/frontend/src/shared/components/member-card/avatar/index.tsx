@@ -13,8 +13,6 @@ type Props = {
 
 /**
  * Дочерний компонент для карточки участника, проекта и тому подобных
- * @param {string} src Путь к изображению, как в теге `<img />`
- * @param {string} alt Alt-текст изображения
  *
  * @example
  * <CardAvatar src="/avatars/default.png" alt="Default avatar" />

@@ -2,7 +2,7 @@ import type { BaseMember, Member } from '@entities/member';
 import { parseSocialLinks } from '@shared/lib/social-links';
 
 /**
- * "Сырые"/Необработанные данные участников команды
+ * Необработанные данные участников команды
  */
 export const BASE_TEAM_MEMBERS: BaseMember[] = [
   {

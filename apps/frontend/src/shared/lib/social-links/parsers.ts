@@ -1,7 +1,9 @@
-import { SOCIAL_PLATFORMS } from '@shared/config/app/social';
 import type { SocialLink } from '@shared/types/social';
 import type { ParseOptions } from './types';
+
 import { extractTextFromBrackets, clearBrackets } from './formatters';
+
+import { SOCIAL_PLATFORMS } from '@shared/config/app/social';
 
 export const parseSocialLinks = (links: string[], options: ParseOptions = {}): SocialLink[] => {
   const {
