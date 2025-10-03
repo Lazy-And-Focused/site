@@ -3,38 +3,45 @@
 import { useState } from "react";
 import { NEWS_API_VARIANTS } from "../api/constants";
 
+import styles from "./page.module.css";
+
 const Page = () => {
   const [ choosedApi, setChoosedApi ] = useState<string>(NEWS_API_VARIANTS[0]);
 
   return (
     <div className="page-center">
-      <section>
-        <h2>Соцсеть</h2>
+      <div className={styles.settings}>
+        <section className={styles.socials}>
+          <h2>Соцсеть</h2>
 
-        <span>
-          Выбранный вариант: {choosedApi}
-        </span>
-        
-        <div>
-          Выберить вариант:
-          {
-            NEWS_API_VARIANTS.map(api =>
-              <button
-                key={api}
-                onClick={() => setChoosedApi(api)}
-              >
-                {api}
-              </button>
-            )
-          }
-        </div>
-      </section>
+          <div className={styles.variants}>
+            <span>
+              Выберите вариант: (сейчас: {choosedApi})
+            </span>
+  
+            <div className={styles.variants_to_choose}>
+              {
+                NEWS_API_VARIANTS
+                  .filter(api => choosedApi !== api)
+                  .map(api =>
+                    <button
+                      key={api}
+                      onClick={() => setChoosedApi(api)}
+                    >
+                      {api}
+                    </button>
+                  )
+              }
+            </div>
+          </div>
+        </section>
 
-      <section>
-        <h2>Текст</h2>
+        <section className={styles.text}>
+          <h2>Текст</h2>
 
-        <textarea name="text" id="text"></textarea>
-      </section>
+          <textarea name="text" id="text"></textarea>
+        </section>
+      </div>
     </div>
   )
 }

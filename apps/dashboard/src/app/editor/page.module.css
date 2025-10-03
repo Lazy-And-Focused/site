@@ -1,0 +1,29 @@
+.settings {
+  display: grid;
+  grid-template-rows: 50% 50%;
+
+  height: 100%;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 32px;
+}
+
+.settings section,
+.variants,
+.text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+  
+  align-items: center;
+  justify-content: center;
+}
+
+.variants_to_choose {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
