@@ -1,7 +1,9 @@
 import Api from "./abstract.api";
 
 export class Bluesky extends Api {
-  protected post(): Promise<void> {
+  public readonly maxTextLength = 300;
+
+   protected post(): Promise<void> {
     throw new Error("Method not implemented.");
   }
   

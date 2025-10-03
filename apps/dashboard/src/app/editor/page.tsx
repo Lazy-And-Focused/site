@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { NEWS_API_VARIANTS } from "../api/constants";
+import { NEWS_API_OBJECT, NEWS_API_VARIANTS } from "../api/constants";
 
 import styles from "./page.module.css";
 
@@ -39,7 +39,12 @@ const Page = () => {
         <section className={styles.text}>
           <h2>Текст</h2>
 
-          <textarea name="text" id="text"></textarea>
+          <textarea
+            name="text"
+            id="text"
+            maxLength={NEWS_API_OBJECT[choosedApi].maxTextLength}
+            placeholder={`Напишите сюда свой текст для ${choosedApi}`}
+          ></textarea>
         </section>
       </div>
     </div>
