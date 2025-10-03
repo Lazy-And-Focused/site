@@ -3,15 +3,15 @@ import Api from "./abstract.api";
 export class Telegram extends Api {
   public readonly maxTextLength = 2000;
 
-  protected post(): Promise<void> {
+  public post(): Promise<void> {
     throw new Error("Method not implemented.");
   }
   
-  protected put(): Promise<void> {
+  public put(): Promise<void> {
     throw new Error("Method not implemented.");
   }
   
-  protected delete(): Promise<void> {
+  public delete(): Promise<void> {
     throw new Error("Method not implemented.");
   }
   
