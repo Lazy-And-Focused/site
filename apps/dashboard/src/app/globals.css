@@ -1,29 +1,18 @@
-@import "tailwindcss";
-
 :root {
   --background: #1A0A15;
   --heading: #F26ECA;
-  --text: #F1B8E0;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #F1B8E0;
+  --border-color: #F059C3;
+  --layout-border: dashed var(--border-color) 1px
 }
 
 body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -48,12 +37,35 @@ body {
   border-radius: 10px;
 
   background-color: var(--background);
-  border: 2px solid var(--mini-text-color);
+  border: 2px solid var(--foreground);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Shantell Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  color: var(--heading);
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 40px;
 }
 
 span,
@@ -106,16 +118,18 @@ header, footer {
 
   height: 76px;
   width: 100%;
-
-  background: #00000080;
 }
 
 header {
   top: 0;
+
+  border-bottom: var(--layout-border);
 }
 
 footer {
   bottom: 0;
+  
+  border-top: var(--layout-border);
 }
 
 main {
@@ -134,6 +148,16 @@ main {
 
   margin: 76px 0;
   height: calc(100% - 152px);
+}
+
+.page-center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100%;
 }
 
 .noselect {
