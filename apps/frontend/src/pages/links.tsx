@@ -46,7 +46,7 @@ const LinksPage = () => {
               >
                 {link.platform.icon && (
                   <span className='flex aspect-square h-6 items-center justify-start overflow-clip rounded'>
-                    <link.platform.icon className="w-4 h-4" />
+                    <link.platform.icon className='h-4 w-4' />
                   </span>
                 )}
                 {link.customName || link.platform.name}

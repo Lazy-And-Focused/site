@@ -12,6 +12,6 @@ export interface SocialLink {
   id: string;
   url: string;
   platform: SocialPlatform;
-  customName?: string;  
+  customName?: string;
   isSpecial: boolean;
 }

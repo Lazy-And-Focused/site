@@ -99,5 +99,5 @@ export const FullVariant = ({ member, avatar }: { member: Member; avatar: React.
         )}
       </div>
     </div>
-  )
+  );
 };
