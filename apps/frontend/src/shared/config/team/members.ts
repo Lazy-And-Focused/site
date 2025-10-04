@@ -92,15 +92,6 @@ export const BASE_TEAM_MEMBERS: BaseMember[] = [
     description:
       'Всем хай. Я Стажер - разработчик, пишу коды на python и немного на c++. В дальнейшем хочу стать Мидлом в этой команде. Моё хобби спорт и программирование.',
   },
-  {
-    tag: 'faktoredguy',
-    name: 'Faktored',
-    avatar: '/images/avatars/faktoredguy.webp',
-    roles: ['Стажёр Frontend-разработчик'],
-    description:
-      'Привет мужики! меня зовут Faktored. Я начинающий фронтенд и инди разработчик игр. знаю Python, JavaScript, TypeScript, C++',
-    socials: ['https://discordapp.com/users/1367377823525900380'],
-  },
 ];
 
 /**
