@@ -5,10 +5,9 @@ const ROUTES = {
 
   POST_SOCIAL: "/:social",
   
-  PUT_SOCIAL: "/:social",
-  PATCH_SOCIAL: "/:social",
+  PUT_SOCIAL: "/:social/:id",
 
-  DELETE_SOCIAL: "/:social",
+  DELETE_SOCIAL: "/:social/:id",
 } as const;
 
 export { ROUTE, ROUTES };

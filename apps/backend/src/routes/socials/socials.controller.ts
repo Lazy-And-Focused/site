@@ -12,7 +12,6 @@ import {
   Post,
   Body,
   Put,
-  Patch,
   Delete,
   UseGuards,
   HttpStatus
@@ -20,7 +19,7 @@ import {
 import { ApiOperation, ApiResponse, ApiUnauthorizedResponse } from "@nestjs/swagger";
 
 import { ROUTE, ROUTES } from "./socials.routes";
-import { Service } from "./socials.service"
+import { Service } from "./socials.service";
 
 @Injectable()
 @NestController(ROUTE)
@@ -40,7 +39,7 @@ export class Controller {
   @Get(ROUTES.GET_SOCIALS)
   @Public()
   public get() {
-    return this.service.get();
+    return this.service.get().data;
   }
 
   @ApiOperation({
@@ -51,11 +50,12 @@ export class Controller {
     status: HttpStatus.CREATED,
     description: "Created"
   })
-  @Post(ROUTES.POST)
+  @Post(ROUTES.POST_SOCIAL)
   public post(
-    @Body() data: SocialCreateDto 
+    @Body() data: SocialCreateDto,
+    @Param("social") social: string 
   ) {
-    return this.service.post(data);
+    return this.service.postSocial(social, data);
   }
 
   @ApiOperation({
@@ -66,28 +66,13 @@ export class Controller {
     status: HttpStatus.OK,
     description: "Updated"
   })
-  @Put(ROUTES.PUT)
+  @Put(ROUTES.PUT_SOCIAL)
   public put(
     @Param("id") id: string,
-    @Body() data: SocialUpdateDto 
+    @Param("social") social: string,
+    @Body() data: SocialUpdateDto
   ) {
-    return this.service.put(id, data);
-  }
-
-  @ApiOperation({
-    summary: "Updating a social"
-  })
-  @ApiUnauthorizedResponse({ description: "Unauthorized" })
-  @ApiResponse({
-    status: HttpStatus.OK,
-    description: "Updated"
-  })
-  @Patch(ROUTES.PUT)
-  public patch(
-    @Param("id") id: string,
-    @Body() data: SocialUpdateDto 
-  ) {
-    return this.service.patch(id, data);
+    return this.service.putSocial(social, id, data);
   }
   
   @ApiOperation({
@@ -98,10 +83,11 @@ export class Controller {
     status: HttpStatus.OK,
     description: "Deleted"
   })
-  @Delete(ROUTES.DELETE)
+  @Delete(ROUTES.DELETE_SOCIAL)
   public delete(
-    @Param("id") id: string
+    @Param("id") id: string,
+    @Param("social") social: string
   ) {
-    return this.service.delete(id);
+    return this.service.deleteSocial(social, id);
   }
 }
