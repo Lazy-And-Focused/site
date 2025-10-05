@@ -1,6 +1,6 @@
 import Api from "./api";
 
-import Bluesky from "./bluesky.api";
+import Bluesky from "./bluesky";
 
 export * from "./api";
 

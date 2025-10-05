@@ -1,14 +1,21 @@
-import Api from "./api";
+import Api from "../api";
+
+import agent, { login } from "./bluesky.agent";
+
+login();
 
 export class BlueskyApi extends Api {
   public readonly maxTextLength: number = 300;
 
   public post({ text }: { text: string }): Promise<unknown> {
-    throw new Error(JSON.stringify({text}));
+    return agent.post({
+      text,
+      createdAt: new Date().toISOString()
+    });
   }
 
-  public put({ id, text }: { id: string, text: string }): Promise<unknown> {
-    throw new Error(JSON.stringify({id, text}));
+  public put(): Promise<unknown> {
+    throw new Error("PUT method is not possible");
   }
   
   public delete({ id }: { id: string }): Promise<unknown> {

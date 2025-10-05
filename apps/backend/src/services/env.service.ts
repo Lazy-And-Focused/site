@@ -20,6 +20,9 @@ export const REQUIRED = [
   "AUTH_SERVICE_URL",
   "THIS_URL",
 
+  "BLUESKY_USERNAME",
+  "BLUESKY_PASSWORD",
+
   ...SOCIALS_API_WITH_URL.map(social => <`${Uppercase<Socials>}_API_URL`>(social.toUpperCase() + "_API_URL"))
 ] as const;
 

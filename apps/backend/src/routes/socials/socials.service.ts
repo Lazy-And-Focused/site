@@ -30,29 +30,27 @@ export class Service {
     social: string,
     data: Parameters[T],
     method: T
-  }): Promise<ServiceResponse<string>> {
+  }): Promise<ServiceResponse<unknown>> {
     if (!SOCIALS.includes(social)) {
       throw new Error("Bad social, choose: " + SOCIALS.join(", "));
     };
-
-    NEWS_API_OBJECT[social][method](<any>data);
     
     return {
       successed: true,
-      data: "Мы что-то сделали",
+      data: NEWS_API_OBJECT[social][method](<any>data),
       error: null
     };
   }
 
-  public async postSocial(social: string, data: SocialCreateDto): Promise<ServiceResponse<string>> {
+  public async postSocial(social: string, data: SocialCreateDto): Promise<ServiceResponse<unknown>> {
     return Service.socialService({ social, data, method: "post" });
   }
 
-  public async putSocial(social: string, id: string, data: SocialUpdateDto): Promise<ServiceResponse<string>> {
+  public async putSocial(social: string, id: string, data: SocialUpdateDto): Promise<ServiceResponse<unknown>> {
     return Service.socialService({ social, data: { id, ...data }, method: "put" });
   }
 
-  public async deleteSocial(social: string, id: string): Promise<ServiceResponse<string>> {
+  public async deleteSocial(social: string, id: string): Promise<ServiceResponse<unknown>> {
     return Service.socialService({ social, data: { id }, method: "delete" });
   }
 }
