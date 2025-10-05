@@ -1,7 +1,7 @@
 import { config } from "dotenv";
-import { SOCIALS_API } from "src/constants";
+import { SOCIALS_API_WITH_URL } from "src/constants";
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== undefined && process.env.NODE_ENV !== "production") {
   config({
     path: ".env." + process.env.NODE_ENV
   });
@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== "production") {
   config();
 }
 
-export type Socials = (typeof SOCIALS_API)[number];
+export type Socials = (typeof SOCIALS_API_WITH_URL)[number];
 
 export const REQUIRED = [
   "CLIENT_URL",
@@ -20,7 +20,7 @@ export const REQUIRED = [
   "AUTH_SERVICE_URL",
   "THIS_URL",
 
-  ...SOCIALS_API.map(social => <`${Uppercase<Socials>}_API_URL`>(social.toUpperCase() + "_API_URL"))
+  ...SOCIALS_API_WITH_URL.map(social => <`${Uppercase<Socials>}_API_URL`>(social.toUpperCase() + "_API_URL"))
 ] as const;
 
 export const ALL = [...REQUIRED, "ENCODING_TYPE", "PORT"] as const;
