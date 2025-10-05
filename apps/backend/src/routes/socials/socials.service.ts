@@ -34,7 +34,7 @@ export class Service {
     if (!SOCIALS.includes(social)) {
       throw new Error("Bad social, choose: " + SOCIALS.join(", "));
     };
-    
+
     return {
       successed: true,
       data: NEWS_API_OBJECT[social][method](<any>data),

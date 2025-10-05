@@ -5,15 +5,15 @@ import env from "@env";
 export class Service {
   public static async validateRequest(req: Request): Promise<boolean> {
     try {
-      const response = await fetch(env.AUTH_SERVICE_URL + "/api/guard/auth", {
+      const response = await fetch(env.AUTH_SERVICE_URL + "/api/guards/auth", {
         method: "GET",
-        headers: Object.keys(req.headers).map(key => [key, JSON.stringify(req.headers[key])])
+        headers: req.headers as any
       });
   
       if (response.status !== 200) return false;
   
       const [ successed ] = await response.json();
-  
+
       return successed;
     } catch (error) {
       console.error(error);

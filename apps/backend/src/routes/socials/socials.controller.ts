@@ -14,7 +14,7 @@ import {
   Put,
   Delete,
   UseGuards,
-  HttpStatus
+  HttpStatus,
 } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiUnauthorizedResponse } from "@nestjs/swagger";
 
@@ -52,8 +52,8 @@ export class Controller {
   })
   @Post(ROUTES.POST_SOCIAL)
   public post(
-    @Body() data: SocialCreateDto,
-    @Param("social") social: string 
+    @Param("social") social: string, 
+    @Body() data: SocialCreateDto
   ) {
     return this.service.postSocial(social, data);
   }

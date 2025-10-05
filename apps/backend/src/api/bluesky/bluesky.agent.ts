@@ -7,10 +7,17 @@ export const agent = new AtpAgent({
 });
 
 export const login = async () => {
-  return await agent.login({
+  const data = await agent.login({
     identifier: env.BLUESKY_USERNAME,
-    password: env.BLUESKY_PASSWORD
+    password: env.BLUESKY_PASSWORD,
   });
+
+  console.log((data.success
+    ? "Получилось"
+    : "Не получилось"
+  ) + " подключиться к агенту Bluesky");
+
+  return data;
 }
 
 

@@ -1,10 +1,8 @@
 import Api from "../api";
 
-import agent, { login } from "./bluesky.agent";
+import agent from "./bluesky.agent";
 
-login();
-
-export class BlueskyApi extends Api {
+export class Bluesky extends Api {
   public readonly maxTextLength: number = 300;
 
   public post({ text }: { text: string }): Promise<unknown> {
@@ -23,4 +21,4 @@ export class BlueskyApi extends Api {
   }
 }
 
-export default BlueskyApi;
+export default Bluesky;

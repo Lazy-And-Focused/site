@@ -7,12 +7,15 @@ import cookieParser = require("cookie-parser");
 
 import connect from "./database/connect";
 import Session from "./app/session.app";
+import { INITIALIZATORS } from "./api";
 
 import { AppModule } from "./app.module";
 import { env } from "services/env.service";
 
 (async () => {
   connect(env.DATABASE_URL);
+
+  Object.values(INITIALIZATORS).forEach(init => init());
 
   const app = await NestFactory.create(AppModule, {
     cors: { origin: [env.CLIENT_URL], credentials: true },

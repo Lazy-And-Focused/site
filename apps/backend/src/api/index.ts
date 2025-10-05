@@ -1,8 +1,12 @@
 import Api from "./api";
 
-import Bluesky from "./bluesky";
+import Bluesky, { login as blueskyLogin } from "./bluesky";
 
 export * from "./api";
+
+export const INITIALIZATORS = {
+  blueskyLogin
+};
 
 export const NEWS_API: (new () => Api)[] = [
   Bluesky

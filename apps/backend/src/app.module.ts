@@ -10,10 +10,11 @@ import { LoggerMiddleware } from "./middleware/logger.middleware";
 import AuthModule from "./routes/auth/auth.module";
 import NewsModule from "./routes/news/news.module";
 import MembersModule from "./routes/members/members.module";
+import SocialsModule from "./routes/socials/socials.module";
 
 @Module({
   imports: [
-    ...[AuthModule, NewsModule, MembersModule].flatMap((module) => [
+    ...[AuthModule, NewsModule, MembersModule, SocialsModule].flatMap((module) => [
       module,
       RouterModule.register([{ path: "api", module }]),
     ]),
