@@ -3,7 +3,7 @@ import type { Request } from "express";
 import env from "@env";
 
 export class Service {
-  public static async validateRequest(req: Request) {
+  public static async validateRequest(req: Request): Promise<boolean> {
     try {
       const response = await fetch(env.AUTH_SERVICE_URL + "/api/guard/auth", {
         method: "GET",
