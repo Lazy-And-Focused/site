@@ -16,4 +16,4 @@ export const routes: AppRoute[] = [
     element: <NotFoundPage />,
   },
 ];
-export { routes as appRoutes }
+export { routes as appRoutes };
