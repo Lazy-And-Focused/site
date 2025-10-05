@@ -3,9 +3,9 @@ import type { AppRoute } from '../types';
 import { App } from '@app/app';
 import { NotFoundPage } from './lazy';
 
-import { mainRoutes } from './main';
+import { routes as mainRoutes } from './main';
 
-export const appRoutes: AppRoute[] = [
+export const routes: AppRoute[] = [
   {
     path: '/',
     element: <App />,
@@ -16,3 +16,4 @@ export const appRoutes: AppRoute[] = [
     element: <NotFoundPage />,
   },
 ];
+export { routes as appRoutes }
