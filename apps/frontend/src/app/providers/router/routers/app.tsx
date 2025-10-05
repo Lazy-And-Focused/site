@@ -1,7 +1,7 @@
 import type { AppRoute } from '../types';
 
 import { App } from '@app/app';
-import { NotFoundPage } from './lazy';
+import { NotFoundPage } from './lazy-pages';
 
 import { routes as mainRoutes } from './main';
 

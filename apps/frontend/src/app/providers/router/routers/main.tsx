@@ -1,10 +1,12 @@
 import type { AppRoute } from '../types';
 
-import { AboutPage, HomePage, LinksPage, ProjectsPage } from './lazy';
+import { AboutPage, HomePage, LinksPage, ProjectsPage } from './lazy-pages';
+
+import { APP_ROUTES } from '@app/constants';
 
 export const routes: AppRoute[] = [
-  { name: 'Главная', path: '/', element: <HomePage /> },
-  { name: 'Проекты', path: 'projects', element: <ProjectsPage /> },
-  { name: 'О нас', path: 'about', element: <AboutPage /> },
-  { name: 'Ссылки', path: 'links', element: <LinksPage /> },
+  { name: 'Главная', path: APP_ROUTES.HOME, element: <HomePage /> },
+  { name: 'Проекты', path: APP_ROUTES.PROJECTS, element: <ProjectsPage /> },
+  { name: 'О нас', path: APP_ROUTES.ABOUT, element: <AboutPage /> },
+  { name: 'Ссылки', path: APP_ROUTES.SOCIALS, element: <LinksPage /> },
 ];
