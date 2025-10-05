@@ -1,7 +1,7 @@
 {
-  "name": "bad-template",
+  "name": "backend",
   "version": "0.0.1",
-  "description": "backend after drinking",
+  "description": "backend for main laf site",
   "author": {
     "name": "Lazy-And-Focused",
     "email": "laf.love.command@gmail.com",
@@ -20,7 +20,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
