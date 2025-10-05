@@ -12,7 +12,7 @@ import { AppModule } from "./app.module";
 import { env } from "services/env.service";
 
 (async () => {
-  await connect(env.DATABASE_URL);
+  connect(env.DATABASE_URL);
 
   const app = await NestFactory.create(AppModule, {
     cors: { origin: [env.CLIENT_URL], credentials: true },
