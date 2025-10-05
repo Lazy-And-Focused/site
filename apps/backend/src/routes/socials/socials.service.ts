@@ -37,7 +37,7 @@ export class Service {
 
     return {
       successed: true,
-      data: NEWS_API_OBJECT[social][method](<any>data),
+      data: await NEWS_API_OBJECT[social][method](<any>data),
       error: null
     };
   }

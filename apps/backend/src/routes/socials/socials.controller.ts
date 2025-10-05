@@ -51,6 +51,7 @@ export class Controller {
     description: "Created"
   })
   @Post(ROUTES.POST_SOCIAL)
+  @Public()
   public post(
     @Param("social") social: string, 
     @Body() data: SocialCreateDto
