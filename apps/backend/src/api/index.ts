@@ -1,7 +1,4 @@
-import Api, {
-  METHODS,
-  PARAMETERS
-} from "./api";
+import Api from "./api";
 
 import Bluesky from "./bluesky.api";
 
@@ -16,7 +13,3 @@ export const NEWS_API_VARIANTS: string[] = NEWS_API.map(api => api.name.toLowerC
 export const NEWS_API_OBJECT: Record<string, Api> = Object.fromEntries(
   NEWS_API.map(api =>
     [api.name.toLowerCase(), new api()]));
-
-export const chooseApiParametersByMethod = (method: (typeof METHODS)[number]) => {
-  return PARAMETERS[method];
-};
