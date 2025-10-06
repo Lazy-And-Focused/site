@@ -3,6 +3,9 @@ import type { HeaderNavLink } from '@shared/components/app-header/types';
 // LIBS / UTILS / PACKAGES
 export const REACT_APP_ROOT_ID = 'root';
 
+// PROJECT / REPOSITORY
+export const PROJECT_REPOSITORY = 'https://github.com/Lazy-And-Focused/site';
+
 // APP
 export const APP_ROUTES = {
   HOME: '/',
