@@ -9,7 +9,7 @@ export const ABOUT_PAGE_CONSTANTS = {
       description: 'Помимо этого, надо понимать, что...',
     },
     credits: {
-      title: 'Послесловие', 
+      title: 'Послесловие',
       description: 'Мы использовали следующие ресурсы для создания сайта',
     },
   },

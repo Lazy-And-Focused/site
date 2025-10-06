@@ -12,7 +12,8 @@ export const InfoSection = () => {
           Чем мы занимаемся
         </h2>
         <p className='mt-6 text-lg/8 text-base-content/40'>
-          Разрабатываем малые и средние IT-продукты, независимо от их типа: веб-, натив-приложения и игры
+          Разрабатываем малые и средние IT-продукты, независимо от их типа: веб-, натив-приложения и
+          игры
         </p>
         <div className='mt-8 flex flex-row gap-4'>
           <Link to='/#members' className='btn btn-outline btn-primary rounded-md'>
