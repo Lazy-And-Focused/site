@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
 import { CreditsSection } from '../ui/credits-section';
 
-import { APP_ROUTES, PROJECT_REPOSITORY } from '@shared/lib/constants';
+import { PROJECT_REPOSITORY } from '@shared/lib/constants';
 
 export const CopyrightSection = () => {
   return (
