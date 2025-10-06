@@ -4,12 +4,13 @@ import { useEffect, useState } from 'react';
 import { useDeviceWidth } from '@/shared/hooks';
 
 import { Link } from 'react-router-dom';
-import { GitHubIcon, TelegramIcon } from '@icons';
 import { ThemeSwitcher } from './theme-switcher';
-
-import clsx from 'clsx';
 import { Navigation } from './navigation';
 import { MobileHeader } from './mobile';
+
+import { GitHubIcon, TelegramIcon } from '@icons';
+
+import clsx from 'clsx';
 
 export const AppHeader = (props: HeaderProps) => {
   const [scrollY, setScrollY] = useState(0);

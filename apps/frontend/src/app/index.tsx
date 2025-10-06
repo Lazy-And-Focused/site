@@ -8,9 +8,6 @@ import { REACT_APP_ROOT_ID } from '@shared/lib/constants';
 
 import '@app/styles/globals.css';
 
-/**
- * Точка входа в приложение
- */
 const root = ReactDOM.createRoot(document.getElementById(REACT_APP_ROOT_ID) as HTMLElement);
 
 root.render(

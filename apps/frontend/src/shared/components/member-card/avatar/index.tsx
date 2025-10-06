@@ -15,7 +15,7 @@ type Props = {
  * Дочерний компонент для карточки участника, проекта и тому подобных
  *
  * @example
- * <CardAvatar src="/avatars/default.png" alt="Default avatar" />
+ * <Avatar src="/avatars/default.png" alt="Default avatar" />
  */
 export const Avatar = ({
   src,
