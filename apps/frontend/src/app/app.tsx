@@ -8,7 +8,7 @@ import LoadingPage from '@pages/loading';
 
 import { ScrollToStartByUrlChanges } from '@shared/lib/utils';
 
-import { HEADER_LINKS } from '@app/constants';
+import { HEADER_LINKS } from '@shared/lib/constants';
 
 export const App = () => {
   return (

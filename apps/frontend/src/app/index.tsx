@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 
 import { router } from '@app/providers';
-import { REACT_APP_ROOT_ID } from '@app/constants';
+import { REACT_APP_ROOT_ID } from '@shared/lib/constants';
 
 import '@app/styles/globals.css';
 

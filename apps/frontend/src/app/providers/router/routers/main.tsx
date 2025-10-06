@@ -2,7 +2,7 @@ import type { AppRoute } from '../types';
 
 import { AboutPage, HomePage, LinksPage, ProjectsPage } from './lazy-pages';
 
-import { APP_ROUTES } from '@app/constants';
+import { APP_ROUTES } from '@shared/lib/constants';
 
 export const routes: AppRoute[] = [
   { name: 'Главная', path: APP_ROUTES.HOME, element: <HomePage /> },

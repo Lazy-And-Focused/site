@@ -1,3 +1,3 @@
-export * from './hero-image';
-export * from './info';
-export * from './member-list';
+export { HeroSection } from './hero';
+export { InfoSection } from './info';
+export { MemberListSection } from './members';

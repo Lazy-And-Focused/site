@@ -1,23 +1,17 @@
-export type HeroImageSectionProps = {
+export interface HeroSectionProps {
   title: string;
   description?: string;
-  background: string;
+  background?: string;
   children?: React.ReactNode;
-};
+}
 
-export const HeroImageSection = ({
-  title,
-  description,
-  background,
-  children,
-}: HeroImageSectionProps) => {
+export const HeroSection = ({ title, description, background, children }: HeroSectionProps) => {
+  const sectionStyle = background ? { backgroundImage: `url('${background}')` } : undefined;
+
   return (
     <section
-      className={
-        'flex h-screen w-full flex-col items-center justify-center' +
-        `bg-[#418d76] bg-[url("${background}")] bg-cover bg-center bg-no-repeat` +
-        'px-6 pt-14 shadow-xl dark:bg-[#205848] dark:bg-none lg:px-8'
-      }
+      className='flex h-screen w-full flex-col items-center justify-center bg-[#418d76] bg-cover bg-center bg-no-repeat px-6 pt-14 shadow-xl dark:bg-[#205848] dark:bg-none lg:px-8'
+      style={sectionStyle}
     >
       <div className='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
         <div className='text-center'>

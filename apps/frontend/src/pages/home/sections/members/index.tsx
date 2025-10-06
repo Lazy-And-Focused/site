@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
-import { TeamMemberCard } from '@/shared/components/member-card';
+import { TeamMemberCard } from '@shared/components/member-card';
 
 import { TEAM_MEMBERS } from '@shared/config/team/members';
+import { APP_ROUTES } from '@shared/lib/constants';
+
+const useFilteredMembers = () => {
+  return TEAM_MEMBERS.filter((member) => !member.meta?.includes('leave'));
+};
 
 export const MemberListSection = () => {
-  const filteredMembers = TEAM_MEMBERS.filter((member) => !member.meta?.includes('leave'));
+  const filteredMembers = useFilteredMembers();
 
   return (
     <section
@@ -20,7 +25,7 @@ export const MemberListSection = () => {
             Юная команда из тех, кто готов покорять ваши сердца!
           </p>
           <div className='mt-8'>
-            <Link to='/about' className='btn btn-outline btn-primary rounded-md'>
+            <Link to={APP_ROUTES.ABOUT} className='btn btn-outline btn-primary rounded-md'>
               Давай дальше <span aria-hidden='true'>→</span>
             </Link>
           </div>
