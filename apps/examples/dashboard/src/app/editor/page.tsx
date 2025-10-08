@@ -1,17 +1,43 @@
 'use client'
 
-import { useState, useRef, JSX } from "react";
-import { chooseApiParametersByMethod, NEWS_API_OBJECT, NEWS_API_VARIANTS } from "../api/constants";
+import { useState, useRef, JSX, useEffect } from "react";
+import { chooseApiParametersByMethod, NEWS_API_OBJECT, NEWS_API_VARIANTS } from "../../api/constants";
+import { isInWhiteList } from "@/api/server/is-in-white-list";
 
 import styles from "./page.module.css";
-import { METHODS, PARAMETERS } from "../api/abstract.api";
+import { METHODS, PARAMETERS } from "../../api/abstract.api";
 
 const Page = () => {
   const [ choosedApi, setChoosedApi ] = useState<string>(NEWS_API_VARIANTS[0]);
   const [ choosedMethod, setChoosedMethod ] = useState<(typeof METHODS)[number]>("post");
+  const [ successed, setSuccessed ] = useState<boolean>(false);
+  const [ loaded, setLoaded ] = useState<boolean>(false);
   const textRef = useRef<HTMLTextAreaElement>(null);
 
   const parameters = chooseApiParametersByMethod(choosedMethod);
+
+  useEffect(() => {
+    (async () => {
+      setSuccessed(await isInWhiteList());
+      setLoaded(true);
+    })();
+  }, []);
+
+  if (!loaded) {
+    return (
+      <div>
+        Загрузка...
+      </div>
+    )
+  }
+
+  if (!successed) {
+    return (
+      <div>
+        У вас нет доступа... :(
+      </div>
+    )
+  }
 
   const chooseApi = (api: string) => {
     setChoosedApi(api);
@@ -40,7 +66,7 @@ const Page = () => {
   }
 
   const idSection = (
-    <section className={styles.id}>
+    <section key={"id-section"} className={styles.id}>
       <h2>Идентификтор</h2>
 
       <input
@@ -53,7 +79,7 @@ const Page = () => {
   );
 
   const textSection = (
-    <section className={styles.text}>
+    <section key={"text-section"} className={styles.text}>
       <h2>Текст</h2>
 
       <textarea
