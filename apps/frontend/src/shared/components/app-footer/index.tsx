@@ -1,4 +1,4 @@
-import { Link } from './Link';
+import { Link } from './link';
 
 import { APP_ROUTES } from '@shared/lib/constants';
 
@@ -15,4 +15,3 @@ export const AppFooter = () => {
     </footer>
   );
 };
-
