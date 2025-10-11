@@ -12,6 +12,7 @@ export const APP_ROUTES = {
   PROJECTS: 'projects',
   ABOUT: 'about',
   SOCIALS: 'links',
+  COPYRIGHT: '/about/#credits',
 } as const;
 
 // TEAM / ORGANIZATION / COMPANY
