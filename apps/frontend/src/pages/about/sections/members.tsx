@@ -1,9 +1,6 @@
-import { TeamMemberCard } from '@shared/components/member-card';
-import { TEAM_MEMBERS } from '@shared/config/team/members';
+import { useFilteredMembers } from '@shared/hooks';
 
-const useFilteredMembers = () => {
-  return TEAM_MEMBERS.filter((member) => !member.meta?.includes('leave'));
-};
+import { TeamMemberCard } from '@shared/components/member-card';
 
 export const AboutMembersSection = () => {
   const filteredMembers = useFilteredMembers();

@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import { TeamMemberCard } from '@shared/components/member-card';
 
-import { TEAM_MEMBERS } from '@shared/config/team/members';
+import { useFilteredMembers } from '@shared/hooks';
+
 import { APP_ROUTES } from '@shared/lib/constants';
 
-const useFilteredMembers = () => {
-  return TEAM_MEMBERS.filter((member) => !member.meta?.includes('leave'));
-};
 
 export const MemberListSection = () => {
   const filteredMembers = useFilteredMembers();

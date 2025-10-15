@@ -1,5 +1,6 @@
-import { SocialLinksSection, TeamMembersSection } from './sections';
 import { useCopyLink } from './hooks/use-copy-link';
+
+import { SocialLinksSection, TeamMembersSection } from './sections';
 
 const LinksPage = () => {
   const { copyButtonRef, copyLinkPage } = useCopyLink();

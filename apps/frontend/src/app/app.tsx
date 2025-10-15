@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+-mimport { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { AppFooter } from '@shared/components/app-footer';
