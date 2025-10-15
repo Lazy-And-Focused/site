@@ -18,6 +18,7 @@ export const APP_ROUTES = {
 // TEAM / ORGANIZATION / COMPANY
 export const ORGANIZATION_NAME = 'Lazy And Focused';
 export const ORGANIZATION_SHORT_NAME = 'LAF';
+export const ORGANIZATION_REPOSITORIES_URL = 'https://api.github.com/orgs/Lazy-And-Focused/repos';
 
 // UTILITARY FOR COMPONENTS
 export const HEADER_LINKS: HeaderNavLink[] = [

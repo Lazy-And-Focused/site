@@ -2,6 +2,8 @@ import type { BrowserTab } from '../ui/browser/types';
 
 import { useState, useEffect } from 'react';
 
+import { ORGANIZATION_REPOSITORIES_URL } from '@shared/lib/constants';
+
 type GitHubRepository = {
   id: string;
   name: string;
@@ -10,7 +12,7 @@ type GitHubRepository = {
 };
 
 async function getProjects(): Promise<GitHubRepository[]> {
-  return fetch('https://api.github.com/orgs/Lazy-And-Focused/repos', {
+  return fetch(ORGANIZATION_REPOSITORIES_URL, {
     method: 'GET',
     cache: 'no-cache',
     headers: {
