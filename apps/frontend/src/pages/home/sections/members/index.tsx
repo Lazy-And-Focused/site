@@ -5,7 +5,6 @@ import { useFilteredMembers } from '@shared/hooks';
 
 import { APP_ROUTES } from '@shared/lib/constants';
 
-
 export const MemberListSection = () => {
   const filteredMembers = useFilteredMembers();
 
