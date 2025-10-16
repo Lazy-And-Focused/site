@@ -25,11 +25,17 @@ async function getProjects(): Promise<GitHubRepository[]> {
 
 export const useProjects = () => {
   const [tabs, setTabs] = useState<BrowserTab[]>([]);
+  const [errorCatched, setErrorCatched] = useState<boolean>(false);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const fetcher = async () => {
       const projects = await getProjects();
+
+      if (projects.length === 0) {
+        setErrorCatched(true);
+        return;
+      }
 
       setTabs(
         projects.map((project) => ({
@@ -46,5 +52,5 @@ export const useProjects = () => {
     fetcher();
   }, []);
 
-  return { tabs, loaded };
+  return { tabs, loaded, errorCatched };
 };

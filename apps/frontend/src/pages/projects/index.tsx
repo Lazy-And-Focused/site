@@ -9,12 +9,15 @@ const placeholder = PROJECTS_PAGE_CONSTANTS.BROWSER.EMPTY_TEXT;
 const loadingPlaceholder = <div className='mt-4 text-slate-200'>Загрузка проектов...</div>;
 
 const ProjectsPage = () => {
-  const { tabs, loaded } = useProjects();
+  const { tabs, loaded, errorCatched } = useProjects();
 
   return (
     <main className='h-full w-full'>
       <ProjectsHero>
-        <Browser tabs={tabs}>{!loaded ? loadingPlaceholder : placeholder}</Browser>
+        <Browser tabs={tabs}>
+          {!errorCatched && (!loaded ? loadingPlaceholder : placeholder)}
+          {errorCatched && 'Произошла ошибка при загрузке данных'}
+        </Browser>
       </ProjectsHero>
     </main>
   );
