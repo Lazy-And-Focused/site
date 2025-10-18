@@ -1,16 +1,16 @@
 export const ABOUT_PAGE_CONSTANTS = {
-  hero: {
-    title: 'О нас',
-    description: 'Немного информации о нас.',
+  HERO: {
+    TITLE: 'О нас',
+    DESCRIPTION: 'Немного информации о нас.',
   },
-  sections: {
-    copyright: {
-      title: 'Примечание',
-      description: 'Помимо этого, надо понимать, что...',
+  SECTIONS: {
+    COPYRIGHT: {
+      TITLE: 'Примечание',
+      DESCRIPTION: 'Помимо этого, надо понимать, что...',
     },
-    credits: {
-      title: 'Послесловие',
-      description: 'Мы использовали следующие ресурсы для создания сайта',
+    CREDITS: {
+      TITLE: 'Послесловие',
+      DESCRIPTION: 'Мы использовали следующие ресурсы для создания сайта',
     },
   },
 } as const;

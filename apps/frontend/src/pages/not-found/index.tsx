@@ -5,6 +5,9 @@ import { HeartBreakIcon, ListIcon } from '@icons';
 
 import { NOT_FOUND_CONFIG } from './lib/constants';
 
+const { globalFactorX, globalFactorY } = NOT_FOUND_CONFIG.parallax.container;
+const parallaxItems = NOT_FOUND_CONFIG.parallax.items;
+
 const NotFoundPage = () => {
   const bgClasses = [
     'h-full max-h-screen w-full overflow-clip bg-cover bg-center bg-no-repeat',
@@ -16,11 +19,8 @@ const NotFoundPage = () => {
 
   return (
     <main className={bgClasses}>
-      <ParallaxContainer
-        globalFactorX={NOT_FOUND_CONFIG.parallax.container.globalFactorX}
-        globalFactorY={NOT_FOUND_CONFIG.parallax.container.globalFactorY}
-      >
-        {NOT_FOUND_CONFIG.parallax.items.map((item, index) => (
+      <ParallaxContainer globalFactorX={globalFactorX} globalFactorY={globalFactorY}>
+        {parallaxItems.map((item, index) => (
           <ParallaxItem key={index} factorX={item.factorX} factorY={item.factorY}>
             {renderContent(item.content)}
           </ParallaxItem>

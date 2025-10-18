@@ -8,9 +8,9 @@ const HomePage = () => {
   return (
     <main className='h-full w-full'>
       <HeroSection
-        title={HOME_PAGE_CONSTANTS.hero.title}
-        description={HOME_PAGE_CONSTANTS.hero.description}
-        background={HOME_PAGE_CONSTANTS.hero.background}
+        title={HOME_PAGE_CONSTANTS.HERO.TITLE}
+        description={HOME_PAGE_CONSTANTS.HERO.DESCRIPTION}
+        background={HOME_PAGE_CONSTANTS.HERO.BACKGROUND}
       >
         <Link to='/#info' className='btn btn-primary rounded-full'>
           Узнать больше

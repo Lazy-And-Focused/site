@@ -1,13 +1,14 @@
 import { CreditsSection } from '../ui/credits-section';
 
 import { PROJECT_REPOSITORY } from '@shared/lib/constants';
+import { ABOUT_PAGE_CONSTANTS } from '../lib/constants';
 
 export const CopyrightSection = () => {
   return (
     <CreditsSection
       id={'copyright'}
-      title={'Примечание'}
-      description={'Помимо этого, надо понимать, что...'}
+      title={ABOUT_PAGE_CONSTANTS.SECTIONS.COPYRIGHT.TITLE}
+      description={ABOUT_PAGE_CONSTANTS.SECTIONS.COPYRIGHT.DESCRIPTION}
     >
       <ul
         role='list'
@@ -53,8 +54,8 @@ export const ResourcesSection = () => {
   return (
     <CreditsSection
       id={'credits'}
-      title={'Послесловие'}
-      description={'Мы использовали следующие ресурсы для создания сайта'}
+      title={ABOUT_PAGE_CONSTANTS.SECTIONS.CREDITS.TITLE}
+      description={ABOUT_PAGE_CONSTANTS.SECTIONS.CREDITS.DESCRIPTION}
     >
       <ul
         role='list'

@@ -28,7 +28,7 @@ export const BrowserDropdown = ({ tabs, currentTab, setCurrentTab }: BrowserDrop
         <div className='absolute right-0 z-10 mt-1 w-full min-w-min overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-800 dark:bg-gray-900'>
           <BrowserDropdownItem
             tab={{ id: '$null', name: 'Вкладка не выбрана', element: null }}
-            isSelected={currentTab === null}
+            selected={currentTab === null}
             onClick={() => {
               setCurrentTab(null);
               setDropdownOpened(false);
