@@ -1,8 +1,11 @@
 import type { Member } from '@/entities/member';
+
 import { useCallback, useEffect, useMemo, useState } from 'react';
+
 import { DefaultVariant } from './variants/default';
 import { FullVariant } from './variants/full';
 import { Avatar } from './avatar';
+
 import { HasPrimarySocials, HasPrimarySocialsType } from './contexts';
 
 export { HasPrimarySocials } from './contexts';

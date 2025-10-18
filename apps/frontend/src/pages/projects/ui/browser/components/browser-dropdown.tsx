@@ -39,7 +39,7 @@ export const BrowserDropdown = ({ tabs, currentTab, setCurrentTab }: BrowserDrop
             <BrowserDropdownItem
               key={tab.id || tab.name}
               tab={tab}
-              isSelected={currentTab?.id === tab.id}
+              selected={currentTab?.id === tab.id}
               onClick={() => {
                 setCurrentTab(tab);
                 setDropdownOpened(false);
