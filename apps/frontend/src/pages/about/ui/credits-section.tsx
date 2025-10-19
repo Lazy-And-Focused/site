@@ -1,11 +1,11 @@
-interface CreditsSectionProps {
+interface Props {
   id?: string;
   title: string;
   description: string;
   children: React.ReactNode;
 }
 
-export const CreditsSection = ({ id, title, description, children }: CreditsSectionProps) => {
+export const CreditsSection = ({ id, title, description, children }: Props) => {
   return (
     <section
       id={id}

@@ -1,20 +1,20 @@
 import { TEAM_SOCIAL_LINKS } from '@shared/config/team/social-links';
 import { LINKS_PAGE_CONSTANTS } from '../lib/constants';
 
+const { SOCIAL_LINKS: SECTION } = LINKS_PAGE_CONSTANTS.SECTIONS;
+
 interface SocialLinksSectionProps {
   onCopyLink: () => void;
   copyButtonRef: React.RefObject<HTMLButtonElement>;
 }
 
 export const SocialLinksSection = ({ onCopyLink, copyButtonRef }: SocialLinksSectionProps) => {
-  const { SOCIAL_LINKS } = LINKS_PAGE_CONSTANTS.SECTIONS;
-
   return (
     <section className='flex w-full flex-col items-center justify-center px-8 py-16 lg:px-12'>
       <h2 className='text-3xl font-semibold tracking-tight text-base-content sm:text-4xl'>
-        {SOCIAL_LINKS.TITLE}
+        {SECTION.TITLE}
       </h2>
-      <p className='my-8 text-center text-lg text-base-content/40'>{SOCIAL_LINKS.DESCRIPTION}</p>
+      <p className='my-8 text-center text-lg text-base-content/40'>{SECTION.DESCRIPTION}</p>
 
       <ul className='mx-auto grid w-full max-w-2xl list-inside list-disc grid-cols-1 justify-start gap-3 rounded-lg bg-base-content/5 p-6 text-sm font-medium text-base-content/85 sm:grid-cols-2'>
         {TEAM_SOCIAL_LINKS.map((link) => (
@@ -47,7 +47,7 @@ export const SocialLinksSection = ({ onCopyLink, copyButtonRef }: SocialLinksSec
         Скопировать адрес страницы
       </button>
 
-      <p className='mt-12 text-base text-base-content/40'>{SOCIAL_LINKS.HINT}</p>
+      <p className='mt-12 text-base text-base-content/40'>{SECTION.HINT}</p>
     </section>
   );
 };

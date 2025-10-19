@@ -4,18 +4,19 @@ import { useFilteredMembers } from '@shared/hooks';
 
 import { LINKS_PAGE_CONSTANTS } from '../lib/constants';
 
+const { TEAM_MEMBERS: SECTION } = LINKS_PAGE_CONSTANTS.SECTIONS;
+
 export const TeamMembersSection = () => {
   const filteredMembers = useFilteredMembers();
-  const { TEAM_MEMBERS: TEAM_CONSTANTS } = LINKS_PAGE_CONSTANTS.SECTIONS;
 
   return (
     <section className='flex min-h-screen w-full flex-col items-center justify-center px-6 py-14 lg:px-8'>
       <div className='mx-auto flex max-w-7xl flex-col gap-16 px-6 md:gap-14 lg:px-8 xl:grid-cols-3'>
         <div className='max-w-xl'>
           <h2 className='text-pretty text-3xl font-semibold tracking-tight text-base-content sm:text-4xl'>
-            {TEAM_CONSTANTS.TITLE}
+            {SECTION.TITLE}
           </h2>
-          <p className='mt-6 text-lg/8 text-base-content/40'>{TEAM_CONSTANTS.DESCRIPTION}</p>
+          <p className='mt-6 text-lg/8 text-base-content/40'>{SECTION.DESCRIPTION}</p>
         </div>
         <ul
           role='list'

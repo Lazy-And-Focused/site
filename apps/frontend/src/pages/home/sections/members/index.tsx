@@ -1,7 +1,7 @@
+import { useFilteredMembers } from '@shared/hooks';
+
 import { Link } from 'react-router-dom';
 import { TeamMemberCard } from '@shared/components/member-card';
-
-import { useFilteredMembers } from '@shared/hooks';
 
 import { APP_ROUTES } from '@shared/lib/constants';
 

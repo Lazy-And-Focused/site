@@ -4,13 +4,15 @@ import { HeroSection, InfoSection, MemberListSection } from './sections';
 import { HOME_PAGE_CONSTANTS } from './lib/constants';
 import { APP_ROUTES } from '@shared/lib/constants';
 
+const { HERO: SECTION } = HOME_PAGE_CONSTANTS;
+
 const HomePage = () => {
   return (
     <main className='h-full w-full'>
       <HeroSection
-        title={HOME_PAGE_CONSTANTS.HERO.TITLE}
-        description={HOME_PAGE_CONSTANTS.HERO.DESCRIPTION}
-        background={HOME_PAGE_CONSTANTS.HERO.BACKGROUND}
+        title={SECTION.TITLE}
+        description={SECTION.DESCRIPTION}
+        background={SECTION.BACKGROUND}
       >
         <Link to='/#info' className='btn btn-primary rounded-full'>
           Узнать больше

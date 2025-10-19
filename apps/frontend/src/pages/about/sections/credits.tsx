@@ -3,13 +3,11 @@ import { CreditsSection } from '../ui/credits-section';
 import { PROJECT_REPOSITORY } from '@shared/lib/constants';
 import { ABOUT_PAGE_CONSTANTS } from '../lib/constants';
 
+const { COPYRIGHT, CREDITS } = ABOUT_PAGE_CONSTANTS.SECTIONS;
+
 export const CopyrightSection = () => {
   return (
-    <CreditsSection
-      id={'copyright'}
-      title={ABOUT_PAGE_CONSTANTS.SECTIONS.COPYRIGHT.TITLE}
-      description={ABOUT_PAGE_CONSTANTS.SECTIONS.COPYRIGHT.DESCRIPTION}
-    >
+    <CreditsSection id={'copyright'} title={COPYRIGHT.TITLE} description={COPYRIGHT.DESCRIPTION}>
       <ul
         role='list'
         className='mx-auto w-full max-w-2xl list-inside list-disc space-y-4 rounded-lg bg-base-content/5 p-6 text-sm font-medium text-base-content/85'
@@ -52,11 +50,7 @@ export const CopyrightSection = () => {
  */
 export const ResourcesSection = () => {
   return (
-    <CreditsSection
-      id={'credits'}
-      title={ABOUT_PAGE_CONSTANTS.SECTIONS.CREDITS.TITLE}
-      description={ABOUT_PAGE_CONSTANTS.SECTIONS.CREDITS.DESCRIPTION}
-    >
+    <CreditsSection id={'credits'} title={CREDITS.TITLE} description={CREDITS.DESCRIPTION}>
       <ul
         role='list'
         className='mx-auto w-full max-w-2xl list-inside list-disc space-y-4 rounded-lg bg-base-content/5 p-6 text-sm font-medium text-base-content/85'

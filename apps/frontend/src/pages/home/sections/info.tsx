@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import { APP_ROUTES } from '@shared/lib/constants';
 
 export const InfoSection = () => {
