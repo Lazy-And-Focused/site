@@ -5,7 +5,7 @@ export const PROJECTS_PAGE_CONSTANTS = {
     TITLE: `Сделано с ${ORGANIZATION_SHORT_NAME}`,
   },
   BROWSER: {
-    /** Browser's placeholder */
-    EMPTY_TEXT: 'Выбери любой проект из списка выше',
+    PLACEHOLDER: 'Выбери любой проект из списка выше',
+    LOADING_PLACEHOLDER: 'Загрузка проектов...',
   },
 } as const;

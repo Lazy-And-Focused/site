@@ -2,20 +2,15 @@ import type { BrowserTab } from './types';
 
 import { useState } from 'react';
 
-import { BrowserHeader } from './components/browser-header';
-import { BrowserDropdown } from './components/browser-dropdown';
+import { BrowserHeader, BrowserDropdown } from './components';
 
-interface BrowserProps {
+interface Props {
   title?: string;
   tabs: BrowserTab[];
   children?: React.ReactNode;
 }
 
-/**
- * Компонент в стилистике web-обозревателя. Использует children, как
- * заполнитель окна.
- */
-export const Browser = ({ title, tabs, children }: BrowserProps) => {
+export const Browser = ({ title, tabs, children }: Props) => {
   const [currentTab, setCurrentTab] = useState<BrowserTab | null>(null);
 
   return (

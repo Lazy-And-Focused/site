@@ -1,12 +1,12 @@
-import type { BrowserTab } from '../types';
+import type { BrowserTab } from '../../types';
 
-interface BrowserDropdownItemProps {
+interface Props {
   tab: BrowserTab;
   selected: boolean;
   onClick: () => void;
 }
 
-export const BrowserDropdownItem = ({ tab, selected, onClick }: BrowserDropdownItemProps) => {
+export const BrowserDropdownItem = ({ tab, selected, onClick }: Props) => {
   return (
     <button
       className={`relative flex w-full min-w-max items-center gap-4 overflow-hidden text-ellipsis text-nowrap px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-800 ${

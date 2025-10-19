@@ -2,11 +2,11 @@ import type { ReactNode } from 'react';
 
 import { ORGANIZATION_SHORT_NAME } from '@shared/lib/constants';
 
-interface ProjectsHeroProps {
+interface Props {
   children: ReactNode;
 }
 
-export const ProjectsHero = ({ children }: ProjectsHeroProps) => {
+export const ProjectsHero = ({ children }: Props) => {
   return (
     <section
       className={[
