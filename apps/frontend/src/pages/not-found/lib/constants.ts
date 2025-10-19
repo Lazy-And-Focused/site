@@ -1,46 +1,46 @@
 export const NOT_FOUND_CONFIG = {
-  background: {
-    light: {
-      color: 'bg-[#418d76]',
-      image: 'bg-[url("/images/backgrounds/pink.png")]',
+  BACKGROUND: {
+    LIGHT: {
+      COLOR: 'bg-[#418d76]',
+      IMAGE: 'bg-[url("/images/backgrounds/pink.png")]',
     },
-    dark: {
-      color: 'dark:bg-[#205848]',
-      image: 'dark:bg-none',
+    DARK: {
+      COLOR: 'dark:bg-[#205848]',
+      IMAGE: 'dark:bg-none',
     },
   },
-  parallax: {
-    container: {
-      globalFactorX: 0.1,
-      globalFactorY: 0.1,
+  PARALLAX: {
+    CONTAINER: {
+      GLOBAL_FACTOR_X: 0.1,
+      GLOBAL_FACTOR_Y: 0.1,
     },
-    items: [
+    ITEMS: [
       {
-        factorX: 0.8,
-        factorY: 0.5,
-        content: 'icon' as const,
+        FACTOR_X: 0.8,
+        FACTOR_Y: 0.5,
+        CONTENT: 'icon' as const,
       },
       {
-        factorX: 0.5,
-        factorY: 0.3,
-        content: 'title' as const,
+        FACTOR_X: 0.5,
+        FACTOR_Y: 0.3,
+        CONTENT: 'title' as const,
       },
       {
-        factorX: 0.3,
-        factorY: 0.4,
-        content: 'description' as const,
+        FACTOR_X: 0.3,
+        FACTOR_Y: 0.4,
+        CONTENT: 'description' as const,
       },
       {
-        factorX: 0.7,
-        factorY: 0.2,
-        content: 'button' as const,
+        FACTOR_X: 0.7,
+        FACTOR_Y: 0.2,
+        CONTENT: 'button' as const,
       },
     ],
   },
-  content: {
-    title: 'Без котика!',
-    description:
+  CONTENT: {
+    TITLE: 'Без котика!',
+    DESCRIPTION:
       'Наш пушистик прошерстил весь сайт, но даже его шустрые лапки с острыми коготками не сумели закотить эту страницу!',
-    buttonText: 'Na glavnuyu',
+    BUTTON_TEXT: 'Na glavnuyu',
   },
 } as const;

@@ -5,24 +5,25 @@ import { HeartBreakIcon, ListIcon } from '@icons';
 
 import { NOT_FOUND_CONFIG } from './lib/constants';
 
-const { globalFactorX, globalFactorY } = NOT_FOUND_CONFIG.parallax.container;
-const parallaxItems = NOT_FOUND_CONFIG.parallax.items;
+const { GLOBAL_FACTOR_X, GLOBAL_FACTOR_Y } = NOT_FOUND_CONFIG.PARALLAX.CONTAINER;
+const { CONTENT: PAGE_CONTENT } = NOT_FOUND_CONFIG;
+const PARALLAX_ITEMS = NOT_FOUND_CONFIG.PARALLAX.ITEMS;
 
 const NotFoundPage = () => {
   const bgClasses = [
     'h-full max-h-screen w-full overflow-clip bg-cover bg-center bg-no-repeat',
-    NOT_FOUND_CONFIG.background.light.color,
-    NOT_FOUND_CONFIG.background.light.image,
-    NOT_FOUND_CONFIG.background.dark.color,
-    NOT_FOUND_CONFIG.background.dark.image,
+    NOT_FOUND_CONFIG.BACKGROUND.LIGHT.COLOR,
+    NOT_FOUND_CONFIG.BACKGROUND.LIGHT.IMAGE,
+    NOT_FOUND_CONFIG.BACKGROUND.DARK.COLOR,
+    NOT_FOUND_CONFIG.BACKGROUND.DARK.IMAGE,
   ].join(' ');
 
   return (
     <main className={bgClasses}>
-      <ParallaxContainer globalFactorX={globalFactorX} globalFactorY={globalFactorY}>
-        {parallaxItems.map((item, index) => (
-          <ParallaxItem key={index} factorX={item.factorX} factorY={item.factorY}>
-            {renderContent(item.content)}
+      <ParallaxContainer globalFactorX={GLOBAL_FACTOR_X} globalFactorY={GLOBAL_FACTOR_Y}>
+        {PARALLAX_ITEMS.map((item, index) => (
+          <ParallaxItem key={index} factorX={item.FACTOR_X} factorY={item.FACTOR_Y}>
+            {renderContent(item.CONTENT)}
           </ParallaxItem>
         ))}
       </ParallaxContainer>
@@ -38,16 +39,12 @@ const renderContent = (type: string) => {
     case 'title':
       return (
         <h1 className='rotate-12 text-balance text-5xl font-semibold tracking-tight text-slate-100 drop-shadow-md sm:text-7xl'>
-          {NOT_FOUND_CONFIG.content.title}
+          {PAGE_CONTENT.TITLE}
         </h1>
       );
 
     case 'description':
-      return (
-        <p className='mt-8 text-pretty text-lg font-medium'>
-          {NOT_FOUND_CONFIG.content.description}
-        </p>
-      );
+      return <p className='mt-8 text-pretty text-lg font-medium'>{PAGE_CONTENT.DESCRIPTION}</p>;
 
     case 'button':
       return (
@@ -55,7 +52,7 @@ const renderContent = (type: string) => {
           to={'/'}
           className='btn btn-outline btn-neutral mt-8 text-sm/6 font-semibold transition-opacity hover:opacity-50'
         >
-          <ListIcon /> {NOT_FOUND_CONFIG.content.buttonText}
+          <ListIcon /> {PAGE_CONTENT.BUTTON_TEXT}
         </Link>
       );
 
