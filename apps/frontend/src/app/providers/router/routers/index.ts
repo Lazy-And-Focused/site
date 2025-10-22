@@ -1,1 +1,1 @@
-export { routerRoutes } from './app.tsx';
+export { routes as routerRoutes } from './app.tsx';
