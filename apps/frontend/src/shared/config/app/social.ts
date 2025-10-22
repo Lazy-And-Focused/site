@@ -1,3 +1,5 @@
+import type { SocialPlatform } from '@shared/types/social';
+
 import {
   DiscordIcon,
   GitHubIcon,
@@ -7,12 +9,10 @@ import {
   TikTokIcon,
   TwitchIcon,
   TwitterIcon,
-  VKIcon,
+  VkIcon,
   WebsiteIcon,
   YouTubeIcon,
 } from '@icons';
-
-import type { SocialPlatform } from '@shared/types/social';
 
 /**
  * Конфигурация социальных платформ для парсинга ссылок
@@ -39,7 +39,7 @@ export const SOCIAL_PLATFORMS: SocialPlatform[] = [
   {
     id: 'vk',
     name: 'VK',
-    icon: VKIcon,
+    icon: VkIcon,
     domains: ['vk.com'],
   },
   {

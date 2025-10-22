@@ -1,4 +1,5 @@
 import type { BaseMember, Member } from '@entities/member';
+
 import { parseSocialLinks } from '@shared/lib/social-links';
 
 /**

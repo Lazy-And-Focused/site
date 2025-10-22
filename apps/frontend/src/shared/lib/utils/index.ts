@@ -1,9 +1,11 @@
+import type { Member } from '@entities/member';
+
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Member } from '../../../entities/member';
-import { TEAM_MEMBERS } from '../../config';
 
-export const ScrollToStartByUrlChanges = (): null => {
+import { TEAM_MEMBERS } from '@shared/config';
+
+export function ScrollToStartByUrlChanges(): null {
   const location = useLocation();
 
   useEffect(() => {
@@ -18,7 +20,7 @@ export const ScrollToStartByUrlChanges = (): null => {
   }, [location]);
 
   return null;
-};
+}
 
 export function filterMembersByWithoutMeta(
   grantedMembers: Member[] = TEAM_MEMBERS,

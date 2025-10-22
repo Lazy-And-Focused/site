@@ -34,7 +34,7 @@ interface TeamSocial {
   icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
 }
 
-const teamSocials: TeamSocial[] = [
+const TEAM_SOCIALS: TeamSocial[] = [
   {
     visibleName: 'Наш GitHub',
     href: 'https://github.com/Lazy-And-Focused',
@@ -45,7 +45,7 @@ const teamSocials: TeamSocial[] = [
     href: 'https://t.me/laf_love',
     icon: TelegramIcon,
   },
-];
+] as const;
 
 export const AppHeader = (props: HeaderProps) => {
   const deviceWidth = useDeviceWidth();
@@ -73,7 +73,7 @@ export const AppHeader = (props: HeaderProps) => {
         <Navigation links={props.links} />
 
         <div className='flex flex-row flex-wrap justify-center gap-4 text-sm font-semibold text-base-content sm:flex-1 sm:justify-end'>
-          {teamSocials.map(({ href, visibleName, icon: Icon }, index) => (
+          {TEAM_SOCIALS.map(({ href, visibleName, icon: Icon }, index) => (
             <a
               href={href}
               className='flex items-center justify-center'
@@ -83,7 +83,7 @@ export const AppHeader = (props: HeaderProps) => {
               <span className={index === 0 ? 'hidden md:ml-2 md:inline' : 'sr-only'}>
                 {visibleName}
               </span>
-              <Icon className={clsx('h-5 w-5', teamSocials.length !== index + 1 && 'sm:ml-2')} />
+              <Icon className={clsx('h-5 w-5', TEAM_SOCIALS.length !== index + 1 && 'sm:ml-2')} />
             </a>
           ))}
           <ThemeSwitcher className='h-5 w-5' />
