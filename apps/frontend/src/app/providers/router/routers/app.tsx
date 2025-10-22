@@ -1,19 +1,18 @@
 import type { AppRoute } from '../types';
 
 import { App } from '@app/app';
-import { NotFoundPage } from './lazy-pages';
+import { NotFoundPage } from '../lazy-pages';
 
-import { routes as mainRoutes } from './main';
+import { routes as generalRoutes } from './general';
 
 export const routes: AppRoute[] = [
   {
     path: '/',
     element: <App />,
-    children: mainRoutes,
+    children: generalRoutes,
   },
   {
     path: '*',
     element: <NotFoundPage />,
   },
 ];
-export { routes as appRoutes };

@@ -1,6 +1,6 @@
 import type { AppRoute } from '../types';
 
-import { AboutPage, HomePage, LinksPage, ProjectsPage } from './lazy-pages';
+import { AboutPage, HomePage, LinksPage, ProjectsPage } from '../lazy-pages';
 
 import { APP_ROUTES } from '@shared/lib/constants';
 
