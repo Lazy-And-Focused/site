@@ -1,7 +1,7 @@
 import type { HeaderNavLink } from './types';
 
 import { AppHeaderLogotype } from './ui/logotype';
-import { AppHeaderNavigation } from './ui/navigation';
+import { AppHeaderNavigation, AppHeaderNavigationItem } from './ui/navigation';
 
 const STYLE = {
   CONTAINER: [
@@ -17,7 +17,17 @@ export const AppHeader = (props: { links: HeaderNavLink[] }) => {
   return (
     <header className={STYLE.CONTAINER}>
       <AppHeaderLogotype />
-      <AppHeaderNavigation />
+      <AppHeaderNavigation>
+        <AppHeaderNavigationItem>
+          s
+        </AppHeaderNavigationItem>
+        <AppHeaderNavigationItem>
+          s
+        </AppHeaderNavigationItem>
+        <AppHeaderNavigationItem>
+          s
+        </AppHeaderNavigationItem>
+      </AppHeaderNavigation>
       <div>Loves</div>
     </header>
   );
