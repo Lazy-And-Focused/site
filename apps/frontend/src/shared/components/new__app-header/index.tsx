@@ -5,7 +5,7 @@ import { AppHeaderNavigation } from './ui/navigation';
 
 const STYLE = {
   CONTAINER: [
-    'fixed inset-x-0 top-0',
+    'fixed z-50 inset-x-0 top-0',
     'px-4 py-3',
     'grid grid-cols-[6rem_minmax(6rem,_1fr)_6rem]',
     'justify-items-center',
