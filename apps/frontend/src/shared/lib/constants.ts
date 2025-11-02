@@ -1,4 +1,7 @@
 import type { HeaderNavLink } from '@shared/components/app-header/types';
+import type { SocialLink } from '../types';
+
+import { parseSocialLinks } from './social-links';
 
 // LIBS / UTILS / PACKAGES
 export const REACT_APP_ROOT_ID = 'root';
@@ -26,6 +29,11 @@ export const HEADER_LINKS: HeaderNavLink[] = [
   { name: 'Проекты', path: APP_ROUTES.PROJECTS },
   { name: 'О нас', path: APP_ROUTES.ABOUT },
 ];
+// Обязательно указывайте customName в '[customName] protocol://url'
+export const HEADER_SOCIAL_LINKS: SocialLink[] = parseSocialLinks([
+  '[Наш GitHub] https://github.com/Lazy-And-Focused',
+  '[Telegram канал команды] https://t.me/laf_love',
+]);
 
 // В будущем можно добавить (для фетчинга с бэка, например):
 // export const API_BASE_URL = import.meta.env.VITE_API_URL;
