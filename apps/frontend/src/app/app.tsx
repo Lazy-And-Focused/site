@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { AppFooter } from '@shared/components/app-footer';
-import { AppHeader } from '@shared/components/app-header';
+import { AppHeader } from '@shared/components/new__app-header';
 
 import LoadingPage from '@pages/loading';
 
