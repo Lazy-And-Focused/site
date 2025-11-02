@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 
 import { ThemeSwitcher } from '../theme-switcher';
 import { Navigation } from '../navigation';
-import { MobileHeader } from './mobile';
 import { Logotype } from './ui/logotype';
 import { GitHubIcon, TelegramIcon } from '@icons';
 
