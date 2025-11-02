@@ -6,7 +6,7 @@ import { ListIcon } from '@icons';
 import { ThemeSwitcher } from '../theme-switcher';
 import { Navigation } from '../navigation';
 
-enum MODALS_STATES {
+const enum MODALS_STATES {
   SHOW = 'show',
   HIDE = 'hide',
 }
@@ -15,18 +15,18 @@ export const MobileHeader = ({ links }: HeaderProps) => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   const changeModalState = (newState: MODALS_STATES) => {
-    if (modalRef.current) {
-      switch (newState) {
-        case MODALS_STATES.SHOW:
-          modalRef.current.showModal();
-          break;
-        case MODALS_STATES.HIDE:
-          modalRef.current.showModal();
-          break;
-      }
+    if (!modalRef.current) {
+      return null;
     }
 
-    return null;
+    switch (newState) {
+      case MODALS_STATES.SHOW:
+        modalRef.current.showModal();
+        break;
+      case MODALS_STATES.HIDE:
+        modalRef.current.showModal();
+        break;
+    }
   };
 
   return (
