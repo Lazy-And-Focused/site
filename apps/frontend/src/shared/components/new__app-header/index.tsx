@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import type { HeaderNavLink } from './types';
 
-import { APP_ROUTES, ORGANIZATION_NAME } from '@shared/lib/constants';
+import { AppHeaderLogotype } from './ui/logotype';
+import { AppHeaderNavigation } from './ui/navigation';
 
 const STYLE = {
   CONTAINER: [
@@ -9,47 +10,15 @@ const STYLE = {
     'grid grid-cols-[6rem_minmax(6rem,_1fr)_6rem]',
     'justify-items-center',
   ].join(' '),
-  LOGOTYPE: {
-    CONTAINER: '-m-1.5 p-1.5',
-    IMAGE: 'aspect-auto rounded shadow',
-  },
-};
+} as const;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-export const AppHeader = (..._any: any) => {
+export const AppHeader = (props: { links: HeaderNavLink[] }) => {
   return (
     <header className={STYLE.CONTAINER}>
       <AppHeaderLogotype />
-      <div>Ram</div>
+      <AppHeaderNavigation />
       <div>Loves</div>
     </header>
-  );
-};
-
-
-const logoImageSrc = '/images/logo.png';
-const logoImageAlt = `Logotype of ${ORGANIZATION_NAME}`;
-
-const AppHeaderLogotype = ({
-  size = 32,
-  imageSrc = logoImageSrc,
-  imageAlt = logoImageAlt,
-}: {
-  size?: number;
-  imageAlt?: string;
-  imageSrc?: string;
-}) => {
-  return (
-    <Link to={APP_ROUTES.HOME} className={STYLE.LOGOTYPE.CONTAINER}>
-      <span className='sr-only'>{ORGANIZATION_NAME}</span>
-      <img
-        title={imageAlt}
-        alt={imageAlt}
-        src={imageSrc}
-        width={size}
-        height={size}
-        className={STYLE.LOGOTYPE.IMAGE}
-      />
-    </Link>
   );
 };
