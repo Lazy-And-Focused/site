@@ -4,7 +4,7 @@ import { ORGANIZATION_NAME, APP_ROUTES } from '@shared/lib/constants';
 
 export const Logotype = () => {
   const imageSrc = '/images/logo.png';
-  const imageAlt = `Logotype of ${ORGANIZATION_NAME}'`;
+  const imageAlt = `Logotype of ${ORGANIZATION_NAME}`;
 
   return (
     <Link to={APP_ROUTES.HOME} className='-m-1.5 p-1.5'>
