@@ -6,7 +6,7 @@ import { filterMembersByWithoutMeta } from '@shared/lib/utils';
 
 /**
  * Возвращает только участников, у кого **нет** подхящих мета.
- * 
+ *
  * !!! Используется обратный синтаксис к filterMembersByMeta()
  */
 export const useFilteredMembers = (

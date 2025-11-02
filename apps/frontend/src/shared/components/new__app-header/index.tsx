@@ -12,21 +12,14 @@ const STYLE = {
   ].join(' '),
 } as const;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-export const AppHeader = (props: { links: HeaderNavLink[] }) => {
+export const AppHeader = ({ links }: { links: HeaderNavLink[] }) => {
   return (
     <header className={STYLE.CONTAINER}>
       <AppHeaderLogotype />
       <AppHeaderNavigation>
-        <AppHeaderNavigationItem>
-          s
-        </AppHeaderNavigationItem>
-        <AppHeaderNavigationItem>
-          s
-        </AppHeaderNavigationItem>
-        <AppHeaderNavigationItem>
-          s
-        </AppHeaderNavigationItem>
+        {links.map(({ name, path }) => (
+          <AppHeaderNavigationItem href={path}>{name}</AppHeaderNavigationItem>
+        ))}
       </AppHeaderNavigation>
       <div>Loves</div>
     </header>
