@@ -16,8 +16,7 @@ export const AppHeaderNavigationItem = ({
 }: {
   href?: string;
   children: React.ReactNode;
-
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }) => {
   if (!href) {
     return (
@@ -28,7 +27,7 @@ export const AppHeaderNavigationItem = ({
   }
 
   return (
-    <Link to={href} className={STYLE.CONTAINER}>
+    <Link to={href} className={STYLE.CONTAINER} onClick={onClick}>
       {children}
     </Link>
   );

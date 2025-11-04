@@ -62,6 +62,20 @@ export const AppHeader = ({ links }: { links: HeaderNavLink[] }) => {
   );
 };
 
+const AppNavigationItems = ({
+  links,
+  onItemClick,
+}: {
+  links: HeaderNavLink[];
+  onItemClick?: () => void;
+}) => {
+  return links.map(({ name, path }) => (
+    <AppHeaderNavigationItem href={path} onClick={onItemClick} key={name}>
+      {name}
+    </AppHeaderNavigationItem>
+  ));
+};
+
 const PcAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
   return (
     <AppHeaderNavigation>
@@ -72,6 +86,10 @@ const PcAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
 
 const MobileAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
   const mobileModalNavigationRef = useRef<HTMLDialogElement>(null);
+
+  const handleCloseModal = () => {
+    changeModalState(mobileModalNavigationRef, MODALS_STATES.HIDE);
+  };
 
   return (
     <AppHeaderModalNavigation
@@ -84,13 +102,7 @@ const MobileAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
       }
       ref={mobileModalNavigationRef}
     >
-      <AppNavigationItems links={links} />
+      <AppNavigationItems links={links} onItemClick={handleCloseModal} />
     </AppHeaderModalNavigation>
   );
-};
-
-const AppNavigationItems = ({ links }: { links: HeaderNavLink[] }) => {
-  return links.map(({ name, path }) => (
-    <AppHeaderNavigationItem href={path}>{name}</AppHeaderNavigationItem>
-  ));
 };
