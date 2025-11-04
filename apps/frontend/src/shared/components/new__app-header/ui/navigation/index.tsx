@@ -7,3 +7,4 @@ export const AppHeaderNavigation = ({ children }: { children: React.ReactNode })
 };
 
 export { AppHeaderNavigationItem } from './item';
+export { AppHeaderModalNavigation } from './modal';

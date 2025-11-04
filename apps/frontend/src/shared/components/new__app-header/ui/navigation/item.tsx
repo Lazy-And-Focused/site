@@ -11,11 +11,19 @@ const STYLE = {
 
 export const AppHeaderNavigationItem = ({
   href,
-  children,
+  children
 }: {
-  href: string;
+  href?: string;
   children: React.ReactNode;
-}) => {
+  }) => {
+  if (!href) {
+    return (
+      <button className={STYLE.CONTAINER}>
+        {children}
+      </button>
+    )
+  }
+
   return (
     <Link to={href} className={STYLE.CONTAINER}>
       {children}

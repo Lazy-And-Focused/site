@@ -1,13 +1,20 @@
 import type { HeaderNavLink } from './types';
 
 import { AppHeaderLogotype } from './ui/logotype';
-import { AppHeaderNavigation, AppHeaderNavigationItem } from './ui/navigation';
+import {
+  AppHeaderNavigation,
+  AppHeaderNavigationItem,
+  AppHeaderModalNavigation,
+} from './ui/navigation';
+import { AppHeaderSocialLinks } from './ui/social-links';
+
 import { WebsiteIcon } from '@icons';
 
 import { useShiftPosition } from './hooks/use-shift-position';
+import { useDeviceWidth } from '@shared/hooks';
+import { useRef } from 'react';
 
 import { HEADER_SOCIAL_LINKS } from '@shared/lib/constants';
-import { AppHeaderSocialLinks } from './ui/social-links';
 
 import clsx from 'clsx';
 
@@ -37,6 +44,7 @@ const socialLinks = HEADER_SOCIAL_LINKS.map((link) => ({
 
 export const AppHeader = ({ links }: { links: HeaderNavLink[] }) => {
   const shifted = useShiftPosition();
+  const deviceWidth = useDeviceWidth();
 
   return (
     <header
@@ -46,12 +54,35 @@ export const AppHeader = ({ links }: { links: HeaderNavLink[] }) => {
       )}
     >
       <AppHeaderLogotype />
-      <AppHeaderNavigation>
-        {links.map(({ name, path }) => (
-          <AppHeaderNavigationItem href={path}>{name}</AppHeaderNavigationItem>
-        ))}
-      </AppHeaderNavigation>
+      {!(deviceWidth <= 670) ? <PcAppHeader links={links} /> : <MobileAppHeader links={links} />}
       <AppHeaderSocialLinks linkSize={20} links={socialLinks} />
     </header>
   );
+};
+
+const PcAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
+  return (
+    <AppHeaderNavigation>
+      <AppNavigationItems links={links} />
+    </AppHeaderNavigation>
+  );
+};
+
+const MobileAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
+  const mobileModalNavigationRef = useRef<HTMLDialogElement>(null);
+
+  return (
+    <AppHeaderModalNavigation
+      placeholderItem={<AppHeaderNavigationItem>Открыть меню</AppHeaderNavigationItem>}
+      ref={mobileModalNavigationRef}
+    >
+      <AppNavigationItems links={links} />
+    </AppHeaderModalNavigation>
+  );
+};
+
+const AppNavigationItems = ({ links }: { links: HeaderNavLink[] }) => {
+  return links.map(({ name, path }) => (
+    <AppHeaderNavigationItem href={path}>{name}</AppHeaderNavigationItem>
+  ));
 };
