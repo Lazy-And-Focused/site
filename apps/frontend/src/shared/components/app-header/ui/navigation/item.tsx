@@ -7,7 +7,7 @@ const STYLE = {
     'font-medium sm:text-sm',
     'text-base-content transition-colors',
   ].join(' '),
-};
+} as const;
 
 export const AppHeaderNavigationItem = ({
   href,

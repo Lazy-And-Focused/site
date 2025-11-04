@@ -10,7 +10,7 @@ import {
 
 import { changeModalState, MODALS_STATES } from '../ui/navigation/modal/utils';
 
-export const PcAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
+export const DefaultAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
   return (
     <AppHeaderNavigation>
       <AppNavigationItems links={links} />

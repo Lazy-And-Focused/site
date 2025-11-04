@@ -8,7 +8,7 @@ import { WebsiteIcon } from '@icons';
 import { useShiftPosition } from './hooks/use-shift-position';
 import { useDeviceWidth } from '@shared/hooks';
 
-import { PcAppHeader, MobileAppHeader } from './variants';
+import { DefaultAppHeader, MobileAppHeader } from './variants';
 
 import { HEADER_SOCIAL_LINKS } from '@shared/lib/constants';
 
@@ -50,7 +50,13 @@ export const AppHeader = ({ links }: { links: HeaderNavLink[] }) => {
       )}
     >
       <AppHeaderLogotype />
-      {!(deviceWidth <= 670) ? <PcAppHeader links={links} /> : <MobileAppHeader links={links} />}
+
+      {!(deviceWidth <= 670) ? (
+        <DefaultAppHeader links={links} />
+      ) : (
+        <MobileAppHeader links={links} />
+      )}
+
       <AppHeaderSocialLinks linkSize={20} links={socialLinks} />
     </header>
   );

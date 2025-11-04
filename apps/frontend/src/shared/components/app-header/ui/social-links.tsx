@@ -2,7 +2,8 @@ import type { SVGProps } from 'react';
 
 const STYLE = {
   CONTAINER: 'flex flex-row items-center justify-end gap-2',
-};
+  LINK: 'btn btn-circle btn-ghost px-2 py-2',
+} as const;
 
 type SocialLink = {
   id: string;
@@ -27,7 +28,7 @@ export const AppHeaderSocialLinks = ({
           href={href}
           target='_blank'
           rel='noreferrer'
-          className='btn btn-ghost aspect-square rounded-full px-2 py-2'
+          className={STYLE.LINK}
         >
           <span className={'sr-only'}>{name}</span>
           {<Icon width={linkSize} height={linkSize} />}

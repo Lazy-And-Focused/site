@@ -10,7 +10,7 @@ const STYLE = {
     BACKDROP: 'modal-backdrop',
     CLOSE_BUTTON: 'btn btn-circle btn-ghost btn-sm absolute right-2 top-2',
   },
-};
+} as const;
 
 export const AppHeaderModalNavigation = forwardRef<
   HTMLDialogElement,

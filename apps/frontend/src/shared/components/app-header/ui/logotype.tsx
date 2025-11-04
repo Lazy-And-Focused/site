@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 import { APP_ROUTES, ORGANIZATION_NAME } from '@shared/lib/constants';
 
-const logoImageSrc = '/images/logo.png';
-const logoImageAlt = `Logotype of ${ORGANIZATION_NAME}`;
+const DEFAULT_IMAGE_SOURCE = '/images/logo.png';
+const DEFAULT_IMAGE_ALT_TEXT = `Logotype of ${ORGANIZATION_NAME}`;
 
 const STYLE = {
   CONTAINER: '-m-1.5 p-1.5',
@@ -12,8 +12,8 @@ const STYLE = {
 
 export const AppHeaderLogotype = ({
   size = 32,
-  imageSrc = logoImageSrc,
-  imageAlt = logoImageAlt,
+  imageSrc = DEFAULT_IMAGE_SOURCE,
+  imageAlt = DEFAULT_IMAGE_ALT_TEXT,
 }: {
   size?: number;
   imageAlt?: string;
