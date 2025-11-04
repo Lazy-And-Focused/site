@@ -1,20 +1,14 @@
 import type { HeaderNavLink } from './types';
 
 import { AppHeaderLogotype } from './ui/logotype';
-import {
-  AppHeaderNavigation,
-  AppHeaderNavigationItem,
-  AppHeaderModalNavigation,
-} from './ui/navigation';
 import { AppHeaderSocialLinks } from './ui/social-links';
 
 import { WebsiteIcon } from '@icons';
 
 import { useShiftPosition } from './hooks/use-shift-position';
 import { useDeviceWidth } from '@shared/hooks';
-import { useRef } from 'react';
 
-import { MODALS_STATES, changeModalState } from './ui/navigation/modal/utils';
+import { PcAppHeader, MobileAppHeader } from './variants';
 
 import { HEADER_SOCIAL_LINKS } from '@shared/lib/constants';
 
@@ -59,50 +53,5 @@ export const AppHeader = ({ links }: { links: HeaderNavLink[] }) => {
       {!(deviceWidth <= 670) ? <PcAppHeader links={links} /> : <MobileAppHeader links={links} />}
       <AppHeaderSocialLinks linkSize={20} links={socialLinks} />
     </header>
-  );
-};
-
-const AppNavigationItems = ({
-  links,
-  onItemClick,
-}: {
-  links: HeaderNavLink[];
-  onItemClick?: () => void;
-}) => {
-  return links.map(({ name, path }) => (
-    <AppHeaderNavigationItem href={path} onClick={onItemClick} key={name}>
-      {name}
-    </AppHeaderNavigationItem>
-  ));
-};
-
-const PcAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
-  return (
-    <AppHeaderNavigation>
-      <AppNavigationItems links={links} />
-    </AppHeaderNavigation>
-  );
-};
-
-const MobileAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
-  const mobileModalNavigationRef = useRef<HTMLDialogElement>(null);
-
-  const handleCloseModal = () => {
-    changeModalState(mobileModalNavigationRef, MODALS_STATES.HIDE);
-  };
-
-  return (
-    <AppHeaderModalNavigation
-      placeholderItem={
-        <AppHeaderNavigationItem
-          onClick={() => changeModalState(mobileModalNavigationRef, MODALS_STATES.SHOW)}
-        >
-          Открыть меню
-        </AppHeaderNavigationItem>
-      }
-      ref={mobileModalNavigationRef}
-    >
-      <AppNavigationItems links={links} onItemClick={handleCloseModal} />
-    </AppHeaderModalNavigation>
   );
 };
