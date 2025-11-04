@@ -11,17 +11,20 @@ const STYLE = {
 
 export const AppHeaderNavigationItem = ({
   href,
-  children
+  children,
+  onClick,
 }: {
   href?: string;
   children: React.ReactNode;
-  }) => {
+
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}) => {
   if (!href) {
     return (
-      <button className={STYLE.CONTAINER}>
+      <button className={STYLE.CONTAINER} onClick={onClick}>
         {children}
       </button>
-    )
+    );
   }
 
   return (

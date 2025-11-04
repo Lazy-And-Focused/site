@@ -24,7 +24,7 @@ export const MobileHeader = ({ links }: HeaderProps) => {
         modalRef.current.showModal();
         break;
       case MODALS_STATES.HIDE:
-        modalRef.current.showModal();
+        modalRef.current.close();
         break;
     }
   };

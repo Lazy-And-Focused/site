@@ -14,6 +14,8 @@ import { useShiftPosition } from './hooks/use-shift-position';
 import { useDeviceWidth } from '@shared/hooks';
 import { useRef } from 'react';
 
+import { MODALS_STATES, changeModalState } from './ui/navigation/modal/utils';
+
 import { HEADER_SOCIAL_LINKS } from '@shared/lib/constants';
 
 import clsx from 'clsx';
@@ -73,7 +75,13 @@ const MobileAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
 
   return (
     <AppHeaderModalNavigation
-      placeholderItem={<AppHeaderNavigationItem>Открыть меню</AppHeaderNavigationItem>}
+      placeholderItem={
+        <AppHeaderNavigationItem
+          onClick={() => changeModalState(mobileModalNavigationRef, MODALS_STATES.SHOW)}
+        >
+          Открыть меню
+        </AppHeaderNavigationItem>
+      }
       ref={mobileModalNavigationRef}
     >
       <AppNavigationItems links={links} />
