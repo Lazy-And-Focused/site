@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 
 export const useShiftPosition = (): boolean => {
-  const [shift, setScroll] = useState(0);
+  const [shift, setShift] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScroll(window.scrollY);
+    const handleScroll = () => {
+      return setShift(window.scrollY)
+    };
 
     window.addEventListener('scroll', handleScroll);
 

@@ -1,4 +1,4 @@
-import type { HeaderNavLink } from '@shared/components/app-header/types';
+import type { HeaderNavigationLink } from '@shared/components/app-header/types';
 import type { SocialLink } from '../types';
 
 import { parseSocialLinks } from './social-links';
@@ -24,7 +24,7 @@ export const ORGANIZATION_SHORT_NAME = 'LAF';
 export const ORGANIZATION_REPOSITORIES_URL = 'https://api.github.com/orgs/Lazy-And-Focused/repos';
 
 // UTILITARY FOR COMPONENTS
-export const HEADER_LINKS: HeaderNavLink[] = [
+export const HEADER_LINKS: HeaderNavigationLink[] = [
   { name: 'Главная', path: APP_ROUTES.HOME },
   { name: 'Проекты', path: APP_ROUTES.PROJECTS },
   { name: 'О нас', path: APP_ROUTES.ABOUT },

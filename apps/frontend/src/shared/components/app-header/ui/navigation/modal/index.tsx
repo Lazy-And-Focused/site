@@ -12,31 +12,35 @@ const STYLE = {
   },
 } as const;
 
-export const AppHeaderModalNavigation = forwardRef<
-  HTMLDialogElement,
-  { children: React.ReactNode; placeholderItem: React.ReactNode }
->(({ children, placeholderItem }, ref) => {
-  const handleClose = () => {
-    if (ref && typeof ref === 'object' && ref.current) {
-      changeModalState(ref, MODALS_STATES.HIDE);
-    }
-  };
+type Props = {
+  children: React.ReactNode;
+  placeholderItem: React.ReactNode;
+};
 
-  return (
-    <nav className={STYLE.CONTAINER}>
-      {placeholderItem}
+export const AppHeaderModalNavigation = forwardRef<HTMLDialogElement, Props>(
+  ({ children, placeholderItem }, ref) => {
+    const handleClose = () => {
+      if (ref && typeof ref === 'object' && ref.current) {
+        changeModalState(ref, MODALS_STATES.HIDE);
+      }
+    };
 
-      <dialog ref={ref} className={STYLE.MODAL.DIALOG}>
-        <div className={STYLE.MODAL.CONTAINER}>
-          <button className={STYLE.MODAL.CLOSE_BUTTON} onClick={handleClose}>
-            ✕
-          </button>
-          {children}
-        </div>
-        <form method='dialog' className={STYLE.MODAL.BACKDROP}>
-          <button onClick={handleClose}>close</button>
-        </form>
-      </dialog>
-    </nav>
-  );
-});
+    return (
+      <nav className={STYLE.CONTAINER}>
+        {placeholderItem}
+
+        <dialog ref={ref} className={STYLE.MODAL.DIALOG}>
+          <div className={STYLE.MODAL.CONTAINER}>
+            <button className={STYLE.MODAL.CLOSE_BUTTON} onClick={handleClose}>
+              ✕
+            </button>
+            {children}
+          </div>
+          <form method='dialog' className={STYLE.MODAL.BACKDROP}>
+            <button onClick={handleClose}>close</button>
+          </form>
+        </dialog>
+      </nav>
+    );
+  },
+);

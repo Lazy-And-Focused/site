@@ -1,4 +1,4 @@
-import type { HeaderNavLink } from './types';
+import type { HeaderNavigationLink } from './types';
 
 import { AppHeaderLogotype } from './ui/logotype';
 import { AppHeaderSocialLinks } from './ui/social-links';
@@ -38,7 +38,7 @@ const socialLinks = HEADER_SOCIAL_LINKS.map((link) => ({
   icon: link.platform.icon || WebsiteIcon,
 }));
 
-export const AppHeader = ({ links }: { links: HeaderNavLink[] }) => {
+export const AppHeader = ({ links }: { links: HeaderNavigationLink[] }) => {
   const shifted = useShiftPosition();
   const deviceWidth = useDeviceWidth();
 
@@ -51,11 +51,7 @@ export const AppHeader = ({ links }: { links: HeaderNavLink[] }) => {
     >
       <AppHeaderLogotype />
 
-      {!(deviceWidth <= 670) ? (
-        <DefaultAppHeader links={links} />
-      ) : (
-        <MobileAppHeader links={links} />
-      )}
+      {deviceWidth < 670 ? <DefaultAppHeader links={links} /> : <MobileAppHeader links={links} />}
 
       <AppHeaderSocialLinks linkSize={20} links={socialLinks} />
     </header>

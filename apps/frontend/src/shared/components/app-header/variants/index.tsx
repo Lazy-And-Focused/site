@@ -1,4 +1,4 @@
-import type { HeaderNavLink } from '../types';
+import type { HeaderNavigationLink } from '../types';
 
 import { useRef } from 'react';
 
@@ -10,7 +10,7 @@ import {
 
 import { changeModalState, MODALS_STATES } from '../ui/navigation/modal/utils';
 
-export const DefaultAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
+export const DefaultAppHeader = ({ links }: { links: HeaderNavigationLink[] }) => {
   return (
     <AppHeaderNavigation>
       <AppNavigationItems links={links} />
@@ -18,8 +18,8 @@ export const DefaultAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
   );
 };
 
-export const MobileAppHeader = ({ links }: { links: HeaderNavLink[] }) => {
-  const mobileModalNavigationRef = useRef<HTMLDialogElement>(null);
+export const MobileAppHeader = ({ links }: { links: HeaderNavigationLink[] }) => {
+  const mobileModalNavigationRef = useRef<HTMLDialogElement | null>(null);
 
   const handleCloseModal = () => {
     changeModalState(mobileModalNavigationRef, MODALS_STATES.HIDE);
@@ -45,7 +45,7 @@ const AppNavigationItems = ({
   links,
   onItemClick,
 }: {
-  links: HeaderNavLink[];
+  links: HeaderNavigationLink[];
   onItemClick?: () => void;
 }) => {
   return links.map(({ name, path }) => (

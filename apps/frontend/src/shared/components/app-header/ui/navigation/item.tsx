@@ -9,15 +9,13 @@ const STYLE = {
   ].join(' '),
 } as const;
 
-export const AppHeaderNavigationItem = ({
-  href,
-  children,
-  onClick,
-}: {
+type Props = {
   href?: string;
   children: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
-}) => {
+};
+
+export const AppHeaderNavigationItem = ({ href, children, onClick }: Props) => {
   if (!href) {
     return (
       <button className={STYLE.CONTAINER} onClick={onClick}>

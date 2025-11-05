@@ -1,1 +1,1 @@
-export type HeaderNavLink = { name: string; path: string };
+export type HeaderNavigationLink = { name: string; path: string };

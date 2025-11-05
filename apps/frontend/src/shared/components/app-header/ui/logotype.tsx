@@ -10,15 +10,17 @@ const STYLE = {
   IMAGE: 'aspect-auto rounded shadow',
 } as const;
 
+type Props = {
+  size?: number;
+  imageAlt?: string;
+  imageSrc?: string;
+};
+
 export const AppHeaderLogotype = ({
   size = 32,
   imageSrc = DEFAULT_IMAGE_SOURCE,
   imageAlt = DEFAULT_IMAGE_ALT_TEXT,
-}: {
-  size?: number;
-  imageAlt?: string;
-  imageSrc?: string;
-}) => {
+}: Props) => {
   return (
     <Link to={APP_ROUTES.HOME} className={STYLE.CONTAINER}>
       <span className='sr-only'>{ORGANIZATION_NAME}</span>
