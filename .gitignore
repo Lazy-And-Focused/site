@@ -46,3 +46,4 @@ site-backend
 *.sln
 *.sw?
 .vs
+/apps/frontend/.vercel/output
