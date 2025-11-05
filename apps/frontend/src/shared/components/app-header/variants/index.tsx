@@ -9,8 +9,9 @@ import {
 } from '../ui/navigation';
 
 import { changeModalState, MODALS_STATES } from '../ui/navigation/modal/utils';
+import { AppHeaderProps } from '../';
 
-export const DefaultAppHeader = ({ links }: { links: HeaderNavigationLink[] }) => {
+export const DefaultAppHeader = ({ links }: AppHeaderProps) => {
   return (
     <AppHeaderNavigation>
       <AppNavigationItems links={links} />
@@ -18,7 +19,7 @@ export const DefaultAppHeader = ({ links }: { links: HeaderNavigationLink[] }) =
   );
 };
 
-export const MobileAppHeader = ({ links }: { links: HeaderNavigationLink[] }) => {
+export const MobileAppHeader = ({ links }: AppHeaderProps) => {
   const mobileModalNavigationRef = useRef<HTMLDialogElement | null>(null);
 
   const handleCloseModal = () => {

@@ -38,7 +38,9 @@ const socialLinks = HEADER_SOCIAL_LINKS.map((link) => ({
   icon: link.platform.icon || WebsiteIcon,
 }));
 
-export const AppHeader = ({ links }: { links: HeaderNavigationLink[] }) => {
+type Props = { links: HeaderNavigationLink[] };
+
+export const AppHeader = (props: Props) => {
   const shifted = useShiftPosition();
   const deviceWidth = useDeviceWidth();
 
@@ -51,9 +53,11 @@ export const AppHeader = ({ links }: { links: HeaderNavigationLink[] }) => {
     >
       <AppHeaderLogotype />
 
-      {deviceWidth < 670 ? <DefaultAppHeader links={links} /> : <MobileAppHeader links={links} />}
+      {deviceWidth < 670 ? <DefaultAppHeader {...props} /> : <MobileAppHeader {...props} />}
 
       <AppHeaderSocialLinks linkSize={20} links={socialLinks} />
     </header>
   );
 };
+
+export type { Props as AppHeaderProps };
