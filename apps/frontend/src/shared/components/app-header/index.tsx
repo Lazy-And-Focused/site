@@ -53,7 +53,7 @@ export const AppHeader = (props: Props) => {
     >
       <AppHeaderLogotype />
 
-      {deviceWidth < 670 ? <DefaultAppHeader {...props} /> : <MobileAppHeader {...props} />}
+      {deviceWidth > 670 ? <DefaultAppHeader {...props} /> : <MobileAppHeader {...props} />}
 
       <AppHeaderSocialLinks linkSize={20} links={socialLinks} />
     </header>
