@@ -1,6 +1,8 @@
 import type { SocialPlatform } from '@shared/types/social';
 
 import {
+  BlueskyIcon,
+  BoostyIcon,
   DiscordIcon,
   GitHubIcon,
   GravatarIcon,
@@ -67,6 +69,11 @@ export const SOCIAL_PLATFORMS: SocialPlatform[] = [
     domains: ['twitter.com', 'x.com'],
   },
   {
+    id: 'patreon',
+    name: 'Patreon',
+    domains: ['patreon.com'],
+  },
+  {
     id: 'pinterest',
     name: 'Pinterest',
     icon: PinterestIcon,
@@ -92,11 +99,13 @@ export const SOCIAL_PLATFORMS: SocialPlatform[] = [
   {
     id: 'boosty',
     name: 'Boosty',
+    icon: BoostyIcon,
     domains: ['boosty.to'],
   },
   {
     id: 'bluesky',
     name: 'Bluesky',
+    icon: BlueskyIcon,
     domains: ['bsky.app'],
   },
   {
