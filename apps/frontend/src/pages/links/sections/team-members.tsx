@@ -1,4 +1,4 @@
-import { TeamMemberCard } from '@shared/components/member-card';
+import { TeamMemberCard } from '@/shared/components/old__member-card';
 
 import { useFilteredMembers } from '@shared/hooks';
 

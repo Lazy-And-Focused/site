@@ -1,6 +1,6 @@
 import { useFilteredMembers } from '@shared/hooks';
 
-import { TeamMemberCard } from '@shared/components/member-card';
+import { TeamMemberCard } from '@/shared/components/old__member-card';
 
 export const AboutMembersSection = () => {
   const filteredMembers = useFilteredMembers();

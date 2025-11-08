@@ -1,81 +1,74 @@
-import type { Member } from '@/entities/member';
+import type { Member } from '@entities/member';
+import type { SocialLink } from '@shared/types';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { WebsiteIcon } from '@icons';
 
-import { DefaultVariant } from './variants/default';
-import { FullVariant } from './variants/full';
-import { Avatar } from './avatar';
+const VIEWERED_SOCIAL_NAMES = ['github', 'telegram'] as const;
 
-import { HasPrimarySocials, HasPrimarySocialsType } from './contexts';
-
-export { HasPrimarySocials } from './contexts';
-
-export const TeamMemberCard = ({
-  member,
+export const MemberCard = ({
+  data: member,
   type = 'default',
 }: {
-  member: Member;
-  type?: 'default' | 'full';
+  data: Member;
+  type?: 'default' | 'mini';
 }) => {
-  const validateSocial = useCallback(
-    (url: string) => {
-      const isExec = member.socials.some((social) => social.url.startsWith(url));
-      return isExec || false;
-    },
-    [member.socials],
-  );
+  if (type === 'mini') {
+    return (
+      <div className={`flex items-center gap-x-6 rounded bg-primary/15 p-2`}>
+        <div className={'aspect-square h-auto w-16 overflow-hidden rounded'}>
+          <img
+            className={'h-full w-full transition-[opacity,_filter] duration-500'}
+            // Костыль
+            src={member.avatar || `https://github.com/${member.tag}.png?size=255`}
+            alt={`Аватар пользователя ${member.tag}`}
+            loading='lazy'
+          />
+        </div>
 
-  const hasPrimarySocials = useMemo<HasPrimarySocialsType>(
-    () => ({
-      github: [validateSocial('https://github.com/'), 'https://github.com/'],
-      telegram: [validateSocial('https://t.me/'), 'https://t.me/'],
-    }),
-    [validateSocial],
-  );
+        <div className='mr-2 w-full text-end'>
+          <h3 className='align-center flex flex-row items-center justify-end gap-x-2 text-base/7 font-semibold tracking-tight text-base-content'>
+            {member.name}
 
-  const [avatarSrc, setAvatarSrc] = useState(getAvatarUrl(member, hasPrimarySocials!['github'][0]));
+            {member.socials
+              .filter((social) =>
+                VIEWERED_SOCIAL_NAMES.some((socialName) =>
+                  social.platform.name.toLowerCase().includes(socialName),
+                ),
+              )
+              .map((social) => (
+                <MemberSocialLink
+                  data={{
+                    ...social,
+                    customName:
+                      social.customName || `Профиль ${member.name} в ${social.platform.name}`,
+                  }}
+                />
+              ))}
+          </h3>
 
-  useEffect(
-    () => setAvatarSrc(getAvatarUrl(member, hasPrimarySocials!['github'][0])),
-    [member, hasPrimarySocials],
-  );
+          <p className='text-sm/6 font-semibold text-primary/75'>{member.roles.join(', ')}</p>
+        </div>
+      </div>
+    );
+  }
+
+  return member.name;
+};
+
+const MemberSocialLink = ({ data: { id, url, customName, platform } }: { data: SocialLink }) => {
+  const Icon = platform.icon || WebsiteIcon;
 
   return (
-    <HasPrimarySocials.Provider value={hasPrimarySocials}>
-      {type === 'full' ? (
-        <FullVariant
-          member={member}
-          avatar={
-            <Avatar
-              src={avatarSrc}
-              alt={`${member.name}'s avatar`}
-              className='aspect-square h-auto w-full'
-            />
-          }
-        />
-      ) : (
-        <DefaultVariant
-          member={member}
-          avatar={
-            <Avatar
-              src={avatarSrc}
-              alt={`${member.name}'s avatar`}
-              className='aspect-square w-24'
-            />
-          }
-        />
-      )}
-    </HasPrimarySocials.Provider>
+    <a
+      key={id}
+      href={url}
+      target='_blank'
+      rel='noreferrer'
+      aria-label={customName}
+      title={customName}
+      className={'md:text-md dark:text-grenn-400 text-sm/6 font-semibold text-primary'}
+    >
+      <Icon aria-label={customName} className='h-4 w-4' />
+    </a>
   );
 };
-
-const getAvatarUrl = (member: Member, hasGitHub: boolean) => {
-  if (member.avatar) {
-    return member.avatar;
-  } else if (hasGitHub) {
-    return `https://github.com/${member.tag}.png?size=255`;
-  }
-  return '/images/avatars/default.png';
-};
-
-export default TeamMemberCard;
