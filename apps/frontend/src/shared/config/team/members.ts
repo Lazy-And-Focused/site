@@ -64,7 +64,7 @@ export const BASE_TEAM_MEMBERS: BaseMember[] = [
     tag: 'beyz1k',
     name: 'beyz1k',
     roles: ['Промоутер'],
-    avatar: "https://github.com/beyz1k.png",
+    avatar: 'https://github.com/beyz1k.png',
     description:
       'Всем привет меня зовут Эмиль, я будущий промоутер и начинающий фронтенд-разработчик <3',
     socials: ['https://github.com/beyz1k'],
@@ -83,7 +83,7 @@ export const BASE_TEAM_MEMBERS: BaseMember[] = [
     tag: 'yonathanpower',
     name: 'Yonathan',
     roles: ['Стажёр Сценарист'],
-    avatar: "https://github.com/yonathanpower.png",
+    avatar: 'https://github.com/yonathanpower.png',
     description:
       'Ола! Я Йонатан, в команде являюсь сценаристом, моя цель — создавать истории, которые не только развлекают, но также захватывают и затягивают в свой чудный мир.',
     socials: ['https://t.me/charlatan0', 'https://github.com/yonathanpower'],

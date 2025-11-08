@@ -19,8 +19,7 @@ export const MemberCard = ({
     return <MemberCardBadge data={member} />;
   }
 
-
-  const socialCount = member.socials.length
+  const socialCount = member.socials.length;
   if (type === 'mini') {
     return (
       <div
@@ -46,7 +45,7 @@ export const MemberCard = ({
 
         {socialCount > 0 && (
           <div className='grid grid-cols-6 gap-2 rounded-md bg-primary/15 p-1 text-primary'>
-            {member.socials.slice(0, socialCount <= 6 ? 6:5).map((social) => (
+            {member.socials.slice(0, socialCount <= 6 ? 6 : 5).map((social) => (
               <MemberSocialLink
                 data={{
                   ...social,
@@ -55,9 +54,12 @@ export const MemberCard = ({
                 }}
               />
             ))}
-            {socialCount >6&& (
-              <span className='col-span-1 text-center self-center'>+{member.socials.slice(6).length}</span>
-            )}</div>
+            {socialCount > 6 && (
+              <span className='col-span-1 self-center text-center'>
+                +{member.socials.slice(6).length}
+              </span>
+            )}
+          </div>
         )}
       </div>
     );

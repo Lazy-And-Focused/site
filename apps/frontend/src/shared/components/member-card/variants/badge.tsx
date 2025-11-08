@@ -38,7 +38,9 @@ export const MemberCardBadge = ({ data: member }: MemberCardBaseProps) => {
             ))}
         </h3>
 
-        <p className='line-clamp-1 max-w-full text-sm/6 font-semibold text-primary/75'>{member.roles[0]}</p>
+        <p className='line-clamp-1 max-w-full text-sm/6 font-semibold text-primary/75'>
+          {member.roles[0]}
+        </p>
       </div>
     </div>
   );
