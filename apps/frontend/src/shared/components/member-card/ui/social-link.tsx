@@ -3,7 +3,12 @@ import type { SocialLink } from '@shared/types';
 import { WebsiteIcon } from '@icons';
 
 const STYLE = {
-  LINK: ['font-semibold text-sm/6 text-primary', 'md:text-md dark:text-grenn-400'].join(' '),
+  LINK: [
+    'btn btn-circle btn-ghost',
+    'w-auto p-0',
+    'font-semibold text-sm/6 text-primary',
+    'md:text-md dark:text-grenn-400',
+  ].join(' '),
 };
 
 export const MemberSocialLink = ({

@@ -28,10 +28,10 @@ export const MemberListSection = () => {
           </div>
         </div>
 
-        <ul role='list' className='grid gap-8 sm:grid-cols-2 xl:col-span-2'>
+        <ul role='list' className='grid gap-8 sm:grid-cols-2 md:grid-cols-3 xl:col-span-2'>
           {filteredMembers.map((member) => (
             <li key={member.tag}>
-              <MemberCard data={member} type={'mini'} />
+              <MemberCard data={member} type={'badge'} />
             </li>
           ))}
         </ul>
