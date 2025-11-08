@@ -36,15 +36,6 @@ export const MemberListSection = () => {
             </li>
           ))}
         </ul>
-
-        {/* Оставил только для сверки */}
-        <ul role='list' className='grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2'>
-          {filteredMembers.map((member) => (
-            <li key={member.tag}>
-              <TeamMemberCard member={member} />
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );
