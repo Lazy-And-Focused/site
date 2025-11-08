@@ -3,6 +3,8 @@ import type { SocialLink } from '@shared/types';
 
 import { WebsiteIcon } from '@icons';
 
+import { DEFAULT_MEMBER_AVATAR_URL } from '../../lib/constants';
+
 const VIEWERED_SOCIAL_NAMES = ['github', 'telegram'] as const;
 
 export const MemberCard = ({
@@ -18,8 +20,7 @@ export const MemberCard = ({
         <div className={'aspect-square h-auto w-16 overflow-hidden rounded'}>
           <img
             className={'h-full w-full transition-[opacity,_filter] duration-500'}
-            // Костыль
-            src={member.avatar || `https://github.com/${member.tag}.png?size=255`}
+            src={member.avatar || DEFAULT_MEMBER_AVATAR_URL}
             alt={`Аватар пользователя ${member.tag}`}
             loading='lazy'
           />

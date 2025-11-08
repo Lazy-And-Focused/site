@@ -34,6 +34,7 @@ export const HEADER_SOCIAL_LINKS: SocialLink[] = parseSocialLinks([
   '[Наш GitHub] https://github.com/Lazy-And-Focused',
   '[Telegram канал команды] https://t.me/laf_love',
 ]);
+export const DEFAULT_MEMBER_AVATAR_URL = "/images/avatars/default.webp";
 
 // В будущем можно добавить (для фетчинга с бэка, например):
 // export const API_BASE_URL = import.meta.env.VITE_API_URL;
