@@ -1,4 +1,4 @@
-import { TeamMemberCard } from '@/shared/components/old__member-card';
+import { MemberCard } from '@shared/components/member-card';
 
 import { useFilteredMembers } from '@shared/hooks';
 
@@ -20,13 +20,11 @@ export const TeamMembersSection = () => {
         </div>
         <ul
           role='list'
-          className='grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-3 xl:col-span-2'
+          className='grid w-full max-w-7xl grid-cols-1 justify-items-center gap-x-4 gap-y-12 p-4 md:grid-cols-2 lg:grid-cols-3'
         >
           {filteredMembers.map((member) => (
-            <li key={member.tag}>
-              <div>
-                <TeamMemberCard member={member} />
-              </div>
+            <li key={member.tag} className='flex h-max w-full items-stretch'>
+              <MemberCard data={member} type={'mini'} />
             </li>
           ))}
         </ul>

@@ -12,11 +12,11 @@ export const AboutMembersSection = () => {
     >
       <ul
         role='list'
-        className='mx-auto grid w-full max-w-7xl grid-cols-1 gap-x-8 gap-y-12 rounded-lg bg-base-content/5 p-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'
+        className='mx-auto grid w-full max-w-7xl grid-cols-1 justify-items-center gap-x-8 gap-y-12 rounded-lg bg-base-content/5 p-4 md:grid-cols-2 lg:grid-cols-3'
       >
         {filteredMembers.map((member) => (
           <li key={member.tag} className='flex h-max items-stretch'>
-            <MemberCard data={member} type={'mini'} />
+            <MemberCard data={member} />
           </li>
         ))}
       </ul>
