@@ -5,45 +5,60 @@ import { MemberSocialLink } from './ui';
 
 import { DEFAULT_MEMBER_AVATAR_URL } from '@shared/lib/constants';
 
+const STYLE = {
+  CONTAINER:
+    'relative col-span-full flex w-full max-w-md flex-col gap-2 rounded-md bg-primary/15 px-2 py-3',
+  HEADER: {
+    BASE: 'flex w-full flex-row justify-between gap-4',
+    AVATAR: {
+      CONTAINER: 'aspect-squire relative -top-12 -mb-10 h-auto w-16 overflow-hidden rounded',
+      BASE: 'h-full w-full',
+    },
+    GENERAL_ROLE:
+      'line-clamp-1 max-w-full rounded-lg border-2 border-primary/20 bg-primary/10 px-2 py-1 text-xs font-semibold text-primary/85',
+  },
+  CONTENT: {
+    HEADING: 'text-lg font-semibold tracking-tight text-primary-content',
+    SOCIALS: {
+      CONTAINER: 'grid grid-cols-6 gap-2 rounded-md bg-primary/15 p-1 text-primary',
+      MORE_SOCIALS: 'col-span-1 self-center text-center',
+    },
+    DESCRIPTION: 'p-2 text-primary-content/85',
+  },
+} as const;
+
 export type MemberCardBaseProps = {
   data: Member;
 };
 
-export const MemberCard = ({
-  data: member,
-  type = 'default',
-}: MemberCardBaseProps & {
+type MemberCardProps = MemberCardBaseProps & {
   type?: 'default' | 'badge' | 'mini';
-}) => {
+};
+
+export const MemberCard = ({ data: member, type = 'default' }: MemberCardProps) => {
   if (type === 'badge') {
     return <MemberCardBadge data={member} />;
   }
 
   const socialCount = member.socials.length;
   return (
-    <div
-      className={
-        'relative col-span-full flex w-full max-w-md flex-col gap-2 rounded-md bg-primary/15 px-2 py-3'
-      }
-    >
-      <div className={'flex w-full flex-row justify-between gap-4'}>
-        <div className='aspect-squire relative -top-12 -mb-10 h-auto w-16 overflow-hidden rounded'>
+    <div className={STYLE.CONTAINER}>
+      <div className={STYLE.HEADER.BASE}>
+        <div className={STYLE.HEADER.AVATAR.CONTAINER}>
           <img
-            className={'h-full w-full'}
+            className={STYLE.HEADER.AVATAR.BASE}
             src={member.avatar || DEFAULT_MEMBER_AVATAR_URL}
             alt={`Аватар пользователя ${member.tag}`}
             loading='lazy'
           />
         </div>
-        <p className='line-clamp-1 max-w-full rounded-lg border-2 border-primary/20 bg-primary/10 px-2 py-1 text-xs font-semibold text-primary/85'>
-          {member.roles[0]}
-        </p>
+        <p className={STYLE.HEADER.GENERAL_ROLE}>{member.roles[0]}</p>
       </div>
 
-      <h3 className={'text-lg font-semibold tracking-tight text-primary-content'}>{member.name}</h3>
+      <h3 className={STYLE.CONTENT.HEADING}>{member.name}</h3>
 
       {socialCount > 0 && (
-        <div className='grid grid-cols-6 gap-2 rounded-md bg-primary/15 p-1 text-primary'>
+        <div className={STYLE.CONTENT.SOCIALS.CONTAINER}>
           {member.socials.slice(0, socialCount <= 6 ? 6 : 5).map((social) => (
             <MemberSocialLink
               data={{
@@ -53,13 +68,14 @@ export const MemberCard = ({
             />
           ))}
           {socialCount > 6 && (
-            <span className='col-span-1 self-center text-center'>
+            <span className={STYLE.CONTENT.SOCIALS.MORE_SOCIALS}>
               +{member.socials.slice(6).length}
             </span>
           )}
         </div>
       )}
 
-      {type === 'default' && <p className='p-2 text-primary-content/85'>{member.description}</p>}</div>
+      {type === 'default' && <p className={STYLE.CONTENT.DESCRIPTION}>{member.description}</p>}
+    </div>
   );
 };
