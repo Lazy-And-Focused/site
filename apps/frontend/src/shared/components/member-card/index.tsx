@@ -6,16 +6,28 @@ import { MemberSocialLink } from './ui';
 import { DEFAULT_MEMBER_AVATAR_URL } from '@shared/lib/constants';
 
 const STYLE = {
-  CONTAINER:
-    'relative col-span-full flex w-full max-w-md flex-col gap-2 rounded-md bg-primary/15 px-2 py-3',
+  CONTAINER: [
+    'relative col-span-full',
+    'flex flex-col gap-2',
+    'w-full max-w-md px-2 py-3',
+    'rounded-md bg-primary/15',
+  ].join(' '),
   HEADER: {
     BASE: 'flex w-full flex-row justify-between gap-4',
     AVATAR: {
-      CONTAINER: 'aspect-squire relative -top-12 -mb-10 h-auto w-16 overflow-hidden rounded',
-      BASE: 'h-full w-full',
+      BASE: [
+        'relative -top-12 -mb-10',
+        'aspect-squire h-auto w-16',
+        'overflow-hidden rounded',
+      ].join(' '),
+      IMAGE: 'h-full w-full',
     },
-    GENERAL_ROLE:
-      'line-clamp-1 max-w-full rounded-lg border-2 border-primary/20 bg-primary/10 px-2 py-1 text-xs font-semibold text-primary/85',
+    GENERAL_ROLE: [
+      'line-clamp-1 max-w-full px-2 py-1',
+      'rounded-lg border-2',
+      'border-primary/20 bg-primary/10',
+      'text-xs font-semibold text-primary/85',
+    ].join(' '),
   },
   CONTENT: {
     HEADING: 'text-lg font-semibold tracking-tight text-primary-content',
@@ -44,9 +56,9 @@ export const MemberCard = ({ data: member, type = 'default' }: MemberCardProps) 
   return (
     <div className={STYLE.CONTAINER}>
       <div className={STYLE.HEADER.BASE}>
-        <div className={STYLE.HEADER.AVATAR.CONTAINER}>
+        <div className={STYLE.HEADER.AVATAR.BASE}>
           <img
-            className={STYLE.HEADER.AVATAR.BASE}
+            className={STYLE.HEADER.AVATAR.IMAGE}
             src={member.avatar || DEFAULT_MEMBER_AVATAR_URL}
             alt={`Аватар пользователя ${member.tag}`}
             loading='lazy'

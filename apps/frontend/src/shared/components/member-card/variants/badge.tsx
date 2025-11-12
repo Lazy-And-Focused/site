@@ -5,20 +5,36 @@ import { MemberSocialLink } from '../ui';
 import { DEFAULT_MEMBER_AVATAR_URL } from '@shared/lib/constants';
 import { VIEWERED_SOCIAL_NAMES } from '../constants';
 
+const STYLE = {
+  CONTAINER: 'flex items-center gap-x-6 rounded bg-primary/15 p-2',
+  AVATAR: {
+    BASE: 'aspect-square h-auto w-20 overflow-hidden rounded',
+    IMAGE: 'h-full w-full',
+  },
+  CONTENT: {
+    CONTAINER: 'mr-2 w-full text-end',
+    HEADING: [
+      'flex flex-row items-center justify-end gap-x-1',
+      'text-base/7 font-semibold tracking-tight text-base-content',
+    ].join(' '),
+    GENERAL_ROLE: 'line-clamp-1 max-w-full text-sm/6 font-semibold text-primary/75',
+  },
+} as const;
+
 export const MemberCardBadge = ({ data: member }: MemberCardBaseProps) => {
   return (
-    <div className={`flex items-center gap-x-6 rounded bg-primary/15 p-2`}>
-      <div className={'aspect-square h-auto w-20 overflow-hidden rounded'}>
+    <div className={STYLE.CONTAINER}>
+      <div className={STYLE.AVATAR.BASE}>
         <img
-          className={'h-full w-full'}
+          className={STYLE.AVATAR.IMAGE}
           src={member.avatar || DEFAULT_MEMBER_AVATAR_URL}
           alt={`Аватар пользователя ${member.tag}`}
           loading='lazy'
         />
       </div>
 
-      <div className='mr-2 w-full text-end'>
-        <h3 className='align-center flex flex-row items-center justify-end gap-x-1 text-base/7 font-semibold tracking-tight text-base-content'>
+      <div className={STYLE.CONTENT.CONTAINER}>
+        <h3 className={STYLE.CONTENT.HEADING}>
           <span className='mr-1'>{member.name}</span>
 
           {member.socials
@@ -38,9 +54,7 @@ export const MemberCardBadge = ({ data: member }: MemberCardBaseProps) => {
             ))}
         </h3>
 
-        <p className='line-clamp-1 max-w-full text-sm/6 font-semibold text-primary/75'>
-          {member.roles[0]}
-        </p>
+        <p className={STYLE.CONTENT.GENERAL_ROLE}>{member.roles[0]}</p>
       </div>
     </div>
   );
