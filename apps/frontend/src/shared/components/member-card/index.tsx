@@ -1,7 +1,11 @@
 import type { Member } from '@entities/member';
 
+import { useRef } from 'react';
+
 import { MemberCardBadge } from './variants';
-import { MemberSocialLink } from './ui';
+import { MemberSocialLink, CardMemberModal } from './ui';
+
+import { MODALS_STATES, changeModalState } from './ui/modal/utils';
 
 import { DEFAULT_MEMBER_AVATAR_URL } from '@shared/lib/constants';
 
@@ -48,6 +52,8 @@ type MemberCardProps = MemberCardBaseProps & {
 };
 
 export const MemberCard = ({ data: member, type = 'default' }: MemberCardProps) => {
+  const socialsRef = useRef<HTMLDialogElement | null>(null);
+
   if (type === 'badge') {
     return <MemberCardBadge data={member} />;
   }
@@ -80,9 +86,38 @@ export const MemberCard = ({ data: member, type = 'default' }: MemberCardProps) 
             />
           ))}
           {socialCount > 6 && (
-            <span className={STYLE.CONTENT.SOCIALS.MORE_SOCIALS}>
-              +{member.socials.slice(6).length}
-            </span>
+            <CardMemberModal
+              placeholderItem={
+                <button
+                  className={STYLE.CONTENT.SOCIALS.MORE_SOCIALS}
+                  onClick={() => changeModalState(socialsRef, MODALS_STATES.SHOW)}
+                >
+                  +{member.socials.slice(6).length}
+                </button>
+              }
+              ref={socialsRef}
+            >
+              {member.socials.map((social) => (
+                <li
+                  className='list-none items-center gap-2 transition-colors hover:text-primary hover:underline'
+                  key={social.id}
+                >
+                  <a
+                    href={social.url}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='relative flex w-full min-w-max items-center justify-start gap-2 overflow-hidden text-ellipsis text-nowrap rounded-md px-4 py-2 text-left hover:bg-base-300/50'
+                  >
+                    {social.platform.icon && (
+                      <span className='flex aspect-square h-6 items-center justify-start overflow-clip rounded'>
+                        <social.platform.icon className='h-4 w-4' />
+                      </span>
+                    )}
+                    {social.customName || social.platform.name}
+                  </a>
+                </li>
+              ))}
+            </CardMemberModal>
           )}
         </div>
       )}
