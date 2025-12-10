@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { MemberCardBadge } from './variants';
 import { MemberSocialLink, CardMemberModal } from './ui';
 
-import { MODALS_STATES, changeModalState } from '../base-modal/utils';
+import { changeModalState, MODALS_STATES } from '@shared/components/base-modal/utils';
 
 import { DEFAULT_MEMBER_AVATAR_URL } from '@shared/lib/constants';
 

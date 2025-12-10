@@ -6,7 +6,7 @@ export const AppHeaderModalNavigation = forwardRef<HTMLDialogElement, BaseModalP
   (props, ref) => {
     return (
       <nav className='flex justify-center gap-x-4 sm:gap-x-8 lg:gap-x-12'>
-        <BaseModal ref={ref} {...props} closeButtonPosition='top' showDivider={false} />
+        <BaseModal ref={ref} {...props} closeButtonPosition='bottom' showDivider={false} />
       </nav>
     );
   },
