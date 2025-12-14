@@ -14,13 +14,88 @@ datasource db {
 }
 
 model AuthUser {
-  id String @id @default(uuid())
+  id           String                    @id @default(uuid()) @db.Uuid
+  serviceId    String                    @unique
 
-  serviceId String @unique
-  memberId  String @unique
-
-  username String @unique
-
+  username     String                    @unique
   accessToken  String
   refreshToken String?
+  
+  @@map("auth_users")
 }
+
+model Member {
+  id               String                @id @default(uuid()) @db.Uuid
+
+  name             String
+  role             String
+  tag              String
+
+  description      String
+  socials          Json
+
+  avatar           String?
+  meta             String[] 
+  
+  projectsAuthor   Project[]         
+  projectsMember   ProjectParticipant[] 
+  newsAuthor       News[]
+  
+  @@map("members")
+}
+
+model Project {
+  id             String                @id @default(ulid()) @db.Uuid
+
+  name           String
+  description    String
+  urls           Json
+
+  cover          String?
+  icon_url       String?
+  
+  authorId       String                @db.Uuid
+  author         Member                @relation(fields: [authorId], references: [id])
+  participants   ProjectParticipant[]
+  
+  @@index([authorId])
+  @@map("projects")
+}
+
+// промежуточная модель для связи проектов и участников
+model ProjectParticipant {
+  id             String                @id @default(uuid()) @db.Uuid
+  role           String
+  
+  projectId      String                @db.Uuid
+  project        Project               @relation(fields: [projectId], references: [id])
+  
+  memberId       String                @db.Uuid
+  member         Member                @relation(fields: [memberId], references: [id])
+  
+  @@unique([projectId, memberId])
+  @@index([projectId])
+  @@index([memberId])
+  @@map("project_contributors")
+}
+
+model News {
+  id             String                @id @default(uuid()) @db.Uuid
+
+  title          String
+  description    String
+  banner         String?
+
+  icon           String?
+  image          String?
+
+  icon_url       String?
+  date           DateTime              @default(now())
+
+  authorId       String                @db.Uuid
+  author         Member                @relation(fields: [authorId], references: [id])
+
+  @@index([authorId])
+  @@map("news")
+}
+

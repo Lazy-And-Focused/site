@@ -8,6 +8,7 @@ old-backend/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.windsurf
 
 # dotenv environment variable files
 .env
