@@ -11,16 +11,12 @@ import { generateId } from "src/database/generate-id";
 import Parser from "src/database/parse";
 import Sorter, { type QuerySort } from "services/sorter.service";
 
-const SORT_BY = [
-  "date",
-  "name",
-  "author"
-];
+const SORT_BY = ["date", "name", "author"];
 
 const parser = new Parser("news");
 const sorter = new Sorter(SORT_BY);
 
-type Filter = { name: string} | { id: string };
+type Filter = { name: string } | { id: string };
 
 @Injectable()
 export class Service {
@@ -29,26 +25,26 @@ export class Service {
 
     return {
       successed: true,
-      data: news.map(n => n.toObject()),
-      error: null
+      data: news.map((n) => n.toObject()),
+      error: null,
     };
   }
 
   public async getOne(filter: Filter): Promise<ServiceResponse<INews>> {
     const news = await News.findOne(filter);
-    
+
     if (!news) {
       return {
         successed: false,
         data: null,
-        error: "not found"
-      }
+        error: "not found",
+      };
     }
 
     return {
       successed: true,
       data: news.toObject(),
-      error: null
+      error: null,
     };
   }
 
@@ -62,31 +58,41 @@ export class Service {
     return {
       successed: true,
       data: news.toObject(),
-      error: null
+      error: null,
     };
   }
 
-  public async put(filter: Filter, data: NewsUpdateDto): Promise<ServiceResponse<INews>> {
-    const updatedNews = await News.findOneAndUpdate(filter, parser.execute(data), {
-      returnDocument: "after"
-    });
+  public async put(
+    filter: Filter,
+    data: NewsUpdateDto,
+  ): Promise<ServiceResponse<INews>> {
+    const updatedNews = await News.findOneAndUpdate(
+      filter,
+      parser.execute(data),
+      {
+        returnDocument: "after",
+      },
+    );
 
     if (!updatedNews) {
       return {
         successed: false,
         data: null,
-        error: "not found or another error"
-      }
+        error: "not found or another error",
+      };
     }
 
     return {
       successed: true,
       data: updatedNews.toObject(),
-      error: null
+      error: null,
     };
   }
 
-  public patch(filter: Filter, data: NewsUpdateDto): Promise<ServiceResponse<INews>> {
+  public patch(
+    filter: Filter,
+    data: NewsUpdateDto,
+  ): Promise<ServiceResponse<INews>> {
     return this.put(filter, data);
   }
 
@@ -97,14 +103,14 @@ export class Service {
       return {
         successed: false,
         data: null,
-        error: "some error"
-      }
+        error: "some error",
+      };
     }
 
     return {
       successed: true,
       data: "deleted",
-      error: null
+      error: null,
     };
   }
 }

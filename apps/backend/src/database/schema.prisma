@@ -17,11 +17,10 @@ model AuthUser {
   id String @id @default(uuid())
 
   serviceId String @unique
-  memberId String @unique
+  memberId  String @unique
 
   username String @unique
 
-  accessToken String
+  accessToken  String
   refreshToken String?
 }
-

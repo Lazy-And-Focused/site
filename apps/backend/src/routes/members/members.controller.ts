@@ -16,33 +16,36 @@ import {
   Delete,
   UseGuards,
   HttpStatus,
-  Query
+  Query,
 } from "@nestjs/common";
-import { ApiOperation, ApiResponse, ApiUnauthorizedResponse } from "@nestjs/swagger";
+import {
+  ApiOperation,
+  ApiResponse,
+  ApiUnauthorizedResponse,
+} from "@nestjs/swagger";
 
 import { ROUTE, ROUTES } from "./members.routes";
 import { Service } from "./members.service";
 
-const resolveSlug = (slug: string) => slug.startsWith("@")
-  ? { tag: slug.slice(1) }
-  : slug.startsWith("#")
-    ? { name: slug.slice(1) }
-    : { id: slug };
+const resolveSlug = (slug: string) =>
+  slug.startsWith("@")
+    ? { tag: slug.slice(1) }
+    : slug.startsWith("#")
+      ? { name: slug.slice(1) }
+      : { id: slug };
 
 @Injectable()
 @NestController(ROUTE)
 @UseGuards(AuthGuard)
 export class Controller {
-  public constructor(
-    private readonly service: Service
-  ) {}
+  public constructor(private readonly service: Service) {}
 
   @ApiOperation({
-    summary: "Getting an array of news"
+    summary: "Getting an array of news",
   })
   @ApiResponse({
     status: HttpStatus.OK,
-    description: "Getted"
+    description: "Getted",
   })
   @Get(ROUTES.GET)
   @Public()
@@ -50,7 +53,7 @@ export class Controller {
     @Query("length") length?: string,
     @Query("offset") offset?: string,
     @Query("sortBy") sortBy?: string,
-    @Query("sortType") sortType?: string
+    @Query("sortType") sortType?: string,
   ) {
     const query = {
       length: "-1",
@@ -63,84 +66,72 @@ export class Controller {
     return this.service.get({
       ...query,
       sortBy: sortBy || "",
-      sortType: sortType || ""
+      sortType: sortType || "",
     });
   }
 
   @ApiOperation({
-    summary: "Getting a members by id"
+    summary: "Getting a members by id",
   })
   @ApiResponse({
     status: HttpStatus.OK,
-    description: "Getted"
+    description: "Getted",
   })
   @Get(ROUTES.GET_ONE)
   @Public()
-  public getOne(
-    @Param("slug") slug: string
-  ) {
+  public getOne(@Param("slug") slug: string) {
     return this.service.getOne(resolveSlug(slug));
   }
 
   @ApiOperation({
-    summary: "Creaing a members"
+    summary: "Creaing a members",
   })
   @ApiUnauthorizedResponse({ description: "Unauthorized" })
   @ApiResponse({
     status: HttpStatus.CREATED,
-    description: "Created"
+    description: "Created",
   })
   @Post(ROUTES.POST)
-  public post(
-    @Body() data: MemberCreateDto 
-  ) {
+  public post(@Body() data: MemberCreateDto) {
     return this.service.post(data);
   }
 
   @ApiOperation({
-    summary: "Updating a members"
+    summary: "Updating a members",
   })
   @ApiUnauthorizedResponse({ description: "Unauthorized" })
   @ApiResponse({
     status: HttpStatus.OK,
-    description: "Updated"
+    description: "Updated",
   })
   @Put(ROUTES.PUT)
-  public put(
-    @Param("slug") slug: string,
-    @Body() data: MemberUpdateDto 
-  ) {
+  public put(@Param("slug") slug: string, @Body() data: MemberUpdateDto) {
     return this.service.put(resolveSlug(slug), data);
   }
 
   @ApiOperation({
-    summary: "Updating a members"
+    summary: "Updating a members",
   })
   @ApiUnauthorizedResponse({ description: "Unauthorized" })
   @ApiResponse({
     status: HttpStatus.OK,
-    description: "Updated"
+    description: "Updated",
   })
   @Patch(ROUTES.PUT)
-  public patch(
-    @Param("slug") slug: string,
-    @Body() data: MemberUpdateDto 
-  ) {
+  public patch(@Param("slug") slug: string, @Body() data: MemberUpdateDto) {
     return this.service.patch(resolveSlug(slug), data);
   }
-  
+
   @ApiOperation({
-    summary: "Deleting a members"
+    summary: "Deleting a members",
   })
   @ApiUnauthorizedResponse({ description: "Unauthorized" })
   @ApiResponse({
     status: HttpStatus.OK,
-    description: "Deleted"
+    description: "Deleted",
   })
   @Delete(ROUTES.DELETE)
-  public delete(
-    @Param("slug") slug: string
-  ) {
+  public delete(@Param("slug") slug: string) {
     return this.service.delete(resolveSlug(slug));
   }
 }

@@ -1,22 +1,20 @@
-const SORT_TYPES = [
-  "desc",
-  "asc",
-];
+const SORT_TYPES = ["desc", "asc"];
 
 export type QuerySort = {
-  length: string,
-  offset: string,
-  sortBy: string,
-  sortType: string
+  length: string;
+  offset: string;
+  sortBy: string;
+  sortType: string;
 };
 
-export class Sorter { 
+export class Sorter {
   public constructor(public readonly sortBy: string[]) {}
 
   public execute(query: QuerySort) {
-    const filter = query.length === "-1"
-      ? { skip: Number(query.offset) }
-      : { limit: Number(query.length), skip: Number(query.offset) };
+    const filter =
+      query.length === "-1"
+        ? { skip: Number(query.offset) }
+        : { limit: Number(query.length), skip: Number(query.offset) };
 
     const sortBy = this.sortBy.includes(query.sortBy)
       ? query.sortBy
@@ -29,9 +27,9 @@ export class Sorter {
     return {
       filter,
       sort: {
-        [sortBy]: sortType
-      }
-    }
+        [sortBy]: sortType,
+      },
+    };
   }
 }
 

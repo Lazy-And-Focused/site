@@ -10,12 +10,7 @@ import { Members } from "src/database/models/members.model";
 import Sorter, { QuerySort } from "services/sorter.service";
 import { generateId } from "src/database/generate-id";
 
-const SORT_BY = [
-  "date",
-  "name",
-  "role",
-  "tag"
-];
+const SORT_BY = ["date", "name", "role", "tag"];
 
 const sorter = new Sorter(SORT_BY);
 
@@ -28,8 +23,8 @@ export class Service {
 
     return {
       successed: true,
-      data: members.map(m => m.toObject()),
-      error: null
+      data: members.map((m) => m.toObject()),
+      error: null,
     };
   }
 
@@ -40,14 +35,14 @@ export class Service {
       return {
         successed: false,
         data: null,
-        error: "not found"
-      }
+        error: "not found",
+      };
     }
 
     return {
       successed: true,
       data: member.toObject(),
-      error: null
+      error: null,
     };
   }
 
@@ -55,35 +50,41 @@ export class Service {
     const member = await new Members({
       id: generateId(),
       ...MEMBER_DEFAULT,
-      ...data
+      ...data,
     }).save();
 
     return {
       successed: true,
       data: member.toObject(),
-      error: null
+      error: null,
     };
   }
 
-  public async put(filter: Filter, data: MemberUpdateDto): Promise<ServiceResponse<IMember>> {
-    const updatedMember = await Members.findOneAndUpdate(filter, data)
+  public async put(
+    filter: Filter,
+    data: MemberUpdateDto,
+  ): Promise<ServiceResponse<IMember>> {
+    const updatedMember = await Members.findOneAndUpdate(filter, data);
 
     if (!updatedMember) {
       return {
         successed: false,
         data: null,
-        error: "not found"
-      }
+        error: "not found",
+      };
     }
 
     return {
       successed: true,
       data: updatedMember.toObject(),
-      error: null
+      error: null,
     };
   }
 
-  public patch(filter: Filter, data: MemberUpdateDto): Promise<ServiceResponse<IMember>> {
+  public patch(
+    filter: Filter,
+    data: MemberUpdateDto,
+  ): Promise<ServiceResponse<IMember>> {
     return this.put(filter, data);
   }
 
@@ -94,14 +95,14 @@ export class Service {
       return {
         successed: false,
         data: null,
-        error: "not deleted"
-      }
+        error: "not deleted",
+      };
     }
 
     return {
       successed: true,
       data: "deleted",
-      error: null
+      error: null,
     };
   }
 }

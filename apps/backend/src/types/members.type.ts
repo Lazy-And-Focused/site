@@ -13,11 +13,14 @@ export type IMember = {
   meta?: string[];
 };
 
-export type ICreateMember = Omit<IMember, "id"|"socials"|"description"|"avatar"|"meta"> & {
-  socials?: ILink[],
-  description?: string,
-  avatar?: string,
-  meta?: string[]
+export type ICreateMember = Omit<
+  IMember,
+  "id" | "socials" | "description" | "avatar" | "meta"
+> & {
+  socials?: ILink[];
+  description?: string;
+  avatar?: string;
+  meta?: string[];
 };
 
 export const MEMBER_DEFAULT = {

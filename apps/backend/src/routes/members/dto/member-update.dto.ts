@@ -6,22 +6,22 @@ import { ILink } from "types";
 export class MemberUpdateDto implements Partial<IMember> {
   @ApiProperty()
   name?: string;
-  
+
   @ApiProperty()
   role?: string;
-  
+
   @ApiProperty()
   tag?: string;
-  
+
   @ApiProperty()
   description?: string;
-  
+
   @ApiProperty()
   socials?: ILink[];
-  
+
   @ApiProperty()
   avatar?: string;
-  
+
   @ApiProperty()
   meta?: string[];
 }
