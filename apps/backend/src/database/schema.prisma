@@ -14,12 +14,12 @@ datasource db {
 }
 
 model AuthUser {
-  id           String                    @id @default(uuid()) @db.Uuid
-  serviceId    String                    @unique
+  id               String                @id @default(uuid()) @db.Uuid
+  serviceId        String                @unique
 
-  username     String                    @unique
-  accessToken  String
-  refreshToken String?
+  username         String                @unique
+  accessToken      String
+  refreshToken     String?
   
   @@map("auth_users")
 }
@@ -52,7 +52,7 @@ model Project {
   urls           Json
 
   cover          String?
-  icon_url       String?
+  icon           String?
   
   authorId       String                @db.Uuid
   author         Member                @relation(fields: [authorId], references: [id])
@@ -88,8 +88,6 @@ model News {
 
   icon           String?
   image          String?
-
-  icon_url       String?
   date           DateTime              @default(now())
 
   authorId       String                @db.Uuid
