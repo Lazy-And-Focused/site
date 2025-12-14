@@ -31,5 +31,5 @@
     }
   },
   "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "dist", "bad-fockarch"]
+  "exclude": ["node_modules", "dist", "bad-fockarch", "prisma.config.ts"]
 }
