@@ -3,7 +3,6 @@ import type { MemberCardBaseProps } from '../';
 import { MemberSocialLink } from '../ui';
 
 import { DEFAULT_MEMBER_AVATAR_URL } from '@shared/lib/constants';
-import { VIEWERED_SOCIAL_NAMES } from '../constants';
 
 const STYLE = {
   CONTAINER: 'flex items-center gap-x-6 rounded bg-primary/15 p-2',
@@ -20,6 +19,8 @@ const STYLE = {
     GENERAL_ROLE: 'line-clamp-1 max-w-full text-sm/6 font-semibold text-primary/75',
   },
 } as const;
+
+const SHOWED_SOCIALS = ['github', 'telegram'] as const;
 
 export const MemberCardBadge = ({ data: member }: MemberCardBaseProps) => {
   return (
@@ -39,7 +40,7 @@ export const MemberCardBadge = ({ data: member }: MemberCardBaseProps) => {
 
           {member.socials
             .filter((social) =>
-              VIEWERED_SOCIAL_NAMES.some((socialName) =>
+              SHOWED_SOCIALS.some((socialName) =>
                 social.platform.name.toLowerCase().includes(socialName),
               ),
             )

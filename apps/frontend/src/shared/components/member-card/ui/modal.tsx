@@ -35,7 +35,7 @@ export const MemberCardModal = ({
           className={STYLE.CONTAINER}
           onClick={() => changeModalState(socialsRef, MODALS_STATES.SHOW)}
         >
-          +{memberSocials.slice(6).length}
+          +{memberSocials.slice(5).length}
         </button>
       }
       ref={socialsRef}

@@ -1,11 +1,10 @@
 import type { Member } from '@entities/member';
+import type { SocialLink } from '@/shared/types';
 
 import { useRef } from 'react';
 
 import { MemberCardHeader, MemberCardModal, MemberSocialLink } from './ui';
 import { MemberCardBadge } from './variants';
-
-import { SocialLink } from '@/shared/types';
 
 const STYLE = {
   CONTAINER: [
