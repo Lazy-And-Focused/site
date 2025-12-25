@@ -9,7 +9,7 @@ const STYLE = {
     'font-semibold text-sm/6 text-primary',
     'md:text-md dark:text-grenn-400',
   ].join(' '),
-};
+} as const;
 
 export const MemberSocialLink = ({
   data: { id, url, customName, platform },

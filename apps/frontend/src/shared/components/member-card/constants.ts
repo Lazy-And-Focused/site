@@ -1,1 +1,1 @@
-export const VIEWERED_SOCIAL_NAMES = ['github', 'telegram'] as const;
+export const SHOWED_SOCIALS = ['github', 'telegram'] as const;
