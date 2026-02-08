@@ -20,12 +20,8 @@ export const HeroPaperSection = () => {
     <section className={STYLE.CONTAINER}>
       <div className={STYLE.CONTENT.WRAPPER}>
         <div className={STYLE.CONTENT.INNER}>
-          <h1 className={STYLE.CONTENT.TITLE}>
-            {SECTION.TITLE}
-          </h1>
-          <p className={STYLE.CONTENT.DESCRIPTION}>
-            {SECTION.DESCRIPTION}
-          </p>
+          <h1 className={STYLE.CONTENT.TITLE}>{SECTION.TITLE}</h1>
+          <p className={STYLE.CONTENT.DESCRIPTION}>{SECTION.DESCRIPTION}</p>
         </div>
       </div>
     </section>

@@ -26,9 +26,7 @@ export const MemberListSection = () => {
     <section id='members' className={STYLE.CONTAINER}>
       <div className={STYLE.CONTENT.WRAPPER}>
         <div className='max-w-xl'>
-          <h2 className={STYLE.CONTENT.TITLE}>
-            А «мы» это кто?
-          </h2>
+          <h2 className={STYLE.CONTENT.TITLE}>А «мы» это кто?</h2>
           <p className={STYLE.CONTENT.DESCRIPTION}>
             Юная команда из тех, кто готов покорять ваши сердца!
           </p>

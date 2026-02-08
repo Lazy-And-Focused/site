@@ -19,9 +19,7 @@ export const InfoSection = () => {
   return (
     <section id='info' className={STYLE.CONTAINER}>
       <div className={STYLE.CONTENT.WRAPPER}>
-        <h2 className={STYLE.CONTENT.TITLE}>
-          Чем мы занимаемся
-        </h2>
+        <h2 className={STYLE.CONTENT.TITLE}>Чем мы занимаемся</h2>
         <p className={STYLE.CONTENT.DESCRIPTION}>
           Разрабатываем малые и средние IT-продукты, независимо от их типа: веб-, натив-приложения и
           игры
