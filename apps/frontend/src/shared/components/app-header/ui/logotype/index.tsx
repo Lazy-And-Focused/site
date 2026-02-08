@@ -1,14 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { APP_ROUTES, ORGANIZATION_NAME } from '@shared/lib/constants';
-
-const DEFAULT_IMAGE_SOURCE = '/images/logo.png';
-const DEFAULT_IMAGE_ALT_TEXT = `Logotype of ${ORGANIZATION_NAME}`;
-
-const STYLE = {
-  CONTAINER: '-m-1.5 p-1.5',
-  IMAGE: 'aspect-auto rounded shadow',
-} as const;
+import { APP_ROUTES } from '@shared/lib/constants';
+import { DEFAULT_IMAGE_SOURCE, DEFAULT_IMAGE_ALT_TEXT, ORGANIZATION_NAME } from './constants';
+import { STYLE } from './style';
 
 type Props = {
   size?: number;

@@ -7,7 +7,6 @@ export const useShiftPosition = (): boolean => {
     const handleScroll = () => {
       return setShift(window.scrollY);
     };
-
     window.addEventListener('scroll', handleScroll);
 
     return () => {
