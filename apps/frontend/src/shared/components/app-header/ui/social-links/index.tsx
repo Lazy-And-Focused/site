@@ -1,9 +1,5 @@
 import type { SVGProps } from 'react';
-
-const STYLE = {
-  CONTAINER: 'flex flex-row items-center justify-end gap-2',
-  LINK: 'btn btn-circle btn-ghost px-2 py-2',
-} as const;
+import { STYLE } from './style';
 
 type SocialLink = {
   id: string;
@@ -12,13 +8,12 @@ type SocialLink = {
   icon: React.ComponentType<SVGProps<SVGSVGElement>>;
 };
 
-export const AppHeaderSocialLinks = ({
-  links,
-  linkSize = 18,
-}: {
+interface Props {
   links: SocialLink[];
   linkSize?: number;
-}) => {
+}
+
+export const AppHeaderSocialLinks = ({ links, linkSize = 18 }: Props) => {
   return (
     <div className={STYLE.CONTAINER}>
       {links.map(({ id, href, name, icon: Icon }) => (
