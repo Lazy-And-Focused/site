@@ -6,9 +6,13 @@ import { APP_ROUTES } from '@shared/lib/constants';
 
 const { HERO: SECTION } = HOME_PAGE_CONSTANTS;
 
+const STYLE = {
+  CONTAINER: 'h-full w-full',
+} as const;
+
 const HomePage = () => {
   return (
-    <main className='h-full w-full'>
+    <main className={STYLE.CONTAINER}>
       <HeroSection
         title={SECTION.TITLE}
         description={SECTION.DESCRIPTION}

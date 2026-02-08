@@ -5,9 +5,13 @@ import {
   ResourcesSection,
 } from './sections';
 
+const STYLE = {
+  CONTAINER: 'mx-auto h-full max-w-7xl',
+} as const;
+
 const AboutPage = () => {
   return (
-    <main className='mx-auto h-full max-w-7xl'>
+    <main className={STYLE.CONTAINER}>
       <HeroPaperSection />
       <AboutMembersSection />
       <CopyrightSection />
