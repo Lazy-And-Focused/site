@@ -10,7 +10,9 @@ export const useShiftPosition = (): boolean => {
 
     window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return shift > 0;
