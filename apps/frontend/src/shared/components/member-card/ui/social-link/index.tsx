@@ -1,15 +1,7 @@
 import type { SocialLink } from '@shared/types';
 
 import { WebsiteIcon } from '@icons';
-
-const STYLE = {
-  LINK: [
-    'btn btn-circle btn-ghost',
-    'w-auto p-0',
-    'font-semibold text-sm/6 text-primary',
-    'md:text-md dark:text-grenn-400',
-  ].join(' '),
-} as const;
+import { STYLE } from './style';
 
 export const MemberSocialLink = ({
   data: { id, url, customName, platform },
