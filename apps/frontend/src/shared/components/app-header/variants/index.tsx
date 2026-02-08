@@ -8,7 +8,7 @@ import {
   AppHeaderNavigationItem,
 } from '../ui/navigation';
 
-import { changeModalState, MODALS_STATES } from '../ui/navigation/modal/utils';
+import { changeModalState, MODALS_STATES } from '@shared/components/base-modal/utils';
 import { AppHeaderProps } from '../';
 
 export const DefaultAppHeader = ({ links }: AppHeaderProps) => {

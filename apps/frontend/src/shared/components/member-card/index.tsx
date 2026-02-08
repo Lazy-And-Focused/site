@@ -1,81 +1,82 @@
-import type { Member } from '@/entities/member';
+import type { Member } from '@entities/member';
+import type { SocialLink } from '@/shared/types';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useRef } from 'react';
 
-import { DefaultVariant } from './variants/default';
-import { FullVariant } from './variants/full';
-import { Avatar } from './avatar';
+import { MemberCardHeader, MemberCardModal, MemberSocialLink } from './ui';
+import { MemberCardBadge } from './variants';
 
-import { HasPrimarySocials, HasPrimarySocialsType } from './contexts';
-
-export { HasPrimarySocials } from './contexts';
-
-export const TeamMemberCard = ({
-  member,
-  type = 'default',
-}: {
-  member: Member;
-  type?: 'default' | 'full';
-}) => {
-  const validateSocial = useCallback(
-    (url: string) => {
-      const isExec = member.socials.some((social) => social.url.startsWith(url));
-      return isExec || false;
+const STYLE = {
+  CONTAINER: [
+    'relative col-span-full',
+    'flex flex-col gap-2',
+    'w-full max-w-md px-2 py-3',
+    'rounded-md bg-primary/15',
+  ].join(' '),
+  CONTENT: {
+    HEADING: 'text-lg font-semibold tracking-tight text-primary-content',
+    SOCIALS: {
+      CONTAINER: 'grid grid-cols-6 gap-2 rounded-md bg-primary/15 p-1 text-primary',
     },
-    [member.socials],
-  );
+    DESCRIPTION: 'p-2 text-primary-content/85',
+  },
+} as const;
 
-  const hasPrimarySocials = useMemo<HasPrimarySocialsType>(
-    () => ({
-      github: [validateSocial('https://github.com/'), 'https://github.com/'],
-      telegram: [validateSocial('https://t.me/'), 'https://t.me/'],
-    }),
-    [validateSocial],
-  );
-
-  const [avatarSrc, setAvatarSrc] = useState(getAvatarUrl(member, hasPrimarySocials!['github'][0]));
-
-  useEffect(
-    () => setAvatarSrc(getAvatarUrl(member, hasPrimarySocials!['github'][0])),
-    [member, hasPrimarySocials],
-  );
-
-  return (
-    <HasPrimarySocials.Provider value={hasPrimarySocials}>
-      {type === 'full' ? (
-        <FullVariant
-          member={member}
-          avatar={
-            <Avatar
-              src={avatarSrc}
-              alt={`${member.name}'s avatar`}
-              className='aspect-square h-auto w-full'
-            />
-          }
-        />
-      ) : (
-        <DefaultVariant
-          member={member}
-          avatar={
-            <Avatar
-              src={avatarSrc}
-              alt={`${member.name}'s avatar`}
-              className='aspect-square w-24'
-            />
-          }
-        />
-      )}
-    </HasPrimarySocials.Provider>
-  );
+export type MemberCardBaseProps = {
+  data: Member;
 };
 
-const getAvatarUrl = (member: Member, hasGitHub: boolean) => {
-  if (member.avatar) {
-    return member.avatar;
-  } else if (hasGitHub) {
-    return `https://github.com/${member.tag}.png?size=255`;
+type MemberCardProps = MemberCardBaseProps & {
+  type?: 'default' | 'badge' | 'mini';
+};
+
+export const MemberCard = ({ data: member, type = 'default' }: MemberCardProps) => {
+  const socialsRef = useRef<HTMLDialogElement | null>(null);
+
+  if (type === 'badge') {
+    return <MemberCardBadge data={member} />;
   }
-  return '/images/avatars/default.png';
+
+  const socialCount = member.socials.length;
+  return (
+    <div className={STYLE.CONTAINER}>
+      <MemberCardHeader avatar={member.avatar} tag={member.tag} generalRole={member.roles[0]} />
+
+      <h3 className={STYLE.CONTENT.HEADING}>{member.name}</h3>
+
+      {socialCount > 0 && (
+        <div className={STYLE.CONTENT.SOCIALS.CONTAINER}>
+          <SocialLinksRow
+            socials={member.socials}
+            socialCount={socialCount}
+            memberName={member.name}
+          />
+          {socialCount > 6 && (
+            <MemberCardModal memberSocials={member.socials} socialsRef={socialsRef} />
+          )}
+        </div>
+      )}
+
+      {type === 'default' && <p className={STYLE.CONTENT.DESCRIPTION}>{member.description}</p>}
+    </div>
+  );
 };
 
-export default TeamMemberCard;
+const SocialLinksRow = ({
+  socials,
+  socialCount,
+  memberName,
+}: {
+  socials: SocialLink[];
+  socialCount: number;
+  memberName: string;
+}) => {
+  return socials.slice(0, socialCount <= 6 ? 6 : 5).map((social) => (
+    <MemberSocialLink
+      data={{
+        ...social,
+        customName: social.customName || `Профиль ${memberName} в ${social.platform.name}`,
+      }}
+    />
+  ));
+};

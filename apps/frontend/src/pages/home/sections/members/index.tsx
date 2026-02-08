@@ -1,7 +1,7 @@
 import { useFilteredMembers } from '@shared/hooks';
 
 import { Link } from 'react-router-dom';
-import { TeamMemberCard } from '@shared/components/member-card';
+import { MemberCard } from '@shared/components/member-card';
 
 import { APP_ROUTES } from '@shared/lib/constants';
 
@@ -27,10 +27,11 @@ export const MemberListSection = () => {
             </Link>
           </div>
         </div>
-        <ul role='list' className='grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2'>
+
+        <ul role='list' className='grid gap-8 sm:grid-cols-2 md:grid-cols-3 xl:col-span-2'>
           {filteredMembers.map((member) => (
             <li key={member.tag}>
-              <TeamMemberCard member={member} />
+              <MemberCard data={member} type={'badge'} />
             </li>
           ))}
         </ul>

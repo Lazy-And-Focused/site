@@ -10,6 +10,7 @@ export const BASE_TEAM_MEMBERS: BaseMember[] = [
     tag: 'fockusty',
     name: 'FOCKUSTY',
     roles: ['CEO', 'Backend-разработчик'],
+    avatar: 'https://github.com/fockusty.png',
     description:
       'Почему я начал изучать программирование? Всё просто, я просто начал, по приколу, да, вот такой вот я. На август 2024 года мне 15 лет. Мой первый язык - JavaScript, сначала я изучал HTML & CSS (Все мы знаем, что они не ЯП), а потом переключился на JS. Я нашел свой интерес в программировании. Раньше я снимал видео на платформу YouTube, но мне в один момент надоело и я начал изучать веб. Я начал изучать программирование с 13 лет (2023 год в июне).',
     socials: [
@@ -63,6 +64,7 @@ export const BASE_TEAM_MEMBERS: BaseMember[] = [
     tag: 'beyz1k',
     name: 'beyz1k',
     roles: ['Промоутер'],
+    avatar: 'https://github.com/beyz1k.png',
     description:
       'Всем привет меня зовут Эмиль, я будущий промоутер и начинающий фронтенд-разработчик <3',
     socials: ['https://github.com/beyz1k'],
@@ -81,6 +83,7 @@ export const BASE_TEAM_MEMBERS: BaseMember[] = [
     tag: 'yonathanpower',
     name: 'Yonathan',
     roles: ['Стажёр Сценарист'],
+    avatar: 'https://github.com/yonathanpower.png',
     description:
       'Ола! Я Йонатан, в команде являюсь сценаристом, моя цель — создавать истории, которые не только развлекают, но также захватывают и затягивают в свой чудный мир.',
     socials: ['https://t.me/charlatan0', 'https://github.com/yonathanpower'],
