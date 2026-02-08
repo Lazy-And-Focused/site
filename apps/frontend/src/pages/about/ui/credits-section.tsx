@@ -1,32 +1,27 @@
-import { useFilteredMembers } from '@shared/hooks';
-
-import { MemberCard } from '@shared/components/member-card';
-
 const STYLE = {
   CONTAINER: [
     'flex min-h-full w-full flex-col items-center justify-center',
-    'px-6 py-14 lg:px-8',
+    'px-8 py-16 lg:px-12',
   ].join(' '),
-  LIST: [
-    'mx-auto grid w-full max-w-7xl grid-cols-1',
-    'justify-items-center gap-x-8 gap-y-12 rounded-lg',
-    'bg-base-content/5 p-4 md:grid-cols-2 lg:grid-cols-3',
-  ].join(' '),
-  LIST_ITEM: 'flex h-max items-stretch',
+  TITLE: 'text-3xl font-semibold tracking-tight text-base-content sm:text-4xl',
+  DESCRIPTION: 'my-8 text-lg text-base-content/40',
 } as const;
 
-export const AboutMembersSection = () => {
-  const filteredMembers = useFilteredMembers();
+interface Props {
+  id?: string;
+  title: string;
+  description: string;
+  children: React.ReactNode;
+}
 
+export const CreditsSection = ({ id, title, description, children }: Props) => {
   return (
-    <section id='members' className={STYLE.CONTAINER}>
-      <ul role='list' className={STYLE.LIST}>
-        {filteredMembers.map((member) => (
-          <li key={member.tag} className={STYLE.LIST_ITEM}>
-            <MemberCard data={member} />
-          </li>
-        ))}
-      </ul>
+    <section id={id} className={STYLE.CONTAINER}>
+      <h2 className={STYLE.TITLE}>{title}</h2>
+
+      <p className={STYLE.DESCRIPTION}>{description}</p>
+
+      {children}
     </section>
   );
 };
