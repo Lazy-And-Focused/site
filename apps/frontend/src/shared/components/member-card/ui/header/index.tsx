@@ -11,7 +11,7 @@ export const MemberCardHeader = ({
   generalRole: string;
 }) => {
   return (
-    <div className={STYLE.BASE}>
+    <div className={STYLE.CONTAINER}>
       <div className={STYLE.AVATAR.BASE}>
         <img
           className={STYLE.AVATAR.IMAGE}

@@ -1,5 +1,5 @@
 export const STYLE = {
-  BASE: 'flex w-full flex-row justify-between gap-4',
+  CONTAINER: 'flex w-full flex-row justify-between gap-4',
   AVATAR: {
     BASE: 'relative -top-12 -mb-10 aspect-squire h-auto w-16 overflow-hidden rounded',
     IMAGE: 'h-full w-full',
