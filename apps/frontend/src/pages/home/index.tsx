@@ -3,12 +3,9 @@ import { HeroSection, InfoSection, MemberListSection } from './sections';
 
 import { HOME_PAGE_CONSTANTS } from './lib/constants';
 import { APP_ROUTES } from '@shared/lib/constants';
+import { STYLE } from './style';
 
 const { HERO: SECTION } = HOME_PAGE_CONSTANTS;
-
-const STYLE = {
-  CONTAINER: 'h-full w-full',
-} as const;
 
 const HomePage = () => {
   return (
