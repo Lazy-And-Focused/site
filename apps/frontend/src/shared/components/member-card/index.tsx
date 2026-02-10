@@ -5,6 +5,7 @@ import { useRef } from 'react';
 
 import { MemberCardHeader, MemberCardModal, MemberSocialLink } from './ui';
 import { MemberCardBadge } from './variants';
+
 import { STYLE } from './style';
 
 export type MemberCardBaseProps = {

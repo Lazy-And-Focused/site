@@ -1,5 +1,5 @@
 export const STYLE = {
-  CONTAINER: 'col-span-1 self-center text-center',
+  CONTAINER: 'btn btn-circle btn-ghost col-span-1 self-center text-center',
   LIST_ITEM: {
     PARENT: [
       'list-none items-center gap-2 transition-colors',
@@ -11,6 +11,6 @@ export const STYLE = {
       'text-ellipsis text-nowrap text-left',
       'overflow-hidden rounded-md hover:bg-base-300/50',
     ].join(' '),
-    LINL_SPAN: 'flex aspect-square h-6 items-center justify-start overflow-clip rounded',
+    LINK_SPAN: 'flex aspect-square h-6 items-center justify-start overflow-clip rounded',
   },
 } as const;
