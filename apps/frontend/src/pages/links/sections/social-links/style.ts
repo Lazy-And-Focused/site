@@ -20,6 +20,7 @@ export const STYLE = {
       'rounded-md hover:bg-base-300/50',
       'text-ellipsis text-nowrap text-left',
     ].join(' '),
+    ITEM_LINK_ICON: 'flex aspect-square h-6 items-center justify-start overflow-clip rounded',
   },
   BUTTON: 'btn btn-ghost mt-10 w-full rounded-full text-slate-800 dark:text-slate-200 md:max-w-80',
   HINT: 'mt-12 text-base text-base-content/40',

@@ -2,7 +2,7 @@ import { MemberCard } from '@shared/components/member-card';
 
 import { useFilteredMembers } from '@shared/hooks';
 
-import { LINKS_PAGE_CONSTANTS } from '../lib/constants';
+import { LINKS_PAGE_CONSTANTS } from '../../lib/constants';
 
 const { TEAM_MEMBERS: SECTION } = LINKS_PAGE_CONSTANTS.SECTIONS;
 

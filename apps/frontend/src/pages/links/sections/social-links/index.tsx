@@ -13,14 +13,14 @@ export const SocialLinksSection = ({ onCopyLink, copyButtonRef }: SocialLinksSec
   return (
     <section className={STYLE.CONTAINER}>
       <h2 className={STYLE.CONTENT.TITLE}>{SECTION.TITLE}</h2>
-      <p className={STYLE.CONTENT.TITLE}>{SECTION.DESCRIPTION}</p>
+      <p className={STYLE.CONTENT.DESCRIPTION}>{SECTION.DESCRIPTION}</p>
 
       <ul className={STYLE.LIST.BASE}>
         {TEAM_SOCIAL_LINKS.map((link) => (
           <li className={STYLE.LIST.ITEM} key={link.id}>
             <a href={link.url} target='_blank' rel='noreferrer' className={STYLE.LIST.ITEM_LINK}>
               {link.platform.icon && (
-                <span className='flex aspect-square h-6 items-center justify-start overflow-clip rounded'>
+                <span className={STYLE.LIST.ITEM_LINK_ICON}>
                   <link.platform.icon className='h-4 w-4' />
                 </span>
               )}

@@ -31,6 +31,8 @@ const NotFoundPage = () => {
   );
 };
 
+// @TODO: Export to style constant into style.ts (under this)
+
 const renderContent = (type: string) => {
   switch (type) {
     case 'icon':
