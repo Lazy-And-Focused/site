@@ -7,6 +7,14 @@ import { PROJECTS_PAGE_CONSTANTS } from './lib/constants';
 
 const { PLACEHOLDER, LOADING_PLACEHOLDER } = PROJECTS_PAGE_CONSTANTS.BROWSER;
 
+const STYLE = {
+  CONTAINER: 'h-full w-full',
+  BROWSER_PLACEHOLDER: {
+    BASE: 'mt-4 text-slate-200',
+    ERROR_STATE: 'mt-4 text-rose-500',
+  },
+} as const;
+
 const ProjectsPage = () => {
   const { tabs, loaded, errorCatched } = useProjects();
 
@@ -16,13 +24,14 @@ const ProjectsPage = () => {
       ? LOADING_PLACEHOLDER
       : PLACEHOLDER;
 
-  const placeholderColorStyle = errorCatched ? 'text-rose-500' : 'text-slate-200';
-
+  const browserPlaceholderCalculatedStyle = !errorCatched
+    ? STYLE.BROWSER_PLACEHOLDER.BASE
+    : STYLE.BROWSER_PLACEHOLDER.ERROR_STATE;
   return (
-    <main className='h-full w-full'>
+    <main className={STYLE.CONTAINER}>
       <ProjectsHero>
         <Browser tabs={tabs}>
-          <div className={`mt-4 ${placeholderColorStyle}`}>{placeholder}</div>
+          <div className={browserPlaceholderCalculatedStyle}>{placeholder}</div>
         </Browser>
       </ProjectsHero>
     </main>
