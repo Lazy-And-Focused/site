@@ -45,3 +45,5 @@ site-backend
 *.njsproj
 *.sln
 *.sw?
+.vs
+/apps/frontend/.vercel/output
