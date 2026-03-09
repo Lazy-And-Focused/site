@@ -10,7 +10,6 @@ const { CREDITS } = ABOUT_PAGE_CONSTANTS.SECTIONS;
 /**
  * Секция с благодарностями за ресурсы (иконки, как пример)
  */
-
 export const ResourcesSection = () => {
   return (
     <CreditsSection id={'credits'} title={CREDITS.TITLE} description={CREDITS.DESCRIPTION}>
@@ -30,22 +29,22 @@ export const ResourcesSection = () => {
             href='https://www.svgrepo.com/'
             target='_blank'
             rel='noopener noreferrer'
-            className='transition-colors hover:text-primary hover:underline'
+            className={STYLE.LIST.LINK}
           >
             SVG Repo
           </a>
-          <span className='text-base-content/50'> (иконки Gravatar и VK)</span>
+          <span className={STYLE.LIST.SUPPLEMENT}> (иконки Gravatar и VK)</span>
         </li>
         <li className={STYLE.LIST.ITEM}>
           <a
             href={PROJECT_REPOSITORY}
             target='_blank'
             rel='noopener noreferrer'
-            className='transition-colors hover:text-primary hover:underline'
+            className={STYLE.LIST.LINK}
           >
             И если интересно, весь стек здесь
           </a>
-          <span className='text-base-content/50'> &lt;- кликните на текст</span>
+          <span className={STYLE.LIST.SUPPLEMENT}> &lt;- кликните на текст</span>
         </li>
       </ul>
     </CreditsSection>
