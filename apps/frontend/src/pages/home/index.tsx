@@ -15,10 +15,10 @@ const HomePage = () => {
         description={SECTION.DESCRIPTION}
         background={SECTION.BACKGROUND}
       >
-        <Link to='/#info' className='btn btn-primary rounded-full'>
+        <Link to='/#info' className={STYLE.PRIMARY_LINK}>
           Узнать больше
         </Link>
-        <Link to={APP_ROUTES.PROJECTS} className='btn btn-ghost rounded-full text-slate-200'>
+        <Link to={APP_ROUTES.PROJECTS} className={STYLE.SECONDARY_LINK}>
           Проекты <span aria-hidden='true'>→</span>
         </Link>
       </HeroSection>
