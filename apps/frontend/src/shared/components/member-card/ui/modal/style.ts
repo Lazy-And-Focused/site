@@ -14,6 +14,6 @@ export const STYLE = {
       ].join(' '),
       SPAN: 'flex aspect-square h-6 items-center justify-start overflow-clip rounded',
       ICON: 'h-4 w-4',
-    }
+    },
   },
 } as const;

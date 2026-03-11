@@ -4,9 +4,7 @@ import { ProjectsHero } from './ui';
 const ProjectsPage = () => {
   return (
     <main className={STYLE.CONTAINER}>
-      <ProjectsHero>
-        Страница в разработке
-      </ProjectsHero>
+      <ProjectsHero>Страница в разработке</ProjectsHero>
     </main>
   );
 };

@@ -26,7 +26,12 @@ export const MemberCardModal = ({
     >
       {memberSocials.map((social) => (
         <li className={STYLE.LIST_ITEM.PARENT} key={social.id}>
-          <a href={social.url} target='_blank' rel='noreferrer' className={STYLE.LIST_ITEM.LINK.WRAPPER}>
+          <a
+            href={social.url}
+            target='_blank'
+            rel='noreferrer'
+            className={STYLE.LIST_ITEM.LINK.WRAPPER}
+          >
             {social.platform.icon && (
               <span className={STYLE.LIST_ITEM.LINK.SPAN}>
                 <social.platform.icon className={STYLE.LIST_ITEM.LINK.ICON} />
