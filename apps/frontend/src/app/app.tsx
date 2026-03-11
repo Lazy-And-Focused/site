@@ -10,11 +10,15 @@ import { ScrollToStartByUrlChanges } from '@shared/lib/utils';
 
 import { HEADER_LINKS } from '@shared/lib/constants';
 
+const STYLE = {
+  CONTAINER: 'h-full min-h-screen base-100 base-content',
+} as const;
+
 export const App = () => {
   return (
     <>
       <ScrollToStartByUrlChanges />
-      <div className='base-100 base-content h-full min-h-screen'>
+      <div className={STYLE.CONTAINER}>
         <AppHeader links={HEADER_LINKS} />
         <Suspense fallback={<LoadingPage />}>
           <Outlet />

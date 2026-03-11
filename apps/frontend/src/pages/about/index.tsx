@@ -4,10 +4,11 @@ import {
   CopyrightSection,
   ResourcesSection,
 } from './sections';
+import { STYLE } from './style';
 
 const AboutPage = () => {
   return (
-    <main className='mx-auto h-full max-w-7xl'>
+    <main className={STYLE.CONTAINER}>
       <HeroPaperSection />
       <AboutMembersSection />
       <CopyrightSection />

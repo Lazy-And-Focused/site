@@ -1,8 +1,10 @@
-const STYLE = {
-  CONTAINER: 'flex justify-center gap-x-4 sm:gap-x-8 lg:gap-x-12',
-} as const;
+import { STYLE } from './style';
 
-export const AppHeaderNavigation = ({ children }: { children: React.ReactNode }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+export const AppHeaderNavigation = ({ children }: Props) => {
   return <nav className={STYLE.CONTAINER}>{children}</nav>;
 };
 
