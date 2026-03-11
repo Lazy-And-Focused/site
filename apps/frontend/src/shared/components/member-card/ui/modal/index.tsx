@@ -29,7 +29,7 @@ export const MemberCardModal = ({
           <a href={social.url} target='_blank' rel='noreferrer' className={STYLE.LIST_ITEM.LINK}>
             {social.platform.icon && (
               <span className={STYLE.LIST_ITEM.LINK_SPAN}>
-                <social.platform.icon className='h-4 w-4' />
+                <social.platform.icon className={STYLE.LIST_ITEM.ICON} />
               </span>
             )}
             {social.customName || social.platform.name}

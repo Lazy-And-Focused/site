@@ -20,8 +20,8 @@ export const SocialLinksSection = ({ onCopyLink, copyButtonRef }: SocialLinksSec
           <li className={STYLE.LIST.ITEM} key={link.id}>
             <a href={link.url} target='_blank' rel='noreferrer' className={STYLE.LIST.ITEM_LINK}>
               {link.platform.icon && (
-                <span className={STYLE.LIST.ITEM_LINK_ICON}>
-                  <link.platform.icon className='h-4 w-4' />
+                <span className={STYLE.LIST.ITEM_LINK_ICON.WRAPPER}>
+                  <link.platform.icon className={STYLE.LIST.ITEM_LINK_ICON.ICON} />
                 </span>
               )}
               {link.customName || link.platform.name}

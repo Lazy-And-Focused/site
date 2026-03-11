@@ -21,7 +21,7 @@ export const MemberCardBadge = ({ data: member }: MemberCardBaseProps) => {
 
       <div className={STYLE.CONTENT.CONTAINER}>
         <h3 className={STYLE.CONTENT.HEADING}>
-          <span className='mr-1'>{member.name}</span>
+          <span className={STYLE.CONTENT.NAME_MARGIN}>{member.name}</span>
 
           {member.socials
             .filter((social) =>

@@ -4,16 +4,9 @@ import { Browser } from './ui/browser';
 import { ProjectsHero } from './ui/projects-hero';
 
 import { PROJECTS_PAGE_CONSTANTS } from './lib/constants';
+import { STYLE } from './style';
 
 const { PLACEHOLDER, LOADING_PLACEHOLDER } = PROJECTS_PAGE_CONSTANTS.BROWSER;
-
-const STYLE = {
-  CONTAINER: 'h-full w-full',
-  BROWSER_PLACEHOLDER: {
-    BASE: 'mt-4 text-slate-200',
-    ERROR_STATE: 'mt-4 text-rose-500',
-  },
-} as const;
 
 const ProjectsPage = () => {
   const { tabs, loaded, errorCatched } = useProjects();

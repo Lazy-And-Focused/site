@@ -20,7 +20,7 @@ export const MemberSocialLink = ({
       title={customName}
       className={STYLE.LINK}
     >
-      <Icon aria-label={customName} className='h-4 w-4' />
+      <Icon aria-label={customName} className={STYLE.LINK_ICON} />
     </a>
   );
 };

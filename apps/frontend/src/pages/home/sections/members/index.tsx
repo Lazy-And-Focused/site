@@ -18,7 +18,7 @@ export const MemberListSection = () => {
             Юная команда из тех, кто готов покорять ваши сердца!
           </p>
           <div className={STYLE.CONTENT.ACTIONS}>
-            <Link to={APP_ROUTES.ABOUT} className='btn btn-outline btn-primary rounded-md'>
+            <Link to={APP_ROUTES.ABOUT} className={STYLE.LINK_BUTTON}>
               Давай дальше <span aria-hidden='true'>→</span>
             </Link>
           </div>
