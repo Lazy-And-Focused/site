@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { convertToRouteObjects } from './utils';
+import { convertAppRoutesToRouteObjects } from './utils';
 import { routerRoutes } from './routers';
 
-export const router = createBrowserRouter(convertToRouteObjects(routerRoutes));
+export const router = createBrowserRouter(convertAppRoutesToRouteObjects(routerRoutes));
 
 export type { AppRoute } from './types';
 
