@@ -10,5 +10,5 @@ export const STYLE = {
     ACTIONS: 'mt-8',
     LIST: 'grid gap-8 sm:grid-cols-2 md:grid-cols-3 xl:col-span-2',
   },
-  LINK_BUTTON: 'btn btn-outline btn-primary rounded-md'
+  LINK_BUTTON: 'btn btn-outline btn-primary rounded-md',
 } as const;

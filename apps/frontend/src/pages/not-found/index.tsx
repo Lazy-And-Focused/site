@@ -27,22 +27,12 @@ const NotFoundPage = () => {
 const renderContent = (type: string) => {
   switch (type) {
     case 'icon':
-      return (
-        <HeartBreakIcon height={128} width={128} className={STYLE.ICON} />
-      );
+      return <HeartBreakIcon height={128} width={128} className={STYLE.ICON} />;
     case 'title':
-      return (
-        <h1 className={STYLE.TITLE}>
-          {PAGE_CONTENT.TITLE}
-        </h1>
-      );
+      return <h1 className={STYLE.TITLE}>{PAGE_CONTENT.TITLE}</h1>;
 
     case 'description':
-      return (
-        <p className={STYLE.DESCRIPTION}>
-          {PAGE_CONTENT.DESCRIPTION}
-        </p>
-      );
+      return <p className={STYLE.DESCRIPTION}>{PAGE_CONTENT.DESCRIPTION}</p>;
 
     case 'button':
       return (

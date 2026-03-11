@@ -1,4 +1,4 @@
-import { NOT_FOUND_CONFIG } from "./lib/constants";
+import { NOT_FOUND_CONFIG } from './lib/constants';
 
 export const STYLE = {
   MAIN: [
@@ -13,12 +13,12 @@ export const STYLE = {
     'rotate-12',
     'text-balance text-5xl font-semibold',
     'tracking-tight text-slate-100',
-    'drop-shadow-md sm:text-7xl'
+    'drop-shadow-md sm:text-7xl',
   ].join(' '),
   DESCRIPTION: 'mt-8 text-pretty text-lg font-medium',
   BUTTON: [
     'btn btn-outline btn-neutral',
     'mt-8 text-sm/6 font-semibold',
     'transition-opacity hover:opacity-50',
-  ].join(' ')
+  ].join(' '),
 } as const;

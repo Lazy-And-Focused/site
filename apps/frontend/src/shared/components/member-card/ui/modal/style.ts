@@ -12,6 +12,6 @@ export const STYLE = {
       'overflow-hidden rounded-md hover:bg-base-300/50',
     ].join(' '),
     LINK_SPAN: 'flex aspect-square h-6 items-center justify-start overflow-clip rounded',
-    ICON: 'h-4 w-4'
+    ICON: 'h-4 w-4',
   },
 } as const;

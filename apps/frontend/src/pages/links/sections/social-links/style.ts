@@ -22,7 +22,7 @@ export const STYLE = {
     ].join(' '),
     ITEM_LINK_ICON: {
       WRAPPER: 'flex aspect-square h-6 items-center justify-start overflow-clip rounded',
-      ICON: 'h-4 w-4'
+      ICON: 'h-4 w-4',
     },
   },
   BUTTON: 'btn btn-ghost mt-10 w-full rounded-full text-slate-800 dark:text-slate-200 md:max-w-80',
