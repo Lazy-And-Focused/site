@@ -1,5 +1,3 @@
-import { useCopy } from '@features/copy-link';
-
 import { SocialLinksSection, TeamMembersSection } from './sections';
 import { STYLE } from './style';
 
