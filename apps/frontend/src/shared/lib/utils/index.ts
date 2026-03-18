@@ -1,9 +1,5 @@
-import type { Member } from '@/entities/member/entity';
-
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
-import { TEAM_MEMBERS } from '@shared/config';
 
 export function ScrollToStartByUrlChanges(): null {
   const location = useLocation();
@@ -20,19 +16,4 @@ export function ScrollToStartByUrlChanges(): null {
   }, [location]);
 
   return null;
-}
-
-export function filterMembersByWithoutMeta(
-  grantedMembers: Member[] = TEAM_MEMBERS,
-  grantedMeta: string[] = [],
-) {
-  let result = [...grantedMembers];
-
-  grantedMeta.forEach((meta) => {
-    result = result.filter((member) => {
-      return !member.meta?.includes(meta);
-    });
-  });
-
-  return result;
 }

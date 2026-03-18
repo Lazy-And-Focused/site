@@ -1,8 +1,8 @@
 import type { Member } from '../entity';
 
-import { TEAM_MEMBERS } from '@shared/config';
+import { TEAM_MEMBERS } from '../config';
 
-import { filterMembersByWithoutMeta } from '@shared/lib/utils';
+import { filterMembersByWithoutMeta } from '../lib/utils';
 
 /**
  * Возвращает только участников, у кого **нет** подхящих мета.

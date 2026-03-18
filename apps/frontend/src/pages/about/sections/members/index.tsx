@@ -1,6 +1,4 @@
-import { useFilteredMembers } from '@shared/hooks';
-
-import { MemberCard } from '@shared/components/member-card';
+import { MemberCard, useFilteredMembers } from '@entities/member';
 import { STYLE } from './style';
 
 export const AboutMembersSection = () => {

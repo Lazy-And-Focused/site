@@ -1,5 +1,5 @@
 import { useCopy } from '@/features/copy-link';
-import { TEAM_SOCIAL_LINKS } from '@shared/config/team/social-links';
+import { TEAM_SOCIAL_LINKS } from '@shared/config/team/social';
 import { LINKS_PAGE_CONSTANTS } from '../../lib/constants';
 import { STYLE } from './style';
 

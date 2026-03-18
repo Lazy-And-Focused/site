@@ -1,5 +1,4 @@
-import { MemberCard } from '@shared/components/member-card';
-import { useFilteredMembers } from '@shared/hooks';
+import { MemberCard, useFilteredMembers } from '@entities/member';
 
 import { LINKS_PAGE_CONSTANTS } from '../../lib/constants';
 import { STYLE } from './style';

@@ -2,7 +2,7 @@ import type { SocialLink } from '@/shared/types';
 
 import { CardMemberBaseModal } from '../base-modal';
 
-import { changeModalState, MODALS_STATES } from '../../../base-modal/utils';
+import { changeModalState, MODALS_STATES } from '@shared/components/base-modal/utils';
 import { STYLE } from './style';
 
 export const MemberCardModal = ({
