@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import vercel from 'vite-plugin-vercel';
+import vercel from 'vite-plugin-vercel/vite';
 
 // https://vite.dev/config/
 export default defineConfig({

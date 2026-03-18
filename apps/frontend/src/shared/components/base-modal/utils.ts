@@ -4,7 +4,7 @@ export const enum MODALS_STATES {
 }
 
 export function changeModalState(
-  modalRef: React.RefObject<HTMLDialogElement>,
+  modalRef: React.RefObject<HTMLDialogElement | null>,
   newState: MODALS_STATES,
 ) {
   if (!modalRef.current) {
