@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 export type Theme = 'emerald' | 'forest';
 
-const THEME_KEY = 'laf-theme';
+const THEME_KEY = 'theme';
 
 export const useTheme = () => {
   const [theme, setTheme] = useState<Theme>(() => {

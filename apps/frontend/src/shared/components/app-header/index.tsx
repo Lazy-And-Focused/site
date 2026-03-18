@@ -1,13 +1,12 @@
 import type { HeaderNavigationLink } from './types';
 
 import { AppHeaderLogotype } from './ui/logotype';
-import { AppHeaderSocialLinks } from './ui/social-links';
-import { ThemeSwitcher } from '@shared/components/ui/theme-switcher';
+import { AppHeaderRightSection } from './ui/right-section';
 
 import { WebsiteIcon } from '@icons';
 
-import { useShiftPosition } from './hooks/use-shift-position';
 import { useDeviceWidth } from '@shared/hooks';
+import { useShiftPosition } from './hooks/use-shift-position';
 
 import { DefaultAppHeader, MobileAppHeader } from './variants';
 
@@ -40,8 +39,7 @@ export const AppHeader = (props: Props) => {
 
       {deviceWidth > 670 ? <DefaultAppHeader {...props} /> : <MobileAppHeader {...props} />}
 
-      <ThemeSwitcher />
-      <AppHeaderSocialLinks linkSize={20} links={socialLinks} />
+      <AppHeaderRightSection linkSize={20} links={socialLinks} />
     </header>
   );
 };

@@ -1,5 +1,6 @@
 import type { SVGProps } from 'react';
 import { STYLE } from './style';
+import { ThemeSwitcher } from '@/shared/components/ui/theme-switcher';
 
 type SocialLink = {
   id: string;
@@ -13,7 +14,7 @@ interface Props {
   linkSize?: number;
 }
 
-export const AppHeaderSocialLinks = ({ links, linkSize = 18 }: Props) => {
+export const AppHeaderRightSection = ({ links, linkSize = 18 }: Props) => {
   return (
     <div className={STYLE.CONTAINER}>
       {links.map(({ id, href, name, icon: Icon }) => (
@@ -29,6 +30,8 @@ export const AppHeaderSocialLinks = ({ links, linkSize = 18 }: Props) => {
           {<Icon width={linkSize} height={linkSize} />}
         </a>
       ))}
+
+      <ThemeSwitcher />
     </div>
   );
 };
