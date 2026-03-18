@@ -23,16 +23,10 @@ export const useTheme = () => {
   useEffect(() => {
     const root = document.documentElement;
     
-    // Remove existing theme classes
     root.classList.remove('emerald', 'forest');
-    
-    // Add current theme class
     root.classList.add(theme);
-    
-    // Update data-theme attribute for daisyUI
     root.setAttribute('data-theme', theme);
     
-    // Save to localStorage
     localStorage.setItem(THEME_KEY, theme);
   }, [theme]);
 
