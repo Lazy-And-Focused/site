@@ -11,10 +11,10 @@ export default defineConfig({
     port: 3000,
     warmup: {
       clientFiles: [
-        './src/components/app-header/index.tsx',
-        './src/components/app-footer/index.tsx',
+        './src/shared/components/app-header/index.tsx',
+        './src/shared/components/app-footer/index.tsx',
 
-        './src/shared/ui/icons/index.tsx',
+        './src/shared/components/ui/icons/index.tsx',
 
         './src/shared/config/*.ts',
         './src/shared/utils/*.ts',
