@@ -1,5 +1,5 @@
 import type { AppRoute } from './types';
-import type { RouteObject } from 'react-router-dom';
+import type { RouteObject } from 'react-router';
 
 /**
  * Конвертирует AppRoute в RouteObject для react-router

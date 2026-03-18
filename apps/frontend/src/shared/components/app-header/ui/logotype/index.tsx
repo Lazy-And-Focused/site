@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 import { APP_ROUTES } from '@shared/lib/constants';
 import { DEFAULT_IMAGE_SOURCE, DEFAULT_IMAGE_ALT_TEXT, ORGANIZATION_NAME } from './constants';

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router';
 
 import { convertAppRoutesToRouteObjects } from './utils';
 import { routerRoutes } from './routers';

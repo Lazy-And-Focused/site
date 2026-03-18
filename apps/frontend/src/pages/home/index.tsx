@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { HeroSection, InfoSection, MemberListSection } from './sections';
 
 import { HOME_PAGE_CONSTANTS } from './lib/constants';

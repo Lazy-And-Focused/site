@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { MemberCard, useFilteredMembers } from '@entities/member';
 
 import { APP_ROUTES } from '@shared/lib/constants';

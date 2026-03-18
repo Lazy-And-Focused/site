@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router';
 
 import { router } from '@app/providers';
 import { REACT_APP_ROOT_ID } from '@shared/lib/constants';
