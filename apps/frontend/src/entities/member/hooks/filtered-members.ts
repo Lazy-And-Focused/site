@@ -1,6 +1,6 @@
-import type { Member } from '../../entities/member';
+import type { Member } from '../entity';
 
-import { TEAM_MEMBERS } from '../config';
+import { TEAM_MEMBERS } from '@shared/config';
 
 import { filterMembersByWithoutMeta } from '@shared/lib/utils';
 

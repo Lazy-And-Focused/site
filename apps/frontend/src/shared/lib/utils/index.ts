@@ -1,4 +1,4 @@
-import type { Member } from '@entities/member';
+import type { Member } from '@/entities/member/entity';
 
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';

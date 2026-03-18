@@ -1,4 +1,4 @@
-import type { Member } from '@entities/member';
+import type { Member } from '../entity';
 import type { SocialLink } from '@/shared/types';
 
 import { useRef } from 'react';

@@ -1,2 +1,1 @@
-export * from './use-device-width';
-export * from './use-filtered-members';
+export * from './device-width';
