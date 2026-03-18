@@ -1,15 +1,13 @@
+import { useCopy } from '@/features/copy-link';
 import { TEAM_SOCIAL_LINKS } from '@shared/config/team/social-links';
 import { LINKS_PAGE_CONSTANTS } from '../../lib/constants';
 import { STYLE } from './style';
 
 const { SOCIAL_LINKS: SECTION } = LINKS_PAGE_CONSTANTS.SECTIONS;
 
-interface SocialLinksSectionProps {
-  onCopyLink: () => void;
-  copyButtonRef: React.RefObject<HTMLButtonElement>;
-}
+export const SocialLinksSection = () => {
+  const { ref: copyButtonRef, copyCurrentUrl } = useCopy(SECTION.COPY_BUTTON_PLACEHOLDER);
 
-export const SocialLinksSection = ({ onCopyLink, copyButtonRef }: SocialLinksSectionProps) => {
   return (
     <section className={STYLE.CONTAINER}>
       <h2 className={STYLE.CONTENT.TITLE}>{SECTION.TITLE}</h2>
@@ -30,8 +28,8 @@ export const SocialLinksSection = ({ onCopyLink, copyButtonRef }: SocialLinksSec
         ))}
       </ul>
 
-      <button className={STYLE.BUTTON} onClick={onCopyLink} ref={copyButtonRef}>
-        Скопировать адрес страницы
+      <button className={STYLE.BUTTON} onClick={() => copyCurrentUrl()} ref={copyButtonRef}>
+        {SECTION.COPY_BUTTON_PLACEHOLDER}
       </button>
 
       <p className={STYLE.HINT}>{SECTION.HINT}</p>

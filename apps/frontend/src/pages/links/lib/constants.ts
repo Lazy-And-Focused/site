@@ -6,6 +6,7 @@ export const LINKS_PAGE_CONSTANTS = {
       TITLE: ORGANIZATION_NAME,
       DESCRIPTION: 'Список официальных страниц команды в социальных сетях',
       HINT: 'Пс-с, ты можешь прокрутить ниже',
+      COPY_BUTTON_PLACEHOLDER: 'Скопировать адрес страницы',
     },
     TEAM_MEMBERS: {
       TITLE: 'А вот это мы',
