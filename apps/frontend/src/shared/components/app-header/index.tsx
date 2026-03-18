@@ -2,6 +2,7 @@ import type { HeaderNavigationLink } from './types';
 
 import { AppHeaderLogotype } from './ui/logotype';
 import { AppHeaderSocialLinks } from './ui/social-links';
+import { ThemeSwitcher } from '@shared/components/ui/theme-switcher';
 
 import { WebsiteIcon } from '@icons';
 
@@ -39,6 +40,7 @@ export const AppHeader = (props: Props) => {
 
       {deviceWidth > 670 ? <DefaultAppHeader {...props} /> : <MobileAppHeader {...props} />}
 
+      <ThemeSwitcher />
       <AppHeaderSocialLinks linkSize={20} links={socialLinks} />
     </header>
   );
