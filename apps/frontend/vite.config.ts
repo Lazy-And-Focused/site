@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { vercel } from 'vite-plugin-vercel/vite';
+// import { vercel } from 'vite-plugin-vercel/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -21,5 +21,5 @@ export default defineConfig({
       ],
     },
   },
-  plugins: [vercel(), react()],
+  plugins: [/*vercel(),*/ react()],
 });

@@ -1,11 +1,25 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: emerald --default, forest --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: "emerald";
+  default: true;
+  --animation-btn: 0.25s,
+  --animation-input: 0.2s,
+  --btn-focus-scale: 0.95,
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@reference "tailwindcss";
 
 @layer components {
   .btn {
     @apply h-9 min-h-9;
   }
 }
+
+@custom-variant dark (&:where([data-theme=forest], [data-theme=forest] *));
