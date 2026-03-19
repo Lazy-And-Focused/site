@@ -14,7 +14,7 @@
 
 @plugin 'daisyui/theme' {
   name: 'forest';
-  default: true;
+  default: false;
   --color-primary-content: oklch(0.92 0.02 151.55);
 }
 
