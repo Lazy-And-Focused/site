@@ -5,7 +5,7 @@ import { TEAM_MEMBERS } from '../config';
 import { filterMembersByWithoutMeta } from '../lib/utils';
 
 /**
- * Возвращает только участников, у кого **нет** подхящих мета.
+ * Возвращает только участников, у кого **нет** подходящих мета.
  *
  * !!! Используется обратный синтаксис к filterMembersByMeta()
  */
