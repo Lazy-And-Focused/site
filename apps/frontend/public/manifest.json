@@ -1,9 +1,9 @@
 {
-  "short_name": "Сайт LAF",
-  "name": "Сайт разработчиков LAF",
+  "short_name": "LAF Team",
+  "name": "Lazy And Focused — разработка игр и приложений",
   "lang": "ru",
   "dir": "ltr",
-  "description": "Главный сайт команды разработчиков LAF, где можно узреть их творения!",
+  "description": "Lazy And Focused — команда молодых разработчиков, создающих веб- и натив-приложения, игры. Знакомьтесь с участниками и проектами.",
   "icons": [
     {
       "src": "images/favicon.svg",
@@ -16,7 +16,7 @@
       "sizes": "192x192"
     },
     {
-      "src": "images/logos/_@192.png",
+      "src": "images/logos/_@512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -25,5 +25,5 @@
   "display": "standalone",
   "theme_color": "#d88188",
   "background_color": "#d88188",
-  "categories": ["develop", "web", "website", "team", "frontend", "backend", "laf"]
+  "categories": ["development", "web", "games", "team", "frontend", "backend", "opensource"]
 }

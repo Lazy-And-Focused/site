@@ -1,0 +1,47 @@
+import { useEffect, useState } from 'react';
+
+export type Theme = 'emerald' | 'forest';
+
+const THEME_KEY = 'theme';
+
+export const useTheme = () => {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') {
+      return 'emerald';
+    }
+
+    const savedTheme = localStorage.getItem(THEME_KEY) as Theme;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+      return savedTheme;
+    }
+
+    return prefersDark ? 'forest' : 'emerald';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    root.classList.remove('emerald', 'forest');
+    root.classList.add(theme);
+    root.setAttribute('data-theme', theme);
+
+    localStorage.setItem(THEME_KEY, theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'emerald' ? 'forest' : 'emerald'));
+  };
+
+  const setThemeTo = (newTheme: Theme) => {
+    setTheme(newTheme);
+  };
+
+  return {
+    theme,
+    isDark: theme === 'forest',
+    toggleTheme,
+    setTheme: setThemeTo,
+  };
+};
