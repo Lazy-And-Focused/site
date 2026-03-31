@@ -16,7 +16,7 @@ export const MemberCardModal = ({
     <CardMemberBaseModal
       placeholderItem={
         <button
-          className={STYLE.CONTAINER}
+        className={STYLE.DISPLAY_BUTTON}
           onClick={() => changeModalState(socialsRef, MODALS_STATES.SHOW)}
         >
           +{memberSocials.slice(5).length}

@@ -1,5 +1,5 @@
 export const STYLE = {
-  CONTAINER: 'flex items-center justify-center',
+  DISPLAY_BUTTON: 'btn btn-circle btn-ghost',
   LIST_ITEM: {
     PARENT: 'py-1',
     LINK: {
