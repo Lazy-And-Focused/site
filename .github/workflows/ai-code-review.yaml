@@ -31,12 +31,12 @@ jobs:
           review-command: ${{ inputs.review-command }}
         env:
           # --- LLM configuration ---
-          LLM__PROVIDER: "OPENAI"
+          LLM__PROVIDER: "OPENROUTER"
           LLM__META__MODEL: "z-ai/glm-4.5-air:free"
           LLM__META__MAX_TOKENS: "15000"
           LLM__META__TEMPERATURE: "0.3"
-          LLM__HTTP_CLIENT__API_URL: "https://api.openai.com/v1"
-          LLM__HTTP_CLIENT__API_TOKEN: ${{ secrets.OPENAI_API_KEY }}
+          LLM__HTTP_CLIENT__API_URL: "https://openrouter.ai/api/v1"
+          LLM__HTTP_CLIENT__API_TOKEN: ${{ secrets.OPENROUTER_API_KEY }}
 
           # --- GitHub integration ---
           VCS__PROVIDER: "GITHUB"
