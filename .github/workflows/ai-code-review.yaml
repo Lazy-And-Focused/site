@@ -30,6 +30,8 @@ jobs:
         with:
           review-command: ${{ inputs.review-command }}
         env:
+          CORE__CONCURRENCY: "2"
+
           # --- LLM configuration ---
           LLM__PROVIDER: "OPENROUTER"
           LLM__META__MODEL: "z-ai/glm-4.5-air:free"
