@@ -1,0 +1,26 @@
+import type { SocialLink } from '@shared/types';
+
+import { WebsiteIcon } from '@icons';
+import { STYLE } from './style';
+
+export const MemberSocialLink = ({
+  data: { id, url, customName, platform },
+}: {
+  data: SocialLink;
+}) => {
+  const Icon = platform.icon || WebsiteIcon;
+
+  return (
+    <a
+      key={id}
+      href={url}
+      target='_blank'
+      rel='noreferrer'
+      aria-label={customName}
+      title={customName}
+      className={STYLE.LINK}
+    >
+      <Icon aria-label={customName} className={STYLE.LINK_ICON} />
+    </a>
+  );
+};

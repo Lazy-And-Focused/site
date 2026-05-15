@@ -1,3 +1,6 @@
 # Ignore artifacts:
 dist
 coverage
+.vercel
+.vscode
+.vs
