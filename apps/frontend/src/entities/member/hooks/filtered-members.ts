@@ -19,12 +19,10 @@ export const useFilteredMembers = (
    */
   grantedMembers: Member[] = TEAM_MEMBERS,
 ) => {
-  const meta = [...grantedMeta];
+  const meta = grantedMeta.slice();
   if (meta.length === 0) {
     meta.push('leave');
   }
-  const members = [...grantedMembers];
-
-  return filterMembersByWithoutMeta(members, meta);
+  return filterMembersByWithoutMeta(grantedMembers, meta);
 };
 export default useFilteredMembers;
