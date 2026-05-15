@@ -10,7 +10,7 @@ export const ABOUT_PAGE_CONSTANTS = {
     },
     CREDITS: {
       TITLE: 'Послесловие',
-      DESCRIPTION: 'Мы использовали следующие ресурсы для создания сайта',
+      DESCRIPTION: 'Мы использовали следующие ресурсы для создания сайта.',
     },
   },
 } as const;

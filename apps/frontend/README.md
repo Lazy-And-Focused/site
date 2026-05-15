@@ -14,13 +14,13 @@
 # Запуск в режиме разработки
 pnpm run dev
 
-# Запуск в продакшн
-pnpm run build # Сборка
-pnpm run start # Запуск
+# Сборка и запуск в продакшене
+pnpm run build
+pnpm run start
 
-# Дополнительные инструменты
-pnpm run lint   # Линтинг
-pnpm run format # Форматирование
+# Проверка и форматирование
+pnpm run lint
+pnpm run format
 ```
 
 ## Для разработчиков LAF
@@ -31,9 +31,9 @@ pnpm run format # Форматирование
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Tailwind CSS](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
-После чего убедитесь, что настройки конфигурации были правильно подтянуты из файлов `eslint.config.js` и `.prettierrc.json`.
+Убедитесь, что настройки конфигурации подтянулись из файлов `eslint.config.js` и `prettier.config.mjs`.
 
-Перед тем, как опубликовать изменения, убедитесь в том, что они прошли проверку `pnpm run lint` и форматирование `pnpm run format`.
+Перед публикацией изменений проверьте их командой `pnpm run lint` и отформатируйте код через `pnpm run format`.
 
 ## Конец
 

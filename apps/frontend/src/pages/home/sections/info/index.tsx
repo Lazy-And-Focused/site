@@ -9,8 +9,7 @@ export const InfoSection = () => {
       <div className={STYLE.CONTENT.WRAPPER}>
         <h2 className={STYLE.CONTENT.TITLE}>Чем мы занимаемся</h2>
         <p className={STYLE.CONTENT.DESCRIPTION}>
-          Разрабатываем малые и средние IT-продукты, независимо от их типа: веб-, натив-приложения и
-          игры
+          Разрабатываем малые и средние IT-продукты: веб-приложения, нативные приложения и игры.
         </p>
         <div className={STYLE.CONTENT.ACTIONS}>
           <Link to='/#members' className='btn btn-outline btn-primary rounded-md'>
