@@ -1,9 +1,9 @@
 import { ILink } from "./link.type";
-import { IMember } from "./member.type";
+import { IMember } from "./members.type";
 
 export type IProject = {
   name: string;
-  
+
   description: string;
   urls?: ILink[];
 
@@ -14,21 +14,18 @@ export type IProject = {
   icon_url?: string;
 };
 
-export const DEFAULT = {
+export const PROJECT_DEFAULT = {
   contributors: [],
   description: "",
   icon_url: "",
   url: "",
 } as const;
 
-export const REQUIRED = [
-  "name",
-  "author"
-] as const;
+export const PROJECT_REQUIRED = ["name", "author"] as const;
 
-export const KEYS = [
-  ...REQUIRED,
-  
+export const PROJECT_KEYS = [
+  ...PROJECT_REQUIRED,
+
   "name",
   "description",
   "url",
