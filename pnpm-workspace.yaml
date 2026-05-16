@@ -2,6 +2,12 @@ packages:
   - "packages/*"
   - "apps/*"
 allowBuilds:
-  '@swc/core': true
+  "@nestjs/core": true
+  "@scarf/scarf": true
+  "@swc/core": true
   esbuild: true
   node: true
+  unrs-resolver: true
+catalog:
+  "@lazy-and-focused/prettier-config": ^1.1.0
+  prettier: ^3.8.3

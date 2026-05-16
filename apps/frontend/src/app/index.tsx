@@ -8,7 +8,9 @@ import { REACT_APP_ROOT_ID } from '@shared/lib/constants';
 
 import '@app/styles/globals.css';
 
-const root = ReactDOM.createRoot(document.getElementById(REACT_APP_ROOT_ID) as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById(REACT_APP_ROOT_ID) as HTMLElement,
+);
 
 root.render(
   <React.StrictMode>

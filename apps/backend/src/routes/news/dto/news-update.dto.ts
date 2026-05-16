@@ -4,23 +4,23 @@ import { ApiProperty } from "@nestjs/swagger";
 
 export class NewsUpdateDto implements Partial<INews> {
   @ApiProperty()
-  name?: string
-  
+  name?: string;
+
   @ApiProperty()
-  author?: string
-  
+  author?: string;
+
   @ApiProperty()
-  date?: string
-  
+  date?: string;
+
   @ApiProperty()
-  text?: string
-  
+  text?: string;
+
   @ApiProperty()
-  banner?: string
-  
+  banner?: string;
+
   @ApiProperty()
-  icon?: string
-  
+  icon?: string;
+
   @ApiProperty()
-  image?: string
+  image?: string;
 }

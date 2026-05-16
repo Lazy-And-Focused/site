@@ -2,7 +2,10 @@ import type { SocialLink } from '@/shared/types';
 
 import { CardMemberBaseModal } from '../base-modal';
 
-import { changeModalState, MODALS_STATES } from '@shared/components/base-modal/utils';
+import {
+  changeModalState,
+  MODALS_STATES,
+} from '@shared/components/base-modal/utils';
 import { STYLE } from './style';
 
 export const MemberCardModal = ({
@@ -16,7 +19,7 @@ export const MemberCardModal = ({
     <CardMemberBaseModal
       placeholderItem={
         <button
-        className={STYLE.DISPLAY_BUTTON}
+          className={STYLE.DISPLAY_BUTTON}
           onClick={() => changeModalState(socialsRef, MODALS_STATES.SHOW)}
         >
           +{memberSocials.slice(5).length}

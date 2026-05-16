@@ -8,6 +8,6 @@ const router = Router();
 
 router.get(ROUTES.GET, controller.get);
 
-export { ROUTER }
+export { ROUTER };
 
 export default router;

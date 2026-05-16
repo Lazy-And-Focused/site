@@ -7,7 +7,8 @@ export const PROJECT_REPOSITORY = 'https://github.com/Lazy-And-Focused/site';
 
 export const ORGANIZATION_NAME = 'Lazy And Focused';
 export const ORGANIZATION_SHORT_NAME = 'LAF';
-export const ORGANIZATION_REPOSITORIES_URL = 'https://api.github.com/orgs/Lazy-And-Focused/repos';
+export const ORGANIZATION_REPOSITORIES_URL =
+  'https://api.github.com/orgs/Lazy-And-Focused/repos';
 
 export const REACT_APP_ROOT_ID = 'root';
 

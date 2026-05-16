@@ -1,9 +1,7 @@
 const ROUTES = {
-  GET: "/"
+  GET: "/",
 } as const;
 
 const ROUTER = "/database/" as const;
 
-export {
-  ROUTER, ROUTES
-};
+export { ROUTER, ROUTES };

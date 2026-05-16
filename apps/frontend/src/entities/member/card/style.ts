@@ -8,7 +8,8 @@ export const STYLE = {
   CONTENT: {
     HEADING: 'text-lg font-semibold tracking-tight text-primary-content',
     SOCIALS: {
-      CONTAINER: 'grid grid-cols-6 gap-2 rounded-md bg-primary/15 p-1 text-primary',
+      CONTAINER:
+        'grid grid-cols-6 gap-2 rounded-md bg-primary/15 p-1 text-primary',
     },
     DESCRIPTION: 'p-2 text-primary-content/85',
   },

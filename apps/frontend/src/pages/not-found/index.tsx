@@ -6,16 +6,24 @@ import { HeartBreakIcon, ListIcon } from '@icons';
 import { NOT_FOUND_CONFIG } from './lib/constants';
 import { STYLE } from './style';
 
-const { GLOBAL_FACTOR_X, GLOBAL_FACTOR_Y } = NOT_FOUND_CONFIG.PARALLAX.CONTAINER;
+const { GLOBAL_FACTOR_X, GLOBAL_FACTOR_Y } =
+  NOT_FOUND_CONFIG.PARALLAX.CONTAINER;
 const { CONTENT: PAGE_CONTENT } = NOT_FOUND_CONFIG;
 const PARALLAX_ITEMS = NOT_FOUND_CONFIG.PARALLAX.ITEMS;
 
 const NotFoundPage = () => {
   return (
     <main className={STYLE.MAIN}>
-      <ParallaxContainer globalFactorX={GLOBAL_FACTOR_X} globalFactorY={GLOBAL_FACTOR_Y}>
+      <ParallaxContainer
+        globalFactorX={GLOBAL_FACTOR_X}
+        globalFactorY={GLOBAL_FACTOR_Y}
+      >
         {PARALLAX_ITEMS.map((item, index) => (
-          <ParallaxItem key={index} factorX={item.FACTOR_X} factorY={item.FACTOR_Y}>
+          <ParallaxItem
+            key={index}
+            factorX={item.FACTOR_X}
+            factorY={item.FACTOR_Y}
+          >
             {renderContent(item.CONTENT)}
           </ParallaxItem>
         ))}

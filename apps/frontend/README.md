@@ -31,9 +31,11 @@ pnpm run format # Форматирование
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Tailwind CSS](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
-После чего убедитесь, что настройки конфигурации были правильно подтянуты из файлов `eslint.config.js` и `.prettierrc.json`.
+После чего убедитесь, что настройки конфигурации были правильно
+подтянуты из файлов `eslint.config.js` и `.prettierrc.json`.
 
-Перед тем, как опубликовать изменения, убедитесь в том, что они прошли проверку `pnpm run lint` и форматирование `pnpm run format`.
+Перед тем, как опубликовать изменения, убедитесь в том, что они прошли
+проверку `pnpm run lint` и форматирование `pnpm run format`.
 
 ## Конец
 

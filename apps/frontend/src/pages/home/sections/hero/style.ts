@@ -9,7 +9,8 @@ export const STYLE = {
     INNER: 'text-center',
     TITLE:
       'text-balance text-5xl font-semibold tracking-tight text-slate-100 drop-shadow-md sm:text-7xl',
-    DESCRIPTION: 'mt-8 text-pretty text-lg font-medium text-slate-200 sm:text-xl/8',
+    DESCRIPTION:
+      'mt-8 text-pretty text-lg font-medium text-slate-200 sm:text-xl/8',
     ACTIONS: 'mt-10 flex items-center justify-center gap-6',
   },
 } as const;

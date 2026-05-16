@@ -31,7 +31,8 @@ export const BASE_TEAM_MEMBERS: BaseMember[] = [
     name: 'Neex',
     roles: ['HR-менеджер'],
     avatar: '/images/avatars/alena_viral25.webp',
-    description: 'Всем привет, я Кари и являюсь HR-менеджер данной команды, моё хобби — рисование',
+    description:
+      'Всем привет, я Кари и являюсь HR-менеджер данной команды, моё хобби — рисование',
   },
   {
     tag: 'lanvalird',

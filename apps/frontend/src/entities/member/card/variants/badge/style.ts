@@ -11,6 +11,7 @@ export const STYLE = {
       'text-base/7 font-semibold tracking-tight text-base-content',
     ].join(' '),
     NAME_MARGIN: 'mr-1',
-    GENERAL_ROLE: 'line-clamp-1 max-w-full text-sm/6 font-semibold text-primary/75',
+    GENERAL_ROLE:
+      'line-clamp-1 max-w-full text-sm/6 font-semibold text-primary/75',
   },
 } as const;

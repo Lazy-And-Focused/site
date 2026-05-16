@@ -2,40 +2,47 @@ import { Message } from "telegraf/typings/core/types/typegram";
 import { IForward } from "../types/interaction.types";
 
 import { News } from "database/models/news.model";
-import { fromMilisecondsToDate, formatDateToDayMonthYear } from "./date-formatter.utility";
+import {
+  fromMilisecondsToDate,
+  formatDateToDayMonthYear,
+} from "./date-formatter.utility";
 
-export type IUtilityMessageForForwards = ({
-  type: "forwarded",
-  message: IForward
-} | {
-  type: "will_forwarded",
-  message: Message
-}) & {
-  name?: string,
-  length?: string
-}
+export type IUtilityMessageForForwards = (
+  | {
+      type: "forwarded";
+      message: IForward;
+    }
+  | {
+      type: "will_forwarded";
+      message: Message;
+    }
+) & {
+  name?: string;
+  length?: string;
+};
 
-export const messages = new Map<string, IUtilityMessageForForwards>()
+export const messages = new Map<string, IUtilityMessageForForwards>();
 
 class Utility {
   public async execute(message: IUtilityMessageForForwards) {
     if (message.type !== "forwarded") return this;
 
-    const data = messages.get(`${message.message.chat.id}`)
+    const data = messages.get(`${message.message.chat.id}`);
     if (!data) return this;
 
-    const {
-      forward_origin,
-      text
-    } = message.message;
+    const { forward_origin, text } = message.message;
 
     const dateInMiliseconds = message.message.forward_date;
 
     const date = fromMilisecondsToDate(dateInMiliseconds);
-    if (data.length && !Number.isNaN(Number(data.length)) && Number(data.length) > 1) {
+    if (
+      data.length &&
+      !Number.isNaN(Number(data.length)) &&
+      Number(data.length) > 1
+    ) {
       messages.set(`${message.message.chat.id}`, {
         ...data,
-        length: `${Number(data.length)-1}`
+        length: `${Number(data.length) - 1}`,
       });
     } else {
       messages.delete(`${message.message.chat.id}`);
@@ -44,17 +51,21 @@ class Utility {
     try {
       const news = await News.create({
         name: message.name || `Отчёт за ${formatDateToDayMonthYear(date)}`,
-        author: forward_origin.type === "channel"
-          ? forward_origin.author_signature
-          : forward_origin.sender_user.username || forward_origin.sender_user.first_name,
+        author:
+          forward_origin.type === "channel"
+            ? forward_origin.author_signature
+            : forward_origin.sender_user.username ||
+              forward_origin.sender_user.first_name,
         text,
-        date: date.toISOString()
+        date: date.toISOString(),
       });
-      
-      console.log(`Была создана новость: "${news.name}" с датой ${formatDateToDayMonthYear(date)}`);
+
+      console.log(
+        `Была создана новость: "${news.name}" с датой ${formatDateToDayMonthYear(date)}`,
+      );
     } catch (error) {
       console.log(error);
-      return this;        
+      return this;
     }
 
     return this;

@@ -7,7 +7,7 @@ export type IMember = {
 
   description: string;
   socials: ILink[];
-  
+
   avatar?: string;
   meta?: string[];
 };
@@ -19,18 +19,14 @@ export const DEFAULT = {
   meta: "",
 } as const;
 
-export const REQUIRED = [
-  "name",
-  "role",
-  "tag",
-] as const;
+export const REQUIRED = ["name", "role", "tag"] as const;
 
 export const KEYS = [
   ...REQUIRED,
-  
+
   "description",
   "socials",
 
   "avatar",
-  "meta"
+  "meta",
 ] as const;

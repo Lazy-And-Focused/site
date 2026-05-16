@@ -1,1 +1,2 @@
-export const generateId = () => `${new Date().getTime()}` + Math.floor(Math.random() * 1000);
+export const generateId = () =>
+  `${new Date().getTime()}` + Math.floor(Math.random() * 1000);
