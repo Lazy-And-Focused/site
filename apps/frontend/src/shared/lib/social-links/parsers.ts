@@ -5,7 +5,10 @@ import { extractTextFromBrackets, clearBrackets } from './formatters';
 
 import { SOCIAL_PLATFORMS } from '@shared/config/app/social';
 
-export function parseSocialLinks(links: string[], options: ParseOptions = {}): SocialLink[] {
+export function parseSocialLinks(
+  links: string[],
+  options: ParseOptions = {},
+): SocialLink[] {
   const {
     generateId = (_, idx) => `social-link-${idx}`,
     specialAttributes = ['(personal)', '(docs)'],

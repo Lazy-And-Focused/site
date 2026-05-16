@@ -8,7 +8,10 @@ import {
   AppHeaderNavigationItem,
 } from '../ui/navigation';
 
-import { changeModalState, MODALS_STATES } from '@shared/components/base-modal/utils';
+import {
+  changeModalState,
+  MODALS_STATES,
+} from '@shared/components/base-modal/utils';
 import { AppHeaderProps } from '../';
 
 export const DefaultAppHeader = ({ links }: AppHeaderProps) => {
@@ -30,7 +33,9 @@ export const MobileAppHeader = ({ links }: AppHeaderProps) => {
     <AppHeaderModalNavigation
       placeholderItem={
         <AppHeaderNavigationItem
-          onClick={() => changeModalState(mobileModalNavigationRef, MODALS_STATES.SHOW)}
+          onClick={() =>
+            changeModalState(mobileModalNavigationRef, MODALS_STATES.SHOW)
+          }
         >
           Открыть меню
         </AppHeaderNavigationItem>

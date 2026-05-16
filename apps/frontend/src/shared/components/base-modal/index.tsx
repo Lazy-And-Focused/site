@@ -18,7 +18,13 @@ export type BaseModalProps = {
 
 export const BaseModal = forwardRef<HTMLDialogElement, BaseModalProps>(
   (
-    { children, placeholderItem, closeButtonPosition = 'top', showDivider = false, className = {} },
+    {
+      children,
+      placeholderItem,
+      closeButtonPosition = 'top',
+      showDivider = false,
+      className = {},
+    },
     ref,
   ) => {
     const handleClose = () => {
@@ -30,7 +36,9 @@ export const BaseModal = forwardRef<HTMLDialogElement, BaseModalProps>(
     return (
       <>
         {placeholderItem && (
-          <div className={className.container || STYLES.CONTAINER}>{placeholderItem}</div>
+          <div className={className.container || STYLES.CONTAINER}>
+            {placeholderItem}
+          </div>
         )}
 
         <dialog ref={ref} className={className.dialog || STYLES.MODAL.DIALOG}>
@@ -59,7 +67,10 @@ export const BaseModal = forwardRef<HTMLDialogElement, BaseModalProps>(
             )}
           </div>
 
-          <form method='dialog' className={className.backdrop || STYLES.MODAL.BACKDROP}>
+          <form
+            method='dialog'
+            className={className.backdrop || STYLES.MODAL.BACKDROP}
+          >
             <button onClick={handleClose}>close</button>
           </form>
         </dialog>

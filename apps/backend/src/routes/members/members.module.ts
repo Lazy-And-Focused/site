@@ -6,6 +6,6 @@ import { Service } from "./members.service";
 @Module({
   imports: [],
   controllers: [Controller],
-  providers: [Service]
+  providers: [Service],
 })
 export default class MembersModule {}

@@ -11,7 +11,9 @@ export const useTheme = () => {
     }
 
     const savedTheme = localStorage.getItem(THEME_KEY) as Theme;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches;
 
     if (savedTheme) {
       return savedTheme;

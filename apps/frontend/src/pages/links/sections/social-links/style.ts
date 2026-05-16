@@ -1,7 +1,9 @@
 export const STYLE = {
-  CONTAINER: 'flex w-full flex-col items-center justify-center px-8 py-16 lg:px-12',
+  CONTAINER:
+    'flex w-full flex-col items-center justify-center px-8 py-16 lg:px-12',
   CONTENT: {
-    TITLE: 'text-3xl font-semibold tracking-tight text-base-content sm:text-4xl',
+    TITLE:
+      'text-3xl font-semibold tracking-tight text-base-content sm:text-4xl',
     DESCRIPTION: 'my-8 text-center text-lg text-base-content/40',
   },
   LIST: {
@@ -21,10 +23,12 @@ export const STYLE = {
       'text-ellipsis text-nowrap text-left',
     ].join(' '),
     ITEM_LINK_ICON: {
-      WRAPPER: 'flex aspect-square h-6 items-center justify-start overflow-clip rounded',
+      WRAPPER:
+        'flex aspect-square h-6 items-center justify-start overflow-clip rounded',
       ICON: 'h-4 w-4',
     },
   },
-  BUTTON: 'btn btn-ghost mt-10 w-full rounded-full text-slate-800 dark:text-slate-200 md:max-w-80',
+  BUTTON:
+    'btn btn-ghost mt-10 w-full rounded-full text-slate-800 dark:text-slate-200 md:max-w-80',
   HINT: 'mt-12 text-base text-base-content/40',
 } as const;

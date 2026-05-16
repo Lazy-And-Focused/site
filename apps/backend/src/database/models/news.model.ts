@@ -5,7 +5,7 @@ const schema = new Schema<INews>({
   id: {
     type: mongoose.SchemaTypes.String,
     required: true,
-    unique: true
+    unique: true,
   },
 
   name: {

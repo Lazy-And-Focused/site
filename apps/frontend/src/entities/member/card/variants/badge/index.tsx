@@ -34,7 +34,8 @@ export const MemberCardBadge = ({ data: member }: MemberCardBaseProps) => {
                 data={{
                   ...social,
                   customName:
-                    social.customName || `Профиль ${member.name} в ${social.platform.name}`,
+                    social.customName ||
+                    `Профиль ${member.name} в ${social.platform.name}`,
                 }}
               />
             ))}

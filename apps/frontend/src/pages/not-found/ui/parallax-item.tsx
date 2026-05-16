@@ -6,7 +6,11 @@ interface ParallaxItemProps {
   factorY?: number;
 }
 
-export const ParallaxItem = ({ children, factorX = 0.1, factorY = 0.1 }: ParallaxItemProps) => {
+export const ParallaxItem = ({
+  children,
+  factorX = 0.1,
+  factorY = 0.1,
+}: ParallaxItemProps) => {
   return (
     <MouseParallaxChild
       factorX={factorX}

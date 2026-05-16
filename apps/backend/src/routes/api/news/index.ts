@@ -10,6 +10,6 @@ const router = Router();
 router.get(ROUTES.GET_ALL, controller.getAll);
 router.get(ROUTES.GET_ONE, controller.getOne);
 
-export { ROUTER }
+export { ROUTER };
 
 export default router;

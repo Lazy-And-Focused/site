@@ -4,11 +4,9 @@ const ROUTES = {
 
   POST: "/",
   PUT: "/:name",
-  DELETE: "/:name"
+  DELETE: "/:name",
 } as const;
 
 const ROUTER = "/members/" as const;
 
-export {
-  ROUTER, ROUTES
-};
+export { ROUTER, ROUTES };

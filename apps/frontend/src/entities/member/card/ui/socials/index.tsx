@@ -11,7 +11,11 @@ export type MemberCardSocialsProps = {
   socialsRef: React.MutableRefObject<HTMLDialogElement | null>;
 };
 
-export const MemberCardSocials = ({ socials, memberName, socialsRef }: MemberCardSocialsProps) => {
+export const MemberCardSocials = ({
+  socials,
+  memberName,
+  socialsRef,
+}: MemberCardSocialsProps) => {
   const socialCount = socials.length;
 
   if (socialCount === 0) {
@@ -27,7 +31,9 @@ export const MemberCardSocials = ({ socials, memberName, socialsRef }: MemberCar
           key={social.id}
           data={{
             ...social,
-            customName: social.customName || `Профиль ${memberName} в ${social.platform.name}`,
+            customName:
+              social.customName ||
+              `Профиль ${memberName} в ${social.platform.name}`,
           }}
         />
       ))}

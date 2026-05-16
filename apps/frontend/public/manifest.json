@@ -25,5 +25,13 @@
   "display": "standalone",
   "theme_color": "#d88188",
   "background_color": "#d88188",
-  "categories": ["development", "web", "games", "team", "frontend", "backend", "opensource"]
+  "categories": [
+    "development",
+    "web",
+    "games",
+    "team",
+    "frontend",
+    "backend",
+    "opensource"
+  ]
 }

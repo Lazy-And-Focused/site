@@ -2,7 +2,12 @@ import type { Member } from '../entity';
 
 import { useRef } from 'react';
 
-import { MemberCardHeader, MemberCardName, MemberCardDescription, MemberCardSocials } from './ui';
+import {
+  MemberCardHeader,
+  MemberCardName,
+  MemberCardDescription,
+  MemberCardSocials,
+} from './ui';
 import { MemberCardBadge } from './variants';
 
 import { STYLE } from './style';
@@ -15,7 +20,10 @@ type MemberCardProps = MemberCardBaseProps & {
   type?: 'default' | 'badge' | 'mini';
 };
 
-export const MemberCard = ({ data: member, type = 'default' }: MemberCardProps) => {
+export const MemberCard = ({
+  data: member,
+  type = 'default',
+}: MemberCardProps) => {
   const socialsRef = useRef<HTMLDialogElement | null>(null);
 
   if (type === 'badge') {
@@ -24,7 +32,11 @@ export const MemberCard = ({ data: member, type = 'default' }: MemberCardProps) 
 
   return (
     <div className={STYLE.CONTAINER}>
-      <MemberCardHeader avatar={member.avatar} tag={member.tag} generalRole={member.roles[0]} />
+      <MemberCardHeader
+        avatar={member.avatar}
+        tag={member.tag}
+        generalRole={member.roles[0]}
+      />
 
       <MemberCardName name={member.name} />
 

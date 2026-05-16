@@ -12,7 +12,11 @@ const { CREDITS } = ABOUT_PAGE_CONSTANTS.SECTIONS;
  */
 export const ResourcesSection = () => {
   return (
-    <CreditsSection id={'credits'} title={CREDITS.TITLE} description={CREDITS.DESCRIPTION}>
+    <CreditsSection
+      id={'credits'}
+      title={CREDITS.TITLE}
+      description={CREDITS.DESCRIPTION}
+    >
       <ul role='list' className={STYLE.LIST.CONTAINER}>
         <li className={STYLE.LIST.ITEM}>
           <a
@@ -44,7 +48,10 @@ export const ResourcesSection = () => {
           >
             И если интересно, весь стек здесь
           </a>
-          <span className={STYLE.LIST.SUPPLEMENT}> &lt;- кликните на текст</span>
+          <span className={STYLE.LIST.SUPPLEMENT}>
+            {' '}
+            &lt;- кликните на текст
+          </span>
         </li>
       </ul>
     </CreditsSection>

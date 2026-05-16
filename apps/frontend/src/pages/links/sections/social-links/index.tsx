@@ -6,7 +6,9 @@ import { STYLE } from './style';
 const { SOCIAL_LINKS: SECTION } = LINKS_PAGE_CONSTANTS.SECTIONS;
 
 export const SocialLinksSection = () => {
-  const { ref: copyButtonRef, copyCurrentUrl } = useCopy(SECTION.COPY_BUTTON_PLACEHOLDER);
+  const { ref: copyButtonRef, copyCurrentUrl } = useCopy(
+    SECTION.COPY_BUTTON_PLACEHOLDER,
+  );
 
   return (
     <section className={STYLE.CONTAINER}>
@@ -16,10 +18,17 @@ export const SocialLinksSection = () => {
       <ul className={STYLE.LIST.BASE}>
         {TEAM_SOCIAL_LINKS.map((link) => (
           <li className={STYLE.LIST.ITEM} key={link.id}>
-            <a href={link.url} target='_blank' rel='noreferrer' className={STYLE.LIST.ITEM_LINK}>
+            <a
+              href={link.url}
+              target='_blank'
+              rel='noreferrer'
+              className={STYLE.LIST.ITEM_LINK}
+            >
               {link.platform.icon && (
                 <span className={STYLE.LIST.ITEM_LINK_ICON.WRAPPER}>
-                  <link.platform.icon className={STYLE.LIST.ITEM_LINK_ICON.ICON} />
+                  <link.platform.icon
+                    className={STYLE.LIST.ITEM_LINK_ICON.ICON}
+                  />
                 </span>
               )}
               {link.customName || link.platform.name}
@@ -28,7 +37,11 @@ export const SocialLinksSection = () => {
         ))}
       </ul>
 
-      <button className={STYLE.BUTTON} onClick={() => copyCurrentUrl()} ref={copyButtonRef}>
+      <button
+        className={STYLE.BUTTON}
+        onClick={() => copyCurrentUrl()}
+        ref={copyButtonRef}
+      >
         {SECTION.COPY_BUTTON_PLACEHOLDER}
       </button>
 

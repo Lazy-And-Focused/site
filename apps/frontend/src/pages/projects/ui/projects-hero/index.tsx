@@ -12,7 +12,9 @@ export const ProjectsHero = ({ children }: Props) => {
     <section className={STYLE.CONTAINER}>
       <div className={STYLE.BASE}>
         <div className={STYLE.HEADING.CONTAINER}>
-          <h1 className={STYLE.HEADING.BASE}>Сделано с {ORGANIZATION_SHORT_NAME}</h1>
+          <h1 className={STYLE.HEADING.BASE}>
+            Сделано с {ORGANIZATION_SHORT_NAME}
+          </h1>
           {children}
         </div>
       </div>

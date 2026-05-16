@@ -2,7 +2,7 @@ import { config } from "dotenv";
 
 if (process.env.NODE_ENV !== "production") {
   config({
-    path: ".env." + process.env.NODE_ENV
+    path: ".env." + process.env.NODE_ENV,
   });
 } else {
   config();
@@ -15,7 +15,7 @@ export const REQUIRED = [
   "HASH_KEY",
   "DATABASE_URL",
   "AUTH_SERVICE_URL",
-  "THIS_URL"
+  "THIS_URL",
 ] as const;
 
 export const ALL = [...REQUIRED, "ENCODING_TYPE", "PORT"] as const;

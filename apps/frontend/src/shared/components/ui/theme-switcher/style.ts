@@ -1,7 +1,8 @@
 export const STYLE = {
   MODAL: {
     OVERLAY: 'fixed inset-0 bg-base-200/50 backdrop-blur-sm',
-    CONTAINER: 'relative bg-base-100 rounded-box shadow-xl p-6 w-full max-w-sm mx-4',
+    CONTAINER:
+      'relative bg-base-100 rounded-box shadow-xl p-6 w-full max-w-sm mx-4',
     TITLE: 'text-lg font-semibold mb-4',
     THEME_OPTION: {
       BASE: 'w-full text-left p-3 rounded-lg border-2 transition-all',
