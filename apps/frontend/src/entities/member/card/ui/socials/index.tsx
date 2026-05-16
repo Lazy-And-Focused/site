@@ -31,9 +31,7 @@ export const MemberCardSocials = ({ socials, memberName, socialsRef }: MemberCar
           }}
         />
       ))}
-      {socialCount > 6 && (
-        <MemberCardModal memberSocials={socials} socialsRef={socialsRef} />
-      )}
+      {socialCount > 6 && <MemberCardModal memberSocials={socials} socialsRef={socialsRef} />}
     </div>
   );
 };

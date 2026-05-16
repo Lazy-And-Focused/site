@@ -12,9 +12,7 @@ export const MemberListSection = () => {
       <div className={STYLE.CONTENT.WRAPPER}>
         <div className='max-w-xl'>
           <h2 className={STYLE.CONTENT.TITLE}>А «мы» это кто?</h2>
-          <p className={STYLE.CONTENT.DESCRIPTION}>
-            Юная команда из тех, кто готов покорять ваши сердца!
-          </p>
+          <p className={STYLE.CONTENT.DESCRIPTION}>Юная команда, готовая покорять ваши сердца!</p>
           <div className={STYLE.CONTENT.ACTIONS}>
             <Link to={APP_ROUTES.ABOUT} className={STYLE.LINK_BUTTON}>
               Давай дальше <span aria-hidden='true'>→</span>

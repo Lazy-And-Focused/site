@@ -17,24 +17,21 @@ export const CopyrightSection = () => {
         <li className={STYLE.LIST.ITEM}>
           <span className={STYLE.LIST.SUPPLEMENT}>Дополнение: </span>
           <span className={STYLE.LIST.DISABLED}>
-            принадлежат <strong>кроме тех случаев, когда</strong> авторское право соотносится с
-            другим правообладателем
+            принадлежат владельцам, <strong>кроме тех случаев, когда</strong> авторское право
+            относится к другому правообладателю
           </span>
         </li>
         <li className={STYLE.LIST.ITEM}>
           <span className={STYLE.LIST.DISABLED}>
-            Любая информация об участника была предоставлена,{' '}
-            <strong>
-              основываясь на данных из Интернет-ресурсов, если пользователь не предоставил
-            </strong>{' '}
-            описание, аватар или ссылки
+            Любая информация об участниках была предоставлена на основе данных из интернет-ресурсов,
+            если сам пользователь не предоставил описание, аватар или ссылки
           </span>
         </li>
         <li className={STYLE.LIST.ITEM}>
           <span className={STYLE.LIST.SUPPLEMENT}>Дополнение: </span>
           <span className={STYLE.LIST.DISABLED}>
             ссылки на социальные сети участников были предоставлены{' '}
-            <strong>только по обоюдному согласию между сторонами</strong>
+            <strong>только по обоюдному согласию</strong>
           </span>
         </li>
       </ul>

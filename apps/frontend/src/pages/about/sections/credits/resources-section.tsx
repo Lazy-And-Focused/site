@@ -21,7 +21,7 @@ export const ResourcesSection = () => {
             rel='noopener noreferrer'
             className={STYLE.LIST.LINK}
           >
-            Boostrap Icons
+            Bootstrap Icons
           </a>
         </li>
         <li className={STYLE.LIST.ITEM}>
