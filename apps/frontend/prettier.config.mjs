@@ -1,8 +1,8 @@
-import { PrettierLafConfiguration } from 'prettier-config-laf';
+import { prettierConfig } from '@lazy-and-focused/prettier-config';
 
 /** @type {import("prettier").Config} */
 const config = {
-  ...PrettierLafConfiguration,
+  ...prettierConfig,
   plugins: ['prettier-plugin-tailwindcss'],
 };
 

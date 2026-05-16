@@ -5,3 +5,6 @@ allowBuilds:
   '@swc/core': true
   esbuild: true
   node: true
+catalog:
+  '@lazy-and-focused/prettier-config': ^1.1.0
+  prettier: ^3.8.3
